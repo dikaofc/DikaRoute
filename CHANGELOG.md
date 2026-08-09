@@ -6,6 +6,18 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.60] - 2026-08-09
+
+### Fixed
+
+- detect source-checkout run in Server-not-found hint (points to npx/global package instead of misleading reinstall)
+
+### Changed
+
+- tag release commit vX.Y.Z and dispatch publish against the tag (raw SHAs rejected by checkout)
+- fix release dispatch — --ref must be a branch (SHA rejected 422); pass SHA via release_ref input
+- dispatch publish against explicit release commit SHA (fix stale-main race that skipped 3.8.59 publish)
+
 ## [3.8.59] - 2026-08-09
 
 ### Fixed
