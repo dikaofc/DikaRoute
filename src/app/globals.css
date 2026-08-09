@@ -18,32 +18,7 @@
 @source not "../../*.sqlite*";
 @source not "../../.claude*";
 
-/* ─────────────────────────────────────────────────
-   iOS palette remap — legacy Tailwind emerald/sky
-   (old OmniRoute brand) now resolve to iOS colors
-   ───────────────────────────────────────────────── */
-@theme {
-  --color-emerald-50: #ebf9f0;
-  --color-emerald-100: #d3f4e0;
-  --color-emerald-200: #a8ecc4;
-  --color-emerald-300: #6fe08a;
-  --color-emerald-400: #4cd964;
-  --color-emerald-500: #30d158;
-  --color-emerald-600: #248a3d;
-  --color-emerald-700: #1f7a36;
-  --color-emerald-800: #1a5f2c;
-  --color-emerald-900: #144422;
-  --color-sky-50: #eaf5ff;
-  --color-sky-100: #d0e9ff;
-  --color-sky-200: #a6d4ff;
-  --color-sky-300: #64b2ff;
-  --color-sky-400: #409cff;
-  --color-sky-500: #0a84ff;
-  --color-sky-600: #096cb6;
-  --color-sky-700: #08558c;
-  --color-sky-800: #073f66;
-  --color-sky-900: #052c46;
-}
+
 @source not "../../.claude-memory";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -461,13 +436,6 @@ button .material-symbols-outlined,
 @keyframes border-glow {
  0%, 100% { box-shadow: 0 0 5px rgba(10, 132, 255, 0.3); }
  50% { box-shadow: 0 0 12px rgba(10, 132, 255, 0.5); }
-}
-  50% {
-    box-shadow:
-      0 0 10px rgba(16, 185, 129, 0.5),
-      0 0 20px rgba(16, 185, 129, 0.3);
-    border-color: rgba(16, 185, 129, 0.8);
-  }
 }
 
 .animate-border-glow {
