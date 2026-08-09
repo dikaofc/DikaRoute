@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.65] - 2026-08-09
+
+### Fixed
+
+- 500 on /docs routes — lazy-load jsdom (devDependency) in docsSanitizer to avoid SSR module eval crash in npm package
+
 ## [3.8.64] - 2026-08-09
 
 ### Added
