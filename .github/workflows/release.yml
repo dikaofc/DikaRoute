@@ -1,0 +1,64 @@
+name: Auto Release (bump + changelog)
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Version bump type"
+        required: true
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - custom
+      version:
+        description: "Custom version X.Y.Z (only used when bump=custom)"
+        required: false
+        type: string
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Auto-bump version + generate CHANGELOG
+        run: |
+          node scripts/release/auto-bump.mjs \
+            --bump "${{ github.event.inputs.bump }}" \
+            --version "${{ github.event.inputs.version }}"
+
+      - name: Commit & push release
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          git add package.json package-lock.json CHANGELOG.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit — nothing to release."
+            exit 0
+          fi
+          git commit -m "chore: release v${VERSION}"
+          git push origin main
+          echo "Pushed v${VERSION} — publish.yml will now publish to npm and create the GitHub Release."
