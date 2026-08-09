@@ -1,0 +1,219 @@
+import { spawnSync } from "node:child_process";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { t } from "../i18n.mjs";
+import { emit } from "../output.mjs";
+import { discoverPlugins } from "../plugins.mjs";
+
+// Run npm with an explicit argument array and no shell. Passing args this way
+// (instead of string-interpolating into `execSync`) prevents a malicious plugin
+// name like `foo; rm -rf ~` or `` foo`id` `` from being interpreted by the shell.
+function runNpm(args) {
+  const res = spawnSync("npm", args, { stdio: "inherit", shell: false });
+  if (res.error) throw res.error;
+  if (typeof res.status === "number" && res.status !== 0) {
+    throw new Error(`npm exited with code ${res.status}`);
+  }
+}
+
+const TEMPLATE_INDEX = `export const meta = {
+  name: "PLUGIN_NAME",
+  version: "0.1.0",
+  description: "DikaRoute plugin",
+  dikarouteApi: ">=4.0.0",
+};
+
+export function register(program, ctx) {
+  program
+    .command("PLUGIN_NAME")
+    .description(meta.description)
+    .action(async (opts, cmd) => {
+      const gOpts = cmd.optsWithGlobals();
+      // ctx provides: ctx.apiFetch, ctx.emit, ctx.t, ctx.withSpinner, ctx.baseUrl, ctx.apiKey
+      const res = await ctx.apiFetch("/api/health", { baseUrl: gOpts.baseUrl, apiKey: gOpts.apiKey });
+      const data = await res.json();
+      ctx.emit(data, gOpts);
+    });
+}
+`;
+
+export function registerPlugin(program) {
+  const plugin = program
+    .command("plugin")
+    .description(t("plugin.description") || "Manage CLI plugins (dikaroute-cmd-*)");
+
+  plugin
+    .command("list")
+    .description(t("plugin.list") || "List installed plugins")
+    .action(async (opts, cmd) => {
+      const plugins = await discoverPlugins();
+      emit(
+        plugins.map((p) => ({ name: p.name, version: p.version, description: p.description })),
+        cmd.optsWithGlobals()
+      );
+      if (plugins.length === 0) {
+        process.stdout.write("No plugins installed.\n");
+        process.stdout.write(`Install: dikaroute plugin install <name>\n`);
+      }
+    });
+
+  plugin
+    .command("install <name>")
+    .description(t("plugin.install") || "Install a plugin")
+    .option("-y, --yes", "Skip confirmation prompt")
+    .action(async (name, opts) => {
+      const isLocal = name.startsWith("./") || name.startsWith("/") || name.startsWith("../");
+      const pkgName = isLocal ? name : `dikaroute-cmd-${name}`;
+
+      if (!opts.yes) {
+        process.stderr.write(
+          `⚠ WARNING: Plugins run with the same privileges as dikaroute CLI.\n` +
+            `  Only install plugins from sources you trust.\n` +
+            `  Installing: ${pkgName}\n` +
+            `  Pass --yes to skip this prompt.\n`
+        );
+        // In non-interactive mode, require explicit --yes
+        if (!process.stdin.isTTY) {
+          process.stderr.write("Non-interactive mode: use --yes to confirm.\n");
+          process.exit(1);
+        }
+      }
+
+      try {
+        runNpm(["install", "-g", pkgName]);
+        process.stdout.write(`\n✓ Installed: ${pkgName}\n`);
+      } catch {
+        process.stderr.write(`✗ Failed to install ${pkgName}\n`);
+        process.exit(1);
+      }
+    });
+
+  plugin
+    .command("remove <name>")
+    .alias("uninstall")
+    .description(t("plugin.remove") || "Remove a plugin")
+    .option("-y, --yes", "Skip confirmation")
+    .action(async (name, opts) => {
+      const pkgName = name.startsWith("dikaroute-cmd-") ? name : `dikaroute-cmd-${name}`;
+      if (!opts.yes) {
+        process.stderr.write(`Removing: ${pkgName} — pass --yes to confirm.\n`);
+        if (!process.stdin.isTTY) {
+          process.exit(1);
+        }
+      }
+      try {
+        runNpm(["uninstall", "-g", pkgName]);
+        process.stdout.write(`✓ Removed: ${pkgName}\n`);
+      } catch {
+        process.stderr.write(`✗ Failed to remove ${pkgName}\n`);
+        process.exit(1);
+      }
+    });
+
+  plugin
+    .command("info <name>")
+    .description(t("plugin.info") || "Show plugin details")
+    .action(async (name, opts, cmd) => {
+      const plugins = await discoverPlugins();
+      const p = plugins.find((x) => x.name === name || x.name === `dikaroute-cmd-${name}`);
+      if (!p) {
+        process.stderr.write(`Plugin '${name}' not found.\n`);
+        process.exit(1);
+      }
+      emit(p.pkg, cmd.optsWithGlobals());
+    });
+
+  plugin
+    .command("search [query]")
+    .description(t("plugin.search") || "Search npm for available plugins")
+    .action(async (query) => {
+      const q = query ? `dikaroute-cmd-${query}` : "dikaroute-cmd";
+      const url = `https://registry.npmjs.org/-/v1/search?text=${encodeURIComponent(q)}&size=50`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`npm registry returned ${res.status}`);
+        const data = await res.json();
+        const rows = (data.objects || []).map((o) => ({
+          name: o.package.name,
+          version: o.package.version,
+          description: o.package.description,
+        }));
+        if (rows.length === 0) {
+          process.stdout.write(`No plugins found for '${query || "dikaroute-cmd"}'.\n`);
+        } else {
+          rows.forEach((r) =>
+            process.stdout.write(`  ${r.name}@${r.version}  ${r.description || ""}\n`)
+          );
+        }
+      } catch (err) {
+        process.stderr.write(`Search failed: ${err.message}\n`);
+        process.exit(1);
+      }
+    });
+
+  plugin
+    .command("update [name]")
+    .description(t("plugin.update") || "Update installed plugin(s)")
+    .action(async (name) => {
+      try {
+        if (name) {
+          const pkg = `dikaroute-cmd-${name}`;
+          runNpm(["update", "-g", pkg]);
+          process.stdout.write(`✓ Updated: ${pkg}\n`);
+          return;
+        }
+        // No name → update every installed plugin. Enumerate them explicitly
+        // instead of relying on a shell glob (`dikaroute-cmd-*`), which never
+        // expands without a shell and would otherwise update nothing.
+        const plugins = await discoverPlugins();
+        const names = plugins
+          .map((p) => p.name)
+          .filter((n) => typeof n === "string" && n.startsWith("dikaroute-cmd-"));
+        if (names.length === 0) {
+          process.stdout.write("No plugins installed to update.\n");
+          return;
+        }
+        runNpm(["update", "-g", ...names]);
+        process.stdout.write(`✓ Updated: ${names.join(", ")}\n`);
+      } catch {
+        process.stderr.write(`✗ Update failed\n`);
+        process.exit(1);
+      }
+    });
+
+  plugin
+    .command("scaffold <name>")
+    .description(t("plugin.scaffold") || "Scaffold a new plugin boilerplate")
+    .action(async (name) => {
+      const safeName = name.replace(/[^a-z0-9-]/g, "-");
+      const dir = join(process.cwd(), `dikaroute-cmd-${safeName}`);
+      if (existsSync(dir)) {
+        process.stderr.write(`Directory already exists: ${dir}\n`);
+        process.exit(1);
+      }
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, "package.json"),
+        JSON.stringify(
+          {
+            name: `dikaroute-cmd-${safeName}`,
+            version: "0.1.0",
+            type: "module",
+            main: "index.mjs",
+            description: `DikaRoute CLI plugin: ${safeName}`,
+            engines: { dikaroute: ">=4.0.0" },
+            keywords: ["dikaroute-plugin", "dikaroute-cmd"],
+          },
+          null,
+          2
+        ) + "\n"
+      );
+      writeFileSync(join(dir, "index.mjs"), TEMPLATE_INDEX.replace(/PLUGIN_NAME/g, safeName));
+      writeFileSync(
+        join(dir, "README.md"),
+        `# dikaroute-cmd-${safeName}\n\nAn DikaRoute CLI plugin.\n\n## Install\n\n\`\`\`bash\ndikaroute plugin install ${safeName}\n\`\`\`\n`
+      );
+      process.stdout.write(`✓ Scaffolded: ${dir}\n`);
+      process.stdout.write(`  Run: cd ${dir} && dikaroute plugin install .\n`);
+    });
+}

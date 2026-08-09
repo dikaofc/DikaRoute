@@ -1,0 +1,17 @@
+export const DIKAROUTE_RESPONSE_HEADERS = {
+  cache: "X-DikaRoute-Cache",
+  cacheHit: "X-DikaRoute-Cache-Hit",
+  compression: "X-DikaRoute-Compression",
+  costSaved: "X-DikaRoute-Cost-Saved",
+  decision: "X-DikaRoute-Decision",
+  fallbackAttempts: "X-DikaRoute-Fallback-Attempts",
+  latencyMs: "X-DikaRoute-Latency-Ms",
+  model: "X-DikaRoute-Model",
+  progress: "X-DikaRoute-Progress",
+  provider: "X-DikaRoute-Provider",
+  requestId: "X-DikaRoute-Request-Id",
+  responseCost: "X-DikaRoute-Response-Cost",
+  tokensIn: "X-DikaRoute-Tokens-In",
+  tokensOut: "X-DikaRoute-Tokens-Out",
+  version: "X-DikaRoute-Version",
+} as const;
