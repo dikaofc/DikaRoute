@@ -6,6 +6,17 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.63] - 2026-08-09
+
+### Fixed
+
+- 4 ReferenceError runtime bugs — ModelCompatPopover missing props, ProviderModalsPanel missing import+prop, RuntimePageClient nodeMap scope, chat handler isAllRateLimited undefined
+
+### Changed
+
+- prune stale eslint suppressions after ReferenceError fixes
+- release v3.8.62
+
 ## [3.8.62] - 2026-08-09
 
 ### Fixed
