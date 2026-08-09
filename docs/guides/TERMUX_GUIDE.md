@@ -52,9 +52,15 @@ Two common Termux-specific causes:
    cache-dir probe. It only accepts a cache root that already exists (`~/.cache`
    or the tmp dir). The CLI normally creates it for you, but on a fresh install
    it may not have existed yet.
-2. **A native module failed to load** — most often the SQLite driver
-   (`better-sqlite3`) when its compiled binary does not match the Termux Node
-   build, or `node:sqlite` is not available in the Termux Node package.
+2. **A native module failed to load** — historically the SQLite driver
+   (`better-sqlite3` when its compiled binary does not match the Termux Node
+   build, or `node:sqlite` when unavailable in the Termux Node package).
+
+> **Since 3.8.59** this is no longer expected: on Android/Termux the DB driver
+> cascade now **skips native drivers entirely** and goes straight to the
+> bundled **sql.js WASM** driver (pure WebAssembly — no compilation, no ABI
+> matching, always works). See [SQLite driver on Termux](#sqlite-driver-on-termux)
+> below. The remaining realistic cause of a 500 is the missing cache dir (#1).
 
 **Step 1 — see the real error** (the CLI hides child output by default):
 
@@ -89,6 +95,28 @@ After each fix, restart: `dikaroute serve`.
 output (especially the `An error occurred while loading instrumentation hook: …`
 line) — that identifies the exact module that failed on your device.
 
+### SQLite driver on Termux
+
+DikaRoute detects Android/Termux at boot and **forces the sql.js WASM driver**
+— the native sync drivers (`better-sqlite3`, `node:sqlite`) are skipped before
+they are even attempted, because their prebuilt binaries do not load on Android.
+
+This is automatic — no action needed. You should see this line in the logs:
+
+```
+[DB] Android/Termux detected — forcing sql.js WASM driver (native sync drivers unreliable on Android)
+[DB] Driver: sql.js | file: ...
+```
+
+On any other platform you can opt into the same behavior explicitly with:
+
+```bash
+DIKAROUTE_FORCE_SQLJS=1 dikaroute serve
+```
+
+sql.js is slower than the native drivers (it loads the database file into WASM
+memory) but is fully functional — the right trade-off for Termux reliability.
+
 ### `Unsupported platform: android`
 
 Next.js's `getCacheDirectory()` has no `android` branch. On Termux it falls back
@@ -115,3 +143,8 @@ dikaroute runtime repair
 This rebuilds required native modules into a user-writable runtime directory
 without needing `make`/`gcc`. Only fall back to `npm rebuild …` when a toolchain
 is installed.
+
+> Since 3.8.59 the SQLite driver is **not** one of those native modules on
+> Termux anymore — `npm rebuild better-sqlite3` is unnecessary there (sql.js
+> WASM is used instead). The runtime-repair path still matters for other
+> optional native pieces (e.g. `wreq-js`).

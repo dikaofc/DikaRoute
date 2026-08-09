@@ -11,6 +11,7 @@ import {
   preInitSqlJs,
   getSqlJsPreInitError,
   openDatabaseAsync,
+  preferSqlJsFallback,
 } from "./adapters/driverFactory";
 import path from "path";
 import { retryProbeIfTransient } from "./probeUtils";
@@ -1388,6 +1389,30 @@ export async function ensureDbInitialized(): Promise<void> {
     return;
   }
 
+  // Android/Termux (or explicit DIKAROUTE_FORCE_SQLJS=1): skip the native
+  // sync drivers entirely and go straight to sql.js WASM — native addons are
+  // unreliable on Android, so this is the guaranteed-to-work driver there.
+  // If sql.js itself fails to pre-init, surface the REAL cause below instead
+  // of letting getDbInstance() throw the misleading "not pre-initialized"
+  // generic message later (#7288).
+  if (preferSqlJsFallback(process.env, process.platform)) {
+    console.warn(
+      "[DB] Android/Termux detected — forcing sql.js WASM driver (native sync drivers unreliable on Android)"
+    );
+    try {
+      await preInitSqlJs(SQLITE_FILE);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      throw new Error(
+        `[DB] sql.js WASM pre-init failed on Android/Termux: ${message}. ` +
+          "Make sure the packaged sql.js runtime (sql-wasm.wasm) is intact — see docs/guides/TERMUX_GUIDE.md."
+      );
+    }
+    // Agora getSqlJsAdapter() retornará o adapter, e getDbInstance() vai usá-lo
+    getDbInstance();
+    return;
+  }
+
   // Tenta drivers síncronos primeiro
   const sync = tryOpenSync(SQLITE_FILE);
   if (sync) {
@@ -1636,4 +1661,3 @@ export function setPageSize(pageSize: number): void {
 export function setCacheSize(cacheSizeKb: number): void {
   setCacheSizeForDb(getDbInstance(), cacheSizeKb);
 }
-

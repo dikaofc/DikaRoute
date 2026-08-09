@@ -10,6 +10,44 @@ import type { SqliteAdapter } from "./types";
 
 const _require = createRequire(import.meta.url);
 
+/**
+ * Detect Android/Termux so the driver cascade can skip the native sync
+ * drivers (better-sqlite3 / node:sqlite) that are either unbuildable or
+ * crash on Android — see docs/guides/TERMUX_GUIDE.md. Mirrors the signal
+ * set used by scripts/build/postinstallSupport.mjs's `isTermux()`:
+ * Node on Termux reports `process.platform === "linux"` (not "android"),
+ * so env vars + a filesystem probe are required.
+ */
+export function isAndroidOrTermux(
+  platform: string = process.platform,
+  env: NodeJS.ProcessEnv = process.env
+): boolean {
+  if (platform === "android") return true;
+  if (env.TERMUX_VERSION) return true;
+  if (typeof env.PREFIX === "string" && env.PREFIX.includes("com.termux")) return true;
+  try {
+    if (existsSync("/data/data/com.termux")) return true;
+  } catch {
+    // ignore probe failures
+  }
+  return false;
+}
+
+/**
+ * Whether the sync-driver cascade should be skipped entirely in favor of the
+ * sql.js WASM adapter. True on Android/Termux (native addons are unreliable
+ * there — the whole reason the cascade used to fall through to sql.js AFTER
+ * two guaranteed failures) or when the operator explicitly opts in with
+ * `DIKAROUTE_FORCE_SQLJS=1` (e.g. a broken better-sqlite3 ABI on any box).
+ */
+export function preferSqlJsFallback(
+  env: NodeJS.ProcessEnv = process.env,
+  platform: string = process.platform
+): boolean {
+  if (env.DIKAROUTE_FORCE_SQLJS === "1" || env.DIKAROUTE_FORCE_SQLJS === "true") return true;
+  return isAndroidOrTermux(platform, env);
+}
+
 type DriverLoader = (moduleName: string) => unknown;
 
 /**
@@ -131,6 +169,18 @@ export function createSyncDriverFactory(load: DriverLoader) {
     filePath: string,
     options?: Record<string, unknown>
   ): SqliteAdapter | null {
+    // Android/Termux (or explicit DIKAROUTE_FORCE_SQLJS=1): skip the native
+    // driver cascade entirely and let the caller go straight to the sql.js
+    // WASM fallback. better-sqlite3's prebuilt binary cannot load on Android
+    // (ERR_DLOPEN_FAILED) and node:sqlite is unreliable under Termux; probing
+    // them here used to cost two guaranteed exceptions plus misleading
+    // debug spam on EVERY boot before the cascade reached sql.js. Now the
+    // failure is impossible to hit on Termux by construction — sql.js is the
+    // intended driver there, chosen before any driver is tried.
+    if (preferSqlJsFallback(process.env, process.platform)) {
+      return null;
+    }
+
     // Bun ships a supported SQLite implementation. Prefer it over the native
     // Node addon, which Bun intentionally skips because its ABI is incompatible.
     if (process.versions.bun) {
@@ -210,6 +260,7 @@ export function tryOpenSync(
   options?: Record<string, unknown>
 ): SqliteAdapter | null {
   if (isPackBootForcedSqlJsSmoke(process.env)) return null;
+  if (preferSqlJsFallback(process.env, process.platform)) return null;
   return openSyncDriver(filePath, options);
 }
 
@@ -283,4 +334,3 @@ export async function openDatabaseAsync(
   console.log(`[DB] Driver: sql.js | file: ${filePath}`);
   return adapter;
 }
-
