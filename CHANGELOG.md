@@ -6,6 +6,19 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.55] - 2026-08-09
+
+### Changed
+
+- **README ditulis ulang** — hero 3D animasi (SVG), badge dinamis, dan dokumentasi
+  lengkap (fitur, arsitektur, quickstart, API reference, konfigurasi env, FAQ,
+  troubleshooting).
+- **Stempel versi disinkronkan di seluruh repo** — commit `chore: sync version
+stamp to 3.8.54 across all files` membuat setiap file menampilkan versi terbaru
+  di GitHub.
+- **`publish.sh` dihapus** — publikasi ke npm kini sepenuhnya ditangani GitHub
+  Actions (`publish.yml`).
+
 ## [3.8.54] - 2026-08-09
 
 ### Fixed
@@ -45,4 +58,3 @@ mengikuti [Semantic Versioning](https://semver.org/).
 ## [3.8.50] - 2026-08-09
 
 - Maintenance dan perbaikan stabilitas (detail lengkap lihat riwayat commit).
-
