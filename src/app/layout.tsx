@@ -6,7 +6,7 @@ import { getMessages, getLocale, getTranslations } from "next-intl/server";
 import { RTL_LOCALES } from "@/i18n/config";
 import { normalizeComplianceEventTypes } from "@/i18n/request";
 import { getSettings } from "@/lib/db/settings";
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { PwaRegister } from "@/shared/components/PwaRegister";
 import { LocaleAutoDetect } from "@/shared/components/LocaleAutoDetect";
 import { BasePathNetworkProvider } from "@/shared/components/BasePathNetworkProvider";
@@ -21,15 +21,27 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
   const instanceName = settings?.instanceName || "DikaRoute";
   const customFaviconUrl = settings?.customFaviconUrl || settings?.customFaviconBase64;
+  const description =
+    "DikaRoute is an AI gateway for multi-provider LLMs. One endpoint for all your AI providers.";
+  const title = `${instanceName} — AI Gateway for Multi-Provider LLMs`;
+
+  // Canonical origin for Open Graph / Twitter cards. When running behind a
+  // reverse proxy or tunnel, set NEXT_PUBLIC_BASE_URL to the public origin so
+  // shared links point at a reachable URL (fallbacks: BASE_URL, then localhost).
+  const publicBaseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || process.env.BASE_URL || "http://localhost:20128";
+  const metadataBase = new URL(new URL(publicBaseUrl).origin);
+  const basePath = process.env.NEXT_PUBLIC_DIKAROUTE_BASE_PATH || "";
+  const ogImage = `${basePath}/images/dikaroute-social.png`;
 
   return {
-    title: `${instanceName} — AI Gateway for Multi-Provider LLMs`,
-    description:
-      "DikaRoute is an AI gateway for multi-provider LLMs. One endpoint for all your AI providers.",
+    metadataBase,
+    title,
+    description,
     manifest: "/manifest.webmanifest",
     applicationName: instanceName,
     appleWebApp: {
@@ -49,6 +61,21 @@ export async function generateMetadata() {
             { url: "/icon-512.svg", type: "image/svg+xml", sizes: "512x512" },
           ],
       apple: [{ url: "/apple-touch-icon.svg", sizes: "180x180", type: "image/svg+xml" }],
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: instanceName,
+      url: new URL(basePath || "/", metadataBase).toString(),
+      title,
+      description,
+      images: [{ url: ogImage, width: 1280, height: 640, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }
@@ -153,4 +180,3 @@ export default async function RootLayout({ children }) {
     </html>
   );
 }
-
