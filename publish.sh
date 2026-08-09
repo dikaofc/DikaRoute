@@ -19,12 +19,11 @@ echo "=================================================="
 # Setup Node 22
 export PATH="$HOME/node22/bin:$PATH"
 
-# Verifikasi Node versi (butuh Node 20+)
+# Verifikasi Node versi
 NODE_VER=$(node -v 2>/dev/null || echo "not found")
-if [[ ! "$NODE_VER" =~ ^v(2[0-9]|[3-9][0-9]) ]]; then
-    echo "ERROR: Node 20+ tidak ditemukan di PATH"
-    echo "Current: $NODE_VER"
-    echo "Install Node 20 atau lebih baru"
+if [[ ! "$NODE_VER" =~ ^v22 ]]; then
+    echo "ERROR: Node 22 tidak ditemukan di PATH"
+    echo "Install Node 22 atau sesuaikan PATH di script ini"
     exit 1
 fi
 echo "Node: $NODE_VER"
@@ -80,11 +79,6 @@ echo ""
 echo "=================================================="
 echo "  STEP 3: Build (memory-safe)"
 echo "=================================================="
-echo "Memory setting:"
-echo "  - Heap: 3GB"
-echo "  - Webpack mode (bukan Turbopack)"
-echo ""
-
 # Set memory limit sesuai RAM available
 RAM_GB=$(free -g | awk '/^Mem:/{print $2}')
 if [[ "$RAM_GB" -ge 16 ]]; then
@@ -93,19 +87,27 @@ elif [[ "$RAM_GB" -ge 12 ]]; then
     HEAP_MB=6144
 elif [[ "$RAM_GB" -ge 8 ]]; then
     HEAP_MB=4096
-elif [[ "$RAM_GB" -ge 6 ]]; then
-    HEAP_MB=3072
 else
-    HEAP_MB=2560
+    # Untuk RAM < 8GB, pakai Turbopack (lebih hemat memory)
+    HEAP_MB=2048
+    USE_TURBOPACK=1
 fi
 
-echo "RAM detected: ${RAM_GB}GB, using heap: ${HEAP_MB}MB"
-echo ""
+echo "RAM detected: ${RAM_GB}GB"
+echo "Heap: ${HEAP_MB}MB"
 
-# Build dengan memory limit
-DIKAROUTE_BUILD_MEMORY_MB=$HEAP_MB \
-DIKAROUTE_USE_TURBOPACK=0 \
-npm run build:cli
+# Untuk RAM kecil, pakai Turbopack (lebih hemat memory)
+if [[ "$USE_TURBOPACK" == "1" ]]; then
+    echo "Mode: Turbopack (RAM terbatas)"
+    echo ""
+    NODE_OPTIONS="--max-old-space-size=$HEAP_MB" npm run build:cli
+else
+    echo "Mode: Webpack"
+    echo ""
+    DIKAROUTE_BUILD_MEMORY_MB=$HEAP_MB \
+    DIKAROUTE_USE_TURBOPACK=0 \
+    npm run build:cli
+fi
 
 # Verifikasi build berhasil
 if [[ ! -d "dist" ]]; then
