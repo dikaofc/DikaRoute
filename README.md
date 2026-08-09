@@ -8,6 +8,8 @@
 <p align="center">
 
 ![DikaRoute](https://img.shields.io/badge/DikaRoute-AI%20Gateway-red)
+![npm version](https://img.shields.io/npm/v/dikaroute)
+![npm downloads](https://img.shields.io/npm/dm/dikaroute)
 ![Node.js](https://img.shields.io/badge/Node.js-Runtime-green)
 ![OpenAI Compatible](https://img.shields.io/badge/API-OpenAI%20Compatible-blue)
 ![License](https://img.shields.io/badge/license-MIT-purple)
@@ -238,12 +240,29 @@ Dashboard capabilities:
 
 ---
 
+# 📦 Releases & Changelog
+
+Current version: **3.8.54**
+
+- 📝 [CHANGELOG.md](./CHANGELOG.md) — detailed release notes (also rendered inside the dashboard)
+- 🏷️ [GitHub Releases](https://github.com/dikaofc/DikaRoute/releases)
+- 📦 [npm — dikaroute](https://www.npmjs.com/package/dikaroute)
+
+---
+
 # 🚀 Installation
 
 ## NPM
 
 ```bash
 npm install -g dikaroute
+```
+
+Install always fetches the latest published version (`dikaroute@3.8.54`).
+To update an existing installation:
+
+```bash
+dikaroute update
 ```
 
 Run:

@@ -120,10 +120,10 @@ export async function runUpdateCommand(opts = {}) {
       if (stdout.trim()) {
         console.log(stdout.trim());
       } else {
-        console.log(`Changelog: https://github.com/your-org/dikaroute/releases/tag/v${latest}`);
+        console.log(`Changelog: https://github.com/dikaofc/DikaRoute/releases/tag/v${latest}`);
       }
     } catch {
-      console.log(`Changelog: https://github.com/your-org/dikaroute/releases/tag/v${latest}`);
+      console.log(`Changelog: https://github.com/dikaofc/DikaRoute/releases/tag/v${latest}`);
     }
     return 0;
   }
