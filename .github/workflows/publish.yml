@@ -1,0 +1,86 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org/'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+
+      - name: Build CLI
+        run: npm run build:cli
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+          DIKAROUTE_BUILD_MEMORY_MB: 4096
+
+      - name: Verify dist folder
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "ERROR: Build failed - dist folder not found"
+            exit 1
+          fi
+          echo "dist size: $(du -sh dist)"
+
+      - name: Get package version
+        id: pkg
+        run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Check if version already published
+        id: check-version
+        run: |
+          if npm view dikaroute@${{ steps.pkg.outputs.VERSION }} version > /dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Version ${{ steps.pkg.outputs.VERSION }} already exists on npm"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Version ${{ steps.pkg.outputs.VERSION }} is new"
+          fi
+        continue-on-error: true
+
+      - name: Publish to npm
+        if: steps.check-version.outputs.exists != 'true'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        if: steps.check-version.outputs.exists != 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.pkg.outputs.VERSION }}
+          name: DikaRoute v${{ steps.pkg.outputs.VERSION }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify success
+        if: steps.check-version.outputs.exists != 'true'
+        run: |
+          echo "✅ DikaRoute v${{ steps.pkg.outputs.VERSION }} published to npm!"
+          echo "📦 https://www.npmjs.com/package/dikaroute"
+          echo "📦 https://github.com/dikaofc/DikaRoute/releases/tag/v${{ steps.pkg.outputs.VERSION }}"
