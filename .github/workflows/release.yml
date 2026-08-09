@@ -24,6 +24,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write # needed to dispatch the publish workflow (gh workflow run)
 
 jobs:
   release:
@@ -58,7 +59,7 @@ jobs:
             --bump "${{ github.event.inputs.bump }}" \
             --version "${{ github.event.inputs.version }}"
 
-      - name: Commit & push release
+      - name: Commit, push & trigger publish
         run: |
           VERSION="$(node -p "require('./package.json').version")"
           git add package.json package-lock.json CHANGELOG.md
@@ -68,4 +69,11 @@ jobs:
           fi
           git commit -m "chore: release v${VERSION}"
           git push origin main
-          echo "Pushed v${VERSION} — publish.yml will now publish to npm and create the GitHub Release."
+          echo "Pushed v${VERSION}."
+          # A push made with GITHUB_TOKEN does NOT re-trigger other workflows
+          # (GitHub's anti-recursion rule), so dispatch publish.yml explicitly.
+          # workflow_dispatch IS allowed for GITHUB_TOKEN.
+          gh workflow run 'Publish to npm' --ref main
+          echo "Dispatched Publish to npm — build, npm publish and GitHub Release run automatically."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
