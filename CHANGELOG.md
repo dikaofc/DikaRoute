@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.64] - 2026-08-09
+
+### Added
+
+- add Saweria donation tab to sidebar Help section + README donate section
+
 ## [3.8.63] - 2026-08-09
 
 ### Fixed
