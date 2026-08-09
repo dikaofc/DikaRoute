@@ -66,7 +66,7 @@ export function DetailsPanel({ request, allRequests }: DetailsPanelProps) {
       <div
         role="tablist"
         aria-label={t("requestDetails")}
-        className="flex flex-wrap items-center gap-0.5 border-b border-border px-2 pt-1 bg-bg-subtle shrink-0"
+        className="mx-3 mt-2 flex shrink-0 flex-wrap items-center gap-1 rounded-[14px] border border-glass-border bg-glass-bg p-1.5 backdrop-blur-md"
       >
         {visibleTabs.map((tab) => {
           const selected = currentTab === tab.id;
@@ -78,10 +78,10 @@ export function DetailsPanel({ request, allRequests }: DetailsPanelProps) {
               aria-selected={selected}
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "inline-flex items-center gap-1 h-8 px-2 text-xs rounded-t border-b-2 transition-colors focus-ring",
+                "inline-flex h-8 items-center gap-1 rounded-[10px] px-2.5 text-xs transition-all duration-200 focus-ring",
                 selected
-                  ? "border-blue-500 text-blue-400 bg-surface"
-                  : "border-transparent text-text-muted hover:text-text-main hover:bg-surface/50"
+                  ? "bg-blue-500/15 text-blue-400"
+                  : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
               )}
             >
               <span className="material-symbols-outlined text-[13px]" aria-hidden="true">
@@ -105,10 +105,9 @@ export function DetailsPanel({ request, allRequests }: DetailsPanelProps) {
       </div>
 
       {/* Annotation footer */}
-      <div className="shrink-0 border-t border-border px-3 py-2 bg-bg-subtle">
+      <div className="shrink-0 border-t border-glass-border bg-glass-bg/40 px-3 py-2">
         <AnnotationField requestId={request.id} initialValue={request.annotation ?? ""} />
       </div>
     </div>
   );
 }
-

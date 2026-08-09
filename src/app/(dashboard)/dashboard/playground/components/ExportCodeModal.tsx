@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
+import { SegmentedControl } from "@/shared/components";
 import type { PlaygroundState, ExportLanguage } from "@/lib/playground/codeExport";
 import { exportAllLanguages, API_KEY_PLACEHOLDER } from "@/lib/playground/codeExport";
 
@@ -61,25 +62,25 @@ export default function ExportCodeModal({ state, onClose }: ExportCodeModalProps
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md dkr-fade-in"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={t("exportCode")}
     >
       <div
-        className="bg-surface border border-border rounded-xl w-[640px] max-w-[96vw] max-h-[80vh] flex flex-col shadow-2xl"
+        className="glass-strong dkr-scale-in flex max-h-[80vh] w-[640px] max-w-[96vw] flex-col rounded-[20px]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal header */}
-        <div className="flex items-center justify-between px-5 py-3.5 border-b border-border shrink-0">
+        <div className="flex shrink-0 items-center justify-between border-b border-glass-border px-5 py-3.5">
           <div className="flex items-center gap-2">
             <span className="font-mono text-sm text-text-muted">&lt;/&gt;</span>
             <h2 className="text-sm font-semibold text-text-main">{t("exportCodeTitle")}</h2>
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded text-text-muted hover:text-text-main hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+            className="rounded p-1 text-text-muted transition-colors hover:bg-glass-bg-hover hover:text-text-main"
             aria-label={t("closeExportModal")}
           >
             <span className="material-symbols-outlined text-[18px]">close</span>
@@ -87,63 +88,55 @@ export default function ExportCodeModal({ state, onClose }: ExportCodeModalProps
         </div>
 
         {/* Language tabs */}
-        <div className="flex items-center gap-1 px-4 pt-3 shrink-0" role="tablist">
-          {LANGUAGE_TABS.map((lang) => (
-            <button
-              key={lang.id}
-              role="tab"
-              aria-selected={activeLanguage === lang.id}
-              onClick={() => {
-                setActiveLanguage(lang.id);
-                setCopied(false);
-              }}
-              className={`px-3 py-1.5 text-xs font-medium rounded transition-colors ${
-                activeLanguage === lang.id
-                  ? "bg-primary/10 text-primary"
-                  : "text-text-muted hover:text-text-main hover:bg-black/5 dark:hover:bg-white/5"
-              }`}
-            >
-              {lang.label}
-            </button>
-          ))}
+        <div className="shrink-0 px-4 pt-3">
+          <SegmentedControl
+            aria-label={t("exportCode")}
+            size="sm"
+            value={activeLanguage}
+            onChange={(next) => {
+              setActiveLanguage(next as ExportLanguage);
+              setCopied(false);
+            }}
+            options={LANGUAGE_TABS.map((lang) => ({ value: lang.id, label: lang.label }))}
+          />
         </div>
 
         {/* Code block */}
-        <div className="flex-1 overflow-y-auto px-4 pt-3 pb-4 min-h-0">
+        <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-3">
           {hasRealKey ? (
-            <div className="text-xs text-destructive bg-destructive/10 rounded p-3">
+            <div className="rounded-lg bg-destructive/10 p-3 text-xs text-destructive">
               {t("exportRealKeyWarning")}
             </div>
           ) : (
-            <pre className="text-xs font-mono text-text-main bg-bg-alt border border-border rounded-lg p-4 overflow-x-auto whitespace-pre-wrap break-all">
+            <pre className="overflow-x-auto whitespace-pre-wrap break-all rounded-lg border border-glass-border bg-glass-bg/60 p-4 font-mono text-xs text-text-main backdrop-blur-xl">
               <code>{currentCode}</code>
             </pre>
           )}
 
           {/* Placeholder hint */}
-          <p className="text-[11px] text-text-muted mt-2">
+          <p className="mt-2 text-[11px] text-text-muted">
             {t("placeholderHintPrefix")}{" "}
-            <code className="font-mono text-primary">{API_KEY_PLACEHOLDER}</code>
-            {" "}{t("placeholderHintSuffix")}
+            <code className="font-mono text-primary">{API_KEY_PLACEHOLDER}</code>{" "}
+            {t("placeholderHintSuffix")}
           </p>
         </div>
 
         {/* Footer with copy button */}
-        <div className="flex items-center justify-end gap-3 px-5 py-3 border-t border-border shrink-0">
+        <div className="flex shrink-0 items-center justify-end gap-3 border-t border-glass-border px-5 py-3">
           <button
             onClick={onClose}
-            className="text-xs px-3 py-1.5 rounded border border-border text-text-muted hover:text-text-main hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+            className="rounded-lg border border-glass-border px-3 py-1.5 text-xs text-text-muted transition-colors hover:bg-glass-bg-hover hover:text-text-main"
           >
             {t("close")}
           </button>
           <button
             onClick={handleCopy}
             disabled={hasRealKey}
-            className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded border transition-colors ${
+            className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs transition-colors ${
               copied
-                ? "border-green-500 text-green-500 bg-green-500/10"
+                ? "border-green-500 bg-green-500/10 text-green-500"
                 : "border-primary text-primary hover:bg-primary/10"
-            } disabled:opacity-40 disabled:cursor-not-allowed`}
+            } disabled:cursor-not-allowed disabled:opacity-40`}
             aria-label={t("copyLangCode", { language: activeLanguage })}
           >
             <span className="material-symbols-outlined text-[14px]">
@@ -156,4 +149,3 @@ export default function ExportCodeModal({ state, onClose }: ExportCodeModalProps
     </div>
   );
 }
-

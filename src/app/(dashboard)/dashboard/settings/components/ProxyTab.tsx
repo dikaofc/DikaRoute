@@ -40,7 +40,7 @@ export default function ProxyTab() {
   return (
     <div className="flex flex-col gap-4">
       <div
-        className="flex gap-1 border-b border-border overflow-x-auto"
+        className="inline-flex max-w-full items-center gap-1 overflow-x-auto rounded-[14px] border border-glass-border bg-glass-bg p-1.5 backdrop-blur-md"
         role="tablist"
         aria-label={translateOrFallback("proxySubTabsAria", "Proxy sections")}
       >
@@ -50,10 +50,10 @@ export default function ProxyTab() {
             role="tab"
             aria-selected={activeTab === tab.id}
             onClick={() => handleTabChange(tab.id)}
-            className={`px-4 py-2 text-sm font-medium border-b-2 whitespace-nowrap transition-colors ${
+            className={`whitespace-nowrap rounded-[10px] px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
               activeTab === tab.id
-                ? "border-primary text-primary"
-                : "border-transparent text-text-muted hover:text-text"
+                ? "bg-white/90 text-text-main shadow-sm dark:bg-white/15 dkr-active-pill"
+                : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
             }`}
           >
             {translateOrFallback(tab.labelKey, tab.fallback)}
@@ -71,4 +71,3 @@ export default function ProxyTab() {
     </div>
   );
 }
-

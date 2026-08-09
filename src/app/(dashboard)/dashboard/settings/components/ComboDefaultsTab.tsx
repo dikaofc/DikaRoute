@@ -379,7 +379,7 @@ export default function ComboDefaultsTab() {
           <div
             role="tablist"
             aria-label={t("comboStrategyAria")}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1 p-0.5 rounded-md bg-black/5 dark:bg-white/5"
+            className="grid grid-cols-2 gap-1 rounded-[14px] border border-glass-border bg-glass-bg p-1.5 backdrop-blur-md sm:grid-cols-3 lg:grid-cols-5"
           >
             {strategyOptions.map((s) => (
               <button
@@ -396,10 +396,10 @@ export default function ComboDefaultsTab() {
                   }
                 }}
                 className={cn(
-                  "px-2 py-1 rounded text-xs font-medium transition-all flex items-center justify-center gap-0.5",
+                  "flex items-center justify-center gap-0.5 rounded-[10px] px-2 py-1 text-xs font-medium transition-all duration-200",
                   comboDefaults.strategy === s.value
-                    ? "bg-white dark:bg-white/10 text-text-main shadow-sm"
-                    : "text-text-muted hover:text-text-main"
+                    ? "bg-white/90 text-text-main shadow-sm dark:bg-white/15 dkr-active-pill"
+                    : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main active:scale-[0.98]"
                 )}
               >
                 <span className="material-symbols-outlined text-[14px]">{s.icon}</span>
@@ -900,4 +900,3 @@ export default function ComboDefaultsTab() {
     </Card>
   );
 }
-

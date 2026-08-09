@@ -15,11 +15,12 @@ interface SearchToolsTopBarProps {
   exportState?: PlaygroundState;
 }
 
-const TABS: { id: ActiveTab; icon: string; labelKey: "tabSearch" | "tabScrape" | "tabCompare" }[] = [
-  { id: "search", icon: "🔍", labelKey: "tabSearch" },
-  { id: "scrape", icon: "📄", labelKey: "tabScrape" },
-  { id: "compare", icon: "⚖", labelKey: "tabCompare" },
-];
+const TABS: { id: ActiveTab; icon: string; labelKey: "tabSearch" | "tabScrape" | "tabCompare" }[] =
+  [
+    { id: "search", icon: "🔍", labelKey: "tabSearch" },
+    { id: "scrape", icon: "📄", labelKey: "tabScrape" },
+    { id: "compare", icon: "⚖", labelKey: "tabCompare" },
+  ];
 
 export default function SearchToolsTopBar({
   activeTab,
@@ -35,11 +36,15 @@ export default function SearchToolsTopBar({
   return (
     <>
       <div
-        className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-bg-alt"
+        className="flex items-center justify-between gap-3 border-b border-glass-border bg-glass-bg/50 px-4 py-2.5 backdrop-blur-md"
         data-testid="search-tools-topbar"
       >
         {/* Tab switcher */}
-        <div className="flex gap-1" role="tablist" aria-label={t("searchTools")}>
+        <div
+          className="inline-flex items-center gap-1 rounded-[12px] border border-glass-border bg-glass-bg/70 p-1 backdrop-blur-md"
+          role="tablist"
+          aria-label={t("searchTools")}
+        >
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -48,10 +53,10 @@ export default function SearchToolsTopBar({
               aria-controls={`tabpanel-${tab.id}`}
               id={`tab-${tab.id}`}
               className={[
-                "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors",
+                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200",
                 activeTab === tab.id
-                  ? "bg-primary/15 text-primary"
-                  : "text-text-muted hover:text-text-main hover:bg-black/5 dark:hover:bg-white/5",
+                  ? "bg-white/90 text-text-main shadow-sm dark:bg-white/15 dkr-active-pill"
+                  : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main",
               ].join(" ")}
               onClick={() => onTabChange(tab.id)}
               data-testid={`tab-${tab.id}`}
@@ -75,7 +80,7 @@ export default function SearchToolsTopBar({
             </span>
           )}
           <button
-            className="flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-surface border border-border text-text-muted hover:text-text-main hover:border-border-hover transition-colors"
+            className="flex items-center gap-1 rounded-lg border border-glass-border bg-glass-bg/70 px-2.5 py-1 text-xs font-medium text-text-muted transition-colors hover:border-glass-border-strong hover:bg-glass-bg-hover hover:text-text-main"
             onClick={() => setExportOpen(true)}
             aria-label={tPlayground("exportCode")}
             data-testid="export-code-button"
@@ -92,4 +97,3 @@ export default function SearchToolsTopBar({
     </>
   );
 }
-
