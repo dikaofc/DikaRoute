@@ -150,6 +150,29 @@ export async function runServe(opts = {}) {
     console.error("\x1b[31m✖ Server not found at:\x1b[0m", serverJs);
     console.error("  The package may not have been built correctly.");
     console.error("");
+    // This CLI is running from a source checkout (e.g. a git clone / symlinked
+    // global install pointing at the repo) that was never built: the bundled
+    // server only ships inside the published npm package (`dist/`). The old
+    // generic "reinstall" hint was actively misleading here — reinstalling the
+    // same broken symlink changes nothing. Detect the repo and say so.
+    const looksLikeSourceRepo =
+      (existsSync(join(ROOT, "src")) || existsSync(join(ROOT, "next.config.mjs"))) &&
+      !existsSync(join(ROOT, "dist", "server.js")) &&
+      !existsSync(join(ROOT, "app", "server.js"));
+    if (looksLikeSourceRepo) {
+      console.error(
+        "  \x1b[33m⚠ This looks like the DikaRoute source repository, not the installed package.\x1b[0m"
+      );
+      console.error("  The bundled server is only shipped in the published npm package.");
+      console.error("  If you just want to run DikaRoute, use the packaged build:");
+      console.error("    \x1b[36mnpx dikaroute@latest\x1b[0m  (no install needed)");
+      console.error(
+        "    or: \x1b[36mnpm install -g dikaroute@latest\x1b[0m  then run `dikaroute` from OUTSIDE this folder"
+      );
+      console.error("  If you are developing the repo itself, run a build first:");
+      console.error("    \x1b[36mnpm run build:cli\x1b[0m");
+      console.error("");
+    }
     const nodeExec = process.execPath || "";
     const isMise = nodeExec.includes("mise") || nodeExec.includes(".local/share/mise");
     const isNvm = nodeExec.includes(".nvm") || nodeExec.includes("nvm");
