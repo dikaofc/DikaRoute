@@ -6,6 +6,17 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.57] - 2026-08-09
+
+### Added
+
+- glass redesign for remaining inline tablists (ExportCodeModal, SearchToolsTopBar, ComboDefaultsTab, ProxyTab, DetailsPanel)
+- glass redesign for DataTable, CommandPalette, old segmented controls, and provider detail page
+
+### Changed
+
+- clarify all-builds-in-CI pipeline (8192MB heap, pack dry-run gate, standalone+CLI build step)
+
 ## [3.8.56] - 2026-08-09
 
 ### Added
