@@ -16,6 +16,7 @@
     "jsx": "react-jsx",
     "incremental": true,
     "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@dikaroute/open-sse": ["./open-sse"],
