@@ -96,6 +96,8 @@ export interface ModelCompatPopoverProps {
 
 export default function ModelCompatPopover({
   t,
+  providerId,
+  modelId,
   effectiveModelNormalize,
   effectiveModelPreserveDeveloper,
   getUpstreamHeadersRecord,
@@ -180,7 +182,7 @@ export default function ModelCompatPopover({
       }
       setParamDirty(false);
     })();
-  }, [open]);
+  }, [open, providerId, modelId]);
 
   const saveModelParamFilters = useCallback(async () => {
     if (!paramDirty) return;
@@ -200,7 +202,7 @@ export default function ModelCompatPopover({
     } finally {
       setParamSaving(false);
     }
-  }, [paramDirty, blockText, allowText]);
+  }, [paramDirty, blockText, allowText, providerId, modelId]);
 
   useEffect(() => {
     setValuePeekRowId(null);
@@ -479,4 +481,3 @@ export default function ModelCompatPopover({
     </div>
   );
 }
-

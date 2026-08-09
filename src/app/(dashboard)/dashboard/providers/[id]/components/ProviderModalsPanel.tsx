@@ -14,6 +14,7 @@ import {
 import RiskNoticeModal from "../../components/RiskNoticeModal";
 import CodexCliGuideModal from "../../components/CodexCliGuideModal";
 import AddApiKeyModal from "./modals/AddApiKeyModal";
+import SiliconFlowEndpointModal from "./SiliconFlowEndpointModal";
 import EditConnectionModal from "./modals/EditConnectionModal";
 import EditCompatibleNodeModal from "./modals/EditCompatibleNodeModal";
 import ExternalLinkModal from "./ExternalLinkModal";
@@ -153,6 +154,7 @@ export default function ProviderModalsPanel({
   existingConnectionCount,
   showRiskNoticeModal,
   handleConfirmRiskNotice,
+  handleCancelRiskNotice,
   showOAuthModal,
   reauthConnection,
   handleOAuthSuccess,
@@ -448,4 +450,3 @@ export default function ProviderModalsPanel({
     </>
   );
 }
-
