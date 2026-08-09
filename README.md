@@ -1,148 +1,387 @@
-# DikaRoute
+# 🚀 DikaRoute
 
-Unified AI gateway/router — multi-provider routing, auto-fallback, context & response
-compression, dengan fokus utama **low latency, stabilitas, dan kecepatan**.
+<p align="center">
+  <b>Unified AI Gateway & Intelligent Model Router</b><br>
+  Connect multiple AI providers through one OpenAI-compatible API.
+</p>
 
-Satu instalasi, satu endpoint OpenAI-compatible (`/v1`), banyak provider AI —
-dipilih otomatis berdasarkan health, latency, dan strategi routing (combos).
+<p align="center">
 
-## Fitur Utama
+![DikaRoute](https://img.shields.io/badge/DikaRoute-AI%20Gateway-red)
+![Node.js](https://img.shields.io/badge/Node.js-Runtime-green)
+![OpenAI Compatible](https://img.shields.io/badge/API-OpenAI%20Compatible-blue)
+![License](https://img.shields.io/badge/license-MIT-purple)
 
-- **Satu endpoint OpenAI-compatible** (`/v1`) untuk banyak provider sekaligus
-- **Auto-fallback & routing stratégis (combos)** — tetap jalan saat provider down
-- **Compression RTK + Caveman** — hemat token, respons lebih cepat
-- **Dashboard ringan & cepat** — statistik real-time, token usage super detail,
-  analytics per provider/model/key, heatmap aktivitas
-- **CLI global** — ketik `dikaroute` di mana saja langsung jalan (auto setup,
-  auto install dependency, auto start dashboard)
-- **Self-update** — `dikaroute update --apply` update versi npm sendiri
-- **2 bahasa untuk dashboard** (Indonesia 🇮🇩 & English 🇬🇧)
-- **ZERO bloat** — tanpa docs/tests/electron bawaan, lebih bersih & hemat
-  storage (cocok untuk VPS kecil dan Termux/Android)
+</p>
 
-## ⚡ Quick Start
+---
+
+## 🌐 Overview
+
+**DikaRoute** is a lightweight, high-performance AI routing gateway designed to unify multiple Large Language Model providers into a single API interface.
+
+Instead of managing multiple endpoints, API keys, SDK differences, rate limits, and provider failures separately, DikaRoute provides one centralized gateway that handles:
+
+- Multi-provider AI routing
+- Automatic fallback system
+- Model selection strategy
+- Context optimization
+- Response compression
+- Provider health monitoring
+- Usage analytics
+- OpenAI-compatible API access
+
+The goal is simple:
+
+> One endpoint. Multiple AI providers. Maximum reliability.
+
+---
+
+# ✨ Features
+
+## 🔀 Intelligent AI Routing
+
+DikaRoute automatically routes requests between connected providers based on your configuration.
+
+Supported routing strategies:
+
+- Priority routing
+- Round robin routing
+- Automatic fallback
+- Provider health checking
+- Model-based routing
+- Custom routing rules
+
+
+Example:
+
+```
+Application
+     |
+     |
+     v
+
+DikaRoute Gateway
+     |
+     +---- OpenAI
+     |
+     +---- Anthropic
+     |
+     +---- Google Gemini
+     |
+     +---- Ollama
+     |
+     +---- Custom Providers
+```
+
+---
+
+# 🛡 Automatic Fallback
+
+AI providers can fail.
+
+Rate limits happen.
+Servers go down.
+API credits disappear into the void.
+
+DikaRoute automatically switches to another available provider.
+
+Example:
+
+```
+Request
+ |
+ v
+Primary Provider
+ |
+ Failed?
+ |
+ v
+Backup Provider
+ |
+ v
+Response
+```
+
+No application changes required.
+
+---
+
+# ⚡ Performance Focused
+
+DikaRoute is designed with low latency and stability in mind.
+
+Optimizations include:
+
+- Minimal proxy overhead
+- Efficient request forwarding
+- Response compression
+- Context optimization
+- Provider connection reuse
+- Lightweight architecture
+
+
+---
+
+# 🧠 Context & Response Compression
+
+Long AI conversations consume tokens quickly.
+
+DikaRoute provides intelligent context handling to reduce unnecessary payload size while maintaining useful information.
+
+Benefits:
+
+- Lower token usage
+- Faster responses
+- Reduced API costs
+- Better long-session performance
+
+
+---
+
+# 🔌 OpenAI Compatible API
+
+DikaRoute provides an OpenAI-style endpoint.
+
+Any application supporting OpenAI API format can connect without major changes.
+
+Example:
+
+```bash
+curl http://localhost:20128/v1/chat/completions \
+-H "Authorization: Bearer YOUR_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+  "model": "auto",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello AI"
+    }
+  ]
+}'
+```
+
+---
+
+# 📦 Supported Provider Architecture
+
+DikaRoute uses a flexible provider system.
+
+Example providers:
+
+```
+providers/
+ ├── OpenAI
+ ├── Anthropic
+ ├── Gemini
+ ├── Ollama
+ ├── OpenAI Compatible APIs
+ └── Custom Providers
+```
+
+Adding new providers does not require rewriting the entire system.
+
+---
+
+# 📊 Dashboard & Monitoring
+
+DikaRoute includes management tools for monitoring your AI infrastructure.
+
+Dashboard capabilities:
+
+- Provider status
+- Request statistics
+- Token usage
+- Latency monitoring
+- Error tracking
+- Configuration management
+
+
+---
+
+# 🏗 Architecture
+
+```
+                 User Applications
+
+        Claude Code
+        Cursor
+        Custom Apps
+        AI Agents
+
+                 |
+                 |
+
+          OpenAI Compatible API
+
+                 |
+
+             DikaRoute
+
+        ┌────────┼────────┐
+        |        |        |
+     Router   Cache   Monitor
+
+        |
+        |
+
+ AI Providers
+
+ OpenAI
+ Anthropic
+ Gemini
+ Ollama
+ Custom APIs
+
+```
+
+---
+
+# 🚀 Installation
+
+## NPM
 
 ```bash
 npm install -g dikaroute
+```
+
+Run:
+
+```bash
 dikaroute
 ```
 
-Tanpa sub-perintah, `dikaroute` **langsung menjalankan server + dashboard**:
+---
 
-- Dashboard: `http://localhost:20128`
-- API (OpenAI-compatible): `http://localhost:20128/v1`
-
-Semua dependency dan setup pertama di-handle otomatis oleh postinstall.
-Support: Linux, Windows, macOS, VPS, Android/Termux, Docker.
-
-### Jalankan di latar belakang
+## From Source
 
 ```bash
-dikaroute serve --daemon   # daemon
-dikaroute stop             # stop
-dikaroute logs             # lihat logs
-```
+git clone https://github.com/dikaofc/DikaRoute.git
 
-### Update ke versi terbaru
-
-```bash
-dikaroute update --apply
-```
-
-## 🖥️ CLI Reference (ringkas)
-
-```bash
-dikaroute                    # = serve — langsung start dashboard + API
-dikaroute serve              # jalankan server (opsional flag: --port, --no-open, --daemon, --log)
-dikaroute stop               # stop server
-dikaroute restart            # restart server
-dikaroute dashboard          # buka dashboard di browser
-dikaroute doctor             # cek kesehatan instalasi & environment
-dikaroute update --apply     # self-update dari npm
-dikaroute status             # status server & provider
-dikaroute health             # health check API
-
-# Provider & kunci API
-dikaroute providers list
-dikaroute add-provider --help          # tambah provider
-dikaroute config list                  # konfigurasi
-dikaroute keys list                    # kelola API keys
-
-# Penggunaan & biaya
-dikaroute usage                        # token usage
-dikaroute cost                         # estimasi biaya per provider/model
-
-# Lainnya
-dikaroute mcp                          # MCP server (stdio)
-dikaroute chat                         # sesi chat langsung dari terminal
-dikaroute logs --tail                  # stream logs
-dikaroute backup                       # backup data
-dikaroute update                      # cek/terapkan update
-dikaroute --version                    # versi terpasang
-dikaroute --help                       # semua sub-perintah lengkap
-```
-
-> Jalankan `dikaroute --help` untuk daftar lengkap 80+ sub-perintah.
-
-## 🚀 Docker
-
-```bash
-docker compose up -d
-```
-
-- `docker-compose.yml` — dev
-- `docker-compose.prod.yml` — production (volume untuk data)
-
-## 💻 Development (dari source)
-
-Butuh **Node.js >= 22.22** (disarankan 22.22.2).
-
-```bash
-git clone https://github.com/dikaofc/DikaRoute
 cd DikaRoute
-npm ci
-npm run dev
+
+npm install
+
+npm run start
 ```
 
-- Dashboard: `http://localhost:20128`
-- Data tersimpan di `~/.dikaroute/` (storage.sqlite)
+---
 
-## ⚙️ Env yang sering dipakai
+# ⚙ Configuration
 
-| Variable | Fungsi |
-|---|---|
-| `PORT` | Port server (default `20128`) |
-| `DATA_DIR` | Direktori data (`storage.sqlite`, `.env`) |
-| `JWT_SECRET` / `API_KEY_SECRET` / `STORAGE_ENCRYPTION_KEY` | Keamanan (auto-generated saat instalasi) |
-| `DIKAROUTE_LANG` | Bahasa CLI (default auto-detected) |
-| `DIKAROUTE_API_KEY` | API key untuk perintah CLI |
+Example configuration:
 
-Lengkap ada di `.env.example`.
+```json
+{
+  "providers": {
+    "openai": {
+      "enabled": true,
+      "apiKey": "your-key"
+    },
 
-## 🛡️ Keamanan
+    "ollama": {
+      "enabled": true,
+      "baseUrl": "http://localhost:11434"
+    }
+  },
 
-- Kredensial provider dienkripsi (AES-GCM) sebelum disimpan
-- `STORAGE_ENCRYPTION_KEY` dibuat otomatis di instalasi pertama, dipakai untuk
-  enkripsi storage (lihat `.env`)
-- Tidak ada traffic telemetry ke luar tanpa izin
+  "routing": {
+    "strategy": "auto-fallback"
+  }
+}
+```
 
-## 🌍 Komunitas
+---
 
-- Repo: https://github.com/dikaofc/DikaRoute
-- Website: https://obitoglory.tech
-- Owner: [@dikaacode](https://t.me/dikaacode)
-- Channel: [@execuidorbaru](https://t.me/execuidorbaru)
+# 🧩 Use Cases
 
-## 🩺 Troubleshooting
+## AI Coding Assistant Gateway
 
-| Masalah | Solusi |
-|---|---|
-| **Termux crash `validationLevel`** | Sudah fixed di ≥ 3.8.52 (instrumentation hook aman di Android). Update: `dikaroute update --apply` |
-| Server tidak jalan di Android | Pastikan direktori cache ada: jalankan sekali `dikaroute serve` → otomatis dibuat |
-| Update tidak diterapkan | `dikaroute update --apply` |
-| Lupa password dashboard | `dikaroute reset-password` |
-| Port bentrok | `dikaroute serve --port 20129` |
+Connect:
 
-## 🔐 Lisensi
+- Claude Code
+- Cursor
+- OpenAI compatible tools
+- Local coding agents
 
-[MIT](./LICENSE) © 2026 DikaRoute
+
+## Self-hosted AI Infrastructure
+
+Run your own AI gateway:
+
+```
+Your Apps
+   |
+DikaRoute
+   |
+Multiple AI Models
+```
+
+---
+
+## AI Agent Platform
+
+Perfect for:
+
+- Autonomous agents
+- Chatbots
+- Internal AI tools
+- Development platforms
+
+
+---
+
+# 🔐 Security
+
+DikaRoute focuses on:
+
+- API key isolation
+- Provider separation
+- Controlled access
+- Local deployment support
+
+
+---
+
+# 📈 Roadmap
+
+Future improvements:
+
+- [ ] Advanced load balancing
+- [ ] More provider adapters
+- [ ] Better analytics
+- [ ] Distributed routing
+- [ ] Plugin system
+- [ ] Enterprise deployment mode
+
+
+---
+
+# 👨‍💻 Developer
+
+Created by **DikaCode**
+
+GitHub:
+https://github.com/dikaofc
+
+Telegram:
+https://t.me/dikaacode
+
+Website:
+https://obitoglory.tech
+
+
+---
+
+# 📄 License
+
+MIT License
+
+Copyright © DikaCode
+
+---
+
+<p align="center">
+Built with ❤️ for developers building the next generation of AI applications.
+</p>
