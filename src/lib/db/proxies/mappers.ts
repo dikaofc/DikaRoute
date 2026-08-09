@@ -1,11 +1,11 @@
-import { decrypt, looksEncrypted } from "../encryption";
+import { decrypt, looksEncrypted } from "../encryption.js";
 import type {
   JsonRecord,
   ProxyScope,
   ProxyRegistryRecord,
   ProxyAssignmentRecord,
   ProxyPayload,
-} from "./types";
+} from "./types.js";
 
 export function toRecord(value: unknown): JsonRecord {
   return value && typeof value === "object" ? (value as JsonRecord) : {};

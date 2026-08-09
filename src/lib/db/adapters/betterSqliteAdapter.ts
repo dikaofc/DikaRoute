@@ -1,4 +1,4 @@
-import type { SqliteAdapter, PreparedStatement, RunResult } from "./types";
+import type { SqliteAdapter, PreparedStatement, RunResult } from "./types.js";
 
 export function createBetterSqliteAdapter(db: import("better-sqlite3").Database): SqliteAdapter {
   return {

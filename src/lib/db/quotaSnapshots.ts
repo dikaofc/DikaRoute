@@ -1,4 +1,4 @@
-import { getDbInstance, rowToCamel } from "./core";
+import { getDbInstance, rowToCamel } from "./core.js";
 import type { QuotaSnapshotRow, ProviderUtilizationPoint } from "@/shared/types/utilization";
 
 type JsonRecord = Record<string, unknown>;

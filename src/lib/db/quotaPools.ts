@@ -8,7 +8,7 @@
  * Import getDbInstance from ./core (Hard Rule #5).
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 // Phase B2: auto-mint/prune quotaShared-* combos when pool allocations change.
 // Imported lazily (dynamic import in the hook) to avoid circular-dependency
 // risk between db/ and quota/ modules. The import is fire-and-forget; combo

@@ -13,8 +13,8 @@
  * provider connection credentials.
  */
 
-import { getDbInstance } from "./core";
-import { encrypt, decrypt } from "./encryption";
+import { getDbInstance } from "./core.js";
+import { encrypt, decrypt } from "./encryption.js";
 
 // ---------------------------------------------------------------------------
 // Types

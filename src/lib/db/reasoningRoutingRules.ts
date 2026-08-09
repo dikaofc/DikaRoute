@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
-import { getDbInstance } from "./core";
-import { registerDbStateResetter } from "./stateReset";
+import { getDbInstance } from "./core.js";
+import { registerDbStateResetter } from "./stateReset.js";
 
 export type ReasoningRuleScope = "global" | "apiKey" | "combo" | "model" | "connection";
 export type ReasoningEffort = "none" | "low" | "medium" | "high" | "xhigh" | "max" | "ultra";

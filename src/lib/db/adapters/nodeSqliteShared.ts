@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import type { PreparedStatement, RunResult, SqliteAdapter } from "./types";
+import type { PreparedStatement, RunResult, SqliteAdapter } from "./types.js";
 
 export interface NodeSqliteDatabaseLike {
   prepare(sql: string): {

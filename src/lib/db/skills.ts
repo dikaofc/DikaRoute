@@ -5,7 +5,7 @@
  * route handlers never contain raw SQL (Hard Rule #5).
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 // ──────────────── Allowed patch columns ────────────────
 //

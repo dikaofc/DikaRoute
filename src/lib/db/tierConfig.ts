@@ -1,6 +1,6 @@
-import { getDbInstance } from "./core";
-import type { TierConfig } from "../../../open-sse/services/tierTypes";
-import { validateTierConfig, DEFAULT_TIER_CONFIG } from "../../../open-sse/services/tierConfig";
+import { getDbInstance } from "./core.js";
+import type { TierConfig } from "../../../open-sse/services/tierTypes.js";
+import { validateTierConfig, DEFAULT_TIER_CONFIG } from "../../../open-sse/services/tierConfig.js";
 import { defaultLogger as log } from "@dikaroute/open-sse/utils/logger";
 
 const TABLE = "tier_config";

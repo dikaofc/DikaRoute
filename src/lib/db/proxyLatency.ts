@@ -2,7 +2,7 @@
 // average latency observed in `proxy_logs` over a trailing window. Extracted
 // from proxies.ts to keep that frozen god-file under its line-count cap
 // (imported directly by src/lib/db/proxies.ts, anti-barrel, #6798).
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 const PROXY_LATENCY_WINDOW_HOURS = parseInt(process.env.PROXY_LATENCY_WINDOW_HOURS ?? "3", 10);
 

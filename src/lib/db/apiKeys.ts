@@ -4,21 +4,21 @@
 
 import { createHash } from "crypto";
 import { v4 as uuidv4 } from "uuid";
-import { getDbInstance, rowToCamel } from "./core";
-import { backupDbFile } from "./backup";
-import { registerDbStateResetter } from "./stateReset";
-import { invalidateReasoningRoutingRuleCache } from "./reasoningRoutingRules";
-import { getKeyGroupsForApiKey, checkKeyModelAccess } from "./apiKeyGroups";
-import { API_KEY_COLUMN_FALLBACKS } from "./apiKeyColumnFallbacks";
+import { getDbInstance, rowToCamel } from "./core.js";
+import { backupDbFile } from "./backup.js";
+import { registerDbStateResetter } from "./stateReset.js";
+import { invalidateReasoningRoutingRuleCache } from "./reasoningRoutingRules.js";
+import { getKeyGroupsForApiKey, checkKeyModelAccess } from "./apiKeyGroups.js";
+import { API_KEY_COLUMN_FALLBACKS } from "./apiKeyColumnFallbacks.js";
 import {
   appendUsageLimitUpdates,
   hasUsageLimitUpdate,
   parseApiKeyUsageLimitFields,
-} from "./apiKeyUsageLimitFields";
-import { setNoLog } from "../compliance/noLog";
+} from "./apiKeyUsageLimitFields.js";
+import { setNoLog } from "../compliance/noLog.js";
 import { resolveModelAlias } from "@dikaroute/open-sse/services/modelDeprecation.ts";
 import { getProviderAlias, resolveProviderId } from "@/shared/constants/providers";
-import { getSyncedAvailableModelsByConnection, getCustomModels, getModelIsHidden } from "./models";
+import { getSyncedAvailableModelsByConnection, getCustomModels, getModelIsHidden } from "./models.js";
 import {
   CLAUDE_CODE_PROVIDER_PREFIXES,
   preferClaudeCodeForUnprefixedClaudeModels,
@@ -29,7 +29,7 @@ import {
   modelPatternMatches,
   hasClaudeCodeWildcardPermission,
   matchesWildcardPattern,
-} from "./apiKeys/modelPermissions";
+} from "./apiKeys/modelPermissions.js";
 import {
   parseAllowedModels,
   parseAllowedCombos,
@@ -47,8 +47,8 @@ import {
   parseIsBanned,
   parseStreamDefaultMode,
   parseChaosModeEnabled,
-} from "./apiKeys/rowParsers";
-import type { AccessSchedule, RateLimitRule } from "./apiKeys/types";
+} from "./apiKeys/rowParsers.js";
+import type { AccessSchedule, RateLimitRule } from "./apiKeys/types.js";
 
 // ──────────────── Performance Optimizations ────────────────
 
@@ -63,7 +63,7 @@ interface CacheEntry<TValue> {
 }
 
 // Re-exported for the historical public surface (moved to ./apiKeys/types).
-export type { AccessSchedule, RateLimitRule } from "./apiKeys/types";
+export type { AccessSchedule, RateLimitRule } from "./apiKeys/types.js";
 
 interface ApiKeyMetadata {
   id: string;

@@ -11,7 +11,7 @@
  * @module lib/db/cliToolState
  */
 
-import { getDbInstance, isBuildPhase, isCloud } from "./core";
+import { getDbInstance, isBuildPhase, isCloud } from "./core.js";
 
 type JsonRecord = Record<string, unknown>;
 

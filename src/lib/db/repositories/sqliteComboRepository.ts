@@ -10,7 +10,7 @@ import type {
 } from "@/domain/persistence/comboRepositories";
 import { normalizeComboRecord } from "@/lib/combos/steps";
 import { validateComboInvariant } from "@/lib/combos/invariants";
-import { getDbInstance } from "../core";
+import { getDbInstance } from "../core.js";
 
 type JsonRecord = Record<string, unknown>;
 

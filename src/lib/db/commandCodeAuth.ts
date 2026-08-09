@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from "crypto";
 
-import { getDbInstance, rowToCamel } from "./core";
-import { decrypt, encrypt } from "./encryption";
+import { getDbInstance, rowToCamel } from "./core.js";
+import { decrypt, encrypt } from "./encryption.js";
 
 export type CommandCodeAuthStatus = "pending" | "received" | "applied" | "expired";
 

@@ -1,5 +1,5 @@
-import { getDbInstance } from "./core";
-import { invalidateDbCache } from "./readCache";
+import { getDbInstance } from "./core.js";
+import { invalidateDbCache } from "./readCache.js";
 
 export type ModelCapabilityOverrideKey = "max_input_tokens" | "max_output_tokens";
 

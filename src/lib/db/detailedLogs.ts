@@ -6,14 +6,14 @@
  * This module remains available for reading historical request_detail_logs rows.
  */
 import { v4 as uuidv4 } from "uuid";
-import { getDbInstance } from "./core";
-import { getSettings } from "./settings";
-import { isNoLog } from "../compliance/noLog";
+import { getDbInstance } from "./core.js";
+import { getSettings } from "./settings.js";
+import { isNoLog } from "../compliance/noLog.js";
 import {
   protectPayloadForLog,
   serializePayloadForStorage,
   parseStoredPayload,
-} from "../logPayloads";
+} from "../logPayloads.js";
 import { compactStructuredStreamPayload } from "@dikaroute/open-sse/utils/streamPayloadCollector.ts";
 
 export interface RequestDetailLog {

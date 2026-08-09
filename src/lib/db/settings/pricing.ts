@@ -2,11 +2,11 @@
  * db/settings/pricing.ts — Pricing data CRUD (user overrides, LiteLLM sync, models.dev sync).
  */
 
-import { getDbInstance } from "../core";
-import { backupDbFile } from "../backup";
-import { invalidateDbCache } from "../readCache";
+import { getDbInstance } from "../core.js";
+import { backupDbFile } from "../backup.js";
+import { invalidateDbCache } from "../readCache.js";
 import { PROVIDER_ID_TO_ALIAS } from "@dikaroute/open-sse/config/providerModels.ts";
-import { type JsonRecord, toRecord } from "./shared";
+import { type JsonRecord, toRecord } from "./shared.js";
 
 type PricingModels = Record<string, JsonRecord>;
 type PricingByProvider = Record<string, PricingModels>;

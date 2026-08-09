@@ -1,13 +1,13 @@
 /** db/models/compat.ts — model-compat overrides (normalizeToolCallId, per-protocol flags, upstream headers). */
 
-import { getDbInstance } from "../core";
-import { backupDbFile } from "../backup";
+import { getDbInstance } from "../core.js";
+import { backupDbFile } from "../backup.js";
 import {
   MODEL_COMPAT_PROTOCOL_KEYS,
   type ModelCompatProtocolKey,
 } from "@/shared/constants/modelCompat";
 import { isForbiddenUpstreamHeaderName } from "@/shared/constants/upstreamHeaders";
-import { getKeyValue } from "./shared";
+import { getKeyValue } from "./shared.js";
 
 /** Built-in / alias models: tool-call + developer-role flags without a full custom row */
 const MODEL_COMPAT_NAMESPACE = "modelCompatOverrides";

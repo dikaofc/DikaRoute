@@ -1,6 +1,6 @@
 import { isRetiredGitHubCopilotModelId } from "@dikaroute/open-sse/config/providers/registry/github/retiredModels.ts";
 
-import { asRecord, toNonEmptyString } from "./shared";
+import { asRecord, toNonEmptyString } from "./shared.js";
 
 export interface SyncedAvailableModel {
   id: string;

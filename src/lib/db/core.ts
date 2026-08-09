@@ -28,18 +28,18 @@ import {
   setAutoVacuumForDb,
   setCacheSizeForDb,
   setPageSizeForDb,
-} from "./optimizationSettings";
+} from "./optimizationSettings.js";
 import {
   buildArtifactRelativePath,
   writeCallArtifact,
   type CallLogArtifact,
-} from "../usage/callLogArtifacts";
-import { migrateLegacyEncryptedString } from "./encryption";
-import { invalidateDbCache } from "./readCache";
-import { rowToCamel } from "./caseMapping";
+} from "../usage/callLogArtifacts.js";
+import { migrateLegacyEncryptedString } from "./encryption.js";
+import { invalidateDbCache } from "./readCache.js";
+import { rowToCamel } from "./caseMapping.js";
 import { isAutomatedTestProcess } from "@/shared/utils/testProcess";
 // Re-exported so existing call sites that pull these helpers off the core module keep working.
-export { toSnakeCase, toCamelCase, objToSnake, rowToCamel, cleanNulls } from "./caseMapping";
+export { toSnakeCase, toCamelCase, objToSnake, rowToCamel, cleanNulls } from "./caseMapping.js";
 import {
   ensureProviderConnectionsColumns,
   ensureUsageHistoryAccountIndex,
@@ -48,7 +48,7 @@ import {
   hasTable,
   quoteIdentifier,
   getTableColumns,
-} from "./schemaColumns";
+} from "./schemaColumns.js";
 
 type SqliteDatabase = SqliteAdapter;
 type JsonRecord = Record<string, unknown>;

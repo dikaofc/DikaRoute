@@ -12,8 +12,8 @@ import {
   SQLITE_FILE,
   DB_BACKUPS_DIR,
   DATA_DIR,
-} from "./core";
-import { resetAllDbModuleState } from "./stateReset";
+} from "./core.js";
+import { resetAllDbModuleState } from "./stateReset.js";
 import { isAutomatedTestProcess } from "@/shared/utils/testProcess";
 
 type CountRow = { cnt?: number };

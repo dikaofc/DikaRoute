@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
-import { getDbInstance } from "./core";
-import { backupDbFile } from "./backup";
+import { getDbInstance } from "./core.js";
+import { backupDbFile } from "./backup.js";
 import type { FreeProxyItem, FreeProxySourceId } from "@/lib/freeProxyProviders/types";
 
 export interface FreeProxyRecord {

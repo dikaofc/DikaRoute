@@ -4,10 +4,10 @@
  * Split from provider.ts to keep the main CRUD file under the size ratchet.
  */
 
-import { getDbInstance, rowToCamel } from "../core";
-import { backupDbFile } from "../backup";
-import { migrateLegacyEncryptedString } from "../encryption";
-import { invalidateDbCache } from "../readCache";
+import { getDbInstance, rowToCamel } from "../core.js";
+import { backupDbFile } from "../backup.js";
+import { migrateLegacyEncryptedString } from "../encryption.js";
+import { invalidateDbCache } from "../readCache.js";
 
 interface StatementLike<TRow = unknown> {
   all: (...params: unknown[]) => TRow[];

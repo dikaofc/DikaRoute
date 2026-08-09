@@ -4,8 +4,8 @@
  * @module db/discovery
  */
 
-import { getDbInstance } from "./core";
-import { logger } from "../../open-sse/utils/logger";
+import { getDbInstance } from "./core.js";
+import { logger } from "../../open-sse/utils/logger.js";
 
 const log = logger("DB_DISCOVERY");
 

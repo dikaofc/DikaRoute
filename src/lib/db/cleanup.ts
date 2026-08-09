@@ -4,8 +4,8 @@
  * @module lib/db/cleanup
  */
 
-import { getDbInstance } from "./core";
-import { getUserDatabaseSettings } from "./databaseSettings";
+import { getDbInstance } from "./core.js";
+import { getUserDatabaseSettings } from "./databaseSettings.js";
 import { rollupUsageHistoryBeforeDate } from "@/lib/usage/aggregateHistory";
 import { purgeCallLogArtifactDirectory } from "@/lib/usage/callLogArtifacts";
 import {
@@ -14,7 +14,7 @@ import {
   deleteCallLogArtifacts,
   deleteFromTableBefore,
   type DeleteByPeriodTarget,
-} from "./cleanup/usagePurge";
+} from "./cleanup/usagePurge.js";
 
 interface CleanupResult {
   deleted: number;

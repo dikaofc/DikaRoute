@@ -9,7 +9,7 @@
  * @see Issue #1628
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 // ──────────────── Types ────────────────
 

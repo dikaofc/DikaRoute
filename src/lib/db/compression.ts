@@ -1,7 +1,7 @@
-import { backupDbFile } from "./backup";
-import { getDefaultCompressionCombo } from "./compressionCombos";
-import { getDbInstance } from "./core";
-import { invalidateDbCache } from "./readCache";
+import { backupDbFile } from "./backup.js";
+import { getDefaultCompressionCombo } from "./compressionCombos.js";
+import { getDbInstance } from "./core.js";
+import { invalidateDbCache } from "./readCache.js";
 import {
   ENGINE_IDS,
   DEFAULT_AGGRESSIVE_CONFIG,
@@ -34,13 +34,13 @@ import {
 } from "@dikaroute/open-sse/services/compression/types.ts";
 import { normalizeCompressionExclusions } from "@dikaroute/open-sse/services/compression/exclusions.ts";
 import { DEFAULT_CONTEXT_BUDGET } from "@dikaroute/open-sse/services/compression/adaptiveCompression/types.ts";
-import { normalizeContextBudgetConfig } from "./compressionContextBudget";
+import { normalizeContextBudgetConfig } from "./compressionContextBudget.js";
 import {
   isPreserveSystemPromptMode,
   normalizePreserveSystemPromptMode,
 } from "@dikaroute/open-sse/services/compression/preserveSystemPromptMode.ts";
 import { maybePrewarmUltraSlmOnConfig } from "@dikaroute/open-sse/services/compression/ultra.ts";
-import { applyDetailConfigUpdate, buildDetailConfigDefaults } from "./compressionDetailNormalizers";
+import { applyDetailConfigUpdate, buildDetailConfigDefaults } from "./compressionDetailNormalizers.js";
 
 const NAMESPACE = "compression";
 const COMPRESSION_MODES = new Set<CompressionMode>([

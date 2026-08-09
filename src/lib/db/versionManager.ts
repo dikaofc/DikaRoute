@@ -1,6 +1,6 @@
 /** Version manager tool state persistence. */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 interface VersionManagerRow {
   id?: unknown;

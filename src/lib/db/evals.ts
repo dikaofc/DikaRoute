@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { getDbInstance, rowToCamel } from "./core";
+import { getDbInstance, rowToCamel } from "./core.js";
 
 export type EvalTargetType = "suite-default" | "model" | "combo";
 export type EvalCaseStrategy = "contains" | "exact" | "regex" | "custom";

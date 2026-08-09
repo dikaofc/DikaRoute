@@ -2,7 +2,7 @@
  * db/settings/lkgp.ts — Last Known Good Provider (LKGP) persistence.
  */
 
-import { getDbInstance } from "../core";
+import { getDbInstance } from "../core.js";
 
 export interface LKGPRecord {
   provider: string;

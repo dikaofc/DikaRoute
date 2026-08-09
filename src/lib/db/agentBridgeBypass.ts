@@ -3,8 +3,8 @@
  * CRUD + seed for agent_bridge_bypass table.
  */
 
-import { getDbInstance } from "./core.ts";
-import type { AgentBridgeBypassRow } from "./_rowTypes.ts";
+import { getDbInstance } from "./core.js";
+import type { AgentBridgeBypassRow } from "./_rowTypes.js";
 
 // SQLite rows have source as plain string
 interface AgentBridgeBypassDbRow {

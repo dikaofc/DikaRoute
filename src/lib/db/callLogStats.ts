@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 /**
  * Aggregation queries over `call_logs` extracted from route handlers.

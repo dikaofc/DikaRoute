@@ -8,7 +8,7 @@
  * Sliced out of #3500 (usage_logs cluster, slice 4).
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 // ---------------------------------------------------------------------------
 // Auto-routing analytics

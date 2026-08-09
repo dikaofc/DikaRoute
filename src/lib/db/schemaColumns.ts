@@ -8,7 +8,7 @@
  * calls during getDbInstance() bootstrap. Behavior-preserving move.
  */
 
-import type { SqliteAdapter } from "./adapters/types";
+import type { SqliteAdapter } from "./adapters/types.js";
 
 type SqliteDatabase = SqliteAdapter;
 

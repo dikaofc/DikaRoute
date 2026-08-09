@@ -1,6 +1,6 @@
 import { DEFAULT_DATABASE_SETTINGS, type DatabaseSettings } from "@/types/databaseSettings";
 
-import type { SqliteAdapter } from "./adapters/types";
+import type { SqliteAdapter } from "./adapters/types.js";
 
 type SqliteDatabase = SqliteAdapter;
 type DatabaseOptimizationSettings = DatabaseSettings["optimization"];

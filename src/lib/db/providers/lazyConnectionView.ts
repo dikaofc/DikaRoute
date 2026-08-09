@@ -9,7 +9,7 @@
  * admin, and catalog callers during Phase 2/3 of the lazy-decrypt rollout.
  */
 
-import { decrypt } from "../encryption";
+import { decrypt } from "../encryption.js";
 
 type JsonRecord = Record<string, unknown>;
 

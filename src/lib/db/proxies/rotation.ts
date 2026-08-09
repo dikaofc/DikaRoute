@@ -7,16 +7,16 @@
 // generation counter (addProxyToScopePool, removeProxyFromScopePool,
 // setScopeRotationStrategy) stay in ../proxies.ts and import the pure helpers here.
 import { randomInt } from "crypto";
-import { getDbInstance } from "../core";
-import { pickByLatency } from "../proxyLatency";
-import type { JsonRecord, ProxyScope, ProxyRotationStrategy } from "./types";
-import { PROXY_ROTATION_STRATEGIES, DEFAULT_PROXY_ROTATION_STRATEGY } from "./types";
+import { getDbInstance } from "../core.js";
+import { pickByLatency } from "../proxyLatency.js";
+import type { JsonRecord, ProxyScope, ProxyRotationStrategy } from "./types.js";
+import { PROXY_ROTATION_STRATEGIES, DEFAULT_PROXY_ROTATION_STRATEGY } from "./types.js";
 import {
   mapAssignmentRow,
   toRegistryProxyResolution,
   normalizeScope,
   normalizeAssignmentScopeId,
-} from "./mappers";
+} from "./mappers.js";
 
 // Rotation state keys off the SAME normalized scope_id as assignments so a global
 // pool ('__global__') and a per-scope pool share one deterministic cursor row.

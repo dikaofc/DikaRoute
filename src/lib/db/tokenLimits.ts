@@ -12,7 +12,7 @@
  */
 
 import { randomUUID } from "crypto";
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 import { getBudgetWindow, type BudgetResetInterval } from "@/domain/costRules";
 
 export type TokenLimitScopeType = "model" | "provider" | "global";

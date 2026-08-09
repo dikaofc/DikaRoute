@@ -17,7 +17,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import type { SqliteAdapter } from "./adapters/types";
+import type { SqliteAdapter } from "./adapters/types.js";
 import { DEFAULT_DATABASE_SETTINGS } from "@/types/databaseSettings";
 import { isAutomatedTestProcess } from "@/shared/utils/testProcess";
 import {
@@ -27,8 +27,8 @@ import {
   PHYSICAL_SCHEMA_SENTINELS,
   INITIAL_SCHEMA_SENTINELS,
   OPTIONAL_FTS5_MIGRATION_VERSIONS,
-} from "./migrationRunner/constants";
-import { getExtraMigrationFiles } from "./migrationRunner/extraDirs";
+} from "./migrationRunner/constants.js";
+import { getExtraMigrationFiles } from "./migrationRunner/extraDirs.js";
 
 const isNodeTestRunnerChild = typeof process.env.NODE_TEST_CONTEXT === "string";
 

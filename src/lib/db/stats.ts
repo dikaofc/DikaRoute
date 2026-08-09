@@ -4,8 +4,8 @@
  * Provides functions to retrieve database statistics including size, table counts, and performance metrics.
  */
 
-import type { SqliteAdapter } from "./adapters/types";
-import { getDbInstance } from "./core";
+import type { SqliteAdapter } from "./adapters/types.js";
+import { getDbInstance } from "./core.js";
 
 export interface DatabaseStats {
   totalSize: number;

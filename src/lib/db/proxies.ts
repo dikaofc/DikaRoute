@@ -4,8 +4,8 @@
 // types share the exact same x-relay-target / x-relay-path / x-relay-auth header spec; only the
 // deployment surface differs.
 import { randomUUID } from "crypto";
-import { getDbInstance } from "./core";
-import { backupDbFile } from "./backup";
+import { getDbInstance } from "./core.js";
+import { backupDbFile } from "./backup.js";
 import type {
   JsonRecord,
   ProxyRegistryRecord,
@@ -17,7 +17,7 @@ import type {
   ProxyTransactionResult,
   LegacyProxyConfig,
   ProxyRotationStrategy,
-} from "./proxies/types";
+} from "./proxies/types.js";
 import {
   mapProxyRow,
   mapAssignmentRow,
@@ -26,16 +26,16 @@ import {
   toLegacyProxyLevel,
   coerceProxyPayload,
   redactProxySecrets,
-} from "./proxies/mappers";
-import { isGlobalProxyEnabled, PROXY_ALIVE_PREDICATE } from "./proxies/guards";
-import { bumpProxyRegistryGeneration } from "./proxies/registryGeneration";
+} from "./proxies/mappers.js";
+import { isGlobalProxyEnabled, PROXY_ALIVE_PREDICATE } from "./proxies/guards.js";
+import { bumpProxyRegistryGeneration } from "./proxies/registryGeneration.js";
 export {
   hasBlockingProxyAssignment,
   hasBlockingProxyAssignmentForProvider,
-} from "./proxies/guards";
-export { extractRelayAuth, redactProxySecrets } from "./proxies/mappers";
-export { addProxiesToScopePool } from "./proxySubscriptions";
-export { bumpProxyRegistryGeneration, getProxyRegistryGeneration } from "./proxies/registryGeneration";
+} from "./proxies/guards.js";
+export { extractRelayAuth, redactProxySecrets } from "./proxies/mappers.js";
+export { addProxiesToScopePool } from "./proxySubscriptions.js";
+export { bumpProxyRegistryGeneration, getProxyRegistryGeneration } from "./proxies/registryGeneration.js";
 import {
   normalizeRotationScopeId,
   clearRotationState,
@@ -45,7 +45,7 @@ import {
   getScopeRotationStrategy,
   resolveProxyForConnectionFromRegistry,
   resolveProxyForScopeFromRegistry,
-} from "./proxies/rotation";
+} from "./proxies/rotation.js";
 export {
   getScopeProxyPool,
   getScopeRotationStrategy,

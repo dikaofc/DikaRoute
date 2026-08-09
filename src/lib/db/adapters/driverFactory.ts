@@ -1,12 +1,12 @@
 import { createRequire } from "node:module";
 import { existsSync } from "node:fs";
-import { createBetterSqliteAdapter } from "./betterSqliteAdapter";
-import { createBunSqliteAdapter, type BunSqliteDatabaseLike } from "./bunSqliteAdapter";
+import { createBetterSqliteAdapter } from "./betterSqliteAdapter.js";
+import { createBunSqliteAdapter, type BunSqliteDatabaseLike } from "./bunSqliteAdapter.js";
 import {
   createNodeSqliteAdapterFromDatabase,
   type NodeSqliteDatabaseLike,
-} from "./nodeSqliteShared";
-import type { SqliteAdapter } from "./types";
+} from "./nodeSqliteShared.js";
+import type { SqliteAdapter } from "./types.js";
 
 const _require = createRequire(import.meta.url);
 

@@ -1,4 +1,4 @@
-import { getDbInstance, rowToCamel } from "./core";
+import { getDbInstance, rowToCamel } from "./core.js";
 
 export interface HandoffPayload {
   id?: string;

@@ -3,9 +3,9 @@
  * CRUD operations for agent_bridge_mappings table.
  */
 
-import { getDbInstance } from "./core";
-import type { AgentBridgeMappingRow } from "./_rowTypes";
-import { setMitmAliasAll } from "./models/mitmAlias";
+import { getDbInstance } from "./core.js";
+import type { AgentBridgeMappingRow } from "./_rowTypes.js";
+import { setMitmAliasAll } from "./models/mitmAlias.js";
 
 /** Agents that have a registered alias key in standaloneRouting.cjs::AGENT_ROUTE_CONFIG. */
 const MITM_ALIAS_AGENTS = new Set(["antigravity", "claude-code", "kiro"]);

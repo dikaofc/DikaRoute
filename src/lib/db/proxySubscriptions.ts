@@ -1,10 +1,10 @@
 // Proxy-subscription-specific pool operations, split out of `proxies.ts` to keep
 // that module under its frozen size cap. Re-exported from `proxies.ts` so callers
 // (subscriptionService.ts et al.) can keep importing from the original module.
-import { getDbInstance } from "./core";
-import { backupDbFile } from "./backup";
-import { normalizeScope, normalizeAssignmentScopeId } from "./proxies/mappers";
-import { bumpProxyRegistryGeneration } from "./proxies/registryGeneration";
+import { getDbInstance } from "./core.js";
+import { backupDbFile } from "./backup.js";
+import { normalizeScope, normalizeAssignmentScopeId } from "./proxies/mappers.js";
+import { bumpProxyRegistryGeneration } from "./proxies/registryGeneration.js";
 
 /**
  * Add MULTIPLE proxies to a scope's rotation POOL in a single batched write

@@ -1,4 +1,4 @@
-import { getDbInstance } from "../core";
+import { getDbInstance } from "../core.js";
 
 export const PROXY_ALIVE_PREDICATE =
   "(p.status IS NULL OR LOWER(p.status) NOT IN ('inactive','error','disabled','dead','down'))";

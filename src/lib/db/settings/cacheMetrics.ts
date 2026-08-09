@@ -2,7 +2,7 @@
  * db/settings/cacheMetrics.ts — Cache control metrics (computed from usage_history on-the-fly).
  */
 
-import { getDbInstance } from "../core";
+import { getDbInstance } from "../core.js";
 
 export async function getCacheMetrics() {
   const db = getDbInstance();

@@ -3,26 +3,26 @@
  */
 
 import { v4 as uuidv4 } from "uuid";
-import { getDbInstance, rowToCamel, cleanNulls } from "./core";
-import { backupDbFile } from "./backup";
+import { getDbInstance, rowToCamel, cleanNulls } from "./core.js";
+import { backupDbFile } from "./backup.js";
 import {
   encryptConnectionFields,
   decryptConnectionFields,
   migrateLegacyEncryptedString,
-} from "./encryption";
-import { createLazyRowProxy } from "./providers/lazyConnectionView";
-import { invalidateDbCache, getCachedRawProviderConnections } from "./readCache";
-import { reorderConnections } from "./providers/deletion";
+} from "./encryption.js";
+import { createLazyRowProxy } from "./providers/lazyConnectionView.js";
+import { invalidateDbCache, getCachedRawProviderConnections } from "./readCache.js";
+import { reorderConnections } from "./providers/deletion.js";
 import {
   removeConnectionHealth,
   removeConnectionIndex,
 } from "@dikaroute/open-sse/services/apiKeyRotator.ts";
-import { invalidateReasoningRoutingRuleCache } from "./reasoningRoutingRules";
+import { invalidateReasoningRoutingRuleCache } from "./reasoningRoutingRules.js";
 import { normalizeProviderSpecificData } from "@/lib/providers/requestDefaults";
-import { bumpProxyConfigGeneration } from "./settings";
-import { webSessionCredentialKey, parseProviderSpecificData } from "./webSessionDedup";
+import { bumpProxyConfigGeneration } from "./settings.js";
+import { webSessionCredentialKey, parseProviderSpecificData } from "./webSessionDedup.js";
 import { pickCodexConnectionForUser } from "@/lib/oauth/utils/codexConnectionSelection";
-import { reconcileCodexUsageHistory } from "./providers/usageIdentityReconciliation";
+import { reconcileCodexUsageHistory } from "./providers/usageIdentityReconciliation.js";
 import {
   withNullableMaxConcurrent,
   withNullableQuotaWindowThresholds,
@@ -34,7 +34,7 @@ import {
   sanitizeQuotaWindowThresholds,
   toStringOrNull,
   toNumberOrZero,
-} from "./providers/columns";
+} from "./providers/columns.js";
 
 type JsonRecord = Record<string, unknown>;
 
@@ -911,13 +911,13 @@ export async function getDistinctGroups(): Promise<string[]> {
   return rows.map((r) => String(r.group ?? "")).filter(Boolean);
 }
 
-export { autoMigrateLegacyEncryptedConnections, getGheCopilotHosts } from "./providers/migrations";
+export { autoMigrateLegacyEncryptedConnections, getGheCopilotHosts } from "./providers/migrations.js";
 export {
   deleteProviderConnection,
   deleteProviderConnections,
   deleteProviderConnectionsByProvider,
   reorderProviderConnections,
-} from "./providers/deletion";
+} from "./providers/deletion.js";
 
 // ──────────────── Re-exports from leaf modules ────────────────
 
@@ -929,7 +929,7 @@ export {
   createProviderNode,
   updateProviderNode,
   deleteProviderNode,
-} from "./providers/nodes";
+} from "./providers/nodes.js";
 export {
   setConnectionRateLimitUntil,
   markConnectionRateLimitedUntil,
@@ -939,4 +939,4 @@ export {
   formatResetCountdown,
   isConnectionRateLimited,
   getRateLimitedConnections,
-} from "./providers/rateLimit";
+} from "./providers/rateLimit.js";

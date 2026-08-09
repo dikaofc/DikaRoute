@@ -9,7 +9,7 @@
  * Part of: Group B — Quota Sharing Engine (plan 22, frente F2).
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 // ---------------------------------------------------------------------------
 // Local type shapes (aligned with src/lib/quota/dimensions.ts — merged by F7)

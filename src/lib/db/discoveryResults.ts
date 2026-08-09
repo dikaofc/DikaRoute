@@ -9,7 +9,7 @@
  * See `_tasks/features-v3.8.42/gaps/DISCOVERY_TOOL_DESIGN.md` for the design.
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 export type DiscoveryMethod =
   | "free_tier"

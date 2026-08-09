@@ -1,7 +1,7 @@
 // src/lib/db/adapters/sqljsAdapter.ts
 import fs from "node:fs";
 import path from "node:path";
-import type { SqliteAdapter, PreparedStatement, RunResult } from "./types";
+import type { SqliteAdapter, PreparedStatement, RunResult } from "./types.js";
 
 const SAVE_DEBOUNCE_MS = 100;
 const CHECKPOINT_INTERVAL_MS = 60_000;

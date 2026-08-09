@@ -12,7 +12,7 @@
  * (Hard Rule #5).
  */
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 // ---------------------------------------------------------------------------
 // Types

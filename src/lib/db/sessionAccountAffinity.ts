@@ -1,6 +1,6 @@
 import { createHash } from "crypto";
 
-import { getDbInstance } from "./core";
+import { getDbInstance } from "./core.js";
 
 type SessionAccountAffinityRecord = {
   connectionId: string;

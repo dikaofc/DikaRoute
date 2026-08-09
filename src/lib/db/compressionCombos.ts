@@ -4,8 +4,8 @@ import type {
   CompressionPipelineStep,
 } from "@dikaroute/open-sse/services/compression/types.ts";
 
-import { backupDbFile } from "./backup";
-import { getDbInstance, rowToCamel } from "./core";
+import { backupDbFile } from "./backup.js";
+import { getDbInstance, rowToCamel } from "./core.js";
 
 export interface CompressionCombo {
   id: string;

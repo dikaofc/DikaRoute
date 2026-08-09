@@ -6,15 +6,15 @@
 
 import { isRetiredGitHubCopilotModelId } from "@dikaroute/open-sse/config/providers/registry/github/retiredModels.ts";
 
-import { getDbInstance } from "./core";
-import { backupDbFile } from "./backup";
-import { getProviderConnectionsCount } from "./providers";
-import { type JsonRecord, getKeyValue } from "./models/shared";
+import { getDbInstance } from "./core.js";
+import { backupDbFile } from "./backup.js";
+import { getProviderConnectionsCount } from "./providers.js";
+import { type JsonRecord, getKeyValue } from "./models/shared.js";
 import {
   normalizeSyncedAvailableModels,
   type SyncedAvailableModel,
   type SyncedAvailableModelInput,
-} from "./models/synced";
+} from "./models/synced.js";
 import {
   readCompatList,
   writeCompatList,
@@ -27,7 +27,7 @@ import {
   type ModelCompatProtocolKey,
   type ModelCompatOverride,
   type ModelCompatPerProtocol,
-} from "./models/compat";
+} from "./models/compat.js";
 
 export {
   sanitizeUpstreamHeadersMap,
@@ -39,15 +39,15 @@ export {
   type ModelCompatPerProtocol,
   type ModelCompatOverride,
   type ModelCompatPatch,
-} from "./models/compat";
+} from "./models/compat.js";
 export {
   getModelAliases,
   setModelAlias,
   deleteModelAlias,
   deleteModelAliasesForProvider,
-} from "./models/aliases";
-export { getMitmAlias, setMitmAliasAll } from "./models/mitmAlias";
-export type { SyncedAvailableModel } from "./models/synced";
+} from "./models/aliases.js";
+export { getMitmAlias, setMitmAliasAll } from "./models/mitmAlias.js";
+export type { SyncedAvailableModel } from "./models/synced.js";
 
 // ──────────────── Custom Models ────────────────
 

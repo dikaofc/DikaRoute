@@ -4,8 +4,8 @@ import {
   getSyncedAvailableModels,
   getSyncedAvailableModelsByConnection,
   type SyncedAvailableModel,
-} from "../models";
-import { getRawProviderConnections } from "../providers";
+} from "../models.js";
+import { getRawProviderConnections } from "../providers.js";
 
 export type ActiveSyncedCatalog = {
   authoritative: boolean;
