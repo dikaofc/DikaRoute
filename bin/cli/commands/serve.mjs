@@ -82,7 +82,17 @@ export function maybeReportInstrumentationHookFailure(text) {
   if (instrumentationFailureHintPrinted) return false;
   if (!isFatalInstrumentationHookFailure(text)) return false;
   instrumentationFailureHintPrinted = true;
-  process.stderr.write(formatAndroidInstrumentationFailureHint(process.env.XDG_CACHE_HOME));
+  const realError = text
+    .split("\n")
+    .filter(
+      (l) =>
+        isFatalInstrumentationHookFailure(l) ||
+        /startup|error|fail|database|sqlite|hook|driver/i.test(l)
+    )
+    .slice(-6);
+  process.stderr.write(
+    formatAndroidInstrumentationFailureHint(process.env.XDG_CACHE_HOME, realError)
+  );
   return true;
 }
 
@@ -510,4 +520,3 @@ async function onReady(dashboardPort, apiPort, noOpen, startedAt) {
     }
   }
 }
-

@@ -74,12 +74,22 @@ export class ServerSupervisor {
         this.crashLog = this.crashLog.slice(-CRASH_LOG_LINES);
       }
       // Surface Android/Termux instrumentation-hook failures even when --log is
-      // off (output is only buffered otherwise).
+      // off (output is only buffered otherwise). Include the matching child
+      // output lines so the operator sees the REAL root cause (cache probe vs
+      // native-module/DB-driver load failure), not just the generic hint.
       if (!this.instrumentationFailureHintPrinted && isFatalInstrumentationHookFailure(text)) {
         this.instrumentationFailureHintPrinted = true;
+        const realError = this.crashLog
+          .filter(
+            (l) =>
+              isFatalInstrumentationHookFailure(l) ||
+              /startup|error|fail|database|sqlite|hook|driver/i.test(l)
+          )
+          .slice(-8);
         process.stderr.write(
           formatAndroidInstrumentationFailureHint(
-            this.env?.XDG_CACHE_HOME || process.env.XDG_CACHE_HOME
+            this.env?.XDG_CACHE_HOME || process.env.XDG_CACHE_HOME,
+            realError
           )
         );
       }
@@ -198,4 +208,3 @@ export function detectMitmCrash(crashLog) {
   const signals = ["mitm", "tls socket", "certificate", "hosts", "eaccess"];
   return signals.filter((s) => text.includes(s)).length >= 2;
 }
-
