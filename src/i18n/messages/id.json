@@ -1201,6 +1201,8 @@
     "docsSubtitle": "Documentation",
     "issuesSubtitle": "Report a bug",
     "changelogSubtitle": "Release notes",
+    "donate": "Donasi",
+    "donateSubtitle": "Dukung via Saweria",
     "costsQuotaPlans": "Paket & Kuota",
     "costsQuotaPlansSubtitle": "Konfigurasikan paket berdasarkan penyedia",
     "activity": "Aktivitas",

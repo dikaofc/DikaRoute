@@ -751,6 +751,14 @@ const HELP_ITEMS: readonly SidebarItemDefinition[] = [
     subtitleKey: "changelogSubtitle",
     icon: "campaign",
   },
+  {
+    id: "donate",
+    href: "https://saweria.co/dikatech",
+    i18nKey: "donate",
+    subtitleKey: "donateSubtitle",
+    icon: "favorite",
+    external: true,
+  },
 ];
 
 // ─── Sections ────────────────────────────────────────────────────────────────
@@ -797,4 +805,3 @@ export const SIDEBAR_SECTIONS: readonly SidebarSectionDefinition[] = [
     children: HELP_ITEMS,
   },
 ];
-

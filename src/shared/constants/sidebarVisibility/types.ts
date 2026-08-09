@@ -105,6 +105,7 @@ export const HIDEABLE_SIDEBAR_ITEM_IDS = [
   "docs",
   "issues",
   "changelog",
+  "donate",
 ] as const;
 
 export type HideableSidebarItemId = (typeof HIDEABLE_SIDEBAR_ITEM_IDS)[number];
@@ -178,4 +179,3 @@ export interface SidebarPresetDefinition {
 }
 
 export type SidebarItemOrder = Partial<Record<SidebarSectionId, string[]>>;
-

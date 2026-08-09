@@ -1203,6 +1203,8 @@
     "docsSubtitle": "Documentation",
     "issuesSubtitle": "Report a bug",
     "changelogSubtitle": "Release notes",
+    "donate": "Donate",
+    "donateSubtitle": "Support via Saweria",
     "costsQuotaPlans": "Plans & Quotas",
     "costsQuotaPlansSubtitle": "Configure plans by provider",
     "activity": "Activity",

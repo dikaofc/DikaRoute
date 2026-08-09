@@ -16,6 +16,7 @@
   <a href="https://github.com/dikaofc/DikaRoute"><img src="https://img.shields.io/github/stars/dikaofc/DikaRoute?style=for-the-badge&label=stars&color=facc15" alt="stars" /></a>
   <a href="https://github.com/dikaofc/DikaRoute/commits/main"><img src="https://img.shields.io/github/last-commit/dikaofc/DikaRoute?style=for-the-badge&label=last%20commit&color=8b5cf6" alt="last commit" /></a>
   <a href="https://github.com/dikaofc/DikaRoute/actions/workflows/publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/dikaofc/DikaRoute/publish.yml?style=for-the-badge&label=build&color=34d399" alt="build status" /></a>
+  <a href="https://saweria.co/dikatech"><img src="https://img.shields.io/badge/Saweria-Donate-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Donate via Saweria" /></a>
 </p>
 
 <p align="center">
@@ -45,6 +46,7 @@
 - [❓ FAQ](#-faq)
 - [🛠️ Troubleshooting](#-troubleshooting)
 - [🤝 Contributing](#-contributing)
+- [💖 Donate](#-donate)
 - [📄 License](#-license)
 
 ---
@@ -455,6 +457,22 @@ Found a bug or have an idea? [Open an issue](https://github.com/dikaofc/DikaRout
 
 ---
 
+## 💖 Donate
+
+DikaRoute is **free and open source**. If this project helps you ship faster or saves you money, consider supporting its development with a small donation — every little bit keeps the servers running, features shipping, and the ☕ flowing.
+
+<p align="center">
+  <a href="https://saweria.co/dikatech"><img src="https://img.shields.io/badge/Saweria-Donate%20via%20Saweria-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Donate via Saweria" /></a>
+</p>
+
+| Platform       | Username   | Link                          |
+| -------------- | ---------- | ----------------------------- |
+| 🇮🇩 **Saweria** | `dikatech` | <https://saweria.co/dikatech> |
+
+> Terima kasih! 🙏 Setiap donasi sangat berarti untuk pengembangan DikaRoute ke depannya.
+
+---
+
 ## 📄 License
 
 **MIT License** — Copyright © DikaCode
@@ -465,4 +483,5 @@ Built with ❤️ for developers building the next generation of AI applications
   <a href="https://github.com/dikaofc"><img src="https://img.shields.io/badge/GitHub-dikaofc-181717?style=for-the-badge&logo=github" alt="GitHub" /></a>
   <a href="https://t.me/dikaacode"><img src="https://img.shields.io/badge/Telegram-@dikaacode-26A5E4?style=for-the-badge&logo=telegram" alt="Telegram" /></a>
   <a href="https://obitoglory.tech"><img src="https://img.shields.io/badge/Website-obitoglory.tech-6366f1?style=for-the-badge" alt="Website" /></a>
+  <a href="https://saweria.co/dikatech"><img src="https://img.shields.io/badge/Saweria-@dikatech-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Saweria" /></a>
 </p>
