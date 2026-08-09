@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button, Card, Toggle } from "@/shared/components";
+import { Button, Card, SegmentedControl, Toggle } from "@/shared/components";
 import { useTheme } from "@/shared/hooks/useTheme";
 import useThemeStore, { COLOR_THEMES } from "@/store/themeStore";
 import { cn } from "@/shared/utils/cn";
@@ -160,31 +160,17 @@ export default function AppearanceTab() {
         </div>
 
         <div className="pt-4 border-t border-border">
-          <div
-            role="tablist"
+          <SegmentedControl
             aria-label={t("themeSelectionAria")}
-            className="inline-flex p-1 rounded-lg bg-black/5 dark:bg-white/5"
-          >
-            {["light", "dark", "system"].map((option) => (
-              <button
-                key={option}
-                role="tab"
-                aria-selected={theme === option}
-                onClick={() => setTheme(option)}
-                className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all",
-                  theme === option
-                    ? "bg-white dark:bg-white/10 text-text-main shadow-sm"
-                    : "text-text-muted hover:text-text-main"
-                )}
-              >
-                <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
-                  {option === "light" ? "light_mode" : option === "dark" ? "dark_mode" : "contrast"}
-                </span>
-                <span>{themeOptionLabels[option] || option}</span>
-              </button>
-            ))}
-          </div>
+            value={theme}
+            onChange={(next) => setTheme(next)}
+            options={["light", "dark", "system"].map((option) => ({
+              value: option,
+              label: themeOptionLabels[option] || option,
+              icon:
+                option === "light" ? "light_mode" : option === "dark" ? "dark_mode" : "contrast",
+            }))}
+          />
         </div>
 
         <div className="pt-4 border-t border-border">
@@ -774,4 +760,3 @@ export default function AppearanceTab() {
     </Card>
   );
 }
-

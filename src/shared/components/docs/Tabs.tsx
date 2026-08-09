@@ -18,8 +18,11 @@ export default function Tabs({ tabs, defaultIndex = 0, className }: TabsProps) {
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
   return (
-    <div className={cn("my-6 flex flex-col gap-2", className)} role="tablist">
-      <div className="flex gap-1 border-b border-border">
+    <div className={cn("my-6 flex flex-col gap-3", className)}>
+      <div
+        role="tablist"
+        className="inline-flex max-w-full items-center gap-1 overflow-x-auto rounded-[14px] border border-glass-border bg-glass-bg p-1.5 backdrop-blur-md"
+      >
         {tabs.map((tab, index) => (
           <button
             key={index}
@@ -28,10 +31,10 @@ export default function Tabs({ tabs, defaultIndex = 0, className }: TabsProps) {
             aria-controls={`tab-panel-${index}`}
             onClick={() => setActiveIndex(index)}
             className={cn(
-              "px-4 py-2 text-sm font-medium transition-colors",
+              "whitespace-nowrap rounded-[10px] px-4 py-1.5 text-sm font-medium transition-all duration-200 active:scale-[0.98]",
               activeIndex === index
-                ? "text-text-primary border-b-2 border-primary"
-                : "text-text-muted hover:text-text-main"
+                ? "dkr-active-pill bg-white/90 text-text-main dark:bg-white/15"
+                : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
             )}
           >
             {tab.label}
@@ -41,11 +44,10 @@ export default function Tabs({ tabs, defaultIndex = 0, className }: TabsProps) {
       <div
         id={`tab-panel-${activeIndex}`}
         role="tabpanel"
-        className="p-4 rounded-lg bg-bg-subtle border border-border"
+        className="rounded-[16px] border border-glass-border bg-glass-bg/60 p-5 backdrop-blur-xl"
       >
         {tabs[activeIndex].content}
       </div>
     </div>
   );
 }
-

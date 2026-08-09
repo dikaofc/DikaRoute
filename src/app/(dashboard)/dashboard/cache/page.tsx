@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, type ReactNode } from "react";
-import { Card, Button, EmptyState } from "@/shared/components";
+import { Card, Button, EmptyState, SegmentedControl } from "@/shared/components";
 import { useNotificationStore } from "@/store/notificationStore";
 import { useTranslations } from "next-intl";
 import { useProviderNodeMap, resolveProviderName } from "@/lib/display/useProviderNodeMap";
@@ -443,44 +443,15 @@ export default function CachePage() {
         </Button>
       </div>
 
-      <div className="flex w-fit gap-1 rounded-lg bg-black/5 p-1 dark:bg-white/5">
-        <button
-          type="button"
-          onClick={() => setActiveView("prompt")}
-          aria-pressed={activeView === "prompt"}
-          className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-            activeView === "prompt"
-              ? "bg-white dark:bg-white/10 text-text-main shadow-sm"
-              : "text-text-muted hover:text-text-main"
-          }`}
-        >
-          {t("promptCache")}
-        </button>
-        <button
-          type="button"
-          onClick={() => setActiveView("semantic")}
-          aria-pressed={activeView === "semantic"}
-          className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-            activeView === "semantic"
-              ? "bg-white dark:bg-white/10 text-text-main shadow-sm"
-              : "text-text-muted hover:text-text-main"
-          }`}
-        >
-          {t("semanticCache")}
-        </button>
-        <button
-          type="button"
-          onClick={() => setActiveView("reasoning")}
-          aria-pressed={activeView === "reasoning"}
-          className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-            activeView === "reasoning"
-              ? "bg-white dark:bg-white/10 text-text-main shadow-sm"
-              : "text-text-muted hover:text-text-main"
-          }`}
-        >
-          {t("reasoningCache")}
-        </button>
-      </div>
+      <SegmentedControl
+        value={activeView}
+        onChange={(next) => setActiveView(next as CacheView)}
+        options={[
+          { value: "prompt", label: t("promptCache") },
+          { value: "semantic", label: t("semanticCache") },
+          { value: "reasoning", label: t("reasoningCache") },
+        ]}
+      />
 
       {loading && (
         <div className="grid grid-cols-1 gap-6" aria-busy="true" aria-label={t("loadingCacheAria")}>
@@ -842,4 +813,3 @@ export default function CachePage() {
     </div>
   );
 }
-

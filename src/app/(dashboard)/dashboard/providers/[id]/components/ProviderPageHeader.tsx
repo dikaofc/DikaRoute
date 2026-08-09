@@ -40,7 +40,6 @@ export default function ProviderPageHeader({
   onOpenTutorial,
   t,
 }: ProviderPageHeaderProps) {
-
   // Resolve the API-key registration link: prefer apiKeyUrl, fall back to
   // signupUrl, hide when neither is set (#9270).
   const noticeUrl = providerInfo.notice?.apiKeyUrl || providerInfo.notice?.signupUrl;
@@ -58,18 +57,18 @@ export default function ProviderPageHeader({
   ) : null;
 
   return (
-    <div>
+    <div className="dkr-rise">
       <Link
         href="/dashboard/providers"
-        className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-primary transition-colors mb-4"
+        className="mb-5 inline-flex items-center gap-1.5 rounded-lg border border-glass-border bg-glass-bg/60 px-2.5 py-1 text-sm text-text-muted backdrop-blur-md transition-colors hover:border-primary/40 hover:text-primary"
       >
         <span className="material-symbols-outlined text-lg">arrow_back</span>
         {t("backToProviders")}
       </Link>
       <div className="flex items-center gap-4">
         <div
-          className="rounded-lg flex items-center justify-center"
-          style={{ backgroundColor: `${providerInfo.color}15` }}
+          className="flex items-center justify-center rounded-2xl border border-glass-border bg-glass-bg/60 p-2.5 shadow-[var(--glass-highlight)] backdrop-blur-md"
+          style={{ backgroundColor: `${providerInfo.color}12` }}
         >
           <ProviderIcon
             providerId={getHeaderIconProviderId(
@@ -86,13 +85,13 @@ export default function ProviderPageHeader({
             fallbackColor={providerInfo.color}
           />
         </div>
-        <div>
+        <div className="min-w-0">
           {providerInfo.website ? (
             <a
               href={providerInfo.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl font-semibold tracking-tight hover:underline inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 text-3xl font-semibold tracking-tight hover:underline"
               style={{ color: providerInfo.color }}
             >
               {providerInfo.name}
@@ -101,15 +100,18 @@ export default function ProviderPageHeader({
           ) : (
             <h1 className="text-3xl font-semibold tracking-tight">{providerInfo.name}</h1>
           )}
-          <div className="flex items-center gap-2">
-            <p className="text-text-muted">
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-glass-border bg-glass-bg/60 px-2.5 py-0.5 text-xs text-text-muted backdrop-blur-md">
+              <span className="material-symbols-outlined text-[14px]" aria-hidden="true">
+                link
+              </span>
               {t("connectionCountLabel", { count: connectionsCount })}
-            </p>
+            </span>
             {apiKeyLink}
             {providerId === "adapta-web" && (
               <button
                 onClick={onOpenTutorial}
-                className="text-sm font-medium underline underline-offset-2 opacity-70 hover:opacity-100 transition-opacity"
+                className="text-sm font-medium underline underline-offset-2 opacity-70 transition-opacity hover:opacity-100"
                 style={{ color: providerInfo.color }}
               >
                 Tutorial
@@ -121,4 +123,3 @@ export default function ProviderPageHeader({
     </div>
   );
 }
-

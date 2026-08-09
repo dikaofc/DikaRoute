@@ -9,6 +9,9 @@ import { useTranslations } from "next-intl";
  * and optional loading/empty states. Extracts the shared
  * table rendering pattern from RequestLoggerV2 and ProxyLogger.
  *
+ * iOS Fluid Glass: frosted sticky header, glass container, CSS-only
+ * hover/selected rows (no per-event style mutations).
+ *
  * Usage:
  *   <DataTable
  *     columns={visibleColumns}
@@ -63,81 +66,34 @@ export default function DataTable({
 
   if (loading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "48px 24px",
-          color: "var(--color-text-muted)",
-          fontSize: "14px",
-        }}
-      >
-        <span style={{ animation: "spin 1s linear infinite", marginRight: "8px" }}>⏳</span>
-        {t("loading")}
-        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      <div className="flex flex-col items-center justify-center gap-3 rounded-card border border-glass-border bg-glass-bg/70 px-6 py-16 backdrop-blur-xl">
+        <span className="size-8 animate-spin rounded-full border-2 border-glass-border-strong border-t-primary" />
+        <p className="text-sm text-text-muted">{t("loading")}</p>
       </div>
     );
   }
 
   if (data.length === 0) {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "48px 24px",
-          color: "var(--color-text-muted)",
-          fontSize: "14px",
-        }}
-      >
-        <span style={{ fontSize: "32px", marginBottom: "8px", opacity: 0.6 }}>{emptyIcon}</span>
-        {resolvedEmptyMessage}
+      <div className="flex flex-col items-center justify-center gap-3 rounded-card border border-glass-border bg-glass-bg/70 px-6 py-16 backdrop-blur-xl">
+        <span className="text-4xl opacity-60">{emptyIcon}</span>
+        <p className="text-sm text-text-muted">{resolvedEmptyMessage}</p>
       </div>
     );
   }
 
   return (
     <div
-      style={{
-        overflow: "auto",
-        maxHeight,
-        borderRadius: "8px",
-        // Opaque surface so the body grid wallpaper never bleeds through the
-        // transparent even-rows / low-alpha zebra when the table renders card-less.
-        background: "var(--color-surface)",
-      }}
+      className="overflow-auto rounded-card border border-glass-border bg-glass-bg/70 shadow-[var(--glass-highlight)] backdrop-blur-xl"
+      style={{ maxHeight }}
     >
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          fontSize: "12px",
-          tableLayout: "auto",
-        }}
-      >
+      <table className="w-full border-collapse text-xs" style={{ tableLayout: "auto" }}>
         <thead>
           <tr>
             {columns.map((col) => (
               <th
                 key={col.key}
-                style={{
-                  padding: "8px 10px",
-                  textAlign: "left",
-                  fontWeight: 600,
-                  color: "var(--color-text-muted)",
-                  borderBottom: "1px solid var(--color-border)",
-                  position: "sticky",
-                  top: 0,
-                  background: "var(--table-header-bg)",
-                  zIndex: 1,
-                  whiteSpace: "nowrap",
-                  fontSize: "11px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
+                className="sticky top-0 z-10 whitespace-nowrap border-b border-glass-border bg-[var(--table-header-bg)] px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wider text-text-muted backdrop-blur-md"
               >
                 {renderHeader ? renderHeader(col) : col.label}
               </th>
@@ -149,35 +105,21 @@ export default function DataTable({
             <tr
               key={row.id || idx}
               onClick={() => onRowClick?.(row)}
-              style={{
-                cursor: onRowClick ? "pointer" : "default",
-                background:
-                  row.id === selectedId
-                    ? "var(--table-row-selected)"
-                    : idx % 2 === 0
-                      ? "transparent"
-                      : "var(--table-row-zebra)",
-                transition: "background 0.15s",
-              }}
-              onMouseEnter={(e) => {
-                if (row.id !== selectedId) {
-                  e.currentTarget.style.background = "var(--table-row-hover)";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (row.id !== selectedId) {
-                  e.currentTarget.style.background =
-                    idx % 2 === 0 ? "transparent" : "var(--table-row-zebra)";
-                }
-              }}
+              className={
+                (onRowClick ? "cursor-pointer " : "") +
+                (row.id === selectedId
+                  ? "bg-[var(--table-row-selected)]"
+                  : idx % 2 === 0
+                    ? "bg-transparent hover:bg-[var(--table-row-hover)]"
+                    : "bg-[var(--table-row-zebra)] hover:bg-[var(--table-row-hover)]") +
+                " transition-colors duration-150"
+              }
             >
               {columns.map((col) => (
                 <td
                   key={col.key}
+                  className="whitespace-nowrap border-b border-[var(--table-cell-border)] px-3 py-2"
                   style={{
-                    padding: "6px 10px",
-                    borderBottom: "1px solid var(--table-cell-border)",
-                    whiteSpace: "nowrap",
                     maxWidth: col.maxWidth || "200px",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
@@ -193,4 +135,3 @@ export default function DataTable({
     </div>
   );
 }
-

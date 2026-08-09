@@ -66,7 +66,7 @@ type RadarTabId = "catalog" | "referrals";
 export function resolveRadarPageState(
   flagOn: boolean,
   optedIn: boolean,
-  hasEntries: boolean,
+  hasEntries: boolean
 ): PageState {
   if (!flagOn) return "flag_off";
   if (!optedIn) return "optin_pending";
@@ -283,7 +283,7 @@ export default function RadarPage() {
   const pageState = resolveRadarPageState(
     optIn !== false, // if we got a 404, optIn=false => flag off
     optIn === true,
-    entries.length > 0 && meta !== null,
+    entries.length > 0 && meta !== null
   );
 
   // Flag off — render not-found
@@ -328,9 +328,7 @@ export default function RadarPage() {
         </div>
       )}
 
-      {error && (
-        <div className="p-3 rounded-lg bg-red-500/10 text-red-400 text-sm">{error}</div>
-      )}
+      {error && <div className="p-3 rounded-lg bg-red-500/10 text-red-400 text-sm">{error}</div>}
 
       {loading ? (
         <div className="flex items-center justify-center min-h-[200px]">
@@ -402,15 +400,18 @@ export default function RadarPage() {
           {/* D28 — tab bar. Only shown once opted in (empty/populated) — the
               activation gate above is a single full-screen step, not a tab. */}
           {(pageState === "empty" || pageState === "populated") && (
-            <div className="flex gap-2 border-b border-border" role="tablist">
+            <div
+              className="inline-flex w-fit items-center gap-1 rounded-[14px] border border-violet-500/20 bg-glass-bg p-1.5 backdrop-blur-md"
+              role="tablist"
+            >
               <button
                 role="tab"
                 aria-selected={activeTab === "catalog"}
                 onClick={() => setActiveTab("catalog")}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                className={`rounded-[10px] px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
                   activeTab === "catalog"
-                    ? "border-violet-500 text-violet-400"
-                    : "border-transparent text-text-muted hover:text-text-main"
+                    ? "bg-violet-500/15 text-violet-400"
+                    : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
                 }`}
               >
                 {t("catalogTab")}
@@ -419,10 +420,10 @@ export default function RadarPage() {
                 role="tab"
                 aria-selected={activeTab === "referrals"}
                 onClick={() => setActiveTab("referrals")}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                className={`rounded-[10px] px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
                   activeTab === "referrals"
-                    ? "border-violet-500 text-violet-400"
-                    : "border-transparent text-text-muted hover:text-text-main"
+                    ? "bg-violet-500/15 text-violet-400"
+                    : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
                 }`}
               >
                 {t("freeCreditsTab")}
@@ -627,4 +628,3 @@ export default function RadarPage() {
     </div>
   );
 }
-

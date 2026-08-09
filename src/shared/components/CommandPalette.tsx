@@ -224,27 +224,32 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
     el?.scrollIntoView({ block: "nearest" });
   }, [selectedIndex]);
 
+  const kbdClass =
+    "hidden sm:inline-flex items-center gap-0.5 rounded-md border border-glass-border bg-glass-bg px-1.5 py-0.5 font-mono text-[10px] text-text-muted";
+  const kbdHintClass =
+    "inline-flex items-center gap-0.5 rounded-md border border-glass-border bg-glass-bg px-1.5 py-0.5 font-mono text-[10px] text-text-muted";
+
   return (
-    <div className="fixed inset-0 z-[60] flex items-start justify-center pt-[10vh] px-4">
+    <div className="fixed inset-0 z-[60] flex items-start justify-center px-4 pt-[10vh]">
       <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/50 backdrop-blur-md dkr-fade-in"
         onClick={onClose}
         aria-hidden="true"
       />
       <div
-        className="relative w-full max-w-3xl bg-surface border border-black/10 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        className="glass-strong dkr-scale-in relative w-full max-w-3xl overflow-hidden rounded-[22px]"
         role="dialog"
         aria-modal="true"
         aria-label="Command palette"
       >
-        <div className="flex items-center gap-3 px-6 py-4 border-b border-black/5 dark:border-white/5">
-          <span className="material-symbols-outlined text-[20px] text-text-muted shrink-0">
+        <div className="flex items-center gap-3 border-b border-glass-border px-6 py-4">
+          <span className="material-symbols-outlined shrink-0 text-[20px] text-text-muted">
             search
           </span>
           <input
             ref={inputRef}
             type="text"
-            className="flex-1 bg-transparent text-text placeholder:text-text-muted outline-none text-base"
+            className="flex-1 bg-transparent text-base text-text-main placeholder:text-text-muted outline-none"
             placeholder="Search pages, settings, tools..."
             value={query}
             onChange={(e) => {
@@ -256,7 +261,7 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
           />
           {query && (
             <button
-              className="text-text-muted hover:text-text transition-colors"
+              className="text-text-muted transition-colors hover:text-text-main"
               onClick={() => {
                 setQuery("");
                 setSelectedIndex(0);
@@ -267,20 +272,18 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
               <span className="material-symbols-outlined text-[16px]">close</span>
             </button>
           )}
-          <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] font-mono bg-black/5 dark:bg-white/5 text-text-muted border border-black/10 dark:border-white/10 shrink-0">
-            Esc
-          </kbd>
+          <kbd className={kbdClass}>Esc</kbd>
         </div>
 
         {grouped.length > 0 ? (
           <ul
             ref={listRef}
-            className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar"
+            className="custom-scrollbar max-h-[60vh] overflow-y-auto py-2"
             role="listbox"
           >
             {grouped.map((group) => (
               <li key={group.sectionId} role="presentation">
-                <div className="sticky top-0 z-10 bg-surface/95 backdrop-blur-sm px-6 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-text-muted border-b border-black/5 dark:border-white/5">
+                <div className="sticky top-0 z-10 border-b border-glass-border bg-glass-bg-strong/90 px-6 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-text-muted backdrop-blur-md">
                   {group.sectionLabel}
                 </div>
                 <ul role="group" aria-label={group.sectionLabel}>
@@ -290,7 +293,7 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
                       role="presentation"
                     >
                       {subgroup.subgroupLabel && (
-                        <div className="px-6 pt-2 pb-1 text-[10px] font-medium uppercase tracking-wide text-text-muted/70">
+                        <div className="px-6 pb-1 pt-2 text-[10px] font-medium uppercase tracking-wide text-text-muted/70">
                           {subgroup.subgroupLabel}
                         </div>
                       )}
@@ -304,30 +307,31 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
                             role="option"
                             aria-selected={flatIndex === selectedIndex}
                             data-flat-index={flatIndex}
+                            className="px-2"
                           >
                             <button
-                              className={`w-full flex items-center gap-3 ${
-                                subgroup.subgroupLabel ? "pl-10 pr-6" : "px-6"
-                              } py-2.5 text-left transition-colors ${
+                              className={`flex w-full items-center gap-3 rounded-[10px] text-left transition-colors ${
+                                subgroup.subgroupLabel ? "pl-8 pr-3" : "px-3"
+                              } py-2 ${
                                 flatIndex === selectedIndex
-                                  ? "bg-accent/10 text-accent ring-1 ring-inset ring-accent/20"
-                                  : "text-text hover:bg-black/5 dark:hover:bg-white/5"
+                                  ? "bg-accent/15 text-accent ring-1 ring-inset ring-accent/25"
+                                  : "text-text-main hover:bg-glass-bg-hover"
                               }`}
                               onClick={() => handleNavigate(item.href, item.external)}
                               onMouseEnter={() => setSelectedIndex(flatIndex)}
                             >
                               <span
-                                className={`material-symbols-outlined text-[18px] shrink-0 ${
+                                className={`material-symbols-outlined shrink-0 text-[18px] ${
                                   flatIndex === selectedIndex ? "text-accent" : "text-text-muted"
                                 }`}
                               >
                                 {item.icon}
                               </span>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium truncate">{item.label}</p>
+                              <div className="min-w-0 flex-1">
+                                <p className="truncate text-sm font-medium">{item.label}</p>
                                 {item.subtitle && (
                                   <p
-                                    className={`text-xs truncate ${
+                                    className={`truncate text-xs ${
                                       flatIndex === selectedIndex
                                         ? "text-accent/70"
                                         : "text-text-muted"
@@ -338,7 +342,7 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
                                 )}
                               </div>
                               {item.external && (
-                                <span className="material-symbols-outlined text-[14px] text-text-muted shrink-0">
+                                <span className="material-symbols-outlined shrink-0 text-[14px] text-text-muted">
                                   open_in_new
                                 </span>
                               )}
@@ -353,26 +357,20 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
             ))}
           </ul>
         ) : (
-          <div className="py-10 text-center text-text-muted text-sm">No results</div>
+          <div className="py-10 text-center text-sm text-text-muted">No results</div>
         )}
 
-        <div className="flex items-center gap-4 px-4 py-2 border-t border-black/5 dark:border-white/5 text-[11px] text-text-muted">
+        <div className="flex items-center gap-4 border-t border-glass-border px-4 py-2.5 text-[11px] text-text-muted">
           <span className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 font-mono">
-              ↑↓
-            </kbd>
+            <kbd className={kbdHintClass}>↑↓</kbd>
             navigate
           </span>
           <span className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 font-mono">
-              ↵
-            </kbd>
+            <kbd className={kbdHintClass}>↵</kbd>
             open
           </span>
           <span className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 rounded bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 font-mono">
-              Esc
-            </kbd>
+            <kbd className={kbdHintClass}>Esc</kbd>
             close
           </span>
         </div>
@@ -380,4 +378,3 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
     </div>
   );
 }
-

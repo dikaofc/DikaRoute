@@ -475,7 +475,7 @@ export default function ProviderDetailPageClient() {
 
   if (loading) {
     return (
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 dkr-rise">
         <CardSkeleton />
         <CardSkeleton />
       </div>
@@ -484,9 +484,20 @@ export default function ProviderDetailPageClient() {
 
   if (!providerInfo) {
     return (
-      <div className="text-center py-20">
+      <div className="flex flex-col items-center justify-center gap-3 py-24 text-center dkr-rise">
+        <div className="flex size-14 items-center justify-center rounded-2xl border border-glass-border bg-glass-bg/60 backdrop-blur-xl">
+          <span className="material-symbols-outlined text-2xl text-text-muted" aria-hidden="true">
+            block
+          </span>
+        </div>
         <p className="text-text-muted">{t("providerNotFound")}</p>
-        <Link href="/dashboard/providers" className="text-primary mt-4 inline-block">
+        <Link
+          href="/dashboard/providers"
+          className="mt-1 inline-flex items-center gap-1.5 text-primary transition-opacity hover:opacity-80"
+        >
+          <span className="material-symbols-outlined text-base" aria-hidden="true">
+            arrow_back
+          </span>
           {t("backToProviders")}
         </Link>
       </div>
@@ -503,7 +514,7 @@ export default function ProviderDetailPageClient() {
         isAnthropicProtocolCompatible={isAnthropicProtocolCompatible}
         onOpenTutorial={() => setShowTutorialModal(true)}
         t={t}
-            />
+      />
 
       {providerId === "zed" && (
         <ZedImportCard fetchConnections={fetchConnections} notify={notify} />
@@ -846,4 +857,3 @@ export default function ProviderDetailPageClient() {
     </div>
   );
 }
-

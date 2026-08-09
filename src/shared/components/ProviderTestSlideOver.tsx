@@ -82,14 +82,14 @@ function ProviderTestSlideOverPanel({
   return (
     <div className="fixed inset-0 z-[60] flex justify-end">
       <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200"
+        className="absolute inset-0 bg-black/50 backdrop-blur-md dkr-fade-in"
         onClick={onClose}
         aria-hidden
       />
       <div
         role="dialog"
         aria-label={`Test ${provider.name}`}
-        className="relative w-full sm:w-[640px] md:w-[720px] lg:w-[820px] max-w-full bg-surface border-l border-black/10 dark:border-white/10 shadow-2xl flex flex-col animate-in slide-in-from-right duration-200"
+        className="relative w-full sm:w-[640px] md:w-[720px] lg:w-[820px] max-w-full border-l border-glass-border bg-glass-bg-strong shadow-2xl backdrop-blur-2xl flex flex-col animate-in slide-in-from-right duration-200"
       >
         <SlideOverHeader
           provider={provider}
@@ -146,7 +146,7 @@ function SlideOverHeader({
   onClose: () => void;
 }) {
   return (
-    <div className="flex items-center gap-3 px-4 py-3 border-b border-black/5 dark:border-white/5 shrink-0">
+    <div className="flex items-center gap-3 px-4 py-3 border-b border-glass-border shrink-0">
       <div
         className="size-9 rounded-lg flex items-center justify-center shrink-0"
         style={{ backgroundColor: `${color}15` }}
@@ -214,7 +214,7 @@ function TestToolbar({
 }) {
   const hasMessages = controls?.hasMessages ?? false;
   return (
-    <div className="flex flex-wrap items-center gap-2 px-4 py-2 border-b border-black/5 dark:border-white/5 bg-bg-subtle/30 shrink-0">
+    <div className="flex flex-wrap items-center gap-2 px-4 py-2 border-b border-glass-border bg-bg-subtle/30 shrink-0">
       <div className="flex items-center gap-1.5 min-w-0 flex-1">
         <label className="text-[11px] text-text-muted shrink-0">Model:</label>
         <select
@@ -266,7 +266,7 @@ function SlideOverTabs({ tab, onChange }: { tab: TabKey; onChange: (next: TabKey
   return (
     <div
       role="tablist"
-      className="flex items-center gap-1 px-4 pt-2 border-b border-black/5 dark:border-white/5 shrink-0"
+      className="mx-4 mt-2 inline-flex w-fit shrink-0 items-center gap-1 self-start rounded-[12px] border border-glass-border bg-glass-bg p-1 backdrop-blur-md"
     >
       {TABS.map((t) => {
         const active = t.key === tab;
@@ -277,18 +277,14 @@ function SlideOverTabs({ tab, onChange }: { tab: TabKey; onChange: (next: TabKey
             type="button"
             aria-selected={active}
             onClick={() => onChange(t.key)}
-            className={`relative flex items-center gap-1.5 px-3 py-2 text-xs font-medium transition-colors ${
-              active ? "text-accent" : "text-text-muted hover:text-text-main"
+            className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
+              active
+                ? "dkr-active-pill bg-white/90 text-text-main dark:bg-white/15"
+                : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
             }`}
           >
             <span className="material-symbols-outlined text-[16px]">{t.icon}</span>
             <span>{t.label}</span>
-            {active && (
-              <span
-                aria-hidden
-                className="absolute left-0 right-0 -bottom-px h-0.5 bg-accent rounded-t"
-              />
-            )}
           </button>
         );
       })}
@@ -420,7 +416,7 @@ function LogsTab({ providerId }: { providerId: string }) {
 
   return (
     <div className="flex-1 min-h-0 flex flex-col">
-      <div className="flex items-center justify-between px-4 py-2 border-b border-black/5 dark:border-white/5 shrink-0">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-glass-border shrink-0">
         <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-wider text-text-muted font-medium">
           <span className="inline-flex items-center gap-1.5">
             <span className="relative inline-flex h-2 w-2">
@@ -442,7 +438,7 @@ function LogsTab({ providerId }: { providerId: string }) {
           Refresh
         </button>
       </div>
-      <ul className="flex-1 min-h-0 overflow-y-auto divide-y divide-border/40">
+      <ul className="flex-1 min-h-0 divide-y divide-glass-border/60 overflow-y-auto">
         {state.logs.map((log) => {
           const key = String(log.id);
           const isExpanded = expanded === key;
@@ -494,7 +490,7 @@ function LogsTab({ providerId }: { providerId: string }) {
           );
         })}
       </ul>
-      <div className="px-4 py-2 border-t border-black/5 dark:border-white/5 text-[10px] text-text-muted text-center shrink-0">
+      <div className="px-4 py-2 border-t border-glass-border text-[10px] text-text-muted text-center shrink-0">
         <a
           href={`/dashboard/logs?connection=${encodeURIComponent(providerId)}`}
           className="inline-flex items-center gap-1 hover:text-text-main hover:underline"
@@ -528,7 +524,7 @@ function LogDetail({ log }: { log: LogEntry }) {
     },
   ];
   return (
-    <dl className="px-4 py-3 bg-bg-subtle/40 border-t border-black/5 dark:border-white/5 grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-[11px]">
+    <dl className="px-4 py-3 bg-bg-subtle/40 border-t border-glass-border grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-[11px]">
       {rows.map((row) => (
         <div key={row.label} className="contents">
           <dt className="text-text-muted uppercase tracking-wider text-[10px] font-medium">
@@ -559,4 +555,3 @@ function formatDurationMs(ms: number | undefined): string {
   if (ms < 1000) return `${Math.round(ms)}ms`;
   return `${(ms / 1000).toFixed(2)}s`;
 }
-
