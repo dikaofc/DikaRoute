@@ -95,3 +95,4 @@ function rowToResult(row: Record<string, unknown>): DiscoveryResult {
     verifiedAt: row.verified_at as string | undefined,
   };
 }
+

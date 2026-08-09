@@ -154,3 +154,4 @@ export function stripGpt5ReasoningWhenTools<T extends Record<string, unknown>>(
   );
   return next as T;
 }
+

@@ -16,3 +16,4 @@ export async function isAutoStartEnabled(): Promise<boolean> {
 }
 
 export { getAutostartStatus };
+

@@ -81,3 +81,4 @@ export function deleteCallLogArtifacts(relativePaths: string[]): {
   cleanupEmptyCallLogDirs();
   return result;
 }
+

@@ -126,3 +126,4 @@ export default function Loading({
       return <Spinner size={size} className={className} label={label} />;
   }
 }
+

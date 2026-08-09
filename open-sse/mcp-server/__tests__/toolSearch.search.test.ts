@@ -24,3 +24,4 @@ describe("searchTools", () => {
     expect(Date.now() - start).toBeLessThan(200);
   });
 });
+

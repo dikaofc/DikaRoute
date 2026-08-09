@@ -97,3 +97,4 @@ export function getAllToolDefinitions(): ToolCatalogEntry[] {
 
   return result;
 }
+

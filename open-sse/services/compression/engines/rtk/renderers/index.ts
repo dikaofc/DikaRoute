@@ -48,3 +48,4 @@ export function applyRenderer(
 export { type RenderResult } from "./types.ts";
 
 export { REGISTRY };
+

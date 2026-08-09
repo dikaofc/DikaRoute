@@ -105,3 +105,4 @@ export function getSyncTokenFromRequest(request: Request) {
   if (!trimmedHeader.toLowerCase().startsWith("bearer ")) return null;
   return trimmedHeader.slice(7).trim() || null;
 }
+

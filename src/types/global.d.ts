@@ -120,3 +120,4 @@ declare module "yazl" {
     outputStream: NodeJS.ReadableStream;
   }
 }
+

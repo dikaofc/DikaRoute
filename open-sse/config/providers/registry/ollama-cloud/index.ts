@@ -37,3 +37,4 @@ export const ollama_cloudProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

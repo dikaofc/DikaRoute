@@ -137,3 +137,4 @@ export function tooManyRequests(retryAfterSec = 60) {
 export function internalError(message = "Internal server error") {
   return apiErrorResponse(500, "INTERNAL_ERROR", message);
 }
+

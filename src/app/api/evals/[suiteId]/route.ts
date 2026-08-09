@@ -18,3 +18,4 @@ export async function GET(request: Request, { params }: { params: Promise<{ suit
     return NextResponse.json({ error: sanitizeErrorMessage(error) }, { status: 500 });
   }
 }
+

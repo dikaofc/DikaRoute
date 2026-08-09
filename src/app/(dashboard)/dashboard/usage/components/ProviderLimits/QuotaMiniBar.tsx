@@ -32,3 +32,4 @@ export default function QuotaMiniBar({ percent, size = "xs", className }: Props)
     </div>
   );
 }
+

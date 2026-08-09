@@ -179,3 +179,4 @@ export function getExtraMigrationFiles(): NamespacedMigrationFile[] {
   if (entries.length === 0) return [];
   return entries.flatMap((entry) => readNamespacedMigrationFiles(entry));
 }
+

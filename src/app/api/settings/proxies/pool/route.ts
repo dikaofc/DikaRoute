@@ -162,3 +162,4 @@ export async function PATCH(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to set rotation strategy");
   }
 }
+

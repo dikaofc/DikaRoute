@@ -45,3 +45,4 @@ export interface GrokStreamEvent {
   result?: { response?: GrokStreamResponse };
   error?: { message?: string; code?: string };
 }
+

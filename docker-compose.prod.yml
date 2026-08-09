@@ -85,3 +85,4 @@ volumes:
     name: dikaroute-prod-data
   redis-prod-data:
     name: redis-prod-data
+

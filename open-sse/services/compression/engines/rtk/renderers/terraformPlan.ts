@@ -38,3 +38,4 @@ export function renderTerraformPlan(
   const out = [summary, ...resources].join("\n");
   return { text: out, changed: true, renderer: "terraform-plan" };
 }
+

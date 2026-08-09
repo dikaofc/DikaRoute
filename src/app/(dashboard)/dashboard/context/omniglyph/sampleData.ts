@@ -29,3 +29,4 @@ export const SAMPLE_METRICS = {
   imageTokens: 84,
   savingsPct: 66.9,
 } as const;
+

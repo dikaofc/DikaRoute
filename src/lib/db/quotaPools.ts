@@ -621,3 +621,4 @@ export function listAllocationsForApiKey(
     .all(apiKeyId);
   return rows.map((row) => ({ poolId: row.pool_id, allocation: rowToAllocation(row) }));
 }
+

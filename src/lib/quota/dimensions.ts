@@ -59,3 +59,4 @@ export const WINDOW_MS: Record<QuotaWindow, number> = {
 export function dimensionKeyToString(k: DimensionKey): string {
   return `${k.poolId}:${k.unit}:${k.window}`;
 }
+

@@ -92,3 +92,4 @@ export function getBufferedKiroToolInput(toolCall: PendingKiroWrapperToolCall): 
 export function encodeSse(value: string): Uint8Array {
   return TEXT_ENCODER.encode(value);
 }
+

@@ -58,3 +58,4 @@ export function getStripTypesForProviderModel(providerId: string, modelId: strin
   const alias = PROVIDER_ID_TO_ALIAS[providerId] || providerId;
   return getModelStripTypes(alias, modelId);
 }
+

@@ -10,3 +10,4 @@ export const THEME_CONFIG = {
   storageKey: "theme",
   defaultTheme: "system",
 };
+

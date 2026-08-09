@@ -151,3 +151,4 @@ export default function RerankPanel({ query, results, onClose }: RerankPanelProp
     </div>
   );
 }
+

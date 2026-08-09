@@ -119,3 +119,4 @@ export function summarizeOutput(output: unknown, maxLength = 200): string {
   if (str.length <= maxLength) return str;
   return str.slice(0, maxLength) + "…";
 }
+

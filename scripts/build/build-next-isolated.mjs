@@ -382,3 +382,4 @@ const entryScript = process.argv[1] ? pathToFileURL(process.argv[1]).href : null
 if (entryScript === import.meta.url) {
   await main();
 }
+

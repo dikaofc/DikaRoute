@@ -40,3 +40,4 @@ export function register_images(parent) {
       emit(data, gOpts);
     });
 }
+

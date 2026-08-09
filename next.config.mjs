@@ -673,3 +673,4 @@ const nextConfig = {
 const withMDX = createMDX();
 
 export default withMDX(withNextIntl(nextConfig));
+

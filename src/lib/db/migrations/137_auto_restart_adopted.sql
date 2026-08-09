@@ -14,3 +14,4 @@
 -- didn't ask to be killed should be opt-in, not automatic.
 ALTER TABLE version_manager
   ADD COLUMN auto_restart_adopted INTEGER NOT NULL DEFAULT 0;
+

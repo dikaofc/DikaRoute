@@ -19,3 +19,4 @@ export async function GET(request: Request) {
 
   return NextResponse.json(getBridgeStats(), { headers: { "Cache-Control": "no-store" } });
 }
+

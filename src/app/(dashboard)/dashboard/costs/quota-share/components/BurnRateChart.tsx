@@ -14,3 +14,4 @@ export interface BurnRateChartProps {
 export default function BurnRateChart({ usage }: BurnRateChartProps) {
   return <BurnRateChartInner usage={usage} />;
 }
+

@@ -115,3 +115,4 @@ export function deleteSemanticCacheByModel(model: string): DeleteSemanticCacheBy
   const result = db.prepare("DELETE FROM semantic_cache WHERE model = ?").run(model);
   return { deleted: result.changes };
 }
+

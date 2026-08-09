@@ -18,3 +18,4 @@ export const g4f_groqProvider: RegistryEntry = {
     { id: "llama-3.1-8b-instant", name: "Llama 3.1 8B Instant (g4f/Groq)" },
   ],
 };
+

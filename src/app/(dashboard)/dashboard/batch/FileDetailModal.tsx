@@ -289,3 +289,4 @@ export default function FileDetailModal({
     </div>
   );
 }
+

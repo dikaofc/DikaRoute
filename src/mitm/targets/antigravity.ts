@@ -83,3 +83,4 @@ export const ANTIGRAVITY_MITM_PROFILE: MitmTarget & {
   additionalHosts: HOSTS.slice(1),
   instructions: INSTRUCTIONS,
 };
+

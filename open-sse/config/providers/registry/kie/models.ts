@@ -41,3 +41,4 @@ export const KIE_IMAGE_MODELS = [
   { id: "wan/2.7-image", name: "Wan 2.7 Image", isMarket: true },
   { id: "wan/2.7-image-pro", name: "Wan 2.7 Image Pro", isMarket: true },
 ];
+

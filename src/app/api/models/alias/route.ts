@@ -207,3 +207,4 @@ async function syncToCloudIfEnabled() {
     console.log("Error syncing aliases to cloud:", error);
   }
 }
+

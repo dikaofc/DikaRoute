@@ -116,3 +116,4 @@ export function getCaptureStatus(): CaptureManagerStatus {
 export function __resetCaptureManager(): void {
   active = null;
 }
+

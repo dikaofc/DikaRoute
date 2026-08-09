@@ -13,3 +13,4 @@ export const ideogramProvider: RegistryEntry = {
     { id: "V_2A", name: "Ideogram V2A" },
   ],
 };
+

@@ -101,3 +101,4 @@ export function getCachedGitLabDirectAccess(
 export function isGitLabDirectAccessDisabled(status: number, bodyText: string): boolean {
   return status === 403 && bodyText.toLowerCase().includes("direct connections are disabled");
 }
+

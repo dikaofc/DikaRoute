@@ -27,3 +27,4 @@ export function findDefaultReferral(
 ): RadarReferral | null {
   return fixed.find((r) => r.provider === provider && r.isDefault === true) ?? null;
 }
+

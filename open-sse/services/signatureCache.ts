@@ -187,3 +187,4 @@ export function clearCache() {
   layers.family.clear();
   layers.session.clear();
 }
+

@@ -46,3 +46,4 @@ export function extractSystemRoleMessages(payload: Record<string, unknown>): voi
   }
   payload.messages = messages.filter((m) => !isSystemRole(m.role));
 }
+

@@ -183,3 +183,4 @@ function makeElement(tag: string): Element {
     parentNode: null as unknown as Node,
   } as unknown as Element;
 }
+

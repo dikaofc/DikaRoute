@@ -727,3 +727,4 @@ export function compareProviderGroups(
   if (labelCmp !== 0) return labelCmp;
   return a < b ? -1 : a > b ? 1 : 0;
 }
+

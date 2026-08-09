@@ -301,3 +301,4 @@ export function validateWeights(weights: ScoringWeights): boolean {
   const sum = Object.values(weights).reduce((a, b) => a + b, 0);
   return Math.abs(sum - 1.0) < 0.01;
 }
+

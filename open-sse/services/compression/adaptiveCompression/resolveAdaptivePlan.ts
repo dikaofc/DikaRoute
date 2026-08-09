@@ -102,3 +102,4 @@ function planFromStages(basePlan: DerivedPlan, applied: LadderStage[]): DerivedP
   const stackedPipeline = [...basePipeline, ...applied];
   return { mode: "stacked", stackedPipeline };
 }
+

@@ -318,3 +318,4 @@ export function claudeToGeminiRequest(model, body, stream, credentials = null) {
 // Antigravity requires Cloud Code envelope wrapping,
 // so they must use the existing hub path (Claude -> OpenAI -> target).
 register(FORMATS.CLAUDE, FORMATS.GEMINI, claudeToGeminiRequest, null);
+

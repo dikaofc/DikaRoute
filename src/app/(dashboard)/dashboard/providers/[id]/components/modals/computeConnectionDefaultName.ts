@@ -8,3 +8,4 @@ export function computeConnectionDefaultName(existingConnectionCount?: number): 
   const count = existingConnectionCount ?? 0;
   return count <= 0 ? "main" : `main-${count + 1}`;
 }
+

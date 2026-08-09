@@ -73,3 +73,4 @@ export default function EventTypeFilter({ value, onChange }: EventTypeFilterProp
     </div>
   );
 }
+

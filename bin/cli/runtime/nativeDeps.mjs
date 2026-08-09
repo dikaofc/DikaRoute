@@ -179,3 +179,4 @@ export function buildEnvWithRuntime(baseEnv = process.env) {
   const parts = [runtimeNm, existing].filter(Boolean);
   return { ...baseEnv, NODE_PATH: parts.join(sep === "\\" ? ";" : ":") };
 }
+

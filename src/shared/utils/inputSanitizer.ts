@@ -398,3 +398,4 @@ function redactBody(body) {
 }
 
 export { detectInjection, processPII, extractMessageContents, INJECTION_PATTERNS, PII_PATTERNS };
+

@@ -66,3 +66,4 @@ export async function runSelfTest(client: ModelClient, judgeModel: string): Prom
   }
   return { passed: true, detail: "control pair ranked correctly" };
 }
+

@@ -17,3 +17,4 @@ export const blackbox_webProvider: RegistryEntry = {
     { id: "gemini-pro", name: "Gemini Pro", toolCalling: false },
   ],
 };
+

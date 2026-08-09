@@ -13,3 +13,4 @@ export function Sparkline({ data = [], color = "cyan", width = 10 }) {
   });
   return <Text color={color}>{chars.join("")}</Text>;
 }
+

@@ -18,3 +18,4 @@ export const g4f_geminiProvider: RegistryEntry = {
     { id: "models/gemini-2.5-pro", name: "Gemini 2.5 Pro (g4f)" },
   ],
 };
+

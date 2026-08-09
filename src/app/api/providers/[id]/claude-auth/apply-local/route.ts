@@ -70,3 +70,4 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return toErrorResponse(error);
   }
 }
+

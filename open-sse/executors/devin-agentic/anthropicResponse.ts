@@ -102,3 +102,4 @@ export function buildClaudeSseFrames(message: JsonRecord): string {
   out += frame("message_stop", { type: "message_stop" });
   return out;
 }
+

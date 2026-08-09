@@ -47,3 +47,4 @@ export function clearAllLKGP(): void {
   const db = getDbInstance();
   db.prepare("DELETE FROM key_value WHERE namespace = 'lkgp'").run();
 }
+

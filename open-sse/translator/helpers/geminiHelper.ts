@@ -688,3 +688,4 @@ export function cleanJSONSchemaForAntigravity(schema: unknown): unknown {
 
   return cleaned;
 }
+

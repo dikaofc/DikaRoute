@@ -19,3 +19,4 @@ export const copilot_m365_webProvider: RegistryEntry = {
     { id: "copilot-m365-gpt-5-5-chat", name: "Microsoft 365 Copilot — GPT 5.5 Chat", toolCalling: false },
   ],
 };
+

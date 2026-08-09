@@ -19,3 +19,4 @@ export function isDegradedLocalCatalog(modelsData: {
     typeof modelsData?.source === "string" ? modelsData.source.trim().toLowerCase() : "";
   return source === "local_catalog" && modelsData?.intentional !== true;
 }
+

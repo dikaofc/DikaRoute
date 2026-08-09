@@ -16,3 +16,4 @@ export function sumUsageTokensThisMonth(db: SqliteAdapter = getDbInstance()): nu
     return 0; // table may not exist yet on a fresh install — treat as 0 used
   }
 }
+

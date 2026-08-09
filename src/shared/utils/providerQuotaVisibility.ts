@@ -11,3 +11,4 @@ export function isProviderQuotaVisible(connection: ProviderQuotaVisibilityConnec
 export function supportsProviderQuota(providerId: string): boolean {
   return USAGE_SUPPORTED_PROVIDERS.includes(providerId);
 }
+

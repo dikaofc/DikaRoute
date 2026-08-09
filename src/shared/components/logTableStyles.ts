@@ -5,3 +5,4 @@ export const LOG_TABLE_HEADER_CELL_CLASS =
   "px-3 py-2.5 font-semibold text-text-muted uppercase tracking-wider text-[10px]";
 export const LOG_TABLE_HEADER_CELL_RIGHT_CLASS = `${LOG_TABLE_HEADER_CELL_CLASS} text-right`;
 export const LOG_TABLE_HEADER_BG_STYLE = { backgroundColor: "var(--color-bg, #fff)" } as const;
+

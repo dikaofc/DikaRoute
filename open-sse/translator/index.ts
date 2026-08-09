@@ -723,3 +723,4 @@ export function initState(sourceFormat) {
 export function initTranslators() {
   bootstrapTranslatorRegistry();
 }
+

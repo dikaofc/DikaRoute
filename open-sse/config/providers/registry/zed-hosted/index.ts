@@ -33,3 +33,4 @@ export const zed_hostedProvider: RegistryEntry = {
 };
 
 export default zed_hostedProvider;
+

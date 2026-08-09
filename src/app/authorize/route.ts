@@ -82,3 +82,4 @@ export async function GET(request: Request) {
     return htmlClose({ success: false, error: "Internal error during callback" });
   }
 }
+

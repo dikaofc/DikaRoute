@@ -80,3 +80,4 @@ export function getAllOcrModels(): Array<{ id: string; name: string; provider: s
   }
   return models;
 }
+

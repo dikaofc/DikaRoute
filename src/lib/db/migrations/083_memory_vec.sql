@@ -24,3 +24,4 @@ ALTER TABLE memories ADD COLUMN needs_reindex INTEGER NOT NULL DEFAULT 0;
 CREATE INDEX IF NOT EXISTS idx_memories_needs_reindex
   ON memories(needs_reindex)
   WHERE needs_reindex = 1;
+

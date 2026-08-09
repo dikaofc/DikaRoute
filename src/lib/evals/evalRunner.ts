@@ -299,3 +299,4 @@ function registerBuiltInSuites() {
     registerSuite(suite);
   }
 }
+

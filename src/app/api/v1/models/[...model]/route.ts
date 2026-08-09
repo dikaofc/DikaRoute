@@ -36,3 +36,4 @@ export async function GET(
   const requestedId = decodeURIComponent(segments.join("/"));
   return handleGetModelById(request, requestedId, getUnifiedModelsResponse);
 }
+

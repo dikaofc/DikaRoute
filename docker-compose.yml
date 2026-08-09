@@ -267,3 +267,4 @@ volumes:
     name: dikaroute-qdrant-data
   bifrost-data:
     name: dikaroute-bifrost-data
+

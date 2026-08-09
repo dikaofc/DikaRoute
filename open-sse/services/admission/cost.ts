@@ -105,3 +105,4 @@ export function normalizeRequestCost(
   const value = requirePositiveSafeInteger("request cost", cost);
   return Math.min(value, max);
 }
+

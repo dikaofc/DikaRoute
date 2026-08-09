@@ -682,3 +682,4 @@ export function getQuotaCacheStats() {
 
   return { total: cache.size, entries };
 }
+

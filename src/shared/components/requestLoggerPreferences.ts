@@ -42,3 +42,4 @@ export function writeSavedRefreshIntervalSec(
     return false;
   }
 }
+

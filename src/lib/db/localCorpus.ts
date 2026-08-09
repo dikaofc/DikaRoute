@@ -41,3 +41,4 @@ export function getLocalCorpusConfig(): LocalCorpusConfig {
   const rootPath = getLocalCorpusRoot();
   return { rootPath, configured: rootPath !== null };
 }
+

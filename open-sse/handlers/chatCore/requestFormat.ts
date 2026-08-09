@@ -122,3 +122,4 @@ export function resolveChatCoreRequestFormat(opts: {
 }
 
 export type ChatCoreRequestFormat = ReturnType<typeof resolveChatCoreRequestFormat>;
+

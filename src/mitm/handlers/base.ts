@@ -331,3 +331,4 @@ export abstract class MitmHandlerBase {
     return performance.now();
   }
 }
+

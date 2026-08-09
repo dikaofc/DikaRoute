@@ -10,3 +10,4 @@ WHERE
   AND name = 'Standard Savings'
   AND description = 'Default Caveman compression pipeline'
   AND pipeline = '[{"engine":"caveman","intensity":"full"}]';
+

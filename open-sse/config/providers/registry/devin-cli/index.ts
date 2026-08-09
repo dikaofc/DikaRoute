@@ -13,3 +13,4 @@ export const devin_cliProvider: RegistryEntry = {
   defaultContextLength: 200000,
   models: DEVIN_MODEL_CATALOG,
 };
+

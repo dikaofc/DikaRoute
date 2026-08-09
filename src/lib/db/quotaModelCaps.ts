@@ -126,3 +126,4 @@ export function deleteModelCap(poolId: string, apiKeyId: string, model: string):
     )
     .run(poolId, apiKeyId, model);
 }
+

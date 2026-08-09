@@ -77,3 +77,4 @@ export async function persistDiscoveredAntigravityProjectId(
     // Non-fatal: persistence failure must never block the in-flight request.
   }
 }
+

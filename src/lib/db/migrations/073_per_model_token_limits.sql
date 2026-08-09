@@ -59,3 +59,4 @@ CREATE INDEX IF NOT EXISTS idx_aktlrl_limit_id
 
 CREATE INDEX IF NOT EXISTS idx_uh_key_provider_model_ts
   ON usage_history (api_key_id, provider, model, timestamp);
+

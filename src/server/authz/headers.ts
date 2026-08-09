@@ -74,3 +74,4 @@ export const AUTHZ_TRUSTED_HEADERS: ReadonlyArray<string> = [
   AUTHZ_HEADER_AUTH_SCOPES,
   AUTHZ_HEADER_PEER_LOCALITY,
 ];
+

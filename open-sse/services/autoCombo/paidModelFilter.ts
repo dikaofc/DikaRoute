@@ -42,3 +42,4 @@ export function filterPaidOnlyCandidates<T extends PaidFilterCandidate>(
   if (!hidePaidModels) return pool;
   return pool.filter(isFreeCandidate);
 }
+

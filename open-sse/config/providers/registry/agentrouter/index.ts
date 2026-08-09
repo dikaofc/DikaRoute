@@ -38,3 +38,4 @@ export const agentrouterProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

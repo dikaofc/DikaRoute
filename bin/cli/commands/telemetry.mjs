@@ -72,3 +72,4 @@ export function registerTelemetry(program) {
       process.stdout.write(`Exported ${items.length} events to ${opts.out}\n`);
     });
 }
+

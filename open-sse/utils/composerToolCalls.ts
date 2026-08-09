@@ -318,3 +318,4 @@ export function feedStreamingChunk(state: StreamingState, accumulated: string): 
   state.emitted = accumulated.length;
   return { safeDelta, ready: false, toolCalls: [], holdback: false };
 }
+

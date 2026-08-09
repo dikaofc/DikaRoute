@@ -17,3 +17,4 @@ export const perplexityProvider: RegistryEntry = {
     { id: "sonar", name: "Sonar" },
   ],
 };
+

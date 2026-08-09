@@ -756,3 +756,4 @@ export function buildAntigravityUrl(base: string, model: string, stream: boolean
   const path = stream ? "/v1internal:streamGenerateContent?alt=sse" : "/v1internal:generateContent";
   return `${base}${path}`;
 }
+

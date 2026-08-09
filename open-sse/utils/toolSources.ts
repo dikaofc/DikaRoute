@@ -67,3 +67,4 @@ export function summarizeToolSources(tools: unknown): string | null {
     names.length > MAX_VISIBLE_NAMES ? `, ... +${names.length - MAX_VISIBLE_NAMES} more` : "";
   return `${tools.length} tools | sources: ${sources} | names: ${visibleNames}${suffix}`;
 }
+

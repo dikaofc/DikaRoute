@@ -13,3 +13,4 @@ CREATE INDEX IF NOT EXISTS idx_sync_tokens_created_at ON sync_tokens(created_at)
 CREATE INDEX IF NOT EXISTS idx_sync_tokens_last_used_at ON sync_tokens(last_used_at);
 CREATE INDEX IF NOT EXISTS idx_sync_tokens_revoked_at ON sync_tokens(revoked_at);
 CREATE INDEX IF NOT EXISTS idx_sync_tokens_sync_api_key_id ON sync_tokens(sync_api_key_id);
+

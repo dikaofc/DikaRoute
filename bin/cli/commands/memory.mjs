@@ -242,3 +242,4 @@ export function registerMemory(program) {
 
   memory.command("health").description(t("memory.health.description")).action(runMemoryHealth);
 }
+

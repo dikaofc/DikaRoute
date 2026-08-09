@@ -80,3 +80,4 @@ export const CLI_COMPAT_PROVIDER_DISPLAY: Record<
     description: "Google Antigravity IDE compatibility",
   },
 };
+

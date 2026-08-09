@@ -125,3 +125,4 @@ export async function buildToolModeResponse(
     headers: SSE_HEADERS,
   });
 }
+

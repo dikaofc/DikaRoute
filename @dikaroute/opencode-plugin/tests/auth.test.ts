@@ -145,3 +145,4 @@ test("loader: api auth with empty key → {} (empty creds rejected)", async () =
   const result = await hook.loader!(async () => ({ type: "api", key: "" }) as never, {} as never);
   assert.deepEqual(result, {});
 });
+

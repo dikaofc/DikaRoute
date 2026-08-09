@@ -21,3 +21,4 @@ CREATE TABLE IF NOT EXISTS plugin_analytics (
 
 CREATE INDEX IF NOT EXISTS idx_plugin_analytics_name ON plugin_analytics(plugin_name);
 CREATE INDEX IF NOT EXISTS idx_plugin_analytics_created ON plugin_analytics(created_at);
+

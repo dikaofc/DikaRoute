@@ -42,3 +42,4 @@ export async function getOrCreateApiKey(apiKeyId?: string | null): Promise<strin
     return `sk-${machineId}-fallback-${Date.now()}`;
   }
 }
+

@@ -89,3 +89,4 @@ export function scheduleStatsEvent(event: StatsEventKey, delayMs = 200): void {
   // (avoids keeping the event loop alive for a stray stats notification).
   (statsEmitTimers[event] as any)?.unref?.();
 }
+

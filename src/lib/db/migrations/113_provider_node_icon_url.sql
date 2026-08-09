@@ -3,3 +3,4 @@
 -- provider nodes. NULL = no custom icon (falls back to the built-in @lobehub/static resolution).
 -- Plain TEXT column (no `_json` suffix) — rowToCamel passes it through as a string as-is.
 ALTER TABLE provider_nodes ADD COLUMN icon_url TEXT;
+

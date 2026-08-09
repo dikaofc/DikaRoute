@@ -20,3 +20,4 @@ CREATE INDEX IF NOT EXISTS idx_memories_api_key ON memories(api_key_id);
 CREATE INDEX IF NOT EXISTS idx_memories_session ON memories(session_id);
 CREATE INDEX IF NOT EXISTS idx_memories_type ON memories(type);
 CREATE INDEX IF NOT EXISTS idx_memories_expires ON memories(expires_at);
+

@@ -88,3 +88,4 @@ export const UpdateCloudAgentTaskSchema = z.object({
   action: z.enum(["approve", "reject", "cancel", "message"]),
   message: z.string().optional(),
 });
+

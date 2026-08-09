@@ -65,3 +65,4 @@ function parseRelayAwareness(headers: HeaderAccessor): RelayAwareness {
     fallback: fallbackRaw === null ? null : fallbackRaw === "true",
   };
 }
+

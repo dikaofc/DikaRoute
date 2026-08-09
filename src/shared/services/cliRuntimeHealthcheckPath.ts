@@ -16,3 +16,4 @@ export const buildHealthcheckPath = (callerPath: string, nodeBinDir: string): st
   }
   return [callerPath, nodeBinDir].filter(Boolean).join(path.delimiter);
 };
+

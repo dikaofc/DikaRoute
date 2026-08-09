@@ -560,3 +560,4 @@ export function getSystemTransformsConfig(): SystemTransformsConfig {
 export function resetSystemTransformsConfig(): void {
   _store[GLOBAL_KEY] = DEFAULT_SYSTEM_TRANSFORMS_CONFIG;
 }
+

@@ -19,3 +19,4 @@ export const hyperbolicProvider: RegistryEntry = {
     { id: "NousResearch/Hermes-3-Llama-3.1-70B", name: "Hermes 3 70B" },
   ],
 };
+

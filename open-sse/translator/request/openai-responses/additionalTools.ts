@@ -139,3 +139,4 @@ export function collectCustomToolNamesForSourceFormat(
     ? collectResponsesCustomToolNames(rootTools, inputItems)
     : new Set<string>();
 }
+

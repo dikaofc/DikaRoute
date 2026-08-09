@@ -135,3 +135,4 @@ export function recordRequestError(
   intercepted.error = sanitizeErrorMessage(err);
   globalTrafficBuffer.update(intercepted.id, intercepted);
 }
+

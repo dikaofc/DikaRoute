@@ -22,3 +22,4 @@ export const CORS_HEADERS = {
 export function handleCorsOptions(): Response {
   return new Response(null, { status: 204, headers: CORS_HEADERS });
 }
+

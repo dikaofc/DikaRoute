@@ -162,3 +162,4 @@ export function registerCommands(program) {
   registerApiCommands(program);
   registerPlugin(program);
 }
+

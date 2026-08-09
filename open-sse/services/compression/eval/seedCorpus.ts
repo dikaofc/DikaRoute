@@ -58,3 +58,4 @@ export const SEED_CORPUS: EvalCase[] = [
     gold: "No; RENAME COLUMN preserves the data.",
   },
 ];
+

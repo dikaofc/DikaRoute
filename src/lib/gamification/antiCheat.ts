@@ -158,3 +158,4 @@ async function detectAnomaly(apiKeyId: string): Promise<boolean> {
   const z = await computeZScore(apiKeyId);
   return z !== null && z > ANOMALY_Z_THRESHOLD;
 }
+

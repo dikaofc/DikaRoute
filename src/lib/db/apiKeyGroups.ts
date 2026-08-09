@@ -316,3 +316,4 @@ function rowToMember(row: any): KeyGroupMember {
     createdAt: row.created_at,
   };
 }
+

@@ -210,3 +210,4 @@ export async function runSetupCommand(opts = {}) {
     prompt.close();
   }
 }
+

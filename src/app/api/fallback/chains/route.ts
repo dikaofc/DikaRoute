@@ -73,3 +73,4 @@ export async function DELETE(request) {
     return NextResponse.json({ error: "Failed to remove fallback chain" }, { status: 500 });
   }
 }
+

@@ -35,3 +35,4 @@ export function deduplicateRepeatedLines(
 
   return { text: output.join("\n"), collapsed };
 }
+

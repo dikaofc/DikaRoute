@@ -36,3 +36,4 @@ export function isRunningInDocker(deps: DockerDetectDeps = defaultDeps): boolean
   }
   return false;
 }
+

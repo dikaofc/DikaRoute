@@ -22,3 +22,4 @@ export const xai_oauthProvider: RegistryEntry = {
     ...(xaiProvider.models || []),
   ],
 };
+

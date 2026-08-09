@@ -22,3 +22,4 @@ export class TraeHandler extends MitmHandlerBase {
     throw new Error("Not yet implemented — Trae viability under investigation. See plan 11 §5.");
   }
 }
+

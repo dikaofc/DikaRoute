@@ -69,3 +69,4 @@ export function isPublicApiRoute(pathname: string, method = "GET"): boolean {
 }
 
 export { PUBLIC_API_ROUTE_PREFIXES, PUBLIC_READONLY_API_ROUTE_PREFIXES, PUBLIC_READONLY_METHODS };
+

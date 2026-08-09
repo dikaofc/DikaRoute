@@ -14,3 +14,4 @@ export async function GET(req: Request) {
     packs: listCavemanRulePacks(),
   });
 }
+

@@ -48,3 +48,4 @@ export function getEnvBanner() {
   if (env.type === "desktop") return null;
   return `[${env.type}] ${env.hint || "limited environment detected"}`;
 }
+

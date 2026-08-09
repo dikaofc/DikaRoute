@@ -276,3 +276,4 @@ test("models: caches per (baseURL, apiKey) tuple (different baseURL → independ
   await hook.models!({} as never, { auth: apiAuth("sk-same", "https://prod.example/v1") as never }); // cached
   assert.equal(fetcher.callCount(), 2, "distinct baseURLs share apiKey but not cache");
 });
+

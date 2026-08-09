@@ -41,3 +41,4 @@ export const inner_aiProvider: RegistryEntry = {
     { id: "mistral-large-2411", name: "Mistral Large (via Inner.ai)" },
   ],
 };
+

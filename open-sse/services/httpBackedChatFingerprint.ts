@@ -27,3 +27,4 @@ export function resolveHttpBackedChatFingerprint(
 ): HttpBackedChatFingerprint {
   return chatUrlMatchDomain === "claude.ai" ? CLAUDE_WEB_FINGERPRINT : DUCKDUCKGO_FALLBACK_FINGERPRINT;
 }
+

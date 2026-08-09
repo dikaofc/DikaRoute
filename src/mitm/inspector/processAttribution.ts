@@ -105,3 +105,4 @@ function readProcessName(pid: number): string {
     return "unknown";
   }
 }
+

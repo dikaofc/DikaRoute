@@ -55,3 +55,4 @@ export function estimateCost(
   const outCost = ((tokensOut ?? 0) / 1_000_000) * price.outputPerMTok;
   return Number((inCost + outCost).toFixed(6));
 }
+

@@ -16,3 +16,4 @@ CREATE TABLE IF NOT EXISTS batch_item_checkpoints (
 
 CREATE INDEX IF NOT EXISTS idx_batch_item_checkpoints_batch_status
   ON batch_item_checkpoints(batch_id, status);
+

@@ -206,3 +206,4 @@ export function registerResilience(program) {
       emit(await res.json(), cmd.optsWithGlobals());
     });
 }
+

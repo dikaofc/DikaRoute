@@ -24,3 +24,4 @@ export function register_telemetry(parent) {
       emit(data, gOpts);
     });
 }
+

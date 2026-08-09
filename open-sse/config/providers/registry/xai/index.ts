@@ -27,3 +27,4 @@ export const xaiProvider: RegistryEntry = {
     { id: "grok-4.20-0309-non-reasoning", name: "Grok 4.20" },
   ],
 };
+

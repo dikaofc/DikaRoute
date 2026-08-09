@@ -50,3 +50,4 @@ validate_scenario /evidence/live-command.jsonl BRIDGE_E2E_COMPLETE Bash true \
   bridge-check bridge-proof true
 
 printf 'PASS: three live Devin-backed Claude Code scenarios completed\n'
+

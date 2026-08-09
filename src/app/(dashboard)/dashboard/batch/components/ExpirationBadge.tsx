@@ -71,3 +71,4 @@ export default function ExpirationBadge({ expiresAt, variant = "default" }: Prop
     </span>
   );
 }
+

@@ -704,3 +704,4 @@ export function extendProvidersMetrics(providers) {
     .option("--period <p>", t("providers.metrics.period"), "24h")
     .action(runProviderMetricSingle);
 }
+

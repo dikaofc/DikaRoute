@@ -23,3 +23,4 @@ export function unwrapClineNonStreamingEnvelope(provider: string, responseBody: 
     usage: isRecord(data) && data.usage !== undefined ? data.usage : responseBody.usage,
   };
 }
+

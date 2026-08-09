@@ -61,3 +61,4 @@ export function sortHfSuggestedModels(
   const safeLimit = Number.isFinite(limit) && limit > 0 ? Math.floor(limit) : 20;
   return sorted.slice(0, safeLimit);
 }
+

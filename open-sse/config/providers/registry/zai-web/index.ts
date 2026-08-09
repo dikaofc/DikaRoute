@@ -17,3 +17,4 @@ export const zai_webProvider: RegistryEntry = {
     { id: "glm-4.5v", name: "GLM-4.5V (Vision)", toolCalling: false },
   ],
 };
+

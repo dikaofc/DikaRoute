@@ -10,3 +10,4 @@ INSERT OR IGNORE INTO version_manager
   (tool, status, port, auto_start, auto_update, provider_expose)
 VALUES
   ('mux', 'not_installed', 8322, 0, 0, 0);
+

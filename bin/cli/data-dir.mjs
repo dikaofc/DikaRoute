@@ -57,3 +57,4 @@ export function resolveDataDir() {
 export function resolveStoragePath(dataDir = resolveDataDir()) {
   return path.join(dataDir, "storage.sqlite");
 }
+

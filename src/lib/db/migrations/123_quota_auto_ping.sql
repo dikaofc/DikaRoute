@@ -5,3 +5,4 @@
 -- Plain TEXT columns — rowToCamel passes them through as-is; NULL = never pinged.
 ALTER TABLE provider_connections ADD COLUMN last_ping_at TEXT;
 ALTER TABLE provider_connections ADD COLUMN last_pinged_reset_key TEXT;
+

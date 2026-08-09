@@ -31,3 +31,4 @@ export interface FreeProxyProvider {
     limit?: number;
   }): Promise<FreeProxyItem[]>;
 }
+

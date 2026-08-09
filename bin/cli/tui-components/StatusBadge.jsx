@@ -15,3 +15,4 @@ export function StatusBadge({ status = "unknown" }) {
   const s = STATUS_MAP[status] ?? { label: status, color: "gray" };
   return <Text color={s.color}>{s.label}</Text>;
 }
+

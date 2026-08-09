@@ -11,3 +11,4 @@ export const nscaleProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.nscale,
 };
+

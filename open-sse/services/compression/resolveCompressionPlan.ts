@@ -26,3 +26,4 @@ function modeToPlan(mode: string, config: any): DerivedPlan {
     ? { mode: "stacked", stackedPipeline: config?.stackedPipeline ?? [] }
     : { mode, stackedPipeline: [] };
 }
+

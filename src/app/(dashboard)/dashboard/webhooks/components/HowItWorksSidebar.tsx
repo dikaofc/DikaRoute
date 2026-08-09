@@ -56,3 +56,4 @@ export function HowItWorksSidebar({ t, showCustomNote }: HowItWorksSidebarProps)
     </aside>
   );
 }
+

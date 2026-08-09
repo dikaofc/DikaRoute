@@ -76,3 +76,4 @@ export function createLogStream(options: LogStreamOptions = {}): LogStream {
     stop: () => controller.abort(),
   };
 }
+

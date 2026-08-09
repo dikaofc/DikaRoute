@@ -230,3 +230,4 @@ export function resolveSpawnArgs(apiKey: string, port: number): SpawnArgs {
     cwd: installDir,
   };
 }
+

@@ -111,3 +111,4 @@ export function DetailsPanel({ request, allRequests }: DetailsPanelProps) {
     </div>
   );
 }
+

@@ -212,3 +212,4 @@ export function parseSSEToGeminiResponse(
 
   return buildChatCompletionFromAccumulator(acc, fallbackModel);
 }
+

@@ -103,3 +103,4 @@ export async function resolveResponsesApiModel(
     return { model: requestedModel, changed: false };
   }
 }
+

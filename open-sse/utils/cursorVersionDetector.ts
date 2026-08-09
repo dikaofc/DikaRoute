@@ -72,3 +72,4 @@ export function resetCursorVersionCache(): void {
   cachedVersion = null;
   cachedAt = 0;
 }
+

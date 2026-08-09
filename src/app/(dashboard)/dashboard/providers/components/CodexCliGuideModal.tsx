@@ -194,3 +194,4 @@ export default function CodexCliGuideModal({ isOpen, onClose }: CodexCliGuideMod
     </Modal>
   );
 }
+

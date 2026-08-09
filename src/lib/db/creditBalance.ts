@@ -90,3 +90,4 @@ export function persistCreditBalance(accountId: string, balance: number): void {
     JSON.stringify(entry)
   );
 }
+

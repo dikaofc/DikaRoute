@@ -68,3 +68,4 @@ export const puterProvider: RegistryEntry = {
   ],
   passthroughModels: true, // 500+ models available — users can type arbitrary Puter model IDs
 };
+

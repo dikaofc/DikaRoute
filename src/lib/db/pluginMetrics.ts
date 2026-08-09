@@ -86,3 +86,4 @@ export function clearPluginMetrics(pluginName?: string): number {
     : db.prepare("DELETE FROM plugin_metrics").run();
   return result.changes;
 }
+

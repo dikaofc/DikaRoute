@@ -628,3 +628,4 @@ export function deleteAllCircuitBreakerStates() {
   const db = getDbInstance();
   db.prepare("DELETE FROM domain_circuit_breakers").run();
 }
+

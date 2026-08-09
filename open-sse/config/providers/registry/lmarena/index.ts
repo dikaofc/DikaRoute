@@ -16,3 +16,4 @@ export const lmarenaProvider: RegistryEntry = {
   authHeader: "cookie",
   models: LMARENA_DIRECT_MODELS,
 };
+

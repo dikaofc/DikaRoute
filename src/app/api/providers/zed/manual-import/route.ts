@@ -58,3 +58,4 @@ export async function POST(request: Request): Promise<NextResponse> {
     return NextResponse.json(buildErrorBody(500, "Failed to save credential"), { status: 500 });
   }
 }
+

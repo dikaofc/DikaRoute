@@ -71,3 +71,4 @@ export async function POST(request: Request) {
     return NextResponse.json(buildErrorBody(500, msg), { status: 500 });
   }
 }
+

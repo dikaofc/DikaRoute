@@ -11,3 +11,4 @@
  * so this page is only reached in the LAN / popup-without-callback-server case.
  */
 export { default } from "@/app/callback/page";
+

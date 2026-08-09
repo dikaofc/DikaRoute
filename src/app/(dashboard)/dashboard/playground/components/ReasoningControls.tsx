@@ -75,3 +75,4 @@ export default function ReasoningControls({ spec, params, setParams }: Reasoning
     </div>
   );
 }
+

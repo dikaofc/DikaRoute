@@ -34,3 +34,4 @@ export function CompressionAnnotation({ stats }: CompressionAnnotationProps) {
     </div>
   );
 }
+

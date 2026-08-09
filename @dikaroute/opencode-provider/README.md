@@ -154,3 +154,4 @@ Duplicates and empty strings are dropped automatically, and order is preserved.
 ## License
 
 MIT — see [`LICENSE`](./LICENSE).
+

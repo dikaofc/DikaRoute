@@ -174,3 +174,4 @@ export function deleteDiscoveryResult(id: number): boolean {
   const info = db.prepare("DELETE FROM discovery_results WHERE id = ?").run(id);
   return info.changes > 0;
 }
+

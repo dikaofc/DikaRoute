@@ -97,3 +97,4 @@ $timer.Start()
 
 Write-Event @{ type = "ready" }
 [System.Windows.Forms.Application]::Run()
+

@@ -106,3 +106,4 @@ export function ServiceLogsPanel({ name }: ServiceLogsPanelProps) {
     </div>
   );
 }
+

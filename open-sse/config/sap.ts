@@ -56,3 +56,4 @@ export function getSapResourceGroup(
 
   return fallback;
 }
+

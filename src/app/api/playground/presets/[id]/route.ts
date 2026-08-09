@@ -185,3 +185,4 @@ export async function DELETE(
     return errorResp(HTTP_STATUS.SERVER_ERROR, safeMsg);
   }
 }
+

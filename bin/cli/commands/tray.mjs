@@ -34,3 +34,4 @@ export function registerTray(program) {
       process.exit(0);
     });
 }
+

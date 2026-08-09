@@ -27,3 +27,4 @@ export default function ProviderExtraPanels({ providerId }: { providerId: string
     </>
   );
 }
+

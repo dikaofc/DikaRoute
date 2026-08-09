@@ -41,3 +41,4 @@ export function runWithCorrelation(correlationId, fn) {
   const id = correlationId || generateCorrelationId();
   return correlationStore.run(id, fn);
 }
+

@@ -82,3 +82,4 @@ export const siliconflowProvider: RegistryEntry = buildOpenAiCompatibleRegistryE
     { id: "ByteDance-Seed/Seed-OSS-36B-Instruct", name: "Seed OSS 36B" },
   ],
 });
+

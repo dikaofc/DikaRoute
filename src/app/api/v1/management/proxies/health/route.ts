@@ -15,3 +15,4 @@ export async function GET(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to load proxy health stats");
   }
 }
+

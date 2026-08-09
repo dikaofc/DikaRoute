@@ -284,3 +284,4 @@ export function summarizeComboControlCenter(
 export function extractComboRuntimeConfig(combo: ComboControlCenterCombo): JsonRecord {
   return isRecord(combo.config) ? combo.config : {};
 }
+

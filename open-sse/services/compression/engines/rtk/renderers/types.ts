@@ -11,3 +11,4 @@ export type Renderer = (text: string, detection: CommandDetectionResult) => Rend
 
 export const NO_RENDER = (text: string): RenderResult => ({ text, changed: false, renderer: "" });
 export type { RtkConfig, CommandDetectionResult };
+

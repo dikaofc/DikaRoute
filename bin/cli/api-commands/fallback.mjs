@@ -47,3 +47,4 @@ export function register_fallback(parent) {
       emit(data, gOpts);
     });
 }
+

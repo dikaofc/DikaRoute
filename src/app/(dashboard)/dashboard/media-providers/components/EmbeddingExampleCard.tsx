@@ -120,3 +120,4 @@ export function EmbeddingExampleCard({ providerId }: Props) {
     </PlaygroundCard>
   );
 }
+

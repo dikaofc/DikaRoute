@@ -291,3 +291,4 @@ export async function handlePickFastestModel(args: PickFastestModelArgs) {
     return { content: [{ type: "text" as const, text: `Error: ${msg}` }], isError: true };
   }
 }
+

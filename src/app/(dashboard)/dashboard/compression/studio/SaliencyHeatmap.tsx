@@ -43,3 +43,4 @@ export function SaliencyHeatmap({ heatmap }: SaliencyHeatmapProps): React.ReactE
     </div>
   );
 }
+

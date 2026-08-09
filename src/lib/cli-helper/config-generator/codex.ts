@@ -32,3 +32,4 @@ export async function generateCodexConfig(options: {
 
   return y.dump(config, { lineWidth: -1 });
 }
+

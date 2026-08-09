@@ -122,3 +122,4 @@ export function resetCursorAgentCliVersionCache(): void {
   cachedVersion = null;
   cachedAt = 0;
 }
+

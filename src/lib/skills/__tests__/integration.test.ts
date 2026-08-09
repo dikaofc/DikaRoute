@@ -137,3 +137,4 @@ describe("SkillsMP Marketplace Integration", () => {
     await skillRegistry.unregisterById(skill.id);
   });
 });
+

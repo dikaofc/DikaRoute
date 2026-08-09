@@ -87,3 +87,4 @@ export function fitThinkingToMaxTokens(
   }
   return { maxTokens: target, thinking: adjustedThinking };
 }
+

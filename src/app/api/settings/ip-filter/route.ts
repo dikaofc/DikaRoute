@@ -76,3 +76,4 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Failed to update IP filter config" }, { status: 500 });
   }
 }
+

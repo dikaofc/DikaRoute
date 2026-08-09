@@ -143,3 +143,4 @@ export function segmentMatchesWildcard(pattern: string, segment: string): boolea
   }
   return cursor <= endLimit;
 }
+

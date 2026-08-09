@@ -139,3 +139,4 @@ export const SEARCH_PROVIDERS = {
     authHint: "Same API key as Ollama Cloud (from ollama.com/settings/keys)",
   },
 };
+

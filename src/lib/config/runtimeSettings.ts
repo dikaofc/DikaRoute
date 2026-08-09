@@ -542,3 +542,4 @@ export function resetRuntimeSettingsStateForTests() {
   lastAppliedSnapshot = null;
   currentAuthzBypass = DEFAULT_AUTHZ_BYPASS_SNAPSHOT;
 }
+

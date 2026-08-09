@@ -11,3 +11,4 @@ export const HERMES = {
   anchors: ["hermes-agent.nousresearch.com", "github.com/NousResearch/hermes-agent"],
   prefixes: ["You are Hermes Agent"],
 };
+

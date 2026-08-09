@@ -39,3 +39,4 @@ export function getRequestTranslator(from: string, to: string) {
 export function getResponseTranslator(from: string, to: string) {
   return responseRegistry.get(makeKey(from, to));
 }
+

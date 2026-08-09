@@ -255,3 +255,4 @@ export function getEnhancedSpecificityBreakdown(input: RuleInput): SpecificityBr
     domainSpecificity: detectDomainSpecificity(input),
   };
 }
+

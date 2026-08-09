@@ -159,3 +159,4 @@ export const cursorProvider: RegistryEntry = {
     { id: "kimi-k2.5", name: "Kimi K2.5" },
   ],
 };
+

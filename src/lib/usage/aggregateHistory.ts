@@ -216,3 +216,4 @@ export async function getRawDataCutoffDate(): Promise<string> {
 export async function isAggregationEnabled(): Promise<boolean> {
   return getUserDatabaseSettings().aggregation.enabled;
 }
+

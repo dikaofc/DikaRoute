@@ -17,3 +17,4 @@ export function extractGoogApiKeyHeader(
 ): string | null {
   return readHeaderValue(headers, "x-goog-api-key") || readHeaderValue(headers, "X-Goog-Api-Key");
 }
+

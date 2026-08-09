@@ -49,3 +49,4 @@ export function FeedbackWidget({ slug }: { slug: string }) {
     </div>
   );
 }
+

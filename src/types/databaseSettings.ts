@@ -138,3 +138,4 @@ export const DEFAULT_DATABASE_SETTINGS: Omit<DatabaseSettings, "location" | "sta
     optimizeOnStartup: true,
   },
 };
+

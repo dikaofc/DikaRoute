@@ -54,3 +54,4 @@ CREATE TRIGGER IF NOT EXISTS trg_reasoning_rules_connection_delete
 AFTER DELETE ON provider_connections BEGIN
   DELETE FROM reasoning_routing_rules WHERE connection_id = OLD.id;
 END;
+

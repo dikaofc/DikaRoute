@@ -8,3 +8,4 @@ INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('compression', '
 INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('compression', 'cacheMinutes', '5');
 INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('compression', 'preserveSystemPrompt', 'true');
 INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('compression', 'comboOverrides', '{}');
+

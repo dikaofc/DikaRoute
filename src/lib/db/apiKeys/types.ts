@@ -19,3 +19,4 @@ export interface AccessSchedule {
   days: number[];
   tz: string;
 }
+

@@ -15,3 +15,4 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+

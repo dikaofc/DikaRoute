@@ -29,3 +29,4 @@ export default async function SettingsPage({ searchParams }: SettingsPageProps) 
   const tab = Array.isArray(params.tab) ? params.tab[0] : params.tab;
   redirect(resolveSettingsRoute(tab));
 }
+

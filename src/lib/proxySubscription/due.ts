@@ -29,3 +29,4 @@ export function isSubscriptionDue(sub: DueCheckInput, now: number = Date.now()):
   const intervalMs = Math.max(0, sub.updateIntervalMinutes) * 60_000;
   return now - last >= intervalMs;
 }
+

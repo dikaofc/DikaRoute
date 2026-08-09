@@ -11,3 +11,4 @@ export const v0_vercelProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS["v0-vercel"],
 };
+

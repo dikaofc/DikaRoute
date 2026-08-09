@@ -162,3 +162,4 @@ export function getCursorRegistryHeaders(
     "User-Agent": getCursorUserAgent(version),
   };
 }
+

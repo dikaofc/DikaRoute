@@ -219,3 +219,4 @@ export async function dispatchEvent(event: WebhookEvent, data: Record<string, an
   await Promise.allSettled(deliveries);
   disableWebhooksWithHighFailures(10);
 }
+

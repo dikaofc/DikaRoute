@@ -29,3 +29,4 @@ export function getProviderPluginManifestEntryForModel(
     provider.models.some((candidate) => candidate.id === model),
   ) ?? null;
 }
+

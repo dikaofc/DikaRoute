@@ -15,3 +15,4 @@ export async function installNinerouter(): Promise<never> {
 export function resolveSpawnArgs(_apiKey: string, _port: number): never {
   throw featureDisabledError(FEATURE);
 }
+

@@ -45,3 +45,4 @@ export function quoteShellArgs(args, platform) {
   const list = [...(args ?? [])];
   return platform === "win32" ? list.map(escapeWindowsShellArg) : list;
 }
+

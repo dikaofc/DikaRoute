@@ -68,3 +68,4 @@ export const EXPECTED_CODE_COUNT = 21;
 // Note: #6318 originally also shipped duplicate "pi"/"jcode"/"codewhale" entries —
 // those tools were already delivered by a separate PR, so only omp+letta landed here.
 export const EXPECTED_AGENT_COUNT = 8;
+

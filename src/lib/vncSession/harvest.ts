@@ -427,3 +427,4 @@ function toError(error: unknown, fallback: string): Error {
   if (error instanceof Error) return error;
   return new Error(typeof error === "string" && error ? error : fallback);
 }
+

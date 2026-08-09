@@ -55,3 +55,4 @@ export interface WsAuthResult {
   sessionId: string;
   error?: string;
 }
+

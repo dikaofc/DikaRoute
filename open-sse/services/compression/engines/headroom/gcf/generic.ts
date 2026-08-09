@@ -590,3 +590,4 @@ function encodeExpandedArrayItem(
 function allPrimitives(arr: unknown[]): boolean {
   return arr.every((v) => typeof v !== "object" || v === null);
 }
+

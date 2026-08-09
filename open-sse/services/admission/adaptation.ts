@@ -166,3 +166,4 @@ export function sampleActiveIntegral(
       ? Number.MAX_SAFE_INTEGER
       : state.windowActiveCostIntegral + contribution;
 }
+

@@ -49,3 +49,4 @@ export function applyM365Tier(target: Record<string, unknown>, tier: M365TierVal
     target.tier = null;
   }
 }
+

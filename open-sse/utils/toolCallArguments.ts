@@ -52,3 +52,4 @@ export function appendToolCallArgumentDelta(current: unknown, incoming: unknown)
   // Incremental delta fragment — append verbatim (preserves repeated chars).
   return existing + next;
 }
+

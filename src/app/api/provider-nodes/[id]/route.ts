@@ -167,3 +167,4 @@ export async function DELETE(_request: Request, { params }: { params: Promise<{ 
     return NextResponse.json({ error: "Failed to delete provider node" }, { status: 500 });
   }
 }
+

@@ -9,3 +9,4 @@ import ProviderOnboardingWizard from "../components/onboarding/ProviderOnboardin
 export default function NewProviderPage() {
   return <ProviderOnboardingWizard />;
 }
+

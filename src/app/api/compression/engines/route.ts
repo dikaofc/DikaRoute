@@ -24,3 +24,4 @@ export async function GET(req: Request) {
     return NextResponse.json(buildErrorBody(500, "Failed to list engines"), { status: 500 });
   }
 }
+

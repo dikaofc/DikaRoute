@@ -90,3 +90,4 @@ export async function runModelsCommand(provider, opts = {}) {
 
   return 0;
 }
+

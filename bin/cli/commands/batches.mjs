@@ -233,3 +233,4 @@ export function registerBatches(program) {
       process.stdout.write(`Saved to ${opts.out}\n`);
     });
 }
+

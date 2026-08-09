@@ -326,3 +326,4 @@ export function getLatencyStats(): Record<
 
   return stats;
 }
+

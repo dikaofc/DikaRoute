@@ -102,3 +102,4 @@ export function getRelevanceScore(memory: Memory, query: string): number {
 
   return score;
 }
+

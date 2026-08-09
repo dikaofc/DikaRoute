@@ -30,3 +30,4 @@ export function normalizeCodexBaseUrl(baseUrl: string, wireApi: CodexWireApi = "
     return normalized.replace(/\/v1$/i, "").replace(/\/api$/i, "") + "/v1";
   }
 }
+

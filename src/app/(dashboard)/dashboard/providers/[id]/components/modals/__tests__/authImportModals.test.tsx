@@ -63,3 +63,4 @@ describe("auth-import modals (Phase 1a extraction)", () => {
     expect(c.querySelector("*")).not.toBeNull();
   });
 });
+

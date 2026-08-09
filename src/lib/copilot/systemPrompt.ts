@@ -187,3 +187,4 @@ Tienes acceso a estas herramientas para ayudar al usuario:
 - Prioriza las herramientas específicas sobre el CLI executor cuando existan.
 - Si el usuario pide crear algo (combo, API key), guíalo con preguntas específicas.`;
 }
+

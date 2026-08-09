@@ -28,3 +28,4 @@ export function buildStaleEncryptionKeyResponse(
   body.error.type = "storage_encryption_stale";
   return NextResponse.json(body, { status: 424 });
 }
+

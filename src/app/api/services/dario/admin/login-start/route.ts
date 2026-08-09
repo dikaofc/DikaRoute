@@ -28,3 +28,4 @@ export async function POST(request: Request): Promise<Response> {
   const forwardBody = typeof body.alias === "string" && body.alias.trim() ? { alias: body.alias.trim() } : {};
   return forwardToDarioAdmin({ method: "POST", path: "/admin/login/start", body: forwardBody });
 }
+

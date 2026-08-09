@@ -215,3 +215,4 @@ export function serializeAnthropicForDevin(body: unknown): DevinPrompt {
   const idSeed = createHash("sha256").update(text).digest("hex").slice(0, 24);
   return { text, tools, inputTokensEstimate: estimateTokens(text), idSeed };
 }
+

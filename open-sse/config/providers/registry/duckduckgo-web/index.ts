@@ -18,3 +18,4 @@ export const duckduckgo_webProvider: RegistryEntry = {
     { id: "tinfoil/gemma4-31b", name: "Gemma 4 31B", toolCalling: false },
   ],
 };
+

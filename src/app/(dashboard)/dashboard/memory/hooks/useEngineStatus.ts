@@ -56,3 +56,4 @@ export function useEngineStatus(refreshIntervalMs = 5000): UseEngineStatusResult
 
   return { status, isLoading, isError, mutate: fetchOnce };
 }
+

@@ -43,3 +43,4 @@ export function getSettings(db) {
   }
   return settings;
 }
+

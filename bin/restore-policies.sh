@@ -76,3 +76,4 @@ DETACH DATABASE snap;"
 
 printf '%s\n' "$sql" | sqlite3 "$DIKAROUTE_SQLITE"
 ops_log "policies restored from $snap — restart DikaRoute to apply"
+

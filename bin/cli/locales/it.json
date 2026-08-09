@@ -30,3 +30,4 @@
     "description": "Avvia un contenitore Redis locale con un clic (Podman o Docker) per la cache e il tracciamento delle quote di DikaRoute"
   }
 }
+

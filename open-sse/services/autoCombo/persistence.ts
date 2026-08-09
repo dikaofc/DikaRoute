@@ -122,3 +122,4 @@ function loadFromDisk(): void {
     /* disk read failure — start fresh */
   }
 }
+

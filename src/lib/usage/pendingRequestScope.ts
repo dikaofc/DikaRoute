@@ -24,3 +24,4 @@ export function finalizePendingScope(scope: PendingRequestScope, metadata: Pendi
     finalizePendingRequest(scope.model, scope.provider, scope.connectionId, metadata);
   }
 }
+

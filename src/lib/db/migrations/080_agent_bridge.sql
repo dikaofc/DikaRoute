@@ -22,3 +22,4 @@ CREATE TABLE IF NOT EXISTS agent_bridge_bypass (
 );
 
 CREATE INDEX IF NOT EXISTS idx_agent_bridge_mappings_agent ON agent_bridge_mappings(agent_id);
+

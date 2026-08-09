@@ -144,3 +144,4 @@ export function setDispatcherCacheEntry(key: string, dispatcher: Dispatcher): vo
   }
   cache.set(key, dispatcher);
 }
+

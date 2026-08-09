@@ -68,3 +68,4 @@ function openFallback(url) {
     execFile(cmd, args, { stdio: "ignore" }, () => resolve());
   });
 }
+

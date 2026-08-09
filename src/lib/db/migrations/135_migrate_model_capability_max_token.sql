@@ -22,3 +22,4 @@ ON CONFLICT (provider, model_id, override_key) DO NOTHING;
 
 DELETE FROM model_capability_overrides
 WHERE override_key = 'max_token';
+

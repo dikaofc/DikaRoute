@@ -269,3 +269,4 @@ export function registerContexts(program) {
       process.stdout.write(`Imported ${count} context(s)\n`);
     });
 }
+

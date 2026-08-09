@@ -47,3 +47,4 @@ export function isAutomatedTestProcess(
 export function isBuildProcess(env: NodeJS.ProcessEnv = process.env): boolean {
   return typeof process !== "undefined" && env.NEXT_PHASE === "phase-production-build";
 }
+

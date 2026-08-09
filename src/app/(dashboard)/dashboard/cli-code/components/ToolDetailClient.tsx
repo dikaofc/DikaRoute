@@ -324,3 +324,4 @@ export default function ToolDetailClient({ toolId, category }: ToolDetailClientP
     </div>
   );
 }
+

@@ -28,3 +28,4 @@ export async function POST(request: Request) {
     return NextResponse.json(buildErrorBody(400, message), { status: 400 });
   }
 }
+

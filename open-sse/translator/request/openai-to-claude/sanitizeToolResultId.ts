@@ -11,3 +11,4 @@ export function sanitizeToolResultId(rawId: unknown): string | null {
   // and throw. Coerce instead so a numeric id (some clients send one) sanitizes normally.
   return sanitizeToolId(typeof rawId === "string" ? rawId : String(rawId));
 }
+

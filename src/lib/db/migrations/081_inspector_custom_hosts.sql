@@ -9,3 +9,4 @@ CREATE TABLE IF NOT EXISTS inspector_custom_hosts (
 
 CREATE INDEX IF NOT EXISTS idx_inspector_custom_hosts_enabled
   ON inspector_custom_hosts(enabled);
+

@@ -486,3 +486,4 @@ function convertFinishReason(reason) {
 
 // Register
 register(FORMATS.OPENAI, FORMATS.CLAUDE, null, openaiToClaudeResponse);
+

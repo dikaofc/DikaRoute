@@ -17,3 +17,4 @@ CREATE INDEX IF NOT EXISTS idx_command_code_auth_sessions_state_hash
 
 CREATE INDEX IF NOT EXISTS idx_command_code_auth_sessions_status_expires
   ON command_code_auth_sessions(status, expires_at);
+

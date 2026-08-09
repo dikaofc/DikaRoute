@@ -122,3 +122,4 @@ export async function generateAllConfigs(options: GenerateOptions): Promise<Gene
       : { success: false, configPath: "", error: r.reason?.message || "Unknown error" }
   );
 }
+

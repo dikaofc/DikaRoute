@@ -62,3 +62,4 @@ export async function DELETE(request: Request, ctx: RouteCtx) {
     return createErrorResponseFromUnknown(error, "Failed to delete proxy subscription");
   }
 }
+

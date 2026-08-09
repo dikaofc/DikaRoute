@@ -58,3 +58,4 @@ export function stopTproxyCaptureMode(): Promise<CaptureManagerStatus> {
     method: "DELETE",
   }).then((r) => r.status);
 }
+

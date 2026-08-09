@@ -20,3 +20,4 @@ export const liquidProvider: RegistryEntry = {
   authHeader: "bearer",
   models: [{ id: "liquid-lfm-40b", name: "Liquid LFM 40B" }],
 };
+

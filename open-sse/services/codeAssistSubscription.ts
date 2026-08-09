@@ -81,3 +81,4 @@ export function extractCodeAssistOnboardTierId(subscriptionInfo: unknown): strin
 
   return "legacy-tier";
 }
+

@@ -25,3 +25,4 @@ SET
   )
 WHERE (api_key_name IS NULL OR api_key_name = '')
   AND connection_id IS NOT NULL;
+

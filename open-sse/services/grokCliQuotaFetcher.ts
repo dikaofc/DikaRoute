@@ -189,3 +189,4 @@ export function registerGrokCliQuotaFetcher(): void {
   registerQuotaFetcher("grok-cli", fetchGrokCliQuota);
   registerMonitorFetcher("grok-cli", fetchGrokCliQuota);
 }
+

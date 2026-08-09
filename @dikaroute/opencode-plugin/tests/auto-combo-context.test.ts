@@ -72,3 +72,4 @@ test("ignores non-positive server values and keeps the safe fallback", () => {
   );
   assert.ok(typeof entry.limit?.output === "number" && entry.limit.output > 0);
 });
+

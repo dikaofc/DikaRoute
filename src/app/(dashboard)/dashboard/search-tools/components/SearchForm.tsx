@@ -364,3 +364,4 @@ export default function SearchForm({ onSearch, loading, onCancel, providers, cat
     </div>
   );
 }
+

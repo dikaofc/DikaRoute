@@ -73,3 +73,4 @@ export function killWinTray(proc) {
     proc.kill("SIGTERM");
   } catch {}
 }
+

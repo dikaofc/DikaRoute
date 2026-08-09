@@ -60,3 +60,4 @@ describe("cache MCP tools registration", () => {
     expect(tools.length).toBeGreaterThanOrEqual(29);
   });
 });
+

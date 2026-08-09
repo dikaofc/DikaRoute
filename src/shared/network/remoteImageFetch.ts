@@ -222,3 +222,4 @@ export async function fetchRemoteImage(
 
   throw new Error(`Remote image exceeded ${maxRedirects} redirect limit`);
 }
+

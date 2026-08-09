@@ -526,3 +526,4 @@ export function registerBuiltinSkills(executor: any): void {
     executor.registerHandler(name, handler);
   }
 }
+

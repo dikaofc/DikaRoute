@@ -61,3 +61,4 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
 
   return NextResponse.json({ id, object: "batch", deleted: true }, { headers: CORS_HEADERS });
 }
+

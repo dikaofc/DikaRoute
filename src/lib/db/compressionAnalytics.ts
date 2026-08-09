@@ -659,3 +659,4 @@ export function getLatestCompressionAnalyticsRun(): LatestCompressionAnalyticsRu
     )
     .get() as LatestCompressionAnalyticsRun | undefined;
 }
+

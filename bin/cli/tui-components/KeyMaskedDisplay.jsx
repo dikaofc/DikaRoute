@@ -10,3 +10,4 @@ export function KeyMaskedDisplay({ apiKey, revealed = false }) {
       : `${apiKey.slice(0, 6)}***${apiKey.slice(-4)}`;
   return <Text>{display}</Text>;
 }
+

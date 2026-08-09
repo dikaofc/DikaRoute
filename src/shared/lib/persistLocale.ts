@@ -17,3 +17,4 @@ export function persistLocale(code: Locale): void {
     // Ignore (e.g. storage disabled/full)
   }
 }
+

@@ -69,3 +69,4 @@ export function stripCloudCodeThinkingConfig(
 
   return next;
 }
+

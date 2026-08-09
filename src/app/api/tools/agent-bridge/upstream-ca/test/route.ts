@@ -61,3 +61,4 @@ export async function POST(request: Request): Promise<Response> {
     return createErrorResponse({ status: 400, message: `Invalid certificate: ${msg}` });
   }
 }
+

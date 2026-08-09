@@ -21,3 +21,4 @@ export async function applyOmniglyphSingleMode(
   if (!engine?.applyAsync) return { body, compressed: false, stats: null };
   return engine.applyAsync(body, options);
 }
+

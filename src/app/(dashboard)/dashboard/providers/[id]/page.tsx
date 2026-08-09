@@ -6,3 +6,4 @@ import ProviderDetailPageClient from "./ProviderDetailPageClient";
 export default function ProviderDetailPage() {
   return <ProviderDetailPageClient />;
 }
+

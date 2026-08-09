@@ -50,3 +50,4 @@ export default function ReasoningTokenBufferToggle({ config, setConfig, t }: Pro
     </div>
   );
 }
+

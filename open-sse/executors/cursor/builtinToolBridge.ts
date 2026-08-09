@@ -423,3 +423,4 @@ export function bridgeCursorBuiltinTool(
   if (background) return ptySpawnBridge(event, tools, platform);
   return directShellBridge(event, tools) ?? ptySpawnBridge(event, tools, platform);
 }
+

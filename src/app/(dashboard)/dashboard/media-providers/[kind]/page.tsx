@@ -95,3 +95,4 @@ export default async function MediaProviderKindPage({ params }: PageProps) {
     </div>
   );
 }
+

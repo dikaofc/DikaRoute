@@ -912,3 +912,4 @@ export function resetBatchProcessorState(): void {
   prevHeaders = null;
   prevHeadersTimestamp = 0;
 }
+

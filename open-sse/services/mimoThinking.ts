@@ -52,3 +52,4 @@ export function normalizeMimoThinking<T extends Record<string, unknown>>(body: T
   delete next.reasoning;
   return next as T;
 }
+

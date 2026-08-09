@@ -12,3 +12,4 @@ export const llmKiwiProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry
   ],
   passthroughModels: true,
 });
+

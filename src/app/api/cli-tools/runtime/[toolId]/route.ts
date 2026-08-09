@@ -41,3 +41,4 @@ export async function GET(request, { params }) {
     return NextResponse.json({ error: "Failed to check CLI runtime" }, { status: 500 });
   }
 }
+

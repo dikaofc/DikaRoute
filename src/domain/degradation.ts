@@ -251,3 +251,4 @@ export function getDegradationSummary(): Record<DegradationLevel, number> {
 export function resetDegradationRegistry(): void {
   registry.clear();
 }
+

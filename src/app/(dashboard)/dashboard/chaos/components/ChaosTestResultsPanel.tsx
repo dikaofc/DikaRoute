@@ -64,3 +64,4 @@ export function ChaosTestResultsPanel({ result }: { result: ChaosTestResult }) {
     </div>
   );
 }
+

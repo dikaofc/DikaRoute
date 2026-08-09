@@ -969,3 +969,4 @@ export function getHeaderIconProviderId(
   }
   return providerInfoId;
 }
+

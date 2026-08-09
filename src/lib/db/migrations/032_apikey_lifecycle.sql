@@ -22,3 +22,4 @@ ALTER TABLE api_keys ADD COLUMN scopes TEXT;
 
 CREATE INDEX IF NOT EXISTS idx_api_keys_revoked_at ON api_keys(revoked_at);
 CREATE INDEX IF NOT EXISTS idx_api_keys_expires_at ON api_keys(expires_at);
+

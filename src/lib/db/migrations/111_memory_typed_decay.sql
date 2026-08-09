@@ -8,3 +8,4 @@
 -- with the sweep disabled they are pure, harmless telemetry.
 ALTER TABLE memories ADD COLUMN access_count INTEGER NOT NULL DEFAULT 0;
 ALTER TABLE memories ADD COLUMN last_accessed_at TEXT;
+

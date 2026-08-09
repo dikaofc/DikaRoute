@@ -477,3 +477,4 @@ const ProviderIcon = memo(function ProviderIcon({
 
 export default ProviderIcon;
 export type { ProviderIconProps };
+

@@ -211,3 +211,4 @@ export function validatePluginConfig(
   if (errors.length > 0) return { valid: false, errors };
   return { valid: true };
 }
+

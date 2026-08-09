@@ -107,3 +107,4 @@ export function serializeToolResultContent(content: unknown): string {
   }
   return parts.join("\n") || "(no output)";
 }
+

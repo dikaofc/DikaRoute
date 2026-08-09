@@ -190,3 +190,4 @@ export function parseEventFrame(data: Uint8Array): EventFrame | null {
     return null;
   }
 }
+

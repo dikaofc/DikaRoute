@@ -283,3 +283,4 @@ export function resetAuditLog(): void {
   auditLog = [];
   idCounter = 0;
 }
+

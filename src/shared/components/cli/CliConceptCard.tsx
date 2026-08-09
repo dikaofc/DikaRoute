@@ -56,3 +56,4 @@ export default function CliConceptCard({ currentType }: CliConceptCardProps) {
     </div>
   );
 }
+

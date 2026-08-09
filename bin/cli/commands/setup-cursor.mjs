@@ -106,3 +106,4 @@ export function registerSetupCursor(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

@@ -162,3 +162,4 @@ export async function updateStreak(apiKeyId: string): Promise<number> {
 
   return newStreak;
 }
+

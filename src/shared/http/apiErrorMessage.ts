@@ -17,3 +17,4 @@ export function extractApiErrorMessage(body: unknown, fallback: string): string 
   }
   return fallback;
 }
+

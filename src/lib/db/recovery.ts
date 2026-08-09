@@ -31,3 +31,4 @@ export function resetEncryptedColumns(
 
   return { affected };
 }
+

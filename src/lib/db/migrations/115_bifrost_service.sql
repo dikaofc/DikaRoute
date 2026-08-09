@@ -7,3 +7,4 @@
 
 INSERT OR IGNORE INTO version_manager (tool, status, port, auto_start, auto_update, provider_expose)
 VALUES ('bifrost', 'not_installed', 8080, 0, 1, 1);
+

@@ -31,3 +31,4 @@ export const vertexProvider: RegistryEntry = {
     { id: "claude-sonnet-4-6", name: "Claude Sonnet 4.6 (Vertex)" },
   ],
 };
+

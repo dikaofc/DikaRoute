@@ -15,3 +15,4 @@ export const SEGMIND_VIDEO_MODELS = [
   { id: "ltx-video-t2v", name: "LTX Video Text-to-Video" },
   { id: "kling-video-t2v", name: "Kling Video Text-to-Video" },
 ];
+

@@ -198,3 +198,4 @@ export function detectMitmCrash(crashLog) {
   const signals = ["mitm", "tls socket", "certificate", "hosts", "eaccess"];
   return signals.filter((s) => text.includes(s)).length >= 2;
 }
+

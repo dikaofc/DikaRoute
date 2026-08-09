@@ -127,3 +127,4 @@ describe("ProviderCooldownCard (#8107)", () => {
     expect(submitted.minRetryCooldownMs).toBe(0);
   });
 });
+

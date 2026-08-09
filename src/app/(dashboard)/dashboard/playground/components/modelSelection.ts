@@ -58,3 +58,4 @@ export function filterModelsByQuery(models: string[], query: string): string[] {
   if (!query.trim()) return models;
   return models.filter((m) => matchesSearch(m, query));
 }
+

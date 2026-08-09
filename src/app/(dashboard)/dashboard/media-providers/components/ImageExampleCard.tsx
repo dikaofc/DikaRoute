@@ -240,3 +240,4 @@ export function ImageExampleCard({ providerId }: Props) {
     </PlaygroundCard>
   );
 }
+

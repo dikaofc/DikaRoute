@@ -77,3 +77,4 @@ Live count: `ls open-sse/services/*.ts | wc -l` (currently 134). More including 
 - Direct provider config access — use `providerRegistry` getter functions
 - Hardcoded fallback chains — define in `modelFamilyFallback.ts`
 - State mutations across concurrent requests — use request-scoped context only
+

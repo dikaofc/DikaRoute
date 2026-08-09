@@ -45,3 +45,4 @@ export async function POST(request: Request): Promise<Response> {
   await ensureInitialized();
   return await handleChat(request);
 }
+

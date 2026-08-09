@@ -51,3 +51,4 @@ export function listSupportedCompressionLanguages(): string[] {
   // keyword hint (so it stays out of the additive scorer), hence it is listed explicitly here.
   return ["en", "zh", ...Object.keys(LANGUAGE_HINTS)];
 }
+

@@ -10,3 +10,4 @@ export function isRetiredGitHubCopilotModelId(providerId: unknown, modelId: unkn
   if (typeof modelId !== "string") return false;
   return RETIRED_GITHUB_COPILOT_MODEL_IDS.has(modelId.trim().toLowerCase());
 }
+

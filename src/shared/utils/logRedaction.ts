@@ -106,3 +106,4 @@ export function redactLogArgs(args: unknown[]): unknown[] {
   });
   return changed ? out : args;
 }
+

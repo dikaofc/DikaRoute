@@ -216,3 +216,4 @@ export const kiroApiKeyImportSchema = z.object({
 export const zedImportSchema = z.object({
   confirmedAccounts: z.array(confirmedAccountSchema),
 });
+

@@ -111,3 +111,4 @@ export function SkillCard({ skill, selected, onClick }: SkillCardProps): JSX.Ele
 }
 
 export default SkillCard;
+

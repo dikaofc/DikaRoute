@@ -258,3 +258,4 @@ export function stopLocalHealthCheck(): void {
 
 // Auto-initialize on first import (same pattern as tokenHealthCheck.ts:272)
 initLocalHealthCheck();
+

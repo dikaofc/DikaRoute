@@ -26,3 +26,4 @@ export const routewayProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntr
     { id: "llama-3.2-3b-instruct:free", name: "Llama 3.2 3B Instruct (free)", contextLength: 16000, toolCalling: true },
   ],
 });
+

@@ -1091,3 +1091,4 @@ export function getMigrationStatus(db: SqliteAdapter): {
 
   return { applied: appliedRows, pending };
 }
+

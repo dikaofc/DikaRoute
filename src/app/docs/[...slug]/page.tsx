@@ -117,3 +117,4 @@ export async function generateMetadata(props: {
     description: page.data.description ?? `DikaRoute documentation: ${page.data.title}`,
   };
 }
+

@@ -5,3 +5,4 @@ import { EngineConfigPage } from "@/shared/components/compression/EngineConfigPa
 export default function UltraPage() {
   return <EngineConfigPage engineId="ultra" />;
 }
+

@@ -63,3 +63,4 @@ export function register_translator(parent) {
       emit(data, gOpts);
     });
 }
+

@@ -80,3 +80,4 @@ export interface EngineRegistryEntry {
   enabled: boolean;
   config: Record<string, unknown>;
 }
+

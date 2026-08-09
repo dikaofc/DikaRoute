@@ -252,3 +252,4 @@ export function readMcpToolProfileFromEnv(
     ...(allowTools.length > 0 ? { allowTools } : {}),
   };
 }
+

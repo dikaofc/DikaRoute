@@ -12,3 +12,4 @@ CREATE TABLE IF NOT EXISTS connection_runtime_state (
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS idx_crs_warmup_until ON connection_runtime_state(warmup_circuit_until) WHERE warmup_circuit_until IS NOT NULL;
+

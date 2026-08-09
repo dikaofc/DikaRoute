@@ -29,3 +29,4 @@ CREATE TABLE IF NOT EXISTS plugins (
 CREATE INDEX IF NOT EXISTS idx_plugins_status ON plugins(status);
 CREATE INDEX IF NOT EXISTS idx_plugins_enabled ON plugins(enabled);
 CREATE INDEX IF NOT EXISTS idx_plugins_name ON plugins(name);
+

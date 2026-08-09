@@ -52,3 +52,4 @@ export async function GET(request: Request): Promise<Response> {
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

@@ -17,3 +17,4 @@ export async function failOneproxyProxy(host: string, port: number): Promise<boo
 export function resetSequentialIndex(): void {
   sequentialIndex = 0;
 }
+

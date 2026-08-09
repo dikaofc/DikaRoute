@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS plugin_metrics (
   last_called_at TEXT,
   PRIMARY KEY (plugin_name, event)
 );
+

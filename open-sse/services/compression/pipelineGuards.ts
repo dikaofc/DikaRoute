@@ -93,3 +93,4 @@ export function applyStackedInflationGuard(
   stats.savingsPercent = 0;
   return { body: inflation.body, compressed: false, stats };
 }
+

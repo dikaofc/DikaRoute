@@ -85,3 +85,4 @@ export function getCachedLoginShellPath(): string | null {
   if (cached === undefined) cached = getLoginShellPath();
   return cached;
 }
+

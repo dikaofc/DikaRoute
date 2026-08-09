@@ -314,3 +314,4 @@ export class ServiceSupervisor extends EventEmitter {
     this.emit("stateChange", this.getStatus());
   }
 }
+

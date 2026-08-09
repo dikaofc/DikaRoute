@@ -91,3 +91,4 @@ class PoolRegistryImpl {
 
 /** Singleton global pool registry */
 export const PoolRegistry = new PoolRegistryImpl();
+

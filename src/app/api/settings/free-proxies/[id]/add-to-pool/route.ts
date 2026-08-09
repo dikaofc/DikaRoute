@@ -117,3 +117,4 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     return createErrorResponseFromUnknown(error, "Failed to add proxy to pool");
   }
 }
+

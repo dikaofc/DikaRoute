@@ -54,3 +54,4 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Failed to update payload rules config" }, { status: 500 });
   }
 }
+

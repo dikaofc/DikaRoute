@@ -55,3 +55,4 @@ export function registerAutostart(program) {
       emit(getAutostartStatus(), globalOpts);
     });
 }
+

@@ -500,3 +500,4 @@ export function registerGrokWebQuotaFetcher(): void {
   registerMonitorFetcher("grok-web", fetchGrokWebQuota);
   registerQuotaWindows("grok-web", [GROK_WINDOW_WEEKLY]);
 }
+

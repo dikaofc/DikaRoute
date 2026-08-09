@@ -39,3 +39,4 @@ export function normalizeCloudCodeArch(arch = getRuntimeArch()): string {
 export function getCloudCodeNodeApiClientHeader(nodeVersion = getRuntimeNodeVersion()): string {
   return `gl-node/${nodeVersion.replace(/^v/, "")}`;
 }
+

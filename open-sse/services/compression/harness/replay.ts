@@ -70,3 +70,4 @@ export function requestBodiesToTranscripts(
 ): Transcript[] {
   return entries.map((entry) => requestBodyToTranscript(entry.id, entry.body));
 }
+

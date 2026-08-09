@@ -21,3 +21,4 @@ export function fingerprintZedCredential(
     .digest("hex")
     .slice(0, 16);
 }
+

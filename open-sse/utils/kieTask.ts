@@ -127,3 +127,4 @@ export function getKieErrorMessage(error: unknown, fallback: string): string {
 
   return typeof error === "string" && error.length > 0 ? error : fallback;
 }
+

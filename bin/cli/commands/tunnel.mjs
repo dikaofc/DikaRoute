@@ -345,3 +345,4 @@ export async function runTunnelRotateCommand(type, opts = {}) {
     return 1;
   }
 }
+

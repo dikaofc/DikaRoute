@@ -129,3 +129,4 @@ describe("ProviderDetailPageClient (Phase 0 smoke)", () => {
     expect(() => unmount()).not.toThrow();
   });
 });
+

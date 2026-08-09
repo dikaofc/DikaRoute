@@ -37,3 +37,4 @@ export async function GET(_request: Request, { params }: Params): Promise<Respon
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

@@ -11,3 +11,4 @@ export function MarkdownView({ content = "" }) {
     .replace(/^#+\s+/gm, "");
   return <Text>{clean}</Text>;
 }
+

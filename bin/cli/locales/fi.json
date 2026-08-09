@@ -30,3 +30,4 @@
     "description": "Käynnistä paikallinen Redis-säiliö yhdellä napsautuksella (Podman tai Docker) DikaRoute-välimuistia ja kiintiöiden seurantaa varten"
   }
 }
+

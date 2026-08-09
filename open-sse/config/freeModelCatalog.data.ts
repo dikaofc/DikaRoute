@@ -539,3 +539,4 @@ export const FREE_MODEL_BUDGETS: FreeModelBudget[] = [
   { provider: "nara", modelId: "mistral-large", displayName: "Mistral Large", monthlyTokens: 150000000, creditTokens: 0, freeType: "recurring-daily", poolKey: "nara-free", tos: "caution" },
   { provider: "nara", modelId: "mistral-medium-3-5", displayName: "Mistral Medium 3.5", monthlyTokens: 150000000, creditTokens: 0, freeType: "recurring-daily", poolKey: "nara-free", tos: "caution" },
 ];
+

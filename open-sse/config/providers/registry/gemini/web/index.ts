@@ -14,3 +14,4 @@ export const gemini_webProvider: RegistryEntry = {
     { id: "gemini-3.1-flash-lite", name: "Gemini 3.1 Flash-Lite", toolCalling: false },
   ],
 };
+

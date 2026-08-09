@@ -28,3 +28,4 @@ export default function LogsTimelinePage() {
     </Suspense>
   );
 }
+

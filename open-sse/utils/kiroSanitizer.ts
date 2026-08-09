@@ -125,3 +125,4 @@ export function sanitizeKiroTools<T>(tools: T): SanitizeKiroToolsResult<T> {
 
   return { tools: sanitized as T, nameMap };
 }
+

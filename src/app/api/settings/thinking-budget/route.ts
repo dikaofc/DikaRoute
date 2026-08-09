@@ -58,3 +58,4 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Failed to update thinking budget config" }, { status: 500 });
   }
 }
+

@@ -194,3 +194,4 @@ export function registerWebhooks(program) {
     .option("--event <e>", t("webhooks.test.event"), "request.completed")
     .action(runWebhooksTest);
 }
+

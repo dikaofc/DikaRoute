@@ -73,3 +73,4 @@ export function pickFirstNonEmptyString(...values: unknown[]): string | undefine
   }
   return undefined;
 }
+

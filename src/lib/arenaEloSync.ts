@@ -562,3 +562,4 @@ export async function initArenaEloSync(): Promise<boolean> {
   startPeriodicSync();
   return true;
 }
+

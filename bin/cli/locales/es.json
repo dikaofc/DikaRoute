@@ -30,3 +30,4 @@
     "description": "Iniciar un contenedor local de Redis con un clic (Podman o Docker) para el almacenamiento en caché y seguimiento de cuotas de DikaRoute"
   }
 }
+

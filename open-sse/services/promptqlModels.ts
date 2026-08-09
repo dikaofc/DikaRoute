@@ -204,3 +204,4 @@ export async function discoverPromptQlModels(opts: {
     })
     .filter((x): x is PromptQlModel => Boolean(x));
 }
+

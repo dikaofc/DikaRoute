@@ -18,3 +18,4 @@ export const chatgpt_webProvider: RegistryEntry = {
     { id: "o3", name: "o3", toolCalling: false }, // plus ~ tier
   ],
 };
+

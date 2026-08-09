@@ -161,3 +161,4 @@ function writeSecureFile(filePath, content) {
     chmodSync(filePath, SECURE_FILE_MODE);
   }
 }
+

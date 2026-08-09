@@ -42,3 +42,4 @@ export function usePreviewCompression() {
   const run = useCallback(async (args: RunPreviewArgs) => { setLoading(true); try { setBatch(await runPreviewBatch(args)); } finally { setLoading(false); } }, []);
   return { batch, loading, run };
 }
+

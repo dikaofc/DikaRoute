@@ -8,3 +8,4 @@ SET value = '16384'
 WHERE namespace = 'databaseSettings'
   AND key IN ('cacheSize', 'optimization.cacheSize')
   AND TRIM(value) IN ('-2000', '"-2000"', '10000', '"10000"');
+

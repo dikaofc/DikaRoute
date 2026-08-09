@@ -44,3 +44,4 @@ if [ "$VERSION" = "$HIGHEST" ]; then
 else
   echo "false"
 fi
+

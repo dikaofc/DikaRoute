@@ -141,3 +141,4 @@ export function CliproxyConnectionPanel() {
     </Card>
   );
 }
+

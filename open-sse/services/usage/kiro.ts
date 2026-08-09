@@ -415,3 +415,4 @@ function isSocialAuthKiroAccount(providerSpecificData?: JsonRecord): boolean {
       : "";
   return provider === "google" || provider === "github";
 }
+

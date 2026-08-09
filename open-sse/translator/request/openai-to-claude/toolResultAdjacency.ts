@@ -111,3 +111,4 @@ function orderedResultsForAssistant(
     return grouped.filter((toolResult) => toolResult.tool_use_id === String(block.id));
   });
 }
+

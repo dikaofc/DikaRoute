@@ -37,3 +37,4 @@ export function buildSshLocalForward(ports: string[], hostname: string): string 
   const unique = [...new Set(ports)];
   return `ssh ${unique.map((p) => `-L ${p}:127.0.0.1:${p}`).join(" ")} <user>@${hostname}`;
 }
+

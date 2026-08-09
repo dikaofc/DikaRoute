@@ -314,3 +314,4 @@ function startMonotonic(): number {
     ? performance.now()
     : Date.now();
 }
+

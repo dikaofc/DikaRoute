@@ -68,3 +68,4 @@ Full list: `ls src/lib/db/*.ts | wc -l` (95 files). Drift detection: `npm run ch
 - Adding logic to `localDb.ts` — re-export layer only
 - Barrel-importing from `localDb.ts` — import specific modules instead
 - Skipping migrations for schema changes — all changes go through `db/migrations/`
+

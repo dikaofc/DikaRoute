@@ -200,3 +200,4 @@ export class AcpManager extends EventEmitter {
 
 // Singleton manager instance
 export const acpManager = new AcpManager();
+

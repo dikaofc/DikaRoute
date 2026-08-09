@@ -17,3 +17,4 @@ ALTER TABLE combos ADD COLUMN tool_filter_regex TEXT DEFAULT NULL;
 ALTER TABLE combos ADD COLUMN context_cache_protection INTEGER DEFAULT 0;
 
 CREATE INDEX IF NOT EXISTS idx_combos_cache_protection ON combos(context_cache_protection);
+

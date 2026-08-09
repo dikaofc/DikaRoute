@@ -20,3 +20,4 @@ export function mapImageSize(sizeParam?: string | null): string {
   // Map OpenAI sizes to aspect ratios
   return OPENAI_SIZE_TO_ASPECT_RATIO[sizeParam] ?? "1:1";
 }
+

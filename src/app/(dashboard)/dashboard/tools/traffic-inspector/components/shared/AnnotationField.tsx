@@ -40,3 +40,4 @@ export function AnnotationField({ requestId, initialValue = "" }: AnnotationFiel
     </div>
   );
 }
+

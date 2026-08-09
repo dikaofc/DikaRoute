@@ -84,3 +84,4 @@ const isEntrypoint =
 if (isEntrypoint) {
   main();
 }
+

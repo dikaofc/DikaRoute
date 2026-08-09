@@ -57,3 +57,4 @@ export function useToolBatchStatuses(): UseToolBatchStatusesResult {
 
   return { statuses, loading, error, refetch };
 }
+

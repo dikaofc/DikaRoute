@@ -23,3 +23,4 @@ export const notion_webProvider: RegistryEntry = {
     name: m.name,
   })),
 };
+

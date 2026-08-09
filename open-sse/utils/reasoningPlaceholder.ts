@@ -26,3 +26,4 @@ export function stripInternalReasoningPlaceholder(value: string): string {
   const stripped = value.replaceAll(NON_ANTHROPIC_THINKING_PLACEHOLDER, "");
   return stripped.trim() === "" ? "" : stripped;
 }
+

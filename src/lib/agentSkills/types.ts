@@ -102,3 +102,4 @@ export interface GeneratorReport {
   orphansDetected: string[]; // ids in repo that aren't in catalog (prune dry-run shows these)
   errors: Array<{ id: string; error: string }>;
 }
+

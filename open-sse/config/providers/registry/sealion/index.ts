@@ -19,3 +19,4 @@ export const sealionProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry
     { id: "aisingapore/Qwen-SEA-LION-v4-32B-IT", name: "Qwen SEA-LION v4 32B IT", contextLength: 32768 },
   ],
 });
+

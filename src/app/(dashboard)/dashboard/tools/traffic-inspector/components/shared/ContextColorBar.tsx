@@ -24,3 +24,4 @@ export function ContextColorBar({ contextKey, className }: ContextColorBarProps)
     />
   );
 }
+

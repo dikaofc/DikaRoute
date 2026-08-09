@@ -45,3 +45,4 @@ export function deleteModelComboMapping(id: string): Promise<boolean> {
 export function resolveComboForModel(model: string): Promise<Record<string, unknown> | null> {
   return repository.resolveForModel(model);
 }
+

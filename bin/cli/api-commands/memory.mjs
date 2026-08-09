@@ -249,3 +249,4 @@ export function register_memory(parent) {
       emit(data, gOpts);
     });
 }
+

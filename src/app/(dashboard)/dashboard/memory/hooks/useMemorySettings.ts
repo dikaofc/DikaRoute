@@ -66,3 +66,4 @@ export function useMemorySettings(): UseMemorySettingsResult {
 
   return { settings, isLoading, isError, mutate: fetchOnce, save };
 }
+

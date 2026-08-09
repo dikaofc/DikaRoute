@@ -31,3 +31,4 @@ CREATE VIRTUAL TABLE IF NOT EXISTS memory_fts USING fts5(
   key,
   content='memories'
 );
+

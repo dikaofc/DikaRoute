@@ -13,3 +13,4 @@ export function CodeBlock({ code = "", language }) {
     </Box>
   );
 }
+

@@ -32,3 +32,4 @@ export const OPEN_CODE_TARGET: MitmTarget = {
     import("../handlers/openCode.ts").then((m) => ({ default: m.OpenCodeHandler })),
   riskNoticeKey: "providers.riskNotice.oauth",
 };
+

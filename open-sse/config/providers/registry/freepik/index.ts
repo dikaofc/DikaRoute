@@ -24,3 +24,4 @@ export const FREEPIK_IMAGE_PROVIDER = {
   ],
   supportedSizes: ["1024x1024", "1024x1792", "1792x1024"],
 };
+

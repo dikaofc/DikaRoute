@@ -26,3 +26,4 @@ export async function getZedCredential(_provider: string): Promise<ZedCredential
 export async function isZedInstalled(): Promise<boolean> {
   return false;
 }
+

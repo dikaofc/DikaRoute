@@ -372,3 +372,4 @@ function extractText(instruction) {
 
 // Register
 register(FORMATS.ANTIGRAVITY, FORMATS.OPENAI, antigravityToOpenAIRequest, null);
+

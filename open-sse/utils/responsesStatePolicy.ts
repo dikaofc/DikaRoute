@@ -73,3 +73,4 @@ export function applyResponsesPreviousResponseIdPolicy(
   delete next.previous_response_id;
   return { body: next, stripped: true, mode };
 }
+

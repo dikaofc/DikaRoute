@@ -77,3 +77,4 @@ export function useConnectionDeleteConfirm(
 
   return { connection, deleting, request, confirm, cancel };
 }
+

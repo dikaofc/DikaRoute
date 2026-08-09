@@ -611,3 +611,4 @@ export function rotateLeaderboardScope(scope: "weekly" | "monthly"): void {
 
   d.prepare("DELETE FROM leaderboard WHERE scope = ?").run(scope);
 }
+

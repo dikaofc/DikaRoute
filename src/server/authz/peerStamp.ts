@@ -97,3 +97,4 @@ export function classifyStampedPeerLocality(
   if (viaProxy && locality !== "remote") return "remote";
   return locality;
 }
+

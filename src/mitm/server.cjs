@@ -885,3 +885,4 @@ startMitmServer().catch((err) => {
   console.error(`❌ ${sanitizeErrorMessage(err && err.message)}`);
   process.exit(1);
 });
+

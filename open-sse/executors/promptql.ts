@@ -696,3 +696,4 @@ export class PromptQlExecutor extends BaseExecutor {
 
 // Re-export catalog for tests / registry
 export { PROMPTQL_FALLBACK_MODELS, PLAYGROUND_GQL, CREDITS_GQL, TOKEN_REFRESH_URL };
+

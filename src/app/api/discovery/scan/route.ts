@@ -52,3 +52,4 @@ export async function POST(request: Request): Promise<Response> {
     return createErrorResponseFromUnknown(error, "Failed to scan provider");
   }
 }
+

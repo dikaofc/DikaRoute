@@ -213,3 +213,4 @@ export interface ResilienceSettingsPatch {
   streamRecovery?: Partial<StreamRecoverySettings>;
   providerQuotaOverrides?: Record<string, Partial<ProviderQuotaOverrideSettings>>;
 }
+

@@ -117,3 +117,4 @@ export const windsurfProvider: RegistryEntry = {
     { id: "glm-5.1", name: "GLM-5.1", contextLength: 128000 },
   ],
 };
+

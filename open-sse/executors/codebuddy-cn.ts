@@ -51,3 +51,4 @@ export class CodeBuddyCnExecutor extends DefaultExecutor {
 }
 
 export default CodeBuddyCnExecutor;
+

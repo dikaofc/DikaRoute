@@ -151,3 +151,4 @@ WHERE account_key IS NOT NULL
   AND (account_label IS NULL OR account_label = '');
 
 CREATE INDEX IF NOT EXISTS idx_uh_account_key ON usage_history(account_key);
+

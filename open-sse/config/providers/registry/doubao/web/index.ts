@@ -13,3 +13,4 @@ export const doubao_webProvider: RegistryEntry = {
     { id: "dola-pro", name: "Dola Pro", toolCalling: false },
   ],
 };
+

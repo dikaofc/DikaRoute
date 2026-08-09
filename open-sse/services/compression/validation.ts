@@ -430,3 +430,4 @@ function collectConstCase(text: string): string[] {
 
   return matches;
 }
+

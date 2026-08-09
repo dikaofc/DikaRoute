@@ -82,3 +82,4 @@ export function matchesModelCatalogQuery(query: string, target: ModelCatalogTarg
 
   return haystacks.some((value) => value.includes(normalizedQuery));
 }
+

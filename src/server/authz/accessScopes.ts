@@ -60,3 +60,4 @@ export function inferRequiredScope(method: string, path: string): AccessScope {
 
   return isMutation ? "write" : "read";
 }
+

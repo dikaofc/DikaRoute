@@ -31,3 +31,4 @@ export const raycastProvider: RegistryEntry = {
     { id: "xai-grok-3-mini", name: "Grok 3 Mini" },
   ],
 };
+

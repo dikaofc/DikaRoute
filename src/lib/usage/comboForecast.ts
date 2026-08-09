@@ -439,3 +439,4 @@ export async function buildComboForecastResponse(opts: {
     combos: forecasts.filter((entry): entry is ComboForecastMetrics => entry !== null),
   };
 }
+

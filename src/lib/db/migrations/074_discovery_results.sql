@@ -18,3 +18,4 @@ CREATE TABLE IF NOT EXISTS discovery_results (
 
 CREATE INDEX IF NOT EXISTS idx_discovery_results_provider ON discovery_results(provider_id);
 CREATE INDEX IF NOT EXISTS idx_discovery_results_status ON discovery_results(status);
+

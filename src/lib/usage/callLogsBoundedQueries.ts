@@ -40,3 +40,4 @@ export function selectCallLogIdsBefore(cutoff: string, limit = CALL_LOG_QUERY_PA
     .all(cutoff, limit) as Array<{ id: string }>;
   return rows.map((row) => String(row.id));
 }
+

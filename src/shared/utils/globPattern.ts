@@ -22,3 +22,4 @@ export function globToRegex(pattern: string): RegExp {
     .replace(/\?/g, "."); // ? → .
   return new RegExp(`^${escaped}$`, "i");
 }
+

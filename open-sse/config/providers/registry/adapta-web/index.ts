@@ -18,3 +18,4 @@ export const adapta_webProvider: RegistryEntry = {
     { id: "adapta-llama", name: "Llama 4 (via Adapta)", toolCalling: false },
   ],
 };
+

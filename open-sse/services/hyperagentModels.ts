@@ -176,3 +176,4 @@ export function wireHyperAgentRuntimeId(model: unknown): string {
   const resolved = resolveHyperAgentModel(model);
   return resolved?.runtimeId || "claude-agents-sdk";
 }
+

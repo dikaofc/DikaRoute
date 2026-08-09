@@ -8,3 +8,4 @@ ALTER TABLE provider_connections ADD COLUMN max_concurrent INTEGER;
 
 -- Index for provider-level filtering
 CREATE INDEX IF NOT EXISTS idx_pc_max_concurrent ON provider_connections(provider, max_concurrent);
+

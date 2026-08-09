@@ -54,3 +54,4 @@ export function extractCozeValidationError(body: unknown): string | null {
     ? `Coze rejected the key: ${detail} (code ${codeStr})`
     : `Coze rejected the key: ${detail}`;
 }
+

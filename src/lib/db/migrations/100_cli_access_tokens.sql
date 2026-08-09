@@ -16,3 +16,4 @@ CREATE TABLE IF NOT EXISTS cli_access_tokens (
 );
 
 CREATE INDEX IF NOT EXISTS idx_cli_access_tokens_hash ON cli_access_tokens(token_hash);
+

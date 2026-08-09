@@ -101,3 +101,4 @@ export function renderPrompt(stage: StageName, variables: Record<string, string>
     user: interpolate(template.user, variables),
   };
 }
+

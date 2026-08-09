@@ -495,3 +495,4 @@ export function resolveWebProviderHost(
     return null;
   }
 }
+

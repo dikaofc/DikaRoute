@@ -51,3 +51,4 @@ CREATE TABLE IF NOT EXISTS proxy_scope_rotation (
   updated_at TEXT NOT NULL DEFAULT (datetime('now')),
   PRIMARY KEY (scope, scope_id)
 );
+

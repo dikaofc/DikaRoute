@@ -29,3 +29,4 @@ CREATE TABLE IF NOT EXISTS ccr_blocks (
 
 -- Pruning scans by expiry.
 CREATE INDEX IF NOT EXISTS idx_ccr_blocks_expires ON ccr_blocks(expires_at);
+

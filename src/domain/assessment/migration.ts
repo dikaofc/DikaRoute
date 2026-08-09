@@ -109,3 +109,4 @@ export async function runAssessmentMigration(dbPath: string): Promise<void> {
 }
 
 export { MIGRATION_SQL };
+

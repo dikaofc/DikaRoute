@@ -106,3 +106,4 @@ export default function RerankConfigCard({ settings, providers, onSave, saving }
     </div>
   );
 }
+

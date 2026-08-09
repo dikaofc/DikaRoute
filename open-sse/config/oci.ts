@@ -42,3 +42,4 @@ export function buildOciChatUrl(
 export function buildOciModelsUrl(value: string | null | undefined): string {
   return `${normalizeOciBaseUrl(value)}/models`;
 }
+

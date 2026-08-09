@@ -162,3 +162,4 @@ export function sha3_512Hex(input: string | Uint8Array): string {
 export function __setSha3NativeForTesting(state: NativeHasher | null | undefined): void {
   nativeHasher = state;
 }
+

@@ -12,3 +12,4 @@ export async function getSkillsProviderSetting(): Promise<SkillsProvider> {
   const settings = (await getSettings()) as Record<string, unknown>;
   return normalizeSkillsProvider(settings.skillsProvider);
 }
+

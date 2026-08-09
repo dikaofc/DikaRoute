@@ -329,3 +329,4 @@ async function fetchOrExit(path, globalOpts) {
 function toArray(val) {
   return Array.isArray(val) ? val : [];
 }
+

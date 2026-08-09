@@ -46,3 +46,4 @@ export async function POST(request: NextRequest) {
     { headers: CORS_HEADERS }
   );
 }
+

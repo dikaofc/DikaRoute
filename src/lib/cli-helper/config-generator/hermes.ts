@@ -45,3 +45,4 @@ export async function generateHermesConfig(options: {
 
   return y.dump(config, { lineWidth: -1 });
 }
+

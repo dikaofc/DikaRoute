@@ -961,3 +961,4 @@ async function syncToCloudIfEnabled() {
     console.log("Error syncing to cloud after OAuth:", error);
   }
 }
+

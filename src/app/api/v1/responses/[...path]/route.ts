@@ -29,3 +29,4 @@ export async function POST(request) {
   await ensureInitialized();
   return await handleChat(request);
 }
+

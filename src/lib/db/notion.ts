@@ -46,3 +46,4 @@ export function getNotionConfig(): { token: string | null; connected: boolean } 
   const token = getNotionToken();
   return { token, connected: token !== null && token.length > 0 };
 }
+

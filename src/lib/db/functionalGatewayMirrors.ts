@@ -126,3 +126,4 @@ export function getFunctionalGatewayGlobalState(): {
 export function isFunctionalGatewayGlobalEnabled(): boolean {
   return getFunctionalGatewayGlobalState().enabled;
 }
+

@@ -307,3 +307,4 @@ export function normalizeHiddenSidebarItems(value: unknown): HideableSidebarItem
 
   return HIDEABLE_SIDEBAR_ITEM_IDS.filter((item) => hiddenItems.has(item));
 }
+

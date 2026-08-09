@@ -17,3 +17,4 @@ export function QuantumLockBadge({ stats }: QuantumLockBadgeProps) {
     </span>
   );
 }
+

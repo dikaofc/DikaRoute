@@ -358,3 +358,4 @@ class SearchError extends Error {
 }
 
 export const POST = withInjectionGuard(postHandler);
+

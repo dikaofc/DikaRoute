@@ -119,3 +119,4 @@ export function resolveChatGptModel(
   const isPro = slug === "gpt-5-6-pro" || slug === "gpt-5-5-pro";
   return { slug, effort, isPro };
 }
+

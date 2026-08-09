@@ -121,3 +121,4 @@ export function mergeTierConfig(userConfig?: Partial<TierConfig>): TierConfig {
     ],
   };
 }
+

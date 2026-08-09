@@ -160,3 +160,4 @@ export function getCcAliasGlobalState(): { enabled: boolean; source: "env" | "db
 export function isCcAliasGlobalEnabled(): boolean {
   return getCcAliasGlobalState().enabled;
 }
+

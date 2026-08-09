@@ -398,3 +398,4 @@ export function classify429FromError(err: unknown): FailureKind | undefined {
   if (typeof status !== "number") return undefined;
   return classify429({ status, headers, body });
 }
+

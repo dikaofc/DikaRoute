@@ -18,3 +18,4 @@ export function TokenBadge({ tokensIn, tokensOut }: TokenBadgeProps) {
     </span>
   );
 }
+

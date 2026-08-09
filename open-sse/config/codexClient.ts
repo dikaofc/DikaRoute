@@ -56,3 +56,4 @@ export function normalizeCodexSessionId(value: unknown): string | null {
   const normalized = value.trim();
   return SAFE_CODEX_SESSION_ID_PATTERN.test(normalized) ? normalized : null;
 }
+

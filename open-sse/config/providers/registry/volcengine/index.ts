@@ -11,3 +11,4 @@ export const volcengineProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.volcengine,
 };
+

@@ -75,3 +75,4 @@ export function pickDisplayValue(
   }
   return pickMaskedDisplayValue(values, fallback);
 }
+

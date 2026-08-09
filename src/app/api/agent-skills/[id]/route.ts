@@ -35,3 +35,4 @@ export async function GET(
     return NextResponse.json(buildErrorBody(500, "Failed to load skill"), { status: 500 });
   }
 }
+

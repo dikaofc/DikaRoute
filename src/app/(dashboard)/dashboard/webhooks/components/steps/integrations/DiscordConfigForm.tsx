@@ -94,3 +94,4 @@ export function DiscordConfigForm({ value, onChange, t }: DiscordConfigFormProps
     </div>
   );
 }
+

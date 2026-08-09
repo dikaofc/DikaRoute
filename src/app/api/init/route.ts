@@ -5,3 +5,4 @@ export async function GET() {
   const initialized = await ensureCloudSyncInitialized();
   return Response.json({ initialized });
 }
+

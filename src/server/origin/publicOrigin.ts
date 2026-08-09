@@ -268,3 +268,4 @@ export function validateBrowserMutationOrigin(request: Request): BrowserMutation
   const allowed = new Set(getPublicOriginCandidates(request).map((candidate) => candidate.origin));
   return allowed.has(normalizedOrigin) ? { ok: true } : { ok: false, reason: "invalid-origin" };
 }
+

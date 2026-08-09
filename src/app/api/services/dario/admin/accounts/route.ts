@@ -47,3 +47,4 @@ export async function DELETE(request: Request): Promise<Response> {
     path: `/admin/accounts/${encodeURIComponent(alias)}`,
   });
 }
+

@@ -16,3 +16,4 @@ export const felo_webProvider: RegistryEntry = {
     { id: "felo-document", name: "Felo Document", toolCalling: false },
   ],
 };
+

@@ -307,3 +307,4 @@ export async function createSqlJsAdapter(filePath: string): Promise<SqliteAdapte
     },
   };
 }
+

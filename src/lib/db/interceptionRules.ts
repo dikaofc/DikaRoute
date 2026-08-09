@@ -226,3 +226,4 @@ export function resolveInterceptFetch(
 
   return rules.interceptFetch;
 }
+

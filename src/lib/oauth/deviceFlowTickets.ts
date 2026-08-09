@@ -108,3 +108,4 @@ export function getDeviceFlowTicketStatus(token: string): {
   if (!ticket) return { status: "expired", result: null };
   return { status: ticket.status, result: ticket.result ?? null };
 }
+

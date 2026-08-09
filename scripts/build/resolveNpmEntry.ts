@@ -38,3 +38,4 @@ export function resolveBundledNpmEntry(
   }
   return null;
 }
+

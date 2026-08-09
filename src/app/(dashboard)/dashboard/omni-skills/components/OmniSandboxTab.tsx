@@ -46,3 +46,4 @@ export function OmniSandboxTab(): JSX.Element {
 }
 
 export default OmniSandboxTab;
+

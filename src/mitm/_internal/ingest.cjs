@@ -80,3 +80,4 @@ async function postIngestEntry(baseUrl, token, entry, fetchImpl) {
 }
 
 module.exports = { buildIngestEntry, postIngestEntry, INGEST_PATH };
+

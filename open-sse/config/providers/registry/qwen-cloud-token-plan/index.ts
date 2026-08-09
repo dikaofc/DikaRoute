@@ -63,3 +63,4 @@ export const qwen_cloud_token_planProvider: RegistryEntry = {
     },
   ],
 };
+

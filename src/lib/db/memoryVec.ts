@@ -136,3 +136,4 @@ export function countMemoryReindexPending(): number {
     .get() as { cnt: number };
   return row.cnt;
 }
+

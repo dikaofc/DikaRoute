@@ -26,3 +26,4 @@ export async function getApiKeyRequestScope(request: Request): Promise<ApiKeyReq
     isSessionAuth,
   };
 }
+

@@ -246,3 +246,4 @@ export function CompareView({ text }: CompareViewProps) {
     </div>
   );
 }
+

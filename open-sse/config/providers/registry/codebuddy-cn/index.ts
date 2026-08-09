@@ -149,3 +149,4 @@ export const codebuddy_cnProvider: RegistryEntry = {
 };
 
 export default codebuddy_cnProvider;
+

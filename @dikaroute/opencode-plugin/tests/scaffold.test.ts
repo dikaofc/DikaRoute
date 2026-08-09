@@ -71,3 +71,4 @@ test("scaffold: built ESM default export resolves with the v1 plugin shape", asy
   assert.strictEqual(mod.default.id, "@dikaroute/opencode-plugin");
   assert.strictEqual(typeof mod.default.server, "function");
 });
+

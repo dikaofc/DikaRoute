@@ -124,3 +124,4 @@ export function getCompressionRunTelemetrySummary(): CompressionRunTelemetrySumm
   }
   return summary;
 }
+

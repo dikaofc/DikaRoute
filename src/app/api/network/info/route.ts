@@ -31,3 +31,4 @@ export async function GET(request: Request) {
 
   return NextResponse.json({ localUrl, lanUrls, tailscaleIpUrl });
 }
+

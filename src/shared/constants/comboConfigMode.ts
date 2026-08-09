@@ -7,3 +7,4 @@ export type ComboConfigMode = (typeof COMBO_CONFIG_MODES)[number];
 export function normalizeComboConfigMode(value: unknown): ComboConfigMode {
   return value === "expert" ? "expert" : "guided";
 }
+

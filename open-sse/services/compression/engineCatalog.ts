@@ -204,3 +204,4 @@ export function engineMeta(id: string): EngineMeta {
 export function isSafeDefault(id: string): boolean {
   return !engineMeta(id).guidance.lossy;
 }
+

@@ -91,3 +91,4 @@ export interface MemoryBackend {
   /** Shutdown backend (close connections, etc.) - called on unregister */
   shutdown?(): Promise<void>;
 }
+

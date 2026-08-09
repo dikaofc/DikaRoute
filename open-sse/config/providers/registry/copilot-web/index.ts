@@ -14,3 +14,4 @@ export const copilot_webProvider: RegistryEntry = {
     { id: "gpt-4", name: "GPT-4 (via Copilot)", toolCalling: false },
   ],
 };
+

@@ -285,3 +285,4 @@ export async function DELETE(request: Request) {
     return NextResponse.json({ error: "Failed to reset kilo settings" }, { status: 500 });
   }
 }
+

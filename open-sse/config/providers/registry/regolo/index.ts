@@ -14,3 +14,4 @@ export const regoloProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

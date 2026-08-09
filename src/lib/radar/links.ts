@@ -40,3 +40,4 @@ export function getContributorClaimUrl(): string {
 export function getSupporterPlansUrl(): string {
   return process.env.RADAR_SUPPORTER_PLANS_URL || DEFAULT_SUPPORTER_PLANS_URL;
 }
+

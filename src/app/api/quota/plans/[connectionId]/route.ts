@@ -117,3 +117,4 @@ export async function DELETE(request: Request, { params }: RouteParams): Promise
     return NextResponse.json(buildErrorBody(500, message), { status: 500 });
   }
 }
+

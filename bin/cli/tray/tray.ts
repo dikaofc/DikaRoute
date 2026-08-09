@@ -184,3 +184,4 @@ async function initUnixTray(options: TrayOptions): Promise<TrayInstance | null> 
     destroy: () => systray.kill(false),
   };
 }
+

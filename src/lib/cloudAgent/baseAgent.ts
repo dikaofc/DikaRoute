@@ -96,3 +96,4 @@ export abstract class CloudAgentBase {
     return `act_${Date.now()}_${randomBytes(8).toString("hex")}`;
   }
 }
+

@@ -159,3 +159,4 @@ export function enforceOutputTokenBudget(
   const adjusted = adjustOutputTokenFields(body, effectiveCap);
   return { ok: true, ...adjusted, availableOutputTokens };
 }
+

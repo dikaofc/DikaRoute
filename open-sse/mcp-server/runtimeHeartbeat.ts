@@ -161,3 +161,4 @@ export function isMcpHeartbeatOnline(
   if (options?.requireLivePid === false) return true;
   return isProcessAlive(snapshot.pid);
 }
+

@@ -3,3 +3,4 @@
 -- This is presentation-only and does not affect routing or provider-limit collection.
 
 ALTER TABLE provider_connections ADD COLUMN quota_visible INTEGER NOT NULL DEFAULT 1;
+

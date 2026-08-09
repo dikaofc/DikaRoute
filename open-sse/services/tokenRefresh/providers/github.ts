@@ -52,3 +52,4 @@ export async function refreshGitHubToken(refreshToken, log, proxyConfig: unknown
     expiresIn: tokens.expires_in,
   };
 }
+

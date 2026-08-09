@@ -30,3 +30,4 @@ export function detectOpenCode(): DetectionResult {
   }
   return { installed: false };
 }
+

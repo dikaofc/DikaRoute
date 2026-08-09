@@ -22,3 +22,4 @@ export const perplexity_webProvider: RegistryEntry = {
     { id: "pplx-nemotron", name: "Nemotron 3 Ultra (via Perplexity)", toolCalling: false },
   ],
 };
+

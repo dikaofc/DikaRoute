@@ -86,3 +86,4 @@ describe("PATCH /api/settings", () => {
     expect(calledWith.comboConfigMode).toBe("expert");
   });
 });
+

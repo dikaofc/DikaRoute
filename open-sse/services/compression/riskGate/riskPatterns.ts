@@ -59,3 +59,4 @@ export const RISK_PATTERNS: RiskPattern[] = [
       /\bWITHOUT WARRANTY\b|\bPermission is hereby granted\b|^SPDX-License-Identifier:.{0,200}$|\bCopyright \(c\)\b|\bAll rights reserved\b/gim,
   },
 ];
+

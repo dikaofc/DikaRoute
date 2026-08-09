@@ -40,3 +40,4 @@ function handleShutdownSignal(signal: NodeJS.Signals): void {
 
 process.once("SIGINT", () => handleShutdownSignal("SIGINT"));
 process.once("SIGTERM", () => handleShutdownSignal("SIGTERM"));
+

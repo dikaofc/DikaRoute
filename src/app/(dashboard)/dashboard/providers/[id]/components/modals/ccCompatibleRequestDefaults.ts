@@ -45,3 +45,4 @@ export function mergeCcCompatibleRequestDefaults(
   }
   return Object.keys(requestDefaults).length > 0 ? requestDefaults : undefined;
 }
+

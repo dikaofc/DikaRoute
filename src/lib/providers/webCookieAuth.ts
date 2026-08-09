@@ -205,3 +205,4 @@ export function normalizeSessionCookieHeaders(
 
   return normalizedHeaders;
 }
+

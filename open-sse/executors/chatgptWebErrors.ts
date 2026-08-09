@@ -16,3 +16,4 @@ const CGPT_WEB_HTTP_ERROR_MESSAGES: Record<number, string> = {
 export function describeChatGptWebHttpError(status: number): string {
   return CGPT_WEB_HTTP_ERROR_MESSAGES[status] ?? `ChatGPT returned HTTP ${status}`;
 }
+

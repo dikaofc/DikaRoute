@@ -116,3 +116,4 @@ export function buildDroidCustomModels(
 export function isDikaRouteCustomModel(entry: { id?: unknown } | null | undefined): boolean {
   return typeof entry?.id === "string" && entry.id.startsWith("custom:DikaRoute");
 }
+

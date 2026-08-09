@@ -114,3 +114,4 @@ export function registerTags(program) {
     emit(data.resources ?? data, cmd.optsWithGlobals());
   });
 }
+

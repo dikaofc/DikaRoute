@@ -214,3 +214,4 @@ async function getClaudeUsageLegacy(accessToken?: string) {
     return { message: `Claude connected. Unable to fetch usage: ${(error as Error).message}` };
   }
 }
+

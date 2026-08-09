@@ -21,3 +21,4 @@ export async function POST(): Promise<Response> {
     return createErrorResponse({ status: 503, message: msg });
   }
 }
+

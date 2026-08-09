@@ -30,3 +30,4 @@ export const SEGMIND_IMAGE_PROVIDER = {
   models: SEGMIND_IMAGE_MODELS,
   supportedSizes: ["512x512", "1024x1024", "1024x1792", "1792x1024"],
 };
+

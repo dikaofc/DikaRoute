@@ -119,3 +119,4 @@ export function collapseRepeated(
   }
   return out.join("\n");
 }
+

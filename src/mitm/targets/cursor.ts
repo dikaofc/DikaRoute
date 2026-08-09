@@ -31,3 +31,4 @@ export const CURSOR_TARGET: MitmTarget = {
     import("../handlers/cursor.ts").then((m) => ({ default: m.CursorHandler })),
   riskNoticeKey: "providers.riskNotice.oauth",
 };
+

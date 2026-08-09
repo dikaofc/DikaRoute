@@ -42,3 +42,4 @@ export async function DELETE(): Promise<Response> {
   globalTrafficBuffer.clear();
   return new Response(null, { status: 204 });
 }
+

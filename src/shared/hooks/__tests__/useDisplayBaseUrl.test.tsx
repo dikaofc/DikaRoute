@@ -316,3 +316,4 @@ describe("useDisplayBaseUrl", () => {
     expect(result).toBe(window.location.origin.replace(/\/+$/, ""));
   });
 });
+

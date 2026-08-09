@@ -296,3 +296,4 @@ describe("dikaroute_web_search handler (via MCP dispatch)", () => {
     expect(result.isError).toBe(true);
   });
 });
+

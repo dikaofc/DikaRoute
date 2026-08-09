@@ -150,3 +150,4 @@ export async function handleAdobeFireflyVideoGeneration({
     return { success: false, status: 500, error: errorText };
   }
 }
+

@@ -164,3 +164,4 @@ export function registerFreeModelQuotaFetcher(): void {
   registerMonitorFetcher("freemodel-dev", fetchFreeModelQuota);
   registerQuotaWindows("freemodel-dev", [FREEMODEL_WINDOW_5H, FREEMODEL_WINDOW_7D]);
 }
+

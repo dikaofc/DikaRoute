@@ -58,3 +58,4 @@ export const anthropicProvider: RegistryEntry = {
     { id: "claude-haiku-4.5", name: "Claude Haiku 4.5" },
   ],
 };
+

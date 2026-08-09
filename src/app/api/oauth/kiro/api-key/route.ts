@@ -125,3 +125,4 @@ async function syncToCloudIfEnabled() {
     console.log("Error syncing to cloud after Kiro API key import:", error);
   }
 }
+

@@ -150,3 +150,4 @@ async function syncToCloudIfEnabled() {
     console.log("Error syncing to cloud:", error);
   }
 }
+

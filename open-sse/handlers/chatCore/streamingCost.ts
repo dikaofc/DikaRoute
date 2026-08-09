@@ -35,3 +35,4 @@ export function recordStreamingCost(args: {
     })
     .catch(() => {});
 }
+

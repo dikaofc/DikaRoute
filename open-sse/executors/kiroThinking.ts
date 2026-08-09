@@ -114,3 +114,4 @@ export function flushPendingThinking(
   if (state.thinkingMode) onReasoning(leftover);
   else onContent(leftover);
 }
+

@@ -51,3 +51,4 @@ export function HeaderTable({ headers }: HeaderTableProps) {
     </div>
   );
 }
+

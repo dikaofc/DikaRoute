@@ -19,3 +19,4 @@ export const aimlapiProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

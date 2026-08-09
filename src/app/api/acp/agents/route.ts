@@ -165,3 +165,4 @@ export async function DELETE(request: Request) {
     return NextResponse.json({ error: "Failed to remove agent" }, { status: 500 });
   }
 }
+

@@ -75,3 +75,4 @@ export async function DELETE(request: NextRequest) {
   await revokeInvite(inviteId);
   return NextResponse.json({ success: true }, { headers: CORS_HEADERS });
 }
+

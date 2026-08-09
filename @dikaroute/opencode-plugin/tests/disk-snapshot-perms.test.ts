@@ -64,3 +64,4 @@ test("defaultDiskSnapshotWriter writes an owner-only (no group/other) snapshot",
     fs.rmSync(tmp, { recursive: true, force: true });
   }
 });
+

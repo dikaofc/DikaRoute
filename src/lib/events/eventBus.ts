@@ -146,3 +146,4 @@ export function initEventBus(): void {
 
 // Auto-initialize on import
 initEventBus();
+

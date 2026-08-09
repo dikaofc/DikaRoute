@@ -95,3 +95,4 @@ export const NAMED_OPENAI_STYLE_PROVIDERS = new Set([
 export function isNamedOpenAIStyleProvider(provider: string): boolean {
   return NAMED_OPENAI_STYLE_PROVIDERS.has(provider);
 }
+

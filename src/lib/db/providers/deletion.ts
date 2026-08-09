@@ -139,3 +139,4 @@ export function reorderConnections(db: DbLike, providerId: string) {
     update.run(index + 1, current.id);
   });
 }
+

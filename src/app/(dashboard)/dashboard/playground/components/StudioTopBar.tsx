@@ -115,3 +115,4 @@ export default function StudioTopBar({ activeTab, onTabChange, metrics, exportSt
     </>
   );
 }
+

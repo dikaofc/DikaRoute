@@ -12,3 +12,4 @@ export const chipotleProvider: RegistryEntry = {
   models: [{ id: "pepper-1", name: "Pepper (Chipotle AI 🌯)" }],
   passthroughModels: true,
 };
+

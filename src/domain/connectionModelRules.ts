@@ -80,3 +80,4 @@ export function hasEligibleConnectionForModel(
     (connection) => !isModelExcludedByConnection(modelId, connection?.providerSpecificData)
   );
 }
+

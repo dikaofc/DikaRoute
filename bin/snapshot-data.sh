@@ -59,3 +59,4 @@ done
 
 printf '%s\n' "$id"
 ops_log "snapshot created: $dest"
+

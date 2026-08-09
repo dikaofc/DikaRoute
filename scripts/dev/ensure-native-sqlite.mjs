@@ -112,3 +112,4 @@ export function ensureNativeSqlite(opts = {}) {
     return { ok: true, rebuilt: true };
   }
 }
+

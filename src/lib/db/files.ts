@@ -168,3 +168,4 @@ export function deleteFile(id: string): boolean {
     .run(Math.floor(Date.now() / 1000), id);
   return result.changes > 0;
 }
+

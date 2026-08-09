@@ -964,3 +964,4 @@ export async function handleAudioSpeech({
     return errorResponse(500, `Speech request failed: ${err.message}`);
   }
 }
+

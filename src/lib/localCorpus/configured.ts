@@ -38,3 +38,4 @@ export async function readConfiguredLocalCorpus(
 ) {
   return getConfiguredIndex().read(relativePath, options);
 }
+

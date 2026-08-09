@@ -393,3 +393,4 @@ export function scheduleCodexCatalogRevalidation(options?: { apiBaseUrl?: string
 export function scheduleCodexCatalogRevalidationAfterInit(options?: { apiBaseUrl?: string }): void {
   scheduleRun(() => revalidateCodexCatalogs({ apiBaseUrl: options?.apiBaseUrl, reason: "init" }));
 }
+

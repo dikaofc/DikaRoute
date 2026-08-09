@@ -11,3 +11,4 @@ export const ai21Provider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.ai21,
 };
+

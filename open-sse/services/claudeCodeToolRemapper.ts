@@ -378,3 +378,4 @@ export function cloakThirdPartyToolNames(
 
   return nameMap ?? new Map<string, string>();
 }
+

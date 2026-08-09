@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS compression_analytics (
   duration_ms INTEGER,
   request_id TEXT
 );
+

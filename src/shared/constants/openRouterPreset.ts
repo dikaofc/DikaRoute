@@ -9,3 +9,4 @@ export function normalizeOpenRouterPreset(value: unknown): string | undefined {
   const normalized = value.trim();
   return normalized || undefined;
 }
+

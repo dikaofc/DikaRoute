@@ -26,3 +26,4 @@ export async function DELETE(request: Request) {
     { headers: CORS_HEADERS }
   );
 }
+

@@ -12,3 +12,4 @@ export default async function CliAgentsDetailPage({
   if (!tool || tool.category !== "agent") notFound();
   return <ToolDetailClient toolId={id} category="agent" />;
 }
+

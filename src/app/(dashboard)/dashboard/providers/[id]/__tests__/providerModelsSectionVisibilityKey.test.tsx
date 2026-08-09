@@ -199,3 +199,4 @@ describe("ProviderModelsSection visibility-toggle key (alias !== id)", () => {
     expect(handleBulkToggleModelHidden).not.toHaveBeenCalledWith(STORAGE_ALIAS, [MODEL_ID], true);
   });
 });
+

@@ -321,3 +321,4 @@ export async function runA2aCardCommand(opts = {}) {
     return 1;
   }
 }
+

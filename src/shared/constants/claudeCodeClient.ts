@@ -15,3 +15,4 @@ export type ClaudeCodeEntrypoint = "cli" | "sdk-cli";
 export function getClaudeCodeUserAgent(entrypoint: ClaudeCodeEntrypoint): string {
   return `claude-cli/${CLAUDE_CODE_CLIENT_VERSION} (external, ${entrypoint})`;
 }
+

@@ -272,3 +272,4 @@ export function buildPrompt(body: JsonRecord | undefined): string {
   prompt += userText;
   return prompt;
 }
+

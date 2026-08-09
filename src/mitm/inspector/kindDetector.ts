@@ -85,3 +85,4 @@ export function detectKind(req: InterceptedRequest): "llm" | "app" | "unknown" {
   return bodySignalFired ? "app" : "unknown";
 }
 
+

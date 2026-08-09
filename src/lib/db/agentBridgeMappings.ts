@@ -74,3 +74,4 @@ export function syncAgentBridgeMappingsToMitmAlias(agentId: string): void {
   }
   setMitmAliasAll(agentId, mappings);
 }
+

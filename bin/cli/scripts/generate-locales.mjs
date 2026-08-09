@@ -909,3 +909,4 @@ for (const locale of locales) {
 }
 
 console.log(`\nGenerated: ${created} | Skipped (already exist): ${skipped}`);
+

@@ -41,3 +41,4 @@ export async function appendIssueAgentAuditRecord(
   await appendFile(auditPath, `${JSON.stringify(row)}\n`, "utf8");
   return { path: auditPath };
 }
+

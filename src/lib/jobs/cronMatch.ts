@@ -82,3 +82,4 @@ export function matchesCron(expr: string, date: Date): boolean {
   if (dowRestricted) return dowMatch;
   return true;
 }
+

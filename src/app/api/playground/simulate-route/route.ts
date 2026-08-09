@@ -224,3 +224,4 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: `Simulation error: ${message}` }, { status: 500 });
   }
 }
+

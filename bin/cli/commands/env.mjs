@@ -98,3 +98,4 @@ export async function runEnvSetCommand(key, value) {
   console.log(`\x1b[33m  ${key}=${value} (temporary — current session only)\x1b[0m`);
   return 0;
 }
+

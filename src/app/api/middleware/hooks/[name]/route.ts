@@ -140,3 +140,4 @@ export async function DELETE(request: Request, { params }: RouteParams) {
     return NextResponse.json({ error: "Failed to delete hook" }, { status: 500 });
   }
 }
+

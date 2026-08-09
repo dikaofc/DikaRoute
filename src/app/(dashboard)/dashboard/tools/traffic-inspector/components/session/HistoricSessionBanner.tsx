@@ -30,3 +30,4 @@ export function HistoricSessionBanner({ sessionName, onBackToLive }: HistoricSes
     </div>
   );
 }
+

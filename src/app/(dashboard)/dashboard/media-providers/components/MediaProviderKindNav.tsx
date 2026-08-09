@@ -37,3 +37,4 @@ export default function MediaProviderKindNav({ activeKind }: MediaProviderKindNa
     </div>
   );
 }
+

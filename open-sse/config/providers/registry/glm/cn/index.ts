@@ -15,3 +15,4 @@ export const glm_cnProvider: RegistryEntry = {
   models: [...GLM_SHARED_MODELS],
   passthroughModels: true,
 };
+

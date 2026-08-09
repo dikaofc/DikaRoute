@@ -45,3 +45,4 @@ export async function PUT(request: Request, { params }) {
   if (!updated) return NextResponse.json({ error: "Compression combo not found" }, { status: 404 });
   return NextResponse.json({ assignments: getAssignmentsForCompressionCombo(id) });
 }
+

@@ -112,3 +112,4 @@ export function wantsProgress(headers) {
   const get = typeof headers.get === "function" ? (k) => headers.get(k) : (k) => headers[k];
   return get("x-dikaroute-progress") === "true";
 }
+

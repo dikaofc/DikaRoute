@@ -131,3 +131,4 @@ export function resolveEndpointCategory(pathname: string): string | null {
   }
   return null;
 }
+

@@ -11,3 +11,4 @@
 --   reasoning_chars : NULL when unknown, else raw char count of observed reasoning
 ALTER TABLE call_logs ADD COLUMN reasoning_source TEXT DEFAULT NULL;
 ALTER TABLE call_logs ADD COLUMN reasoning_chars INTEGER DEFAULT NULL;
+

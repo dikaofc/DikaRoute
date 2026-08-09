@@ -24,3 +24,4 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Failed to fetch provider USD costs" }, { status: 500 });
   }
 }
+

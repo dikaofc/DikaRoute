@@ -20,3 +20,4 @@ export function DnsStatusBadge({ enabled }: DnsStatusBadgeProps) {
     </span>
   );
 }
+

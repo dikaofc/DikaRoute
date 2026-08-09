@@ -5,3 +5,4 @@ export function buildJulesApiUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${JULES_API_BASE_URL}${normalized}`;
 }
+

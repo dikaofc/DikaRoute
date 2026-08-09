@@ -29,3 +29,4 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ success: true, scope: parsed.data.scope }, { headers: CORS_HEADERS });
 }
+

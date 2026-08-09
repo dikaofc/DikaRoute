@@ -6,3 +6,4 @@ WHERE provider = 'qwen';
 DELETE FROM key_value
 WHERE namespace IN ('cliToolLastConfig', 'cliToolInitialConfig')
   AND key = 'qwen';
+

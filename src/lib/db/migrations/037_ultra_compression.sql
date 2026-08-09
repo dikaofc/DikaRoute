@@ -4,3 +4,4 @@
 -- key='ultra'. No schema change is required; this migration reserves the version.
 
 SELECT 1;
+

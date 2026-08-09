@@ -155,3 +155,4 @@ export default function MarkdownMessage({ content, className }: MarkdownMessageP
     </div>
   );
 }
+

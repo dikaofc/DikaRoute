@@ -193,3 +193,4 @@ export function extractFacts(response: string, apiKeyId: string, sessionId: stri
     log.info("memory.extraction.complete", { apiKeyId, factCount: facts.length });
   });
 }
+

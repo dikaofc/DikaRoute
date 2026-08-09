@@ -146,3 +146,4 @@ export function registerSetupCrush(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

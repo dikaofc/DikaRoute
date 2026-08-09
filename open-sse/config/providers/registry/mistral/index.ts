@@ -16,3 +16,4 @@ export const mistralProvider: RegistryEntry = {
     { id: "codestral-latest", name: "Codestral" },
   ],
 };
+

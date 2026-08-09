@@ -190,3 +190,4 @@ export default function ProxyLogDetail({ log, onClose }) {
     </div>
   );
 }
+

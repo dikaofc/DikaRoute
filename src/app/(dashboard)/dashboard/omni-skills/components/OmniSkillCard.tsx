@@ -96,3 +96,4 @@ export function OmniSkillCard({ skill, selected, onClick }: OmniSkillCardProps):
 }
 
 export default OmniSkillCard;
+

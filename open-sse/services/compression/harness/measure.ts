@@ -96,3 +96,4 @@ export function measureCompression(original: string, compressed: string): Compre
     retention: computeRetention(original, compressed),
   };
 }
+

@@ -24,3 +24,4 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     revokedAt: new Date().toISOString(),
   });
 }
+

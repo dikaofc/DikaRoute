@@ -23,3 +23,4 @@ export async function runRestartCommand(opts = {}) {
   await runServe(opts);
   return 0;
 }
+

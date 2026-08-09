@@ -116,3 +116,4 @@ export function applyCodexClientMetadata(
     "x-codex-installation-id": identity.installationId,
   };
 }
+

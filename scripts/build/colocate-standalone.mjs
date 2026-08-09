@@ -98,3 +98,4 @@ for (const pkg of closure) {
 console.log(
   `[colocate-standalone] ✅ optional-dep closure: ${closure.length} packages (copied ${copied})`
 );
+

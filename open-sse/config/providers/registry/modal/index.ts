@@ -10,3 +10,4 @@ export const modalProvider: RegistryEntry = {
   authHeader: "bearer",
   models: [{ id: "google/gemini-2.0-flash", name: "Gemini 2.0 Flash" }],
 };
+

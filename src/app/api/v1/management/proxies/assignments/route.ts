@@ -80,3 +80,4 @@ export async function PUT(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to update proxy assignment");
   }
 }
+

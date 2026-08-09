@@ -173,3 +173,4 @@ export function resolveAlibabaProviderMediaBaseUrl(
     .replace(/\/compatible-mode\/v1(?:\/(?:chat\/completions|models))?$/i, "/api/v1")
     .replace(/\/apps\/anthropic(?:\/v1)?(?:\/messages)?$/i, "/api/v1");
 }
+

@@ -133,3 +133,4 @@ export function evaluateToolScopes(
     reason: missing.length > 0 ? "missing_scopes" : undefined,
   };
 }
+

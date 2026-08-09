@@ -28,3 +28,4 @@ export function stageTrace(
   }
   log?.info?.("STAGE_TRACE", `${traceId} ${label} t=${elapsed}ms${suffix}`);
 }
+

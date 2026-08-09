@@ -329,3 +329,4 @@ export default function TelemetryCard() {
     </Card>
   );
 }
+

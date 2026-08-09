@@ -424,3 +424,4 @@ export const GitHubSkillsInstallSchema = z.object({
     .describe("Where to install the skill"),
   description: z.string().default("").describe("Repo description for category inference"),
 });
+

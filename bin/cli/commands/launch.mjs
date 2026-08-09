@@ -239,3 +239,4 @@ export function registerLaunch(program) {
       process.exitCode = await runLaunchCommand(opts, claudeArgs ?? []);
     });
 }
+

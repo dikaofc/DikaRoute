@@ -18,3 +18,4 @@ export const promptqlProvider: RegistryEntry = {
     ...(m.supportsVision ? { supportsVision: true } : {}),
   })),
 };
+

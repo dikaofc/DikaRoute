@@ -1520,3 +1520,4 @@ test("buildStaticProviderEntry: nested combo-ref context is the bottleneck acros
   assert.ok(parent, "Parent combo must be in the static catalog");
   assert.equal(parent.limit?.context, 8_000);
 });
+

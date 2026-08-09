@@ -58,3 +58,4 @@ export function ChatBubble({ turn }: ChatBubbleProps) {
     </div>
   );
 }
+

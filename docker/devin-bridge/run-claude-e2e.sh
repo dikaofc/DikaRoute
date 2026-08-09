@@ -25,3 +25,4 @@ check grep -q 'Read' /workspace/.e2e-hook.log
 check grep -q 'Edit' /workspace/.e2e-hook.log
 check grep -q 'Bash' /workspace/.e2e-hook.log
 check grep -q 'BRIDGE_E2E_COMPLETE' /evidence/claude-stream.jsonl
+

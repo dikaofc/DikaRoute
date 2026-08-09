@@ -40,3 +40,4 @@ export async function GET(): Promise<Response> {
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

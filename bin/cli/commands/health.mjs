@@ -122,3 +122,4 @@ export async function runHealthComponentsCommand(opts = {}) {
     return 1;
   }
 }
+

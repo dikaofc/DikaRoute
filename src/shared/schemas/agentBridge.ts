@@ -35,3 +35,4 @@ export const AgentBridgeMappingPutSchema = z.object({
 export const AgentBridgeBypassUpsertSchema = z.object({ patterns: z.array(z.string()) });
 
 export const AgentBridgeUpstreamCaPostSchema = z.object({ path: z.string().min(1) });
+

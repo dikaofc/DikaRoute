@@ -208,3 +208,4 @@ export function restoreDashboardPages(stubbed, log = console) {
   }
   log.log?.(`[backend-only] Restored ${restored}/${stubbed.length} App-Router UI file(s)`);
 }
+

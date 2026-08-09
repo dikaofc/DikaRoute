@@ -279,3 +279,4 @@ export function getAntigravityProjectFromCache(
 ): string | undefined {
   return projectCache.get(getProjectCacheKey(accessToken, clientProfile));
 }
+

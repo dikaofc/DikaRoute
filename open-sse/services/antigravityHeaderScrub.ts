@@ -73,3 +73,4 @@ export function scrubProxyAndFingerprintHeaders(
   }
   return cleaned;
 }
+

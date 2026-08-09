@@ -120,3 +120,4 @@ export function formatAndroidInstrumentationFailureHint(cacheDir) {
     `  See: docs/guides/TERMUX_GUIDE.md → Troubleshooting → Unsupported platform: android\n`
   );
 }
+

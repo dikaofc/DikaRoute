@@ -26,3 +26,4 @@ CREATE INDEX IF NOT EXISTS idx_context_handoffs_expires
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_context_handoffs_session_combo
   ON context_handoffs(session_id, combo_name);
+

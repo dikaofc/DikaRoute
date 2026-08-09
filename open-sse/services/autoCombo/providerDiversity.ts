@@ -168,3 +168,4 @@ export function resetDiversity(): void {
   usageWindow = [];
   config = { ...DEFAULT_CONFIG };
 }
+

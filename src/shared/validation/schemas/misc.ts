@@ -212,3 +212,4 @@ export const paginationSchema = z.object({
   offset: z.coerce.number().int().min(0).optional(),
   limit: z.coerce.number().int().min(0).max(200).optional(),
 });
+

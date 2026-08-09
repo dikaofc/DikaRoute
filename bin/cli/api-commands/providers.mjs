@@ -146,3 +146,4 @@ export function register_providers(parent) {
       emit(data, gOpts);
     });
 }
+

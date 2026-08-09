@@ -104,3 +104,4 @@ export function resetForTests() {
   activeLocale = null;
   fallbackCatalog = null;
 }
+

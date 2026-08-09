@@ -11,3 +11,4 @@ export const veniceProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.venice,
 };
+

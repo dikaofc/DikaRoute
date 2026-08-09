@@ -27,3 +27,4 @@ export function expandActiveSection(
 ): Set<SidebarSectionId> {
   return new Set([...pinned, sectionId]);
 }
+

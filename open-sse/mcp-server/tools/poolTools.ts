@@ -203,3 +203,4 @@ export const poolTools = {
     handler: () => handleBrowserPoolStatus(),
   },
 };
+

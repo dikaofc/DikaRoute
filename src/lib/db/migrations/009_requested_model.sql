@@ -7,3 +7,4 @@ ALTER TABLE call_logs ADD COLUMN requested_model TEXT DEFAULT NULL;
 -- Index for filtering/aggregating by requested_model in Analytics
 CREATE INDEX IF NOT EXISTS idx_call_logs_requested_model
   ON call_logs(requested_model);
+

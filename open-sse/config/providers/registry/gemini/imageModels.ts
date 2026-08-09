@@ -30,3 +30,4 @@ export const GEMINI_IMAGEN_PROVIDER = {
   ],
   supportedSizes: ["1024x1024", "1792x1024", "1024x1792"],
 };
+

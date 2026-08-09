@@ -155,3 +155,4 @@ export const command_codeProvider: RegistryEntry = {
     },
   ],
 };
+

@@ -20,3 +20,4 @@ export async function POST(request: Request, ctx: RouteCtx) {
     return createErrorResponseFromUnknown(error, "Failed to refresh proxy subscription");
   }
 }
+

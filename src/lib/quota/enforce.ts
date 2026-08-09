@@ -399,3 +399,4 @@ function costForUnit(cost: RecordConsumptionInput["cost"], unit: QuotaUnit): num
       return 0;
   }
 }
+

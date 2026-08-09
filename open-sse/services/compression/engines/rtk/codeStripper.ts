@@ -202,3 +202,4 @@ export function stripCode(
   const strippedLines = Math.max(0, originalLines - (result ? result.split(/\r?\n/).length : 0));
   return { text: result, strippedLines, language: resolvedLanguage };
 }
+

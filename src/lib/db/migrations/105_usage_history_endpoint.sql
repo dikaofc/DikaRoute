@@ -4,3 +4,4 @@
 -- Backward compatible: existing rows default to NULL; aggregation queries fold NULL into 'unknown'.
 ALTER TABLE usage_history ADD COLUMN endpoint TEXT;
 CREATE INDEX IF NOT EXISTS idx_uh_endpoint ON usage_history(endpoint);
+

@@ -120,3 +120,4 @@ export function buildTproxyRevertCommands(cfg: TproxyConfig): TproxyCommand[] {
     { bin: "ip", args: ["rule", "del", "fwmark", String(cfg.mark), "lookup", String(cfg.routeTable)] },
   ];
 }
+

@@ -91,3 +91,4 @@ export function stripStainlessHeadersForOpenAICompat(
 
   return strippedKeys;
 }
+

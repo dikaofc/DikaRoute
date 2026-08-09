@@ -85,3 +85,4 @@ export function parseGrokCliPasteToken(raw: string): GrokCliPasteTokenResult {
     error: "Paste the full contents of ~/.grok/auth.json (JSON object).",
   };
 }
+

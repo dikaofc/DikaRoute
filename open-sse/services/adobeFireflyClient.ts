@@ -2382,3 +2382,4 @@ export async function adobeFireflyGenerateVideo(opts: {
 
   return { url: mediaUrl, format: "mp4", latest };
 }
+

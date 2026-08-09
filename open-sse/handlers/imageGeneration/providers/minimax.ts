@@ -188,3 +188,4 @@ export async function handleMinimaxImageGeneration({
     return buildMinimaxFetchErrorResult(err, { provider, model, startTime, log });
   }
 }
+

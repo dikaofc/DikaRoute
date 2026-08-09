@@ -176,3 +176,4 @@ export function registerSetupKilo(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

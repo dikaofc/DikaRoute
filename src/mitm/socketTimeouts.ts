@@ -22,3 +22,4 @@ export function applyIdleTimeout(socket: Socket, ms: number = MITM_IDLE_TIMEOUT_
     socket.destroy();
   });
 }
+

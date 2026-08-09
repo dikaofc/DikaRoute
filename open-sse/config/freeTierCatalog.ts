@@ -99,3 +99,4 @@ export function computeFreeTierTotals(opts: { excludeTosAvoid?: boolean } = {}):
     headline: `over ${billions(documentedMonthlyTokens)} documented free tokens/month across ${byProvider.length}+ providers`,
   };
 }
+

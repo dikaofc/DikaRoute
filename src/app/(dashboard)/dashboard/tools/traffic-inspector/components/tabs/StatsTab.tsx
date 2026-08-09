@@ -28,3 +28,4 @@ export function StatsTab({ requests }: StatsTabProps) {
   }
   return <StatsCharts requests={requests} />;
 }
+

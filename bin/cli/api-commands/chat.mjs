@@ -56,3 +56,4 @@ export function register_chat(parent) {
       emit(data, gOpts);
     });
 }
+

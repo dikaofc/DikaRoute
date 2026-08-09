@@ -535,3 +535,4 @@ function startAutoCleanup(): void {
 
 // Start on module load — every consumer of reasoning cache benefits.
 startAutoCleanup();
+

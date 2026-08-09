@@ -385,3 +385,4 @@ function scheduleIdleSweep(): void {
   }, 30_000);
   idleTimer.unref?.();
 }
+

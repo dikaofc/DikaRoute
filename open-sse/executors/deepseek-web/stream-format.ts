@@ -42,3 +42,4 @@ export function appendSearchCitations(
     .map((r) => `[${r.cite_index}]: [${r.title}](${r.url})`)
     .join("\n");
 }
+

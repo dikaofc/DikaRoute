@@ -26,3 +26,4 @@ export const cohereProvider: RegistryEntry = {
     { id: "command-r-08-2024", name: "Command R (Aug 2024)" },
   ],
 };
+

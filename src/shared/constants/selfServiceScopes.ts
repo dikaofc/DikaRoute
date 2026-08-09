@@ -18,3 +18,4 @@ export function normalizeSelfServiceScopesForCreate(
   normalized.add(SELF_USAGE_SCOPE);
   return [...normalized];
 }
+

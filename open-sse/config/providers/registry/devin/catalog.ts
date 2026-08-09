@@ -96,3 +96,4 @@ export const DEVIN_MODEL_CATALOG: RegistryModel[] = [
   { id: "nemotron-3-ultra-nvfp4", name: "Nemotron 3 Ultra", contextLength: 262144 },
   { id: "kimi-k2-7", name: "Kimi K2.7", contextLength: 262144 },
 ];
+

@@ -22,3 +22,4 @@ export function register_rerank(parent) {
       emit(data, gOpts);
     });
 }
+

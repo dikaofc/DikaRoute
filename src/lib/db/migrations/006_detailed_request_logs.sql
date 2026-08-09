@@ -40,3 +40,4 @@ END;
 -- Inserted only if not already present (safe for existing installs)
 INSERT OR IGNORE INTO key_value (namespace, key, value)
 VALUES ('settings', 'detailed_logs_enabled', '0');
+

@@ -341,3 +341,4 @@ export function runJsonMigration(
     domainBudgets: (data.domainBudgets ?? []).length,
   };
 }
+

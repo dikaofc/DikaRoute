@@ -283,3 +283,4 @@ export class PromptInjectionGuardrail extends BaseGuardrail {
 }
 
 export { DEFAULT_GUARD_PATTERNS, detectWithPatterns, normalizePatternEntry, shouldBlock };
+

@@ -195,3 +195,4 @@ export function usePortChanged(onPortChanged: (port: number) => void) {
     return dispose;
   }, [isElectron, onPortChanged]);
 }
+

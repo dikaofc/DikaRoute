@@ -235,3 +235,4 @@ function extractGeminiText(content) {
 
 // Register
 register(FORMATS.GEMINI, FORMATS.OPENAI, geminiToOpenAIRequest, null);
+

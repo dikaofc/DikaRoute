@@ -347,3 +347,4 @@ export function registerOAuth(program) {
     .option("--yes", t("oauth.revoke.yes"))
     .action(runOAuthRevoke);
 }
+

@@ -74,3 +74,4 @@ describe("dikaroute_db_health_check MCP tool", () => {
     expect(payload.backupCreated).toBe(true);
   });
 });
+

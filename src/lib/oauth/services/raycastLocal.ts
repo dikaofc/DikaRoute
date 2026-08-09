@@ -196,3 +196,4 @@ export function extractLocalRaycastCredentials(): RaycastLocalCredentials {
     source: analyticsFromDb ? "keychain+analyticsId" : "keychain+posthog",
   };
 }
+

@@ -21,3 +21,4 @@ export const hailuo_webProvider: RegistryEntry = {
   authHeader: "bearer",
   models: HAILUO_WEB_STATIC_MODELS,
 };
+

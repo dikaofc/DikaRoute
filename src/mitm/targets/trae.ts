@@ -30,3 +30,4 @@ export const TRAE_TARGET: MitmTarget = {
   riskNoticeKey: "providers.riskNotice.investigating",
   viability: "investigating",
 };
+

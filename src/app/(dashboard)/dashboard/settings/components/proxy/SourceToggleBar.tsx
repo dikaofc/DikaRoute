@@ -65,3 +65,4 @@ export default function SourceToggleBar({ disabledSources, onToggle }: SourceTog
     </div>
   );
 }
+

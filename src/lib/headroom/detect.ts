@@ -212,3 +212,4 @@ export async function getHeadroomStatus(url: string): Promise<HeadroomStatus> {
   const proxyReachable = await probeProxyRunning(url);
   return buildHeadroomStatus({ url, binaryPath, python, proxyReachable });
 }
+

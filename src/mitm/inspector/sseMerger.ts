@@ -314,3 +314,4 @@ export function mergeStream(chunks: SseEvent[]): MergedResponse {
       return { format: "unknown", raw: chunks };
   }
 }
+

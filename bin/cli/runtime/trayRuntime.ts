@@ -91,3 +91,4 @@ function installSystray(): void {
     { stdio: ["ignore", "ignore", "pipe"], timeout: 120_000 }
   );
 }
+

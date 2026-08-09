@@ -89,3 +89,4 @@ export function initWindowsTray(opts: WinTrayOptions): WinTrayHandle | null {
     },
   };
 }
+

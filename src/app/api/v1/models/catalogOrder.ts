@@ -96,3 +96,4 @@ export function sortCatalogModelsProviderGrouped<T extends Record<string, unknow
 
   return annotated.map((entry) => entry.model);
 }
+

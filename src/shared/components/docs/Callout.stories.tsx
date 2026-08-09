@@ -38,3 +38,4 @@ export const Danger: Story = {
     children: "Deleting this resource is irreversible and will remove all associated data.",
   },
 };
+

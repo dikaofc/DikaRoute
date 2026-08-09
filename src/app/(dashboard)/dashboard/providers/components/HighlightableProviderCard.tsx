@@ -34,3 +34,4 @@ export default function HighlightableProviderCard(props: ProviderCardProps) {
 
   return <ProviderCard {...props} onCardClick={handleCardClick} ref={highlightedCardRef} />;
 }
+

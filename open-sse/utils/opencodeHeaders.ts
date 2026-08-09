@@ -115,3 +115,4 @@ function applyCliDefaults(
   headers["x-opencode-request"] ||= randomUUID();
   headers["x-opencode-session"] ||= randomUUID();
 }
+

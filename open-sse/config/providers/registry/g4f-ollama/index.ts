@@ -16,3 +16,4 @@ export const g4f_ollamaProvider: RegistryEntry = {
   passthroughModels: true,
   models: [{ id: "gemma3:4b", name: "Gemma 3 4B (g4f/Ollama)" }],
 };
+

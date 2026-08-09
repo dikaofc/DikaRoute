@@ -28,3 +28,4 @@ CREATE TABLE IF NOT EXISTS radar_settings (
 -- Seed the single row so reads never return "no row" for settings
 INSERT OR IGNORE INTO radar_settings (id, opt_in, supporter_key_encrypted, updated_at)
 VALUES (1, 0, NULL, datetime('now'));
+

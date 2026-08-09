@@ -44,3 +44,4 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Failed to build API key status" }, { status: 500 });
   }
 }
+

@@ -42,3 +42,4 @@ export function allow(subject: AuthSubject): AuthDecision {
 export function reject(status: number, code: string, message: string): AuthRejection {
   return { allow: false, status, code, message };
 }
+

@@ -31,3 +31,4 @@ export function detectAntigravity(): DetectionResult {
   }
   return { installed: false };
 }
+

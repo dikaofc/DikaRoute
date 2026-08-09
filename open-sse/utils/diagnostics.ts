@@ -309,3 +309,4 @@ export function describeMalformedNonStream(
 
 // ── Test-only export ─────────────────────────────────────────────────────────
 export const __test = { describeReason };
+

@@ -26,3 +26,4 @@ export const antigravityProvider: RegistryEntry = {
   models: [...ANTIGRAVITY_PUBLIC_MODELS],
   passthroughModels: true,
 };
+

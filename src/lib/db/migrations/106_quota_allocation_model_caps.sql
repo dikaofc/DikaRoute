@@ -30,3 +30,4 @@ CREATE TABLE IF NOT EXISTS quota_allocation_model_caps (
 
 CREATE INDEX IF NOT EXISTS idx_qamc_pool_key
   ON quota_allocation_model_caps(pool_id, api_key_id);
+

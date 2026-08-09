@@ -133,3 +133,4 @@ export async function runEval(opts: RunEvalOptions): Promise<RunEvalResult> {
   const report = aggregateRecords(records, stamps, { partial, totalCostUsd: meter.spent });
   return { aborted: false, report };
 }
+

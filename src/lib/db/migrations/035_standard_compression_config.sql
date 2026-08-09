@@ -7,3 +7,4 @@ VALUES (
   'cavemanConfig',
   '{"enabled":true,"compressRoles":["user"],"skipRules":[],"minMessageLength":50,"preservePatterns":[]}'
 );
+

@@ -133,3 +133,4 @@ function matchesReadonlyPublic(path: string, method: string): boolean {
 function isClassifiedAsPublic(path: string, method: string): boolean {
   return isPublicApiRoute(path, method);
 }
+

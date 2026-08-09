@@ -370,3 +370,4 @@ export function parseVideoModel(modelStr: string | null) {
 export function getAllVideoModels() {
   return getAllModelsFromRegistry(VIDEO_PROVIDERS);
 }
+

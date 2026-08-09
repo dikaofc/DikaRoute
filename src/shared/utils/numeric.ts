@@ -68,3 +68,4 @@ export function toNumberArray(v: unknown, fallback: number[] = []): number[] {
   if (!Array.isArray(v)) return fallback;
   return v.map((item) => toNumber(item, 0));
 }
+

@@ -32,3 +32,4 @@ export function applyClaudeCodeCompatibleThinkingDisplay(
     display: "summarized",
   };
 }
+

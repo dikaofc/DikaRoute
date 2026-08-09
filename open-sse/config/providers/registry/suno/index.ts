@@ -16,3 +16,4 @@ export const sunoProvider: RegistryEntry = {
     { id: "chirp-v3-5", name: "Chirp V3.5" },
   ],
 };
+

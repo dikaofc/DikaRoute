@@ -54,3 +54,4 @@ export const cacheStatusSchema = [
   { key: "key", header: "Metric", width: 28 },
   { key: "value", header: "Value" },
 ];
+

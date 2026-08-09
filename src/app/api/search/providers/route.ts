@@ -204,3 +204,4 @@ export async function GET(request: Request) {
     return NextResponse.json(buildErrorBody(500, "Failed to list providers"), { status: 500 });
   }
 }
+

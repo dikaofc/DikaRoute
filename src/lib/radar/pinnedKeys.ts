@@ -61,3 +61,4 @@ export function toPublicKey(input: string): crypto.KeyObject | null {
     return null;
   }
 }
+

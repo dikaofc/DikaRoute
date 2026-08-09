@@ -26,3 +26,4 @@ export const DEFAULT_CHAOS_PAGE_CONFIG: ChaosPageConfig = {
 };
 
 export type ChaosPageMessage = { type: "success" | "error"; text: string } | null;
+

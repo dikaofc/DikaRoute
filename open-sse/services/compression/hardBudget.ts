@@ -199,3 +199,4 @@ export function applyHardBudget(
 
   return { body: newBody, compressed: changed, stats };
 }
+

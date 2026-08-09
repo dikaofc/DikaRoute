@@ -419,3 +419,4 @@ export async function launchAutoUpdate({
     composeCommand: validation.composeCommand,
   };
 }
+

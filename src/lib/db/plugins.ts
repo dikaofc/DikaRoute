@@ -278,3 +278,4 @@ export function getPluginAnalyticsSummary(pluginName: string): PluginAnalyticsSu
     avgDurationMs: row?.avg_duration ?? 0,
   };
 }
+

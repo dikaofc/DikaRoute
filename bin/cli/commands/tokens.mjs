@@ -116,3 +116,4 @@ export function registerTokens(program) {
       process.stdout.write("  admin  write + manage (tokens, providers add, services, policy)\n");
     });
 }
+

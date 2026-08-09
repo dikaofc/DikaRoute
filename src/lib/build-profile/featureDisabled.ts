@@ -21,3 +21,4 @@ export class FeatureDisabledError extends Error {
 export function featureDisabledError(featureName: string): FeatureDisabledError {
   return new FeatureDisabledError(featureName);
 }
+

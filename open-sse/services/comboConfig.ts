@@ -326,3 +326,4 @@ export function resolveComboSetupConfig(combo: ComboConfigLike, settings: ComboS
     ? resolveComboConfig(combo, settings)
     : { ...getDefaultComboConfig(), ...((combo?.config as Record<string, unknown>) || {}) };
 }
+

@@ -96,3 +96,4 @@ export function extractProviderWarnings(...payloads: unknown[]) {
   payloads.forEach((payload) => collectProviderWarnings(payload, hits));
   return Array.from(hits);
 }
+

@@ -224,3 +224,4 @@ export function buildCursorRequest(model, body, stream, credentials) {
 }
 
 register(FORMATS.OPENAI, FORMATS.CURSOR, buildCursorRequest, null);
+

@@ -316,3 +316,4 @@ export function formatBenchmarkTable(rows: EngineSummaryRow[]): string {
   });
   return [header, sep, ...body].join("\n");
 }
+

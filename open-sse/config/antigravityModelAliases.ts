@@ -234,3 +234,4 @@ export function isUserCallableAntigravityModelId(modelId: string): boolean {
   const upstreamId = resolveAntigravityModelId(modelId);
   return PUBLIC_MODEL_IDS.has(clientId) || UPSTREAM_PUBLIC_MODEL_IDS.has(upstreamId);
 }
+

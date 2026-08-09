@@ -355,3 +355,4 @@ export function registerOpenrouterQuotaFetcher(): void {
   registerQuotaFetcher("openrouter", fetchOpenrouterQuotaWithFreeWindowPreflight);
   registerMonitorFetcher("openrouter", fetchOpenrouterQuotaWithFreeWindowPreflight);
 }
+

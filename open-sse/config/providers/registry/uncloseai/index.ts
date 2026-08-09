@@ -17,3 +17,4 @@ export const uncloseaiProvider: RegistryEntry = {
     { id: "gemma4:31b", name: "Gemma 4 31B (🆓 Free)" },
   ],
 };
+

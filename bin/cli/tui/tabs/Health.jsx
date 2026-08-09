@@ -51,3 +51,4 @@ export default function Health({ baseUrl, apiKey }) {
     />
   );
 }
+

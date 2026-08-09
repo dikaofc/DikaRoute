@@ -121,3 +121,4 @@ export function registerPricing(program) {
       emit(data.diff ?? data, cmd.optsWithGlobals());
     });
 }
+

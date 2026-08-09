@@ -71,3 +71,4 @@ export const moonshotProvider: RegistryEntry = {
   authHeader: "bearer",
   models: MOONSHOT_KIMI_MODELS,
 };
+

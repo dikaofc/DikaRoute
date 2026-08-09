@@ -305,3 +305,4 @@ export function detectProvider(modelId: string): "openai" | "anthropic" | "googl
 
   return "other";
 }
+

@@ -85,3 +85,4 @@ export function updateEngineConfig(
 export function clearCompressionEngineRegistry(): void {
   ENGINES.clear();
 }
+

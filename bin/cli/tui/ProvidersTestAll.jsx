@@ -188,3 +188,4 @@ export async function startProvidersTestTui({ providers, baseUrl, apiKey, concur
     waitUntilExit().then(resolve).catch(reject);
   });
 }
+

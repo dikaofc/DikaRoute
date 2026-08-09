@@ -7,3 +7,4 @@ import { REGISTRY } from "@dikaroute/open-sse/config/providerRegistry";
 export function getProviderRegistry() {
   return REGISTRY;
 }
+

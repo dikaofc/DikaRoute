@@ -285,3 +285,4 @@ export function supportsXHighEffortForMaxNormalization(
 ): boolean {
   return supportsXHighEffort(aliasOrId, modelId);
 }
+

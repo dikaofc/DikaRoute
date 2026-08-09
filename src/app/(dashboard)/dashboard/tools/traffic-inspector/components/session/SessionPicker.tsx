@@ -87,3 +87,4 @@ export function SessionPicker({ sessions, selectedId, onSelect, onDelete }: Sess
     </div>
   );
 }
+

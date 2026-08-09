@@ -106,3 +106,4 @@ export async function GET() {
     return NextResponse.redirect("/favicon.svg");
   }
 }
+

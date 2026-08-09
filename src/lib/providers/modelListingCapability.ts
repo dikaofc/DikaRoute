@@ -31,3 +31,4 @@ export function providerLacksModelListing(providerId: string, kinds: readonly st
   if (kinds.length === 0) return false;
   return kinds.every((kind) => TOOL_ONLY_SERVICE_KINDS.has(kind));
 }
+

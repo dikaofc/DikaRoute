@@ -288,3 +288,4 @@ export function useCommandCodeAuth({
     handleOpenCommandCodeConnect,
   };
 }
+

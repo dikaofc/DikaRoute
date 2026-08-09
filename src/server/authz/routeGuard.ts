@@ -243,3 +243,4 @@ export function isLocalOnlyBypassableByManageScope(path: string): boolean {
 export function isAlwaysProtectedPath(path: string): boolean {
   return ALWAYS_PROTECTED_API_PATHS.some((p) => path === p || path.startsWith(p));
 }
+

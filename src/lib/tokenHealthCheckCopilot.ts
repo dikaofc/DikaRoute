@@ -75,3 +75,4 @@ export async function refreshGithubCopilotSubTokenIfNeeded(params: {
     logError(`${logPrefix} Error refreshing Copilot sub-token:`, copilotErr?.message || copilotErr);
   }
 }
+

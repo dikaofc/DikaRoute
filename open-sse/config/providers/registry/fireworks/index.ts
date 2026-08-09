@@ -33,3 +33,4 @@ export const fireworksProvider: RegistryEntry = {
     { id: "qwen3p6-plus", name: "Qwen3.6 Plus" },
   ],
 };
+

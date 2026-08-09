@@ -124,3 +124,4 @@ export function OcrExampleCard({ providerId }: Props) {
     </PlaygroundCard>
   );
 }
+

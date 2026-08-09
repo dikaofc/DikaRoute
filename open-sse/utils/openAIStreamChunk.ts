@@ -31,3 +31,4 @@ export function normalizeFinalOpenAIStreamChunk(
     : undefined;
   return { changed, hasFinishReason: Boolean(firstChoice?.finish_reason) };
 }
+

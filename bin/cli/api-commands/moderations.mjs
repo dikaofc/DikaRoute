@@ -22,3 +22,4 @@ export function register_moderations(parent) {
       emit(data, gOpts);
     });
 }
+

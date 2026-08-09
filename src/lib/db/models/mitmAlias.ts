@@ -30,3 +30,4 @@ export async function setMitmAliasAll(toolName: string, mappings: unknown) {
   ).run(toolName, JSON.stringify(mappings || {}));
   backupDbFile("pre-write");
 }
+

@@ -494,3 +494,4 @@ export default function BatchDetailModal({ batch, files, onClose, onActionDone }
     </div>
   );
 }
+

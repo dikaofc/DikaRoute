@@ -32,3 +32,4 @@ export const MITM_TOOL_HOSTS: Record<string, string[]> = {
 export function getMitmToolHosts(toolId: string): string[] {
   return MITM_TOOL_HOSTS[toolId] ?? [];
 }
+

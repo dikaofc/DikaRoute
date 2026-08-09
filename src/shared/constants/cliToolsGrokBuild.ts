@@ -17,3 +17,4 @@ export const GROK_BUILD_CLI_TOOL: CliCatalogEntry = {
   baseUrlSupport: "full",
   defaultCommand: "grok",
 };
+

@@ -9,3 +9,4 @@ export const requestyProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntr
   models: [],
   passthroughModels: true,
 });
+

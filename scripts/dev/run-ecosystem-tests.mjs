@@ -106,3 +106,4 @@ main().catch((error) => {
   console.error("[test:ecosystem] Failed:", error?.message || error);
   process.exit(1);
 });
+

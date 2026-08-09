@@ -41,3 +41,4 @@ export function maskApiKey(plainKey: string): string {
   const last4 = plainKey.slice(-4);
   return `nr_••••••••${last4}`;
 }
+

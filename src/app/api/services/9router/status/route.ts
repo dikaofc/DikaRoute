@@ -76,3 +76,4 @@ export async function GET(request: Request = new Request("http://localhost/")): 
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

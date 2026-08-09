@@ -76,3 +76,4 @@ export async function maybeSyncClaudeExtraUsageState({
     log?.debug?.("CLAUDE_USAGE", `Failed to sync Claude extra-usage state: ${message}`);
   }
 }
+

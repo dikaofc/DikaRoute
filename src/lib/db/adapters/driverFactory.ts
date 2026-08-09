@@ -283,3 +283,4 @@ export async function openDatabaseAsync(
   console.log(`[DB] Driver: sql.js | file: ${filePath}`);
   return adapter;
 }
+

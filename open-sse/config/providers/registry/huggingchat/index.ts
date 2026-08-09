@@ -141,3 +141,4 @@ export const huggingchatProvider: RegistryEntry = {
     },
   ],
 };
+

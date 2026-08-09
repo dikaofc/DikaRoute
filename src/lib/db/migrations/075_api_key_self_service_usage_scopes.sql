@@ -49,3 +49,4 @@ WHERE NOT EXISTS (
 
 INSERT OR IGNORE INTO key_value (namespace, key, value)
 VALUES ('apiKeySelfService', 'usageScopesBackfilled', datetime('now'));
+

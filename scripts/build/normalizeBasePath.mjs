@@ -29,3 +29,4 @@ export function joinBasePath(basePath, pathname) {
   if (pathPart === "/") return `${basePath}/`;
   return `${basePath}${pathPart}`;
 }
+

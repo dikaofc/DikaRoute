@@ -28,3 +28,4 @@ export function shouldUseSpinner(opts = {}) {
   if (process.env.CI) return false;
   return true;
 }
+

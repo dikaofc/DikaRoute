@@ -41,3 +41,4 @@ export function Step1ChooseIntegration({ selected, onSelect, t }: Step1Props) {
     </div>
   );
 }
+

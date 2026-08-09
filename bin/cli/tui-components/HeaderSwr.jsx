@@ -23,3 +23,4 @@ export function HeaderSwr({ fetcher, interval = 5000, render, initial = null }) 
   if (!data) return <Text dimColor>Loading…</Text>;
   return render(data);
 }
+

@@ -140,3 +140,4 @@ export function isProviderModelHidden(
   }
   return hiddenModelsByProvider.get(providerId)?.has(modelId) ?? false;
 }
+

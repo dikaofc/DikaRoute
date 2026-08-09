@@ -30,3 +30,4 @@ export const ZED_TARGET: MitmTarget = {
   handler: () => import("../handlers/zed.ts").then((m) => ({ default: m.ZedHandler })),
   riskNoticeKey: "providers.riskNotice.oauth",
 };
+

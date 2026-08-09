@@ -60,3 +60,4 @@ WHERE EXISTS (
     AND json_type(usage_history.account_key, '$[5]') = 'text'
     AND json_extract(usage_history.account_key, '$[5]') <> ''
 );
+

@@ -38,3 +38,4 @@ export function ConfirmDialog({ message, onConfirm, onCancel }) {
     </Box>
   );
 }
+

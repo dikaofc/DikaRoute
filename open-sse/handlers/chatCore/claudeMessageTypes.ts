@@ -13,3 +13,4 @@ export type ClaudeMessage = {
   role?: unknown;
   content?: unknown;
 };
+

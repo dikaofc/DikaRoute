@@ -38,3 +38,4 @@ export function getHermesHome(): string {
 export function getHermesConfigPath(): string {
   return path.join(getHermesHome(), "config.yaml");
 }
+

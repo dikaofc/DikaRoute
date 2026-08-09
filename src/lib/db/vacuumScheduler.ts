@@ -324,3 +324,4 @@ export function __resetForTests(): void {
   stop();
   currentState = { ...STATE_DEFAULTS };
 }
+

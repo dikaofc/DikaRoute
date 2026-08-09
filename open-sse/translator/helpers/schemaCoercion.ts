@@ -553,3 +553,4 @@ export function sanitizeClaudeToolSchemas(tools: unknown): unknown {
     return { ...tool, input_schema: sanitizeClaudeToolSchema(tool.input_schema) };
   });
 }
+

@@ -518,3 +518,4 @@ async function uninstallCertWindows(certPath: string): Promise<void> {
   await runElevatedPowerShell(buildWindowsDelstoreScript(certutilThumbprint(certPath)));
   console.log("✅ Uninstalled certificate from Windows Root store");
 }
+

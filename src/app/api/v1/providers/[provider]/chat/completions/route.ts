@@ -103,3 +103,4 @@ export async function POST(request, { params }) {
 
   return await handleChat(newRequest, () => buildClientRawRequest(request, rawBody));
 }
+

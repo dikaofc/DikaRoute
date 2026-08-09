@@ -92,3 +92,4 @@ export interface RecordConsumptionInput {
   model?: string;
   cost: { tokens?: number; usd?: number; requests?: number };
 }
+

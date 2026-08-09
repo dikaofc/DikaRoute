@@ -225,3 +225,4 @@ export function getStaticModelsForProvider(provider: string): LocalCatalogModel[
 
   return specialtyModels.length > 0 ? specialtyModels : undefined;
 }
+

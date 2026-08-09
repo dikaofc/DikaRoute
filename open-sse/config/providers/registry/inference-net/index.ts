@@ -11,3 +11,4 @@ export const inference_netProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS["inference-net"],
 };
+

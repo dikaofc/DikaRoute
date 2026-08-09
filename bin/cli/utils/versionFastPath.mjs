@@ -23,3 +23,4 @@ export function isVersionFastPath(argv) {
   const args = Array.isArray(argv) ? argv.slice(2) : [];
   return args.length === 1 && (args[0] === "--version" || args[0] === "-V");
 }
+

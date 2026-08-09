@@ -395,3 +395,4 @@ export function stripOrphanedToolResults<T extends ToolCallBody>(body: T): T {
   body.messages = filteredMessages;
   return body;
 }
+

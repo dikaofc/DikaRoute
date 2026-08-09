@@ -108,3 +108,4 @@ export function queryBlock(text: string, q: CcrQuery): CcrQueryResult {
       return err(`unknown mode: ${String(mode)}`);
   }
 }
+

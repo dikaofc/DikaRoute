@@ -139,3 +139,4 @@ export async function POST(request: Request): Promise<Response> {
 export function getIngestTokenForBootstrap(): string {
   return getIngestToken();
 }
+

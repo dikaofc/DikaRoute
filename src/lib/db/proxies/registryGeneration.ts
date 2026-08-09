@@ -10,3 +10,4 @@ export function bumpProxyRegistryGeneration() {
 export function getProxyRegistryGeneration() {
   return proxyRegistryGeneration;
 }
+

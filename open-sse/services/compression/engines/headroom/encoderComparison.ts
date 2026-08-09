@@ -70,3 +70,4 @@ export function summarizeEncoderCandidates(
     winner: pickWinner(json, gcf, toon, toonAvailable),
   };
 }
+

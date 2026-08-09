@@ -23,3 +23,4 @@ export const minimaxProvider: RegistryEntry = {
     { id: "MiniMax-M2.5-highspeed", name: "MiniMax M2.5 Highspeed" },
   ],
 };
+

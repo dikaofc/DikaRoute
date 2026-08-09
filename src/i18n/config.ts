@@ -52,3 +52,4 @@ export const LANGUAGES: readonly {
 export const RTL_LOCALES: readonly Locale[] = config.rtl as readonly Locale[];
 
 export const LOCALE_COOKIE = "NEXT_LOCALE";
+

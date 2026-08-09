@@ -830,3 +830,4 @@ export function getAllDomainBudgets(): Record<string, unknown>[] {
   const db = getDbInstance();
   return db.prepare("SELECT * FROM domain_budgets").all() as Record<string, unknown>[];
 }
+

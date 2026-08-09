@@ -109,3 +109,4 @@ export function isSubscriptionFetchUrlAllowed(url: string): boolean {
   }
   return true; // hostname: resolved + checked at fetch time
 }
+

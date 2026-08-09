@@ -10,3 +10,4 @@ export const cozeProvider: RegistryEntry = {
   authHeader: "bearer",
   models: [{ id: "claude-3-7-sonnet-20250514", name: "Claude 3.7 Sonnet" }],
 };
+

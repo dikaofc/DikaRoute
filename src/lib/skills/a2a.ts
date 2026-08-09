@@ -32,3 +32,4 @@ export const a2aMemorySkill = {
 export function registerA2ASkill(registry: any): void {
   registry.registerHandler("memory_aware_routing", a2aMemorySkill.handler);
 }
+

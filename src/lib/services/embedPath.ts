@@ -17,3 +17,4 @@
 export function toUpstreamPath(pathSegments: string[]): string {
   return pathSegments.length > 0 ? "/" + pathSegments.join("/") : "/";
 }
+

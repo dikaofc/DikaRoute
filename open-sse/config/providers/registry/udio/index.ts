@@ -10,3 +10,4 @@ export const udioProvider: RegistryEntry = {
   authHeader: "cookie",
   models: [{ id: "udio-default", name: "Udio Default" }],
 };
+

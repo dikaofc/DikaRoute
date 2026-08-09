@@ -129,3 +129,4 @@ export async function DELETE(request: Request): Promise<Response> {
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

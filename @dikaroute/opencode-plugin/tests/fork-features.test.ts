@@ -289,3 +289,4 @@ test("createDebugLoggingFetch: SSE response is NOT buffered (resBody is the stre
   assert.equal(entries.length, 1);
   assert.equal(entries[0].resBody, "[stream]", "SSE responses must not be buffered");
 });
+

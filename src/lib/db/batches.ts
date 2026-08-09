@@ -448,3 +448,4 @@ export function deleteCompletedBatches(): { deletedBatches: number; deletedFiles
   const result = db.prepare("DELETE FROM batches WHERE status = 'completed'").run();
   return { deletedBatches: result.changes, deletedFiles };
 }
+

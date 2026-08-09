@@ -12,3 +12,4 @@ export default async function CliCodeDetailPage({
   if (!tool || tool.category !== "code") notFound();
   return <ToolDetailClient toolId={id} category="code" />;
 }
+

@@ -115,3 +115,4 @@ export function parseDevinToolRequest(text: string, tools: AnthropicTool[], idSe
     .slice(0, 16);
   return { id: `tool_devin_${digest}`, name, input };
 }
+

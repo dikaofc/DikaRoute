@@ -42,3 +42,4 @@ CREATE INDEX IF NOT EXISTS idx_proxy_subscriptions_enabled ON proxy_subscription
 ALTER TABLE proxy_registry ADD COLUMN subscription_id TEXT;
 
 CREATE INDEX IF NOT EXISTS idx_proxy_registry_subscription ON proxy_registry(subscription_id);
+

@@ -256,3 +256,4 @@ export function stripStaleForwardingHeaders(headers: Headers): void {
   headers.delete("content-length");
   headers.delete("transfer-encoding");
 }
+

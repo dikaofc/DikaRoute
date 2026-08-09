@@ -5,3 +5,4 @@ import { EngineConfigPage } from "@/shared/components/compression/EngineConfigPa
 export default function CcrPage() {
   return <EngineConfigPage engineId="ccr" />;
 }
+

@@ -19,3 +19,4 @@ CREATE INDEX IF NOT EXISTS idx_quota_pool_connections_pool
 INSERT OR IGNORE INTO quota_pool_connections (pool_id, connection_id)
   SELECT id, connection_id FROM quota_pools
   WHERE connection_id IS NOT NULL AND connection_id <> '';
+

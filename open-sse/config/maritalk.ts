@@ -16,3 +16,4 @@ export function buildMaritalkChatUrl(value: string | null | undefined): string {
 export function buildMaritalkModelsUrl(value: string | null | undefined): string {
   return `${normalizeMaritalkBaseUrl(value)}/models`;
 }
+

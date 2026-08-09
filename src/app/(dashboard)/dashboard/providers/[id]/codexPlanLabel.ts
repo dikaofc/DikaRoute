@@ -17,3 +17,4 @@ export function getCodexPlanLabel(isCodex: boolean, providerSpecificData: unknow
   const raw = record.chatgptPlanType;
   return typeof raw === "string" ? raw.trim() : "";
 }
+

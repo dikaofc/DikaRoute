@@ -41,3 +41,4 @@ export const SkillConfigSchema = z.object({
   timeout: z.number().int().positive().default(30000),
   maxRetries: z.number().int().min(0).default(3),
 });
+

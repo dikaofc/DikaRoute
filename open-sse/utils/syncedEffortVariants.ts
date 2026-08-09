@@ -107,3 +107,4 @@ export function appendSyncedEffortVariants<T extends CatalogModelEntry>(models: 
 
   return variants.length > 0 ? [...models, ...variants] : models;
 }
+

@@ -26,3 +26,4 @@ export const doubaoProvider: RegistryEntry = {
     { id: "doubao-pro-32k", name: "Doubao Pro 32K" },
   ],
 };
+

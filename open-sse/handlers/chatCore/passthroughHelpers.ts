@@ -261,3 +261,4 @@ export function isClaudeCodeSemanticPassthroughRequest({
   const sessionId = getHeaderValueCaseInsensitive(headers, "x-claude-code-session-id");
   return typeof sessionId === "string" && sessionId.trim().length > 0;
 }
+

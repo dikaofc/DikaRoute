@@ -13,3 +13,4 @@ export const sarvamProvider: RegistryEntry = {
     { id: "sarvam-30b", name: "Sarvam 30B", contextLength: 65536 },
   ],
 };
+

@@ -52,3 +52,4 @@ export const TIER_FILTERS = [
   { key: "free", labelKey: "tierFree" },
   { key: "unknown", labelKey: "tierUnknown" },
 ];
+

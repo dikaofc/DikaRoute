@@ -22,3 +22,4 @@ export function findEmbeddingComboDimensionConflict(
   const modelStrs = targets.map((t) => t.modelStr).filter(Boolean);
   return detectEmbeddingDimensionConflict(modelStrs);
 }
+

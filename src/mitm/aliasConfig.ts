@@ -81,3 +81,4 @@ export function hasInvalidReasoningEffort(mappings: unknown): boolean {
     return normalizeEffort(raw) === undefined;
   });
 }
+

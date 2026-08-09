@@ -44,3 +44,4 @@ export function registerBuiltinCompressionEngines(): void {
     if (!getCompressionEngine(id)) registerCompressionEngine(engine);
   }
 }
+

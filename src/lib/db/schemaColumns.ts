@@ -311,3 +311,4 @@ export function getTableColumns(db: SqliteDatabase, tableName: string): string[]
     .map((column) => String(column.name ?? ""))
     .filter((column) => column.length > 0);
 }
+

@@ -12,3 +12,4 @@ export const baiProvider: RegistryEntry = {
   models: [],
   passthroughModels: true,
 };
+

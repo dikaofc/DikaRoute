@@ -13,3 +13,4 @@ export const deepseekProvider: RegistryEntry = {
     { id: "deepseek-v4-flash", name: "DeepSeek V4 Flash", supportsReasoning: true },
   ],
 };
+

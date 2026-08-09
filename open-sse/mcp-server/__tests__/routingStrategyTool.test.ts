@@ -64,3 +64,4 @@ describe("dikaroute_set_routing_strategy MCP tool schema", () => {
     expect(result.success).toBe(false);
   });
 });
+

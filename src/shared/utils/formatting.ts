@@ -198,3 +198,4 @@ export function formatErrorForDisplay(err: unknown): string | null {
     return String(err);
   }
 }
+

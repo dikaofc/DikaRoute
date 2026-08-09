@@ -476,3 +476,4 @@ function isEnabledLinux() {
   if (existsSync(linuxSystemdUnitPath())) return true;
   return existsSync(linuxDesktopPath());
 }
+

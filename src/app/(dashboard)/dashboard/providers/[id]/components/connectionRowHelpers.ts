@@ -73,3 +73,4 @@ export function sortConnectionsByAvailability<T extends AvailabilitySortableConn
     return 0;
   });
 }
+

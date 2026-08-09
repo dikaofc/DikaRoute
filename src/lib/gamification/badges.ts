@@ -540,3 +540,4 @@ export async function seedBuiltinBadges(): Promise<void> {
 
   insertMany(BUILTIN_BADGES);
 }
+

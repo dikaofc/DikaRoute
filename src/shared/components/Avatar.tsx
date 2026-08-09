@@ -79,3 +79,4 @@ export default function Avatar({ src, alt = "Avatar", name, size = "md", classNa
     </div>
   );
 }
+

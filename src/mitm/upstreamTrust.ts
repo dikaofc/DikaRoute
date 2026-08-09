@@ -38,3 +38,4 @@ export function configureUpstreamCa(pemPath?: string): void {
   const { Agent, setGlobalDispatcher } = require("undici") as typeof import("undici");
   setGlobalDispatcher(new Agent({ connect: { ca } }));
 }
+

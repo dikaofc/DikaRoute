@@ -562,3 +562,4 @@ function normalizeDashscopeSize(size: unknown, aspectRatio: unknown): string | u
   }
   return undefined;
 }
+

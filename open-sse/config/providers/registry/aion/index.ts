@@ -21,3 +21,4 @@ export const aionProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry({
     { id: "aion-labs/aion-rp-llama-3.1-8b", name: "Aion RP Llama 3.1 8B", contextLength: 32768 },
   ],
 });
+

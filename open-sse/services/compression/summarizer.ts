@@ -242,3 +242,4 @@ export class RuleBasedSummarizer implements Summarizer {
 export function createSummarizer(): Summarizer {
   return new RuleBasedSummarizer();
 }
+

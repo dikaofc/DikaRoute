@@ -51,3 +51,4 @@ export function getLegacyCliTokenSync(salt?: string): string {
     return "";
   }
 }
+

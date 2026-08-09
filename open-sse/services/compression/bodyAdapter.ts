@@ -598,3 +598,4 @@ function rewriteKiroEntry(
     },
   };
 }
+

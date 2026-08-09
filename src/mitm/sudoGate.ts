@@ -33,3 +33,4 @@ export function isMitmSudoPasswordRequired(sudoPassword: string): boolean {
 export function canRunPrivilegedMitmSteps(sudoPassword: string): boolean {
   return !isMitmSudoPasswordRequired(sudoPassword);
 }
+

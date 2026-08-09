@@ -29,3 +29,4 @@ export function buildRemoteOAuthHint(hostHeader: string | null, port: number): R
       `or use the token import flow instead.`,
   };
 }
+

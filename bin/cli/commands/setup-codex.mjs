@@ -385,3 +385,4 @@ export function registerSetupCodex(program) {
       if (exitCode !== 0) process.exit(exitCode);
     });
 }
+

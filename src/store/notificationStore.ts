@@ -94,3 +94,4 @@ export const useNotificationStore = create<NotificationStore>((set, get) => ({
 
   info: (message, title) => get().addNotification({ type: "info", message, title }),
 }));
+

@@ -22,3 +22,4 @@ export function SseEventList({ events }: SseEventListProps) {
     </div>
   );
 }
+

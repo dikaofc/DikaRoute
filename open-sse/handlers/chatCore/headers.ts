@@ -63,3 +63,4 @@ export function isStripReasoningRequested(
     .toLowerCase();
   return value === "true" || value === "1" || value === "yes";
 }
+

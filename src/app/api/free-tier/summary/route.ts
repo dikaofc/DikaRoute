@@ -32,3 +32,4 @@ export async function GET(req: Request): Promise<Response> {
     headers: { "Content-Type": "application/json", ...CORS },
   });
 }
+

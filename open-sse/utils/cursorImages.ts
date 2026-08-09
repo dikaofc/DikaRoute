@@ -352,3 +352,4 @@ export function extractImageUrls(
   }
   return urls;
 }
+

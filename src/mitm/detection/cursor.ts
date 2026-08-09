@@ -29,3 +29,4 @@ export function detectCursor(): DetectionResult {
   }
   return { installed: false };
 }
+

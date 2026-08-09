@@ -109,3 +109,4 @@ export function computeBurnRate(
 
   return { tokensPerSecond: safeRate, timeToExhaustionMs };
 }
+

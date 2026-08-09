@@ -45,3 +45,4 @@ export function platformBinaryLabel() {
   if (process.platform === "darwin") return "macho";
   return "elf";
 }
+

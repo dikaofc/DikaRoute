@@ -389,3 +389,4 @@ export function getClaudeCodeCompatibleRequestDefaults(providerSpecificData: unk
     ...(summarizeThinking ? { summarizeThinking } : {}),
   };
 }
+

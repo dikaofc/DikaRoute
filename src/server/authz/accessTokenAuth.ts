@@ -65,3 +65,4 @@ export function evaluateAccessTokenAuth(request: Request): AccessTokenVerdict {
 
   return { kind: "ok", scope: verified.scope, id: verified.id, name: verified.name };
 }
+

@@ -86,3 +86,4 @@ export function modifyBody(body: unknown): PluginResult {
 export function addMetadata(metadata: Record<string, unknown>): PluginResult {
   return { metadata };
 }
+

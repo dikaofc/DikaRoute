@@ -63,3 +63,4 @@ CREATE TABLE IF NOT EXISTS account_key_limits (
   last_reset_hour  TEXT NOT NULL DEFAULT '',
   updated_at       TEXT NOT NULL DEFAULT (datetime('now'))
 );
+

@@ -120,3 +120,4 @@ container.register("telemetry", () => {
 });
 
 export default container;
+

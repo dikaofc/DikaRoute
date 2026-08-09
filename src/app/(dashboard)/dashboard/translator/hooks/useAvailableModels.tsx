@@ -98,3 +98,4 @@ export function useAvailableModels(provider?: string) {
 
   return { model, setModel, availableModels, modelCapabilities, loading, pickModelForFormat };
 }
+

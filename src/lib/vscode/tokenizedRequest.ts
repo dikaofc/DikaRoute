@@ -77,3 +77,4 @@ export function withPathTokenApiKey(request: Request, token?: string) {
 export async function withSanitizedPathTokenApiKey(request: Request, token?: string) {
   return sanitizeVscodeRequest(withPathTokenApiKey(request, token));
 }
+

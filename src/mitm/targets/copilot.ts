@@ -30,3 +30,4 @@ export const COPILOT_TARGET: MitmTarget = {
     import("../handlers/copilot.ts").then((m) => ({ default: m.CopilotHandler })),
   riskNoticeKey: "providers.riskNotice.oauth",
 };
+

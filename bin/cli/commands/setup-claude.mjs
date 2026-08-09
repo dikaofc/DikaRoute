@@ -225,3 +225,4 @@ export function registerSetupClaude(program) {
       if (exitCode !== 0) process.exit(exitCode);
     });
 }
+

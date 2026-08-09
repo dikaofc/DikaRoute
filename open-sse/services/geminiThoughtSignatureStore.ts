@@ -327,3 +327,4 @@ export function getGeminiThoughtSignatureMemorySizeForTests() {
   pruneExpired();
   return signatures.size;
 }
+

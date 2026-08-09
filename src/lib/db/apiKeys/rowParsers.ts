@@ -163,3 +163,4 @@ export function parseIsBanned(value: unknown): boolean {
 export function parseStreamDefaultMode(value: unknown): "legacy" | "json" {
   return value === "json" ? "json" : "legacy";
 }
+

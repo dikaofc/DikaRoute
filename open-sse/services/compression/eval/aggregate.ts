@@ -60,3 +60,4 @@ export function aggregateRecords(
     perKind,
   };
 }
+

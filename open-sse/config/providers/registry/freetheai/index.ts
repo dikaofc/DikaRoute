@@ -21,3 +21,4 @@ export const freetheaiProvider: RegistryEntry = {
     { id: "deepseek-chat", name: "DeepSeek Chat" },
   ],
 };
+

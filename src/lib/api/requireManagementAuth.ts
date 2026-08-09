@@ -121,3 +121,4 @@ export async function requireManagementAuth(
     type: "invalid_request",
   });
 }
+

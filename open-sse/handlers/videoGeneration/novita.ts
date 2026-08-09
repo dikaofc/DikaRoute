@@ -126,3 +126,4 @@ export function parseNovitaTaskResult(json: unknown): NovitaTaskResult {
 
   return { done: true, status, errorMessage: "Novita task succeeded but returned no video_url" };
 }
+

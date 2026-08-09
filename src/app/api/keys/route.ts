@@ -148,3 +148,4 @@ async function syncKeysToCloudIfEnabled() {
     log.error("keys", "Error syncing keys to cloud", error);
   }
 }
+

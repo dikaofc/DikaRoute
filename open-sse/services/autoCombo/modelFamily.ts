@@ -93,3 +93,4 @@ export function buildFamilyCandidateFilter(
 
 /** Advertised `auto/<family>` catalog ids (#6453), e.g. `auto/glm`, `auto/minimax`. */
 export const AUTO_FAMILY_IDS: readonly string[] = MODEL_FAMILIES.map((family) => `auto/${family}`);
+

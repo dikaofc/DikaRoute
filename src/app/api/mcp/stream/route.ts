@@ -55,3 +55,4 @@ export async function DELETE(request: NextRequest) {
   if (blocked) return blocked;
   return handleMcpStreamableHTTP(request);
 }
+

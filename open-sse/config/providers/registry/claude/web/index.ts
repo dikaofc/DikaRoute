@@ -31,3 +31,4 @@ export const claude_webProvider: RegistryEntry = {
     },
   ],
 };
+

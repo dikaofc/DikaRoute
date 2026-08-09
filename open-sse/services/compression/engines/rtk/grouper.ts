@@ -97,3 +97,4 @@ export function groupSimilarLines(text: string, options: GroupingOptions = {}): 
 
   return { text: output.join("\n"), grouped };
 }
+

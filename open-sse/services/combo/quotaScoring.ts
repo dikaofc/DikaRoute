@@ -417,3 +417,4 @@ export function calculateResetWindowAffinity(quota: unknown, config: ResetWindow
   if (msUntilReset <= 0) return 1;
   return clamp01(1 - msUntilReset / getResetWindowHorizonMs(config.windows));
 }
+

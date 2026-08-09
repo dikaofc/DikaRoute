@@ -28,3 +28,4 @@ export function convertCursorToOpenAI(chunk, state) {
 }
 
 register(FORMATS.CURSOR, FORMATS.OPENAI, null, convertCursorToOpenAI);
+

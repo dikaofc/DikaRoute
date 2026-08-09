@@ -32,3 +32,4 @@ export default function DayHeader({ label, dayKey }: DayHeaderProps) {
     </div>
   );
 }
+

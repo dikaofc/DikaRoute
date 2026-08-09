@@ -288,3 +288,4 @@ export function suggestFilter(command: string, samples: CommandSample[]): Sugges
     _meta: { learnedFromSamples: totalSamples, dropThreshold: DROP_THRESHOLD_RATIO },
   };
 }
+

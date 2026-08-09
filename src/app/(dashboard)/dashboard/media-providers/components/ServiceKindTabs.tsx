@@ -62,3 +62,4 @@ export function ServiceKindTabs({ kinds, activeKind, onSelect, className }: Serv
     </div>
   );
 }
+

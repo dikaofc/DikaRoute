@@ -166,3 +166,4 @@ export function patchStandaloneBasePath({ appRoot, fromBasePath, toBasePath }) {
 
   return { changed: true, patchedManifests, patchedTextFiles, distRoots, toBasePath: to };
 }
+

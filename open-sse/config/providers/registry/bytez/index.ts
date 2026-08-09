@@ -15,3 +15,4 @@ export const bytezProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.bytez,
 };
+

@@ -80,3 +80,4 @@ export function clearAllFeatureFlagOverrides(): void {
   const db = getDbInstance();
   db.prepare("DELETE FROM key_value WHERE namespace = ?").run(NAMESPACE);
 }
+

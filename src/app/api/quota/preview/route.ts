@@ -76,3 +76,4 @@ export async function GET(request: Request): Promise<Response> {
     return NextResponse.json(buildErrorBody(500, message), { status: 500 });
   }
 }
+

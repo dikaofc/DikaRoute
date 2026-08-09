@@ -154,3 +154,4 @@ export function extractContextEditingTelemetry(
   if (clearedInputTokens <= 0 && clearedToolUses <= 0) return null;
   return { editCount: edits.length, clearedInputTokens, clearedToolUses };
 }
+

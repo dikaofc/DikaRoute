@@ -165,3 +165,4 @@ export default function ScrapeTab({ configState, onMetrics }: ScrapeTabProps) {
     </div>
   );
 }
+

@@ -370,3 +370,4 @@ Puedes decirme algo como:
     toolCalls: [{ name: intent.tool, args: intent.args, result }],
   };
 }
+

@@ -12,3 +12,4 @@ export const unorouterProvider: RegistryEntry = {
   models: [{ id: "auto", name: "Auto (Best Available)" }],
   passthroughModels: true,
 };
+

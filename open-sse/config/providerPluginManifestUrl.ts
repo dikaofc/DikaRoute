@@ -24,3 +24,4 @@ export function getProviderPluginManifestHeader(origin?: string | null): Record<
     [PROVIDER_PLUGIN_MANIFEST_HEADER]: resolveProviderPluginManifestUrl(origin),
   };
 }
+

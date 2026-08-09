@@ -521,3 +521,4 @@ export function registerCodexQuotaFetcher(): void {
     CODEX_SPARK_QUOTA_WEEKLY,
   ]);
 }
+

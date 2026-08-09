@@ -30,3 +30,4 @@
     "description": "Start en lokal Redis-container med ét klik (Podman eller Docker) til DikaRoute-caching og kvoteovervågning"
   }
 }
+

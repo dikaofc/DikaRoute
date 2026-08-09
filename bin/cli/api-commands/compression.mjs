@@ -126,3 +126,4 @@ export function register_compression(parent) {
       emit(data, gOpts);
     });
 }
+

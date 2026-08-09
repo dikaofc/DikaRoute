@@ -73,3 +73,4 @@ export function getAntigravityLoadCodeAssistMetadata(): Record<string, string> {
     ideType: "ANTIGRAVITY",
   };
 }
+

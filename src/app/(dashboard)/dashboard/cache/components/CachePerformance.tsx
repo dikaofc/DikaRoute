@@ -173,3 +173,4 @@ export default function CachePerformance({
     </Card>
   );
 }
+

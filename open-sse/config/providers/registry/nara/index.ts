@@ -17,3 +17,4 @@ export const naraProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry({
     { id: "mistral-medium-3-5", name: "Mistral Medium 3.5", contextLength: 256000, toolCalling: true, supportsVision: true },
   ],
 });
+

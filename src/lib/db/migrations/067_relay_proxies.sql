@@ -54,3 +54,4 @@ CREATE INDEX IF NOT EXISTS idx_relay_logs_token ON relay_logs(token_id, created_
 CREATE INDEX IF NOT EXISTS idx_relay_logs_created ON relay_logs(created_at);
 CREATE INDEX IF NOT EXISTS idx_relay_tokens_prefix ON relay_tokens(token_prefix);
 CREATE INDEX IF NOT EXISTS idx_relay_rate_limits_window ON relay_rate_limits(token_id, window_start);
+

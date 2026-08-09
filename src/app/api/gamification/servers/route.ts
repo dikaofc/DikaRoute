@@ -61,3 +61,4 @@ export async function DELETE(request: NextRequest) {
   await disconnectServer(serverId);
   return NextResponse.json({ success: true }, { headers: CORS_HEADERS });
 }
+

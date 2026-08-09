@@ -223,3 +223,4 @@ export function isNewApiAggregatorBalanceConnection(
   const providerSpecificData = toRecord(connection?.providerSpecificData);
   return providerSpecificData.newApiAggregatorBalance === true;
 }
+

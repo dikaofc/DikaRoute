@@ -11,3 +11,4 @@ export const vercel_ai_gatewayProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS["vercel-ai-gateway"],
 };
+

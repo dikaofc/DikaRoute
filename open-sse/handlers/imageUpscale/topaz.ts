@@ -269,3 +269,4 @@ function toBoolean(value: unknown): boolean {
   const raw = String(value ?? "").trim().toLowerCase();
   return raw === "true" || raw === "1" || raw === "yes" || raw === "on";
 }
+

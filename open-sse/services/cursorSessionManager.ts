@@ -229,3 +229,4 @@ export class CursorSessionManager {
 // Module-level singleton — one manager per DikaRoute process. The executor
 // imports this directly. For testing, construct a fresh CursorSessionManager.
 export const cursorSessionManager = new CursorSessionManager();
+

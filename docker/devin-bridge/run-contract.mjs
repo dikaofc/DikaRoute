@@ -133,3 +133,4 @@ for (const marker of ["CONTRACT_ERROR", "CONTRACT_EXIT"]) {
 }
 
 console.log("PASS: Anthropic Messages wire contracts and fail-closed errors passed");
+

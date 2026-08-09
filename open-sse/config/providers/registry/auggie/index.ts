@@ -50,3 +50,4 @@ export const auggieProvider: RegistryEntry = {
     { id: "prism-b", name: "Prism (GPT + Kimi)", contextLength: 200000 },
   ],
 };
+

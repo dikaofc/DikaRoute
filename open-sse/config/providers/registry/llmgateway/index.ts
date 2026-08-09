@@ -9,3 +9,4 @@ export const llmgatewayProvider: RegistryEntry = buildOpenAiCompatibleRegistryEn
   models: [],
   passthroughModels: true,
 });
+

@@ -85,3 +85,4 @@ export function HttpProxySnippetCard({ port, onClose }: HttpProxySnippetCardProp
     </div>
   );
 }
+

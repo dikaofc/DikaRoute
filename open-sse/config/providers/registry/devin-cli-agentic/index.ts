@@ -19,3 +19,4 @@ export const devin_cli_agenticProvider: RegistryEntry = {
     supportsVision: false,
   })),
 };
+

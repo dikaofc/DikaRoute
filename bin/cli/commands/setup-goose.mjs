@@ -148,3 +148,4 @@ export function registerSetupGoose(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

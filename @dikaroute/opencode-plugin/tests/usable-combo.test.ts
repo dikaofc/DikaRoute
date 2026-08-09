@@ -83,3 +83,4 @@ test("isUsableCombo: usable canonical prefix → keep", () => {
   const c = combo([{ kind: "model", model: "anthropic/claude-opus-4-7" }]);
   assert.equal(isUsableCombo(c, usable), true);
 });
+

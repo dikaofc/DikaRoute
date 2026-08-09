@@ -14,3 +14,4 @@ export const kimiProvider: RegistryEntry = {
   authHeader: "bearer",
   models: MOONSHOT_KIMI_MODELS,
 };
+

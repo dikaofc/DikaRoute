@@ -453,3 +453,4 @@ export default function QuotaEndpointsCard({
     </Card>
   );
 }
+

@@ -43,3 +43,4 @@ export function hashCorpus(cases: EvalCase[]): string {
     .join("\n");
   return createHash("sha256").update(canonical).digest("hex");
 }
+

@@ -177,3 +177,4 @@ export function deletePlaygroundPreset(id: string): boolean {
   const result = db.prepare("DELETE FROM playground_presets WHERE id = ?").run(id);
   return result.changes > 0;
 }
+

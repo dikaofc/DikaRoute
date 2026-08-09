@@ -14,3 +14,4 @@ CREATE TABLE IF NOT EXISTS auto_candidate_overrides (
 
 CREATE INDEX IF NOT EXISTS idx_auto_candidate_overrides_key_channel
   ON auto_candidate_overrides(api_key_id, auto_channel);
+

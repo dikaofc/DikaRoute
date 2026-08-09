@@ -41,3 +41,4 @@ VALUES (
   'full',
   1
 );
+

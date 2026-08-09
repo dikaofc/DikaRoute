@@ -1502,3 +1502,4 @@ export function flattenMessages(messages: ChatMessage[]): string {
   const labelled = lines.join("\n\n");
   return systemTexts.length > 0 ? `${systemTexts.join("\n\n")}\n\n${labelled}` : labelled;
 }
+

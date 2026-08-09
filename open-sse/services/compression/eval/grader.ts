@@ -25,3 +25,4 @@ export function parseGradeVerdict(raw: string): GradeVerdict {
   if (/\bcorrect\b/.test(text)) return { correct: true, raw };
   return { correct: false, raw };
 }
+

@@ -24,3 +24,4 @@ export async function readFetchErrorMessage(res: Response, fallback: string): Pr
   }
   return fallback;
 }
+

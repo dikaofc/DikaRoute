@@ -378,3 +378,4 @@ function extractFirstUserMessage(body: SessionBody | null | undefined): string |
   }
   return null;
 }
+

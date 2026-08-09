@@ -172,3 +172,4 @@ function mapDetailedLogRow(row: Record<string, unknown>): RequestDetailLog {
     duration_ms: typeof row.duration_ms === "number" ? row.duration_ms : 0,
   };
 }
+

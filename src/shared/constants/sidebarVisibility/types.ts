@@ -178,3 +178,4 @@ export interface SidebarPresetDefinition {
 }
 
 export type SidebarItemOrder = Partial<Record<SidebarSectionId, string[]>>;
+

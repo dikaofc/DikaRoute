@@ -168,3 +168,4 @@ export function isUserCallableAgyModelId(modelId: string): boolean {
 export function isDiscoverableAgyModelId(modelId: string): boolean {
   return !!modelId && !AGY_NON_CHAT_MODEL_IDS.has(modelId);
 }
+

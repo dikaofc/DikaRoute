@@ -281,3 +281,4 @@ export function getObsidianConfigForApiKey(apiKeyId: string | null | undefined):
     source: "global",
   };
 }
+

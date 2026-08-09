@@ -41,3 +41,4 @@ export function buildWatsonxChatUrl(value: string | null | undefined): string {
 export function buildWatsonxModelsUrl(value: string | null | undefined): string {
   return `${normalizeWatsonxBaseUrl(value)}/models`;
 }
+

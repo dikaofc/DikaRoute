@@ -396,3 +396,4 @@ class SkillRegistry {
 }
 
 export const skillRegistry = SkillRegistry.getInstance();
+

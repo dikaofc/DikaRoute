@@ -761,3 +761,4 @@ export default function DefaultToolCard({
     </Card>
   );
 }
+

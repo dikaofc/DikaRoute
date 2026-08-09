@@ -56,3 +56,4 @@ export function getUpstreamErrorIdentifier(error: unknown): string | undefined {
   const value = (error as { code?: unknown }).code;
   return typeof value === "string" && value.length > 0 ? value : undefined;
 }
+

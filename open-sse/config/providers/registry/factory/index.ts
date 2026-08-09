@@ -31,3 +31,4 @@ export const factoryProvider: RegistryEntry = {
   // reflect whatever Factory's `/v1/models` returns live.
   models: [{ id: "auto", name: "Factory Auto (best model)" }],
 };
+

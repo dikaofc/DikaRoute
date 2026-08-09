@@ -49,3 +49,4 @@ export async function readJsoncConfig<T = unknown>(
   const parsed = parseJsoncOrNull<T>(content);
   return parsed ?? fallback;
 }
+

@@ -15,3 +15,4 @@ export function resolveTopologyNodeLabel(
 ): string {
   return (entryName && entryName.trim()) || (configName && configName.trim()) || providerId;
 }
+

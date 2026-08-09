@@ -22,3 +22,4 @@ export const muse_spark_webProvider: RegistryEntry = {
     },
   ],
 };
+

@@ -134,3 +134,4 @@ test("multi-instance: invalid opts on one instance does not poison the other", a
   });
   assert.equal(ok.auth?.provider, "opencode-recovered");
 });
+

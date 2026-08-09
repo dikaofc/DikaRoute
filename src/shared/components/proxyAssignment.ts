@@ -38,3 +38,4 @@ export function selectScopeAssignment(
 ): ProxyAssignmentItem | null {
   return items.find((item) => isSameScopeAssignment(item, scope, scopeId)) ?? null;
 }
+

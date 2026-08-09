@@ -18,3 +18,4 @@ export default defineConfig({
   // in opencode.jsonc.
   noExternal: ["zod"],
 });
+

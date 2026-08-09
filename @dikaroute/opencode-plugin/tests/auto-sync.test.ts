@@ -128,3 +128,4 @@ test("forceSyncDikaRouteModels: missing auth returns error", async () => {
   assert.equal(result.ok, false);
   assert.match(result.error ?? "", /credentials|baseURL|connect/i);
 });
+

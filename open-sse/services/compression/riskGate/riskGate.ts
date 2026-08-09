@@ -134,3 +134,4 @@ export function detectRiskSpans(text: string, cfg: RiskGateConfig): RiskSpan[] {
     return [];
   }
 }
+

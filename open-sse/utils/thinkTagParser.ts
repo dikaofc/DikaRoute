@@ -266,3 +266,4 @@ export function flushThink(
     addedLength: (reasoningDelta?.length || 0) + (contentDelta?.length || 0),
   };
 }
+

@@ -146,3 +146,4 @@ export function normalizeFirecrawlSearchResponse<T>(
   );
   return { results, totalResults: results.length };
 }
+

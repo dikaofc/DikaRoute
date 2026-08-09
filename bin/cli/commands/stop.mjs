@@ -172,3 +172,4 @@ async function terminatePids(pids, { kill, running, wait }) {
   // Confirm the port is free: any PID still alive means we failed.
   return pids.every((p) => !running(p));
 }
+

@@ -54,3 +54,4 @@ describe("#8603 static fitness table matches longest pattern first", () => {
     expect(getStaticFitnessTableScore("totally-unknown-model", "coding")).toBeNull();
   });
 });
+

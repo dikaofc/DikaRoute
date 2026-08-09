@@ -46,3 +46,4 @@ export function applyDefaultReasoningEffort<T extends Record<string, unknown>>(
 
   return { ...body, reasoning_effort: defaultEffort };
 }
+

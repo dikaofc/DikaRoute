@@ -360,3 +360,4 @@ export function syncEnv({ rootDir, quiet = false, scope = "full" } = {}) {
 if (process.argv[1]?.endsWith("sync-env.mjs")) {
   syncEnv({ scope: process.argv.includes("--oauth-only") ? "oauth" : "full" });
 }
+

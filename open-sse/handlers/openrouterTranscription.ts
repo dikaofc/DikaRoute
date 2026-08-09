@@ -99,3 +99,4 @@ export async function handleOpenRouterTranscription(
     return errorResponse(500, `Transcription request failed: ${error.message}`);
   }
 }
+

@@ -108,3 +108,4 @@ main().catch((error) => {
   console.error("[test:protocols:e2e] Failed:", error?.message || error);
   process.exit(1);
 });
+

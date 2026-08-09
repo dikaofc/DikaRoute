@@ -104,3 +104,4 @@ export function isOriginAllowed(
   if (originHostMatches(origin, allowedHosts)) return true;
   return false;
 }
+

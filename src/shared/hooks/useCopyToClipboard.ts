@@ -36,3 +36,4 @@ export function useCopyToClipboard(resetDelay = 2000) {
 
   return { copied, copy };
 }
+

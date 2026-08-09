@@ -229,3 +229,4 @@ export async function isZedInstalled(): Promise<boolean> {
 
   return false;
 }
+

@@ -82,3 +82,4 @@ export async function DELETE(request: Request) {
     return NextResponse.json(buildErrorBody(500, msg), { status: 500 });
   }
 }
+

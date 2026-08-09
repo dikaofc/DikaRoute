@@ -30,3 +30,4 @@
     "description": "Lokalen Redis-Container mit einem Klick starten (Podman oder Docker) für DikaRoute-Caching und Kontingentverfolgung"
   }
 }
+

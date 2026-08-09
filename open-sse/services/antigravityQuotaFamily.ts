@@ -54,3 +54,4 @@ export function getQuotaScopeLabelForProvider(
   if (provider !== "antigravity" && provider !== "agy") return "model";
   return getAntigravityQuotaFamily(model) === "other" ? "model" : "family";
 }
+

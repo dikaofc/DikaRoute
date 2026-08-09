@@ -28,3 +28,4 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Failed to fetch degradation report." }, { status: 500 });
   }
 }
+

@@ -431,3 +431,4 @@ export default function CompareTab({ providers, onMetrics }: CompareTabProps) {
     </div>
   );
 }
+

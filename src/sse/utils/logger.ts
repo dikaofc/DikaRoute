@@ -35,3 +35,4 @@ function spreadData(data: unknown): Record<string, unknown> {
   if (typeof data === "object") return data as Record<string, unknown>;
   return { detail: String(data) };
 }
+

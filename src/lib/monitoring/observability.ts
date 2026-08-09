@@ -396,3 +396,4 @@ export function buildHealthPayload({
     setupComplete: settings?.setupComplete || false,
   };
 }
+

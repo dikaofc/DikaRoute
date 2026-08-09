@@ -35,3 +35,4 @@ export interface ServiceProviderPlugin {
   spawnArgs: (apiKey: string, port: number) => ReturnType<typeof resolveNinerouterSpawnArgs>;
   manifestTemplate: ServiceBackendManifestTemplateEntry;
 }
+

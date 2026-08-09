@@ -33,3 +33,4 @@ export async function HEAD() {
 export async function GET(request: Request) {
   return getUnifiedModelsResponse(request);
 }
+

@@ -33,3 +33,4 @@ export function stripStore(
     (provider === "agentrouter" && targetFormat === FORMATS.OPENAI_RESPONSES);
   if (!supportsStore && "store" in body) delete body.store;
 }
+

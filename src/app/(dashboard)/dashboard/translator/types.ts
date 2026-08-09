@@ -66,3 +66,4 @@ export interface ExampleTemplate {
   description: string;
   formats: Partial<Record<FormatId, Record<string, unknown>>>;
 }
+

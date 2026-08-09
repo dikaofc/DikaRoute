@@ -5,3 +5,4 @@ import { EngineConfigPage } from "@/shared/components/compression/EngineConfigPa
 export default function LlmlinguaPage() {
   return <EngineConfigPage engineId="llmlingua" />;
 }
+

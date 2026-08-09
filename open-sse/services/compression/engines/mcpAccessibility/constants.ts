@@ -61,3 +61,4 @@ export function clampMcpAccessibilityConfig(raw: unknown): McpAccessibilityConfi
     minLengthToProcess: boundedInt(record["minLengthToProcess"], 1, d.minLengthToProcess),
   };
 }
+

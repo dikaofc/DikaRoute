@@ -240,3 +240,4 @@ function _printResult(result, showLatency) {
     );
   }
 }
+

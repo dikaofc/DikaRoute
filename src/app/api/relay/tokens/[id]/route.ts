@@ -77,3 +77,4 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
   deleteRelayToken(id);
   return NextResponse.json({ success: true });
 }
+

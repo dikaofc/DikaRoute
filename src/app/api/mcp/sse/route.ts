@@ -44,3 +44,4 @@ export async function POST(request: NextRequest) {
   if (blocked) return blocked;
   return handleMcpSSE(request);
 }
+

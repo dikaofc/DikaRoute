@@ -380,3 +380,4 @@ function CommandPaletteDialog({ onClose }: { onClose: () => void }) {
     </div>
   );
 }
+

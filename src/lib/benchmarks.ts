@@ -31,3 +31,4 @@ export async function runBenchmarks(): Promise<BenchmarkResult[]> {
 export function formatBenchmarkReport(results: BenchmarkResult[]): string {
   return results.map((r) => `${r.name}: ${r.opsPerSecond.toFixed(2)} ops/s`).join("\n");
 }
+

@@ -93,3 +93,4 @@ test("resolveEffectiveFeatureFlags: non-boolean sibling keys do not leak into fl
   assert.equal("mcpToken" in flags, false);
   assert.equal("logLevel" in flags, false);
 });
+

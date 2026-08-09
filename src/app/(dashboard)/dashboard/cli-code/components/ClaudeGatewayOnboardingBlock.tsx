@@ -57,3 +57,4 @@ export default function ClaudeGatewayOnboardingBlock({ baseUrl }: { baseUrl: str
     </div>
   );
 }
+

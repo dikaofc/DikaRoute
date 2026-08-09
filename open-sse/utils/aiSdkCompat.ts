@@ -187,3 +187,4 @@ export function stripMarkdownCodeFence(text: unknown): unknown {
   const match = text.trim().match(codeBlockRegex);
   return match ? match[1].trim() : text;
 }
+

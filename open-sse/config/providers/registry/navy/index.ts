@@ -28,3 +28,4 @@ export const navyProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry({
     { id: "llama-4-scout", name: "Llama 4 Scout", contextLength: 10000000, toolCalling: true, supportsVision: true },
   ],
 });
+

@@ -89,3 +89,4 @@ export function applyAntigravityClientProfileHeaders(
 
   return profile;
 }
+

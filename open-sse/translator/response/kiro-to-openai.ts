@@ -209,3 +209,4 @@ export function convertKiroToOpenAI(chunk, state) {
 
 // Register translator
 register(FORMATS.KIRO, FORMATS.OPENAI, null, convertKiroToOpenAI);
+

@@ -29,3 +29,4 @@ export function resolveTargetScopes(sub: ScopeInput): TargetScope[] {
   // global mode, or rule mode with no providers selected → bind global.
   return [{ scope: "global" as const, scopeId: null }];
 }
+

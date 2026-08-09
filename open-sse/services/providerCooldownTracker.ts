@@ -196,3 +196,4 @@ export function clearCooldownState(): void {
 export function getCooldownEntryCount(): number {
   return cooldownMap.size;
 }
+

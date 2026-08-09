@@ -111,3 +111,4 @@ export function parseThinkingBudgetMax(errText: unknown): number | null {
 export function __test_resetLearnedThinkingCaps(): void {
   learnedCaps.clear();
 }
+

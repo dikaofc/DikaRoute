@@ -111,3 +111,4 @@ describe("Sidebar search/filter (#4013)", () => {
     expect(linksAfterClear.length).toBe(linksBefore.length);
   });
 });
+

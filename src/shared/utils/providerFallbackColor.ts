@@ -39,3 +39,4 @@ export function getFallbackProviderColor(providerId: string): string {
   const index = hashProviderId(providerId) % FALLBACK_COLOR_PALETTE.length;
   return FALLBACK_COLOR_PALETTE[index];
 }
+

@@ -222,3 +222,4 @@ Commands that mutate state (delete, reset, `--force`) **must**:
 - `docs/security/ERROR_SANITIZATION.md` — the only acceptable error shapes.
 - `tests/unit/cli-tools-i18n.test.ts` — current i18n infrastructure (pre-`t()`).
 - Commander.js docs — Options & subcommand patterns.
+

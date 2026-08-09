@@ -37,3 +37,4 @@ export function renderGitDiff(text: string, _detection: CommandDetectionResult):
 
   return { text: out, changed: true, renderer: "git-diff" };
 }
+

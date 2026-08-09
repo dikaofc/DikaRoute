@@ -17,3 +17,4 @@ export const waferProvider: RegistryEntry = {
     { id: "GLM-5.1", name: "GLM 5.1" },
   ],
 };
+

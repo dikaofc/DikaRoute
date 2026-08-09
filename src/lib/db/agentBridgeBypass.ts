@@ -79,3 +79,4 @@ export function seedDefaultBypassPatterns(defaults: string[]): void {
 
   runTransaction();
 }
+

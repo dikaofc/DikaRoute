@@ -92,3 +92,4 @@ export function toPlainHeaders(headers: unknown): Record<string, string> {
   } catch {}
   return plain;
 }
+

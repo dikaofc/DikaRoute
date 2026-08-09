@@ -214,3 +214,4 @@ describe("dual-auth provider actions (#8882)", () => {
     expect(getButton(container, "Manual API key")).toBeUndefined();
   });
 });
+

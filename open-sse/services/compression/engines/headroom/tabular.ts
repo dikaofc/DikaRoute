@@ -261,3 +261,4 @@ export function decodeTabular(text: string): Record<string, unknown>[] {
   }
   return decodeTabularBlockLegacy(inner);
 }
+

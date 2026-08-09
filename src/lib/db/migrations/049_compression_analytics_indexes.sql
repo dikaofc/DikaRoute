@@ -8,3 +8,4 @@ CREATE INDEX IF NOT EXISTS idx_compression_analytics_provider
 
 CREATE INDEX IF NOT EXISTS idx_compression_analytics_provider_timestamp 
   ON compression_analytics(provider, timestamp);
+

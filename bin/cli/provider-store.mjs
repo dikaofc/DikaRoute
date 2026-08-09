@@ -310,3 +310,4 @@ export function updateProviderTestResult(db, connectionId, result) {
     testedAt: now,
   };
 }
+

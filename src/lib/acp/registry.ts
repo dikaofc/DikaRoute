@@ -382,3 +382,4 @@ export function getAgentById(id: string): CliAgentInfo | undefined {
 export function getAvailableAgents(): CliAgentInfo[] {
   return detectInstalledAgents().filter((a) => a.installed);
 }
+

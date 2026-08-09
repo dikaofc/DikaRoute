@@ -25,3 +25,4 @@ CREATE INDEX IF NOT EXISTS idx_reasoning_cache_model
   ON reasoning_cache(model);
 CREATE INDEX IF NOT EXISTS idx_reasoning_cache_created
   ON reasoning_cache(created_at);
+

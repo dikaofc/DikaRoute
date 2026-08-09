@@ -61,3 +61,4 @@ export type SkillHandler = (
   // web_fetch builtin uses them to resolve a per-model pinned fetch backend.
   context: { apiKeyId: string; sessionId: string; provider?: string; model?: string }
 ) => Promise<Record<string, unknown>>;
+

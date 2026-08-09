@@ -42,3 +42,4 @@ INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('databaseSetting
 INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('databaseSettings', 'pageSize', '4096');
 INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('databaseSettings', 'cacheSize', '16384');
 INSERT OR IGNORE INTO key_value (namespace, key, value) VALUES ('databaseSettings', 'mmapSize', '268435456');
+

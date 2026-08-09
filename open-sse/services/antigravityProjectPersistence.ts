@@ -11,3 +11,4 @@ export function preferAntigravityConnectionsWithStoredProject(
     (conn) => conn != null && typeof conn.projectId === "string" && conn.projectId.trim().length > 0
   );
 }
+

@@ -254,3 +254,4 @@ export async function handlePipelineChat({
   // Unreachable — the final step returns inside the loop.
   return errorResponse(500, "Pipeline produced no final response");
 }
+

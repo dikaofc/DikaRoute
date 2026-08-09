@@ -88,3 +88,4 @@ export function normalizeClaudeDisabledThinkingEffort<T extends Record<string, u
     output_config: { ...outputConfig, effort: disabledEffortCap },
   } as T;
 }
+

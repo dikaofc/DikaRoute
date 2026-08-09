@@ -77,3 +77,4 @@ export async function handleOcr({ body, credentials }) {
     return errorResponse(500, `OCR request failed: ${err.message}`);
   }
 }
+

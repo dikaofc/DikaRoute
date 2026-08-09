@@ -45,3 +45,4 @@ export function mergeSyncedCapabilities(
     ...(effortTiers ? { effort_tiers: sm.supportedThinkingEfforts! } : {}),
   };
 }
+

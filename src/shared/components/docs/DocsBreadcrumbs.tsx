@@ -44,3 +44,4 @@ export default function DocsBreadcrumbs({ labels, className }: DocsBreadcrumbsPr
     </nav>
   );
 }
+

@@ -51,3 +51,4 @@ export async function getXaiUsage(connectionId: string) {
     return { message: `xAI self-tracked usage error: ${(error as Error).message}` };
   }
 }
+

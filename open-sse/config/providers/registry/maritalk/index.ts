@@ -11,3 +11,4 @@ export const maritalkProvider: RegistryEntry = {
   authHeader: "key",
   models: CHAT_OPENAI_COMPAT_MODELS.maritalk,
 };
+

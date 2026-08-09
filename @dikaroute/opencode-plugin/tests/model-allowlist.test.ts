@@ -315,3 +315,4 @@ test("buildStaticProviderEntry: empty visibleModels → no filter (passthrough)"
   assert.ok(ids.includes("cc/claude-opus-4-7"), "empty visibleModels should not filter");
   assert.ok(ids.includes("glm/gpt-5"), "empty visibleModels should not filter");
 });
+

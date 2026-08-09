@@ -269,3 +269,4 @@ test("disk cache: snapshot written under management token A is rejected under to
     fs.rmSync(tmp, { recursive: true, force: true });
   }
 });
+

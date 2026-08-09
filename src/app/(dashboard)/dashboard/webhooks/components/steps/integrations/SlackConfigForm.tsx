@@ -94,3 +94,4 @@ export function SlackConfigForm({ value, onChange, t }: SlackConfigFormProps) {
     </div>
   );
 }
+

@@ -98,3 +98,4 @@ export async function runQuotaCommand(opts = {}) {
   console.log(`\n  \x1b[32mTotal: ${providers.length} providers\x1b[0m`);
   return 0;
 }
+

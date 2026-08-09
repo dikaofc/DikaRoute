@@ -37,3 +37,4 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     revokedAt: new Date().toISOString(),
   });
 }
+

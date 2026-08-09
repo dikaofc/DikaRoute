@@ -344,3 +344,4 @@ export function shutdownMcpHttp(): void {
 export function isMcpHttpActive(): boolean {
   return _sseTransport !== null || _streamableSessions.size > 0;
 }
+

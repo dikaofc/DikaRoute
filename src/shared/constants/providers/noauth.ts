@@ -188,3 +188,4 @@ export const NOAUTH_PROVIDER_PROXY_SUPPORTED = new Set(["opencode", "theoldllm"]
 export function supportsNoAuthProviderProxy(providerId: string): boolean {
   return NOAUTH_PROVIDER_PROXY_SUPPORTED.has(providerId);
 }
+

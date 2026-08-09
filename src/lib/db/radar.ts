@@ -124,3 +124,4 @@ export function setRadarKey(key: string | null): void {
     "UPDATE radar_settings SET supporter_key_encrypted = ?, updated_at = datetime('now') WHERE id = 1"
   ).run(encrypted);
 }
+

@@ -53,3 +53,4 @@ export async function generateCert(): Promise<{ key: string; cert: string }> {
   console.log(`✅ Generated SSL certificate for ${TARGET_HOSTS.join(", ")}`);
   return { key: keyPath, cert: certPath };
 }
+

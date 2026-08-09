@@ -27,3 +27,4 @@ export async function GET(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to get free proxy stats");
   }
 }
+

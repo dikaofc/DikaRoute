@@ -9,3 +9,4 @@ export const SUPPORTED_BATCH_ENDPOINTS = [
 ] as const;
 
 export type SupportedBatchEndpoint = (typeof SUPPORTED_BATCH_ENDPOINTS)[number];
+

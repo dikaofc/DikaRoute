@@ -31,3 +31,4 @@ if (typeof Promise.withResolvers === "undefined") {
 if (typeof globalThis.WebSocket === "undefined") {
   (globalThis as any).WebSocket = WebSocket;
 }
+

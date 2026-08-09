@@ -162,3 +162,4 @@ export async function prepareStructuredEmbeddingRequest(
   }
   throw new Error(`Provider ${provider.id} has no structured embedding input translator`);
 }
+

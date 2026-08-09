@@ -86,3 +86,4 @@ async function resolvePrincipalFromEnv(): Promise<string | undefined> {
     return undefined;
   }
 }
+

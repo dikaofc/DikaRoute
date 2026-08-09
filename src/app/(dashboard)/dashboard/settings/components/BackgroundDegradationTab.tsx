@@ -252,3 +252,4 @@ export default function BackgroundDegradationTab() {
     </Card>
   );
 }
+

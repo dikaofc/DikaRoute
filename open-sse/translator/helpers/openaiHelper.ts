@@ -261,3 +261,4 @@ export function filterToOpenAIFormat(body, opts: FilterToOpenAIFormatOptions = {
 
   return body;
 }
+

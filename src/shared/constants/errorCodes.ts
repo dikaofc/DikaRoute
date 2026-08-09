@@ -249,3 +249,4 @@ export function createErrorResponse(code: string, details: ErrorDetails = {}) {
 export function getErrorsByCategory(category: string): ErrorCodeDef[] {
   return Object.values(ERROR_CODES).filter((e) => e.category === category);
 }
+

@@ -9,3 +9,4 @@ export const electronhubProvider: RegistryEntry = buildOpenAiCompatibleRegistryE
   models: [],
   passthroughModels: true,
 });
+

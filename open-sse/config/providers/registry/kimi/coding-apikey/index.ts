@@ -7,3 +7,4 @@ export const kimi_coding_apikeyProvider: RegistryEntry = {
   ...KIMI_CODING_SHARED,
   authType: "apikey",
 };
+

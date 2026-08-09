@@ -6,3 +6,4 @@
 -- Idempotent via ADD COLUMN; safe to run more than once on older schemas.
 
 ALTER TABLE api_keys ADD COLUMN allowed_quotas TEXT NOT NULL DEFAULT '[]';
+

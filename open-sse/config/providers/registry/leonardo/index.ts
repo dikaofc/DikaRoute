@@ -13,3 +13,4 @@ export const leonardoProvider: RegistryEntry = {
     { id: "sdxl", name: "SDXL" },
   ],
 };
+

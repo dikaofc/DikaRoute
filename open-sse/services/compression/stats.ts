@@ -188,3 +188,4 @@ export function getDefaultCompressionConfig(): CompressionConfig {
     languageConfig: { ...DEFAULT_COMPRESSION_LANGUAGE_CONFIG },
   };
 }
+

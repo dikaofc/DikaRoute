@@ -227,3 +227,4 @@ export function formatUsageLog(tokens: unknown): string {
   }
   return msg;
 }
+

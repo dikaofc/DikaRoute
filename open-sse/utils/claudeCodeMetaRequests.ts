@@ -85,3 +85,4 @@ export function extractFilepathsFromCommand(command: string, _output = ""): stri
 
   return [];
 }
+

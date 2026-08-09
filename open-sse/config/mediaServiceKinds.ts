@@ -68,3 +68,4 @@ export function resolveProviderServiceKinds(
   for (const kind of getRegistryMediaKinds(providerId)) set.add(kind);
   return [...set];
 }
+

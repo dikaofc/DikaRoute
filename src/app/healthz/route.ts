@@ -29,3 +29,4 @@ export function GET(): Response {
 export function HEAD(): Response {
   return createHealthResponse("HEAD");
 }
+

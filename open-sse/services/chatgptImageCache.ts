@@ -141,3 +141,4 @@ export function __resetChatGptImageCacheForTesting(): void {
 export function __getChatGptImageCacheBytesForTesting(): number {
   return cacheBytes;
 }
+

@@ -47,3 +47,4 @@ export async function GET(request) {
     message: syncInitialized ? "Cloud sync is running" : "Cloud sync not initialized",
   });
 }
+

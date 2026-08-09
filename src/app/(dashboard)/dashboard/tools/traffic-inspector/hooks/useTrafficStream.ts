@@ -169,3 +169,4 @@ export function useTrafficStream(
 
   return [state, { pause, resume, clear }];
 }
+

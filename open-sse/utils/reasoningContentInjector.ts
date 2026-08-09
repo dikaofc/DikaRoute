@@ -105,3 +105,4 @@ export function injectReasoningContentForThinkingModel(body: unknown): unknown {
 
   return modified ? { ...record, messages } : body;
 }
+

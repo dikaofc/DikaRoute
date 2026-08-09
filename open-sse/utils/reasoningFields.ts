@@ -85,3 +85,4 @@ export function copyOpenAICompatibleReasoningFields(source: JsonRecord, target: 
     else if (stripped !== target.reasoning) target.reasoning = stripped;
   }
 }
+

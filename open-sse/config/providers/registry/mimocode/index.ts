@@ -14,3 +14,4 @@ export const mimocodeProvider: RegistryEntry = {
   authHeader: "none",
   models: CHAT_OPENAI_COMPAT_MODELS["mimocode"],
 };
+

@@ -241,3 +241,4 @@ export function resetMcpDescriptionCompressionStats(): void {
   persistedDescriptionCompressionStats.charsSaved = 0;
   persistedDescriptionCompressionStats.estimatedTokensSaved = 0;
 }
+

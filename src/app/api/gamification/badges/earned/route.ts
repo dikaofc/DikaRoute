@@ -22,3 +22,4 @@ export async function GET(request: NextRequest) {
   const badges = apiKeyId ? getBadges(apiKeyId) : getAllEarnedBadges();
   return NextResponse.json({ badges }, { headers: CORS_HEADERS });
 }
+

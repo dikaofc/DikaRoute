@@ -64,3 +64,4 @@ export function secureRandomInt(maxExclusive: number): number {
 export function _setSecureRandomFloatSource(source: (() => number) | null): void {
   testFloatSource = source ?? null;
 }
+

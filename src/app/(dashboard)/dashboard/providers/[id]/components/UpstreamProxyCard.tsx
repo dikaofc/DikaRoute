@@ -46,3 +46,4 @@ export default function UpstreamProxyCard({ t }: UpstreamProxyCardProps) {
     </Card>
   );
 }
+

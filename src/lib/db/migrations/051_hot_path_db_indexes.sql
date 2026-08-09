@@ -8,3 +8,4 @@ CREATE INDEX IF NOT EXISTS idx_usage_history_api_key_name_timestamp
 
 CREATE INDEX IF NOT EXISTS idx_call_logs_combo_name_timestamp
   ON call_logs(combo_name, timestamp);
+

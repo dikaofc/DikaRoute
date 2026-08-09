@@ -26,3 +26,4 @@ export async function GET(request: NextRequest) {
   const badges = getBadgeDefinitions(category);
   return NextResponse.json({ badges }, { headers: CORS_HEADERS });
 }
+

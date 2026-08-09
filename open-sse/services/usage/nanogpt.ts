@@ -94,3 +94,4 @@ export async function getNanoGptUsage(apiKey: string) {
     return { message: `NanoGPT connected. Unable to fetch usage: ${(error as Error).message}` };
   }
 }
+

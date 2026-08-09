@@ -495,3 +495,4 @@ function parseSseDelta(line: string): { kind: "answer" | "think"; text: string }
   }
   return null;
 }
+

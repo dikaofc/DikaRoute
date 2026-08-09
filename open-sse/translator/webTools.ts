@@ -589,3 +589,4 @@ export function buildToolAwareResult(
     finishReason: toolCalls ? "tool_calls" : "stop",
   };
 }
+

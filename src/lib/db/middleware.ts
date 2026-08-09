@@ -237,3 +237,4 @@ export function cleanupHookLogs(maxEntries = 10000): number {
     .run(maxEntries);
   return result.changes;
 }
+

@@ -73,3 +73,4 @@ describe("PassthroughModelRow — friendly name fallback", () => {
     expect(text.split(GUID).length - 1).toBe(1);
   });
 });
+

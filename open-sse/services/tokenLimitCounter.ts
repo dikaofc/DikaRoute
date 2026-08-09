@@ -340,3 +340,4 @@ export function recordTokenUsage(
       // Microtask scheduling/setup failure — non-fatal, never blocks the stream.
     });
 }
+

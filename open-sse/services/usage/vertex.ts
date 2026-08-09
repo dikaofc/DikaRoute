@@ -59,3 +59,4 @@ export async function getVertexUsage(connectionId: string, provider: string) {
     return { message: `Vertex usage tracking error: ${(error as Error).message}` };
   }
 }
+

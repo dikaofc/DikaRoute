@@ -237,3 +237,4 @@ export function redactProxySecrets(proxy: ProxyRegistryRecord): ProxyRegistryRec
     notes: redactedNotes,
   };
 }
+

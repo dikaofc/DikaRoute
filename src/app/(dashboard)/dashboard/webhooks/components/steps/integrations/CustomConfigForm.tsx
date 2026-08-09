@@ -111,3 +111,4 @@ export function CustomConfigForm({ value, onChange, t, isEditing }: CustomConfig
     </div>
   );
 }
+

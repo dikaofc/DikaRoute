@@ -83,3 +83,4 @@ export function validateDashboardCsrfToken(request: Request, nowMs: number = Dat
   const expectedMac = csrfMac(secret, expiresAtSeconds, authToken);
   return providedMac.length === expectedMac.length && timingSafeEqual(providedMac, expectedMac);
 }
+

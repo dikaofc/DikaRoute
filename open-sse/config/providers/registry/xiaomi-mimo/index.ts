@@ -23,3 +23,4 @@ export const xiaomi_mimoProvider: RegistryEntry = {
     },
   ],
 };
+

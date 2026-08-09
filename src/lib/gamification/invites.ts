@@ -125,3 +125,4 @@ export async function revokeInvite(inviteId: string): Promise<boolean> {
   dbRevoke(inviteId);
   return true;
 }
+

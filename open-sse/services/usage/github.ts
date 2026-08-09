@@ -228,3 +228,4 @@ export function inferGitHubPlanName(data: JsonRecord, premiumQuota: UsageQuota |
   }
   return "GitHub Copilot";
 }
+

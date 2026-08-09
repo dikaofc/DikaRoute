@@ -141,3 +141,4 @@ export function decodeVarintField(buf: Buffer, fieldNumber: number): number {
   if (f && f.wireType === 0) return Number(f.varint);
   return 0;
 }
+

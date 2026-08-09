@@ -18,3 +18,4 @@ export const huggingfaceProvider: RegistryEntry = {
     { id: "deepseek-ai/DeepSeek-V3", name: "DeepSeek V3" },
   ],
 };
+

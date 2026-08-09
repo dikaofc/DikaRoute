@@ -230,3 +230,4 @@ export function deleteUserFitnessOverrideEntry(
 ): boolean {
   return deleteModelIntelligence(model.toLowerCase(), "user_override", category.toLowerCase());
 }
+

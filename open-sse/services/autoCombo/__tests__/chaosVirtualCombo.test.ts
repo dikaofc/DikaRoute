@@ -47,3 +47,4 @@ describe("auto/chaos virtual combo", () => {
     expect(providers.length).toBe(uniqueProviders.size);
   });
 });
+

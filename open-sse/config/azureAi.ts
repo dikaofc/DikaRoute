@@ -95,3 +95,4 @@ export function buildAzureAiChatUrl(
 export function buildAzureAiModelsUrl(value: string | null | undefined): string {
   return `${normalizeAzureAiBaseUrl(value)}/models`;
 }
+

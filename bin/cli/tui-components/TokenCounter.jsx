@@ -16,3 +16,4 @@ export function TokenCounter({ tokensIn = 0, tokensOut = 0, costUsd = 0, model }
     </Box>
   );
 }
+

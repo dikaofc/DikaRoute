@@ -155,3 +155,4 @@ export function isUnknownAutoChannelError(err: unknown): boolean {
 export function buildCandidatesErrorBody(statusCode: number, message: string) {
   return buildErrorBody(statusCode, message);
 }
+

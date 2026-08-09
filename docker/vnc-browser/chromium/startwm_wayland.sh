@@ -22,3 +22,4 @@ if [ "${SELKIES_DESKTOP,,}" == "true" ]; then
 else
   labwc > /dev/null 2>&1
 fi
+

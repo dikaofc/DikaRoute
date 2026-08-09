@@ -44,3 +44,4 @@ export function sortRankingsAuthTypeFirst(
 ): FreeProviderRanking[] {
   return [...rankings].sort((a, b) => AUTH_TYPE_ORDER[a.category] - AUTH_TYPE_ORDER[b.category]);
 }
+

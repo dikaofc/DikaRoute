@@ -16,3 +16,4 @@
 export function shouldShowProviderTopologyOnHome(setting: unknown): boolean {
   return setting !== false;
 }
+

@@ -787,3 +787,4 @@ export function createResponsesApiTransformStream(
     { highWaterMark: 16384 }
   );
 }
+

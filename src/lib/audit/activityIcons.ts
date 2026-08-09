@@ -67,3 +67,4 @@ export const ACTIVITY_ICONS: Record<string, ActivityIconSpec> = {
 export function getActivityIcon(action: string): ActivityIconSpec {
   return ACTIVITY_ICONS[action] ?? { icon: "info", i18nKeyVerb: "genericEvent" };
 }
+

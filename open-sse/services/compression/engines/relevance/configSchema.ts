@@ -61,3 +61,4 @@ export function resolveRelevanceConfig(stepConfig: Record<string, unknown>): Rel
     boilerplateWeight: typeof stepConfig.boilerplateWeight === "number" ? stepConfig.boilerplateWeight : 0.5,
   };
 }
+

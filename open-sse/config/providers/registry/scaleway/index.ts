@@ -18,3 +18,4 @@ export const scalewayProvider: RegistryEntry = {
     { id: "gpt-oss-120b", name: "GPT-OSS 120B (🆓 EU)" },
   ],
 };
+

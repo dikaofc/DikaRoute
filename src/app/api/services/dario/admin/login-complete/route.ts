@@ -38,3 +38,4 @@ export async function POST(request: Request): Promise<Response> {
     body: { alias: parsed.data.alias, code: parsed.data.code },
   });
 }
+

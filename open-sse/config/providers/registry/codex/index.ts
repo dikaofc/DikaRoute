@@ -196,3 +196,4 @@ export const codexProvider: RegistryEntry = {
     { id: "gpt-5.3-codex-spark", name: "GPT 5.3 Codex Spark" },
   ],
 };
+

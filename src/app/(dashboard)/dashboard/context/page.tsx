@@ -34,3 +34,4 @@ export default async function ContextPage({ searchParams }: ContextPageProps) {
   const tab = Array.isArray(params.tab) ? params.tab[0] : params.tab;
   redirect(resolveContextRoute(tab));
 }
+

@@ -108,3 +108,4 @@ export function decodeNativeTodoWriteCompletion(payload: Buffer): NativeTodoWrit
 
   return { kind: "native_todo_write", toolCallId, merge, todos };
 }
+

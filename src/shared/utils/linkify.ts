@@ -52,3 +52,4 @@ export function linkifyText(input: string): TextSegment[] {
   if (last < input.length) segments.push({ text: input.slice(last) });
   return segments;
 }
+

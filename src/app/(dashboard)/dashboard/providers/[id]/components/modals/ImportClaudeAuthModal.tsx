@@ -740,3 +740,4 @@ export function ApplyClaudeAuthModal({
     </Modal>
   );
 }
+

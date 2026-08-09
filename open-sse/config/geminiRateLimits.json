@@ -32,3 +32,4 @@
   "gemini-2.5-flash-native-audio-dialog": { "rpm": -1, "rpd": -1, "tpm": 1000000 },
   "gemini-3-flash-live": { "rpm": -1, "rpd": -1, "tpm": 65000 }
 }
+

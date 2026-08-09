@@ -73,3 +73,4 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     return NextResponse.json(buildErrorBody(500, sanitizeErrorMessage(error)), { status: 500 });
   }
 }
+

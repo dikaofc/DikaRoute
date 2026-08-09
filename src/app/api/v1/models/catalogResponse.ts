@@ -206,3 +206,4 @@ export function finalizeCatalogResponse(
 
   return Response.json(responseBody, { headers });
 }
+

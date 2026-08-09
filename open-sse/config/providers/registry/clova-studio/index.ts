@@ -15,3 +15,4 @@ export const clova_studioProvider: RegistryEntry = {
     { id: "HCX-005", name: "HCX-005" },
   ],
 };
+

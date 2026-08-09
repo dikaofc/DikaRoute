@@ -367,3 +367,4 @@ export function getRelayLogs(tokenId?: string, limit = 50): RelayLogRow[] {
     .prepare("SELECT * FROM relay_logs ORDER BY created_at DESC LIMIT ?")
     .all(limit) as RelayLogRow[];
 }
+

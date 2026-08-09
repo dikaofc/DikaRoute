@@ -40,3 +40,4 @@ export function isForbiddenCustomHeaderName(name: string): boolean {
   const n = String(name).trim().toLowerCase();
   return isForbiddenUpstreamHeaderName(n) || FORBIDDEN_AUTH.has(n);
 }
+

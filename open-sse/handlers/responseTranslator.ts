@@ -822,3 +822,4 @@ function convertOpenAINonStreamingToGeminiFamily(openaiResponse: JsonRecord): Js
 
   return geminiResponse;
 }
+

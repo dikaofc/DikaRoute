@@ -29,3 +29,4 @@ export function getServerCredentials(): ServerCredentials {
     userId: process.env.DIKAROUTE_USER_ID || process.env.CLI_USER_ID || "cli",
   };
 }
+

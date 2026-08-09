@@ -59,3 +59,4 @@ export function useTranslateDeepLink(): UseTranslateDeepLinkReturn {
     setAdvanced: (advanced) => update({ advanced }),
   };
 }
+

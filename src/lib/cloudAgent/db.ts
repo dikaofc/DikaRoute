@@ -143,3 +143,4 @@ export function deleteCloudAgentTask(id: string): void {
   const db = getDbInstance();
   db.prepare("DELETE FROM cloud_agent_tasks WHERE id = ?").run(id);
 }
+

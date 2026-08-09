@@ -185,3 +185,4 @@ export const STATIC_CORS_HEADERS: Readonly<Record<string, string>> = Object.free
   "Access-Control-Allow-Methods": STANDARD_ALLOW_METHODS,
   "Access-Control-Allow-Headers": STANDARD_ALLOW_HEADERS,
 });
+

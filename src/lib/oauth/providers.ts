@@ -306,3 +306,4 @@ export async function pollForToken(providerName, deviceCode, codeVerifier, extra
     errorDescription: result.data.error_description,
   };
 }
+

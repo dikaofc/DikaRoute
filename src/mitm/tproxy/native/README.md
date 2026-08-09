@@ -53,3 +53,4 @@ re-encrypted forward → upstream round-trip was validated end-to-end on the VPS
 (kernel 6.8.0), including the anti-loop fix (PR #4229). Wired via the capture
 manager (#4208), the local-only route + CA installer (#4211), and the Traffic
 Inspector toggle (#4216).
+

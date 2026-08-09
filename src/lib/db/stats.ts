@@ -76,3 +76,4 @@ export function getDatabaseStats(db: SqliteAdapter = getDbInstance()): DatabaseS
     cacheSize,
   };
 }
+

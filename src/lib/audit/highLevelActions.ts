@@ -55,3 +55,4 @@ const SET: ReadonlySet<string> = new Set<string>(HIGH_LEVEL_ACTIONS);
 export function isHighLevelAction(action: string): boolean {
   return SET.has(action);
 }
+

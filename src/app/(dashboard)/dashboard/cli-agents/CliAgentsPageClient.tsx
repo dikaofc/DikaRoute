@@ -153,3 +153,4 @@ export default function CliAgentsPageClient({ machineId: _machineId }: CliAgents
     </div>
   );
 }
+

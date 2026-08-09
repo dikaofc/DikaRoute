@@ -100,3 +100,4 @@ export async function DELETE(
   const deleted = await deleteUpstreamProxyConfig(providerId);
   return NextResponse.json({ deleted });
 }
+

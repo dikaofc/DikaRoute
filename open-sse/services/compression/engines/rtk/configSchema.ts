@@ -115,3 +115,4 @@ export function validateRtkEngineConfig(config: Record<string, unknown>): Engine
   }
   return { valid: errors.length === 0, errors };
 }
+

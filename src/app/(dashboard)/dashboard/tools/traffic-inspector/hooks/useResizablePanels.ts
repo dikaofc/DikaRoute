@@ -80,3 +80,4 @@ export function useResizablePanels(): [ResizablePanelsState, ResizablePanelsActi
 
   return [{ listWidth: effectiveWidth, collapsed }, { startDrag, toggleCollapse }];
 }
+

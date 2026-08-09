@@ -460,3 +460,4 @@ export function isModelScoped400(errorText: string | null | undefined): boolean 
     /\bdoes\s+not\s+support\s+(?:the\s+)?responses\s+api\b/i.test(text)
   );
 }
+

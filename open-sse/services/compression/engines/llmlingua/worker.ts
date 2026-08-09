@@ -371,3 +371,4 @@ export function __resetLlmlinguaWorkerForTests(): void {
   _depsAvailable = null;
   nextId = 1;
 }
+

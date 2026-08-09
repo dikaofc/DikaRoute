@@ -44,3 +44,4 @@ export function stripBooleanReasoning(body: JsonRecord): JsonRecord {
   delete next.reasoning;
   return next;
 }
+

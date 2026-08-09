@@ -13,3 +13,4 @@ export const dgridProvider: RegistryEntry = {
   models: [{ id: "dgridai/free", name: "DGrid Free Models Router" }],
   passthroughModels: true,
 };
+

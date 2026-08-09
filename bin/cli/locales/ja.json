@@ -30,3 +30,4 @@
     "description": "DikaRouteのキャッシュとクォータ追跡用に、ローカルRedisコンテナー（PodmanまたはDocker）をワンクリックで起動"
   }
 }
+

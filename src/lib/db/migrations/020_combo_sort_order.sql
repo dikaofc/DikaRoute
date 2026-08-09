@@ -14,3 +14,4 @@ SET sort_order = (
   FROM ordered_combos
   WHERE ordered_combos.id = combos.id
 );
+

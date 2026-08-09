@@ -247,3 +247,4 @@ export function resolvePublicCredMulti(
   }
   return decodePublicCredBytes(EMBEDDED_DEFAULTS[key]);
 }
+

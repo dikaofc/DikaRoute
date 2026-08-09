@@ -238,3 +238,4 @@ export function getTaskManager(): A2ATaskManager {
   }
   return globalForA2A._a2aTaskManager;
 }
+

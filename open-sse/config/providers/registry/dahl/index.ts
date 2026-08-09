@@ -26,3 +26,4 @@ export const dahlProvider: RegistryEntry = {
     { id: "moonshotai/Kimi-K2.6", name: "Kimi K2.6" },
   ],
 };
+

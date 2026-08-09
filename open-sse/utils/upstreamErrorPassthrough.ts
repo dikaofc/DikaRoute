@@ -36,3 +36,4 @@ export function buildPassthroughErrorResponse(
     headers: { "Content-Type": "application/json", ...(headers || {}) },
   });
 }
+

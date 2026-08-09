@@ -59,3 +59,4 @@ export function getHeader(h: unknown, name: string): string | null {
   const plain = normalizeHeaders(h);
   return plain[name.toLowerCase()] ?? null;
 }
+

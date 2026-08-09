@@ -332,3 +332,4 @@ export function selectProvider(
 
   return providers.reduce((cheapest, p) => (p.costPerQuery < cheapest.costPerQuery ? p : cheapest));
 }
+

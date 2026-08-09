@@ -60,3 +60,4 @@ describe("EditCompatibleNodeModal (Phase 1b extraction)", () => {
     ).not.toThrow();
   });
 });
+

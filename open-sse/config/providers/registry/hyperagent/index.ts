@@ -24,3 +24,4 @@ export const hyperagentProvider: RegistryEntry = {
     contextLength: HYPERAGENT_CONTEXT_LENGTH,
   })),
 };
+

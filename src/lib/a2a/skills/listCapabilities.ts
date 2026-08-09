@@ -70,3 +70,4 @@ export async function executeListCapabilities(_task: A2ATask): Promise<ListCapab
     },
   };
 }
+

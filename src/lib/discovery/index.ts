@@ -135,3 +135,4 @@ export function getDiscoveryResults(providerId?: string): DiscoveryResult[] {
 export function isDiscoveryEnabled(): boolean {
   return DEFAULT_DISCOVERY_CONFIG.enabled;
 }
+

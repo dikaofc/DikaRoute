@@ -92,3 +92,4 @@ CREATE TABLE IF NOT EXISTS community_servers (
   status TEXT NOT NULL DEFAULT 'connected' CHECK (status IN ('connected', 'disconnected', 'error')),
   error_message TEXT
 );
+

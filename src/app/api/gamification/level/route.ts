@@ -22,3 +22,4 @@ export async function GET(request: NextRequest) {
   const level = apiKeyId ? getXp(apiKeyId) : getAggregateXp();
   return NextResponse.json({ level }, { headers: CORS_HEADERS });
 }
+

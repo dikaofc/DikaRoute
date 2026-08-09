@@ -40,3 +40,4 @@ export function sanitizeDocsHtml(html: string): string {
   const purify = getSanitizer();
   return purify.sanitize(html, { ALLOWED_TAGS, ALLOWED_ATTR });
 }
+

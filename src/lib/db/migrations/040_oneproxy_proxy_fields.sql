@@ -22,3 +22,4 @@ ALTER TABLE proxy_registry ADD COLUMN country_code TEXT;
 CREATE INDEX IF NOT EXISTS idx_proxy_registry_source ON proxy_registry(source);
 CREATE INDEX IF NOT EXISTS idx_proxy_registry_quality ON proxy_registry(quality_score DESC);
 CREATE INDEX IF NOT EXISTS idx_proxy_registry_country ON proxy_registry(country_code);
+

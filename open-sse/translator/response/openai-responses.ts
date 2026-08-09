@@ -1199,3 +1199,4 @@ function openaiResponsesToOpenAIResponseStream(chunk, state) {
 // Register both directions
 register(FORMATS.OPENAI, FORMATS.OPENAI_RESPONSES, null, openaiToOpenAIResponsesResponse);
 register(FORMATS.OPENAI_RESPONSES, FORMATS.OPENAI, null, openaiResponsesToOpenAIResponse);
+

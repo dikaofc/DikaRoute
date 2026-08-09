@@ -52,3 +52,4 @@ export function hasManageScope(scopes: readonly string[] = []): boolean {
   }
   return false;
 }
+

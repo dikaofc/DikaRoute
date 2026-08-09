@@ -496,3 +496,4 @@ export function hashNotionCallerCookie(cookie: string): string {
   // accidental and crafted collisions infeasible; the raw cookie is never stored.
   return createHash("sha256").update(raw).digest("hex").slice(0, 32);
 }
+

@@ -278,3 +278,4 @@ export function CompressionCockpit({ run: runProp }: CompressionCockpitProps) {
 }
 
 export default CompressionCockpit;
+

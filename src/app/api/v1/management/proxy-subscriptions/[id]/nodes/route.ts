@@ -29,3 +29,4 @@ export async function GET(request: Request, ctx: RouteCtx) {
     return createErrorResponseFromUnknown(error, "Failed to load proxy subscription nodes");
   }
 }
+

@@ -8,3 +8,4 @@ ALTER TABLE skills ADD COLUMN install_count INTEGER NOT NULL DEFAULT 0;
 
 CREATE INDEX IF NOT EXISTS idx_skills_mode ON skills(mode);
 CREATE INDEX IF NOT EXISTS idx_skills_source_provider ON skills(source_provider);
+

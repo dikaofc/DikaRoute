@@ -344,3 +344,4 @@ export async function vertexGenerateVideo(
   }
   throw new Error("Vertex Veo video generation timed out");
 }
+

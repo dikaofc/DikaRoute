@@ -188,3 +188,4 @@ export function CaptureModesToolbar({ customHostCount }: CaptureModesToolbarProp
     </>
   );
 }
+

@@ -253,3 +253,4 @@ export function detectExpirationFromResponse(
 export function resetExpirations(): void {
   expirations.clear();
 }
+

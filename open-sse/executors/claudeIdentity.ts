@@ -462,3 +462,4 @@ export function stripProxyToolPrefix(body: Record<string, unknown>): void {
     }
   }
 }
+

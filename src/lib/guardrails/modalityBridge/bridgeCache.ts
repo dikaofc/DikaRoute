@@ -80,3 +80,4 @@ export function getSharedBridgeCache(ttlMs: number, maxEntries: number): BridgeC
 export function getSharedBridgeCacheFor(settings: VisionBridgeRuntimeSettings): BridgeCache {
   return getSharedBridgeCache(settings.cacheTtlMinutes * 60_000, settings.cacheMaxEntries);
 }
+

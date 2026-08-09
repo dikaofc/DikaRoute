@@ -21,3 +21,4 @@ export function generateKilocodeConfig(options: {
 
   return JSON.stringify(config, null, 2);
 }
+

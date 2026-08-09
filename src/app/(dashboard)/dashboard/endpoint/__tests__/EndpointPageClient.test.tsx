@@ -403,3 +403,4 @@ describe("EndpointPageClient", () => {
     expect(requestPaths).not.toContain("/api/settings/compression");
   });
 });
+

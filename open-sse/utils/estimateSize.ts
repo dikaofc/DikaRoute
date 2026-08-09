@@ -110,3 +110,4 @@ export function estimateSizeFast(value: unknown): number {
 export function isSmallEnoughForSemanticCache(value: unknown): boolean {
   return estimateSizeFast(value) <= 256 * 1024;
 }
+

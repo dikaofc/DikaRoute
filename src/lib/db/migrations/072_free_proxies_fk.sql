@@ -25,3 +25,4 @@ BEGIN
       updated_at = datetime('now')
   WHERE pool_proxy_id = OLD.id;
 END;
+

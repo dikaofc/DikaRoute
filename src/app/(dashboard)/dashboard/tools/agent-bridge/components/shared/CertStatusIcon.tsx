@@ -27,3 +27,4 @@ export function CertStatusIcon({ trusted, size = 16 }: CertStatusIconProps) {
     </span>
   );
 }
+

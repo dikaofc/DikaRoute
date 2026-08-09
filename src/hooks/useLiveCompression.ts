@@ -95,3 +95,4 @@ export function useLiveCompression(options?: UseLiveDashboardOptions): UseLiveCo
     reconnect,
   };
 }
+

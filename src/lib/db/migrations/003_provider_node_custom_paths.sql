@@ -3,3 +3,4 @@
 -- NULL = use default path (backward compatible)
 ALTER TABLE provider_nodes ADD COLUMN chat_path TEXT;
 ALTER TABLE provider_nodes ADD COLUMN models_path TEXT;
+

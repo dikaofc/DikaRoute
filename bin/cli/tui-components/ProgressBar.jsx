@@ -13,3 +13,4 @@ export function ProgressBar({ value = 0, max = 100, width = 20, color = "green" 
     </Box>
   );
 }
+

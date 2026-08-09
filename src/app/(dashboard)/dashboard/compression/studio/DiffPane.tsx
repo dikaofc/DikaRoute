@@ -44,3 +44,4 @@ export function DiffPane({ segments, preservedBlocks }: DiffPaneProps) {
     </div>
   );
 }
+

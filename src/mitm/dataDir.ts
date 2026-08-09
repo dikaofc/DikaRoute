@@ -39,3 +39,4 @@ export function resolveMitmDataDir(): string {
 
   return path.join(homeDir, `.${APP_NAME}`);
 }
+

@@ -25,3 +25,4 @@ interface InFlightRequest {
 export function selectActiveRequests(requests: InFlightRequest[]): TopologyActiveRequest[] {
   return requests.map(({ provider, model }) => ({ provider, model }));
 }
+

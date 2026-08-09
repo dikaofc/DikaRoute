@@ -24,3 +24,4 @@ export const CC_WIRE_IMAGE_BUILTINS: ReadonlySet<string> = new Set(["agentrouter
 export function usesCcWireImage(provider: unknown): boolean {
   return typeof provider === "string" && CC_WIRE_IMAGE_BUILTINS.has(provider);
 }
+

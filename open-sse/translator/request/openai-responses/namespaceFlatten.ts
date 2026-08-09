@@ -39,3 +39,4 @@ export function flattenNamespaceToolName(nsName: string, leaf: string): string {
   const hash = createHash("sha256").update(qualified).digest("hex").slice(0, 7);
   return `${qualified.slice(0, MAX_TOOL_NAME_LEN - 8)}_${hash}`;
 }
+

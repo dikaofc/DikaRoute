@@ -186,3 +186,4 @@ export function toHar(requests: InterceptedRequest[]): HarFile {
     },
   };
 }
+

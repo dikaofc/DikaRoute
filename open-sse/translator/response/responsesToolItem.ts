@@ -30,3 +30,4 @@ export function buildResponsesToolCallItem(options: {
   if (namespace) item.namespace = namespace;
   return item;
 }
+

@@ -94,3 +94,4 @@ export function searchTools(
 
   return scored.slice(0, clampedLimit);
 }
+

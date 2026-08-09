@@ -30,3 +30,4 @@
     "description": "Start en lokal Redis-beholder med ett klikk (Podman eller Docker) for DikaRoute-hurtigbufring og kvotesporing"
   }
 }
+

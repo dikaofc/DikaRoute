@@ -34,3 +34,4 @@ export const GenerateBodySchema = z.object({
   prune: z.boolean().default(false),
   onlyIds: z.array(z.string()).optional(),
 });
+

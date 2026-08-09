@@ -453,3 +453,4 @@ try {
 } catch {
   // Silently skip — runtime warm-up is best-effort.
 }
+

@@ -53,3 +53,4 @@ export function useSystemProxyExitGuard(opts: UseSystemProxyExitGuardOpts): void
     };
   }, [opts.endpoint]);
 }
+

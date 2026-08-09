@@ -497,3 +497,4 @@ export function generateOpencodeConfigSync(options: {
 // `config.mjs` working. The async variant above is the preferred entry
 // point for new callers.
 export default generateOpencodeConfigSync;
+

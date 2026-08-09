@@ -148,3 +148,4 @@ app.__qa_backup/
 .next-playwright/
 cloud/
 electron/dist-electron
+

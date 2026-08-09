@@ -22,3 +22,4 @@ export const openrouterProvider: RegistryEntry = {
   passthroughModels: true,
   models: [{ id: "auto", name: "Auto (Best Available)" }],
 };
+

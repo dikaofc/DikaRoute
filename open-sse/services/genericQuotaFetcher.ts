@@ -218,3 +218,4 @@ export function registerGenericQuotaFetchers(): void {
     registerQuotaFetcher(provider, fetchGenericQuota);
   }
 }
+

@@ -56,3 +56,4 @@ function setScope(scopes: Set<string>, scope: string, enabled: boolean): void {
     scopes.delete(scope);
   }
 }
+

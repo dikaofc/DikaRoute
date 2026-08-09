@@ -128,3 +128,4 @@ export function wasRefreshTokenRotated(
 export function __resetRefreshSerializerForTest(): void {
   groupTail.clear();
 }
+

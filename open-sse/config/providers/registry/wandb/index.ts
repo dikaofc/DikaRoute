@@ -11,3 +11,4 @@ export const wandbProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.wandb,
 };
+

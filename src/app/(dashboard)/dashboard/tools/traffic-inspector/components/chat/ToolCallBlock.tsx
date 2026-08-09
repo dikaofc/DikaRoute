@@ -33,3 +33,4 @@ export function ToolCallBlock({ id, name, input }: ToolCallBlockProps) {
     </div>
   );
 }
+

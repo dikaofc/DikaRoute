@@ -27,3 +27,4 @@ export const gitlab_duoProvider: RegistryEntry = {
     { id: "claude-haiku-4-5", name: "Claude Haiku 4.5 (GitLab Duo)" },
   ],
 };
+

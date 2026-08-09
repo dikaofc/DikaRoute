@@ -10,3 +10,4 @@ export const chutesProvider: RegistryEntry = {
   authHeader: "bearer",
   models: [{ id: "Qwen2.5-72B-Instruct", name: "Qwen2.5 72B" }],
 };
+

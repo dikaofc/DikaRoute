@@ -4,3 +4,4 @@
 
 /** Default chat path for Claude-Code-compatible (Anthropic-shaped) custom nodes. */
 export const CC_COMPATIBLE_DEFAULT_CHAT_PATH = "/v1/messages?beta=true";
+

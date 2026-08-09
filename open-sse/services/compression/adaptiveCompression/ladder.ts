@@ -83,3 +83,4 @@ const REDUCTION_FACTOR: Record<string, number> = {
 export function expectedReductionFactor(engine: string): number {
   return REDUCTION_FACTOR[engine] ?? 0.9;
 }
+

@@ -51,3 +51,4 @@ export function getLatestChangelogMarkdown(markdown: string, limit = 10): string
 
   return [header, versions].filter(Boolean).join("\n\n");
 }
+

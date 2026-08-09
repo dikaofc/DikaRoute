@@ -24,3 +24,4 @@ export function capScaledCooldownMs(
     typeof maxCooldownMs === "number" && maxCooldownMs > 0 ? maxCooldownMs : fallbackMaxMs;
   return Math.min(cooldownMs, cap);
 }
+

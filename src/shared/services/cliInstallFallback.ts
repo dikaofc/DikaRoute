@@ -67,3 +67,4 @@ export const withSettingsFallback = (
     requiresBinary: notInstalledResult.requiresBinary,
   };
 };
+

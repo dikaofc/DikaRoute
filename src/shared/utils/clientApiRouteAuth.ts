@@ -48,3 +48,4 @@ export async function enforceClientApiRouteAuth(request: Request): Promise<Respo
     ? errorResponse(HTTP_STATUS.UNAUTHORIZED, "Authentication required")
     : null;
 }
+

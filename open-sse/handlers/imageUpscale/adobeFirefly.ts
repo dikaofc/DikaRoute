@@ -175,3 +175,4 @@ function normalizePositiveNumber(value: unknown, fallback: number): number {
   const n = Number(value);
   return Number.isFinite(n) && n > 0 ? n : fallback;
 }
+

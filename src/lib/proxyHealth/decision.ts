@@ -75,3 +75,4 @@ export function decideProxyHealthAction(input: ProxyHealthDecisionInput): ProxyH
 
   return { failures, clearFailures: false, setStatus: null, remove: false };
 }
+

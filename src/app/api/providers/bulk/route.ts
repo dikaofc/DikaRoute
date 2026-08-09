@@ -235,3 +235,4 @@ async function syncToCloudIfEnabled() {
     console.log("Error syncing providers to cloud:", error);
   }
 }
+

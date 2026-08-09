@@ -112,3 +112,4 @@ export async function runReindexBatch(
 export function getReindexPending(): number {
   return countMemoryReindexPending();
 }
+

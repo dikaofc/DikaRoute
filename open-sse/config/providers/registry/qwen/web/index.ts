@@ -54,3 +54,4 @@ export const qwen_webProvider: RegistryEntry = {
     },
   ],
 };
+

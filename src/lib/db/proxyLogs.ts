@@ -33,3 +33,4 @@ export function exportProxyLogsSince(since: string): Record<string, unknown>[] {
   );
   return stmt.all({ since }) as Record<string, unknown>[];
 }
+

@@ -21,3 +21,4 @@ export function resolveClaudeCodeCompatibleAnthropicBeta(
 }
 
 export const CLAUDE_CODE_COMPATIBLE_ANTHROPIC_BETA = resolveClaudeCodeCompatibleAnthropicBeta();
+

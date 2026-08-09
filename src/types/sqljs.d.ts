@@ -30,3 +30,4 @@ declare module "sql.js" {
 
   export default function initSqlJs(options?: SqlJsInitOptions): Promise<SqlJsStatic>;
 }
+

@@ -906,3 +906,4 @@ export function createDikaRouteModesBlock(
 }
 
 export default createDikaRouteProvider;
+

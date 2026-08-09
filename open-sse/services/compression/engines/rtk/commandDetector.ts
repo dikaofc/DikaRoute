@@ -480,3 +480,4 @@ export function detectCommandType(text: string, command?: string | null): Comman
 }
 
 export const detectCommandOutput = detectCommandType;
+

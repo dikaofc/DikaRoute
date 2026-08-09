@@ -143,3 +143,4 @@ CREATE INDEX idx_call_logs_requested_model ON call_logs(requested_model);
 CREATE INDEX idx_call_logs_request_type ON call_logs(request_type);
 CREATE INDEX idx_cl_combo_target
   ON call_logs(combo_name, combo_execution_key, timestamp);
+

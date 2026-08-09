@@ -236,3 +236,4 @@ export function getCodeGraphStats(): CodeGraphQueryResult {
                    SELECT 'languages', GROUP_CONCAT(DISTINCT language) FROM files UNION ALL
                    SELECT 'node_kinds', GROUP_CONCAT(DISTINCT kind) FROM nodes`);
 }
+

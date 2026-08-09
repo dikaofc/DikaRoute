@@ -478,3 +478,4 @@ export function resetAllComboMetrics(): void {
   metrics.clear();
   shadowMetrics.clear();
 }
+

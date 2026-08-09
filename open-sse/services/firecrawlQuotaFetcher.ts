@@ -190,3 +190,4 @@ export function registerFirecrawlQuotaFetcher(): void {
   registerQuotaFetcher("firecrawl", fetchFirecrawlQuota);
   registerMonitorFetcher("firecrawl", fetchFirecrawlQuota);
 }
+

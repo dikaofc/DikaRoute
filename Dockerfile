@@ -251,3 +251,4 @@ RUN --mount=type=cache,id=npm-cache,target=/root/.npm \
   npm install -g --no-audit --no-fund @openai/codex @anthropic-ai/claude-code droid openclaw@latest
 
 USER node
+

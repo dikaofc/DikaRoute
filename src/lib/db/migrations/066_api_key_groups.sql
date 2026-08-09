@@ -45,3 +45,4 @@ CREATE INDEX IF NOT EXISTS idx_group_members_key
 CREATE INDEX IF NOT EXISTS idx_group_members_group
   ON key_group_members(group_id);
 
+

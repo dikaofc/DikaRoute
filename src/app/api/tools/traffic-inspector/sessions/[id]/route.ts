@@ -121,3 +121,4 @@ export async function DELETE(_request: Request, { params }: Params): Promise<Res
     });
   }
 }
+

@@ -17,3 +17,4 @@ ON session_model_history(session_id, combo_name, used_at DESC);
 
 CREATE INDEX IF NOT EXISTS idx_session_model_history_cleanup
 ON session_model_history(used_at);
+

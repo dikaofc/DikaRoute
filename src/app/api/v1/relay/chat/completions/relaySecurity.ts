@@ -70,3 +70,4 @@ export function checkIpRateLimit(tokenId: string, ip: string): { allowed: boolea
   bucket.count++;
   return { allowed: true, resetIn: 60 - (now % 60) };
 }
+

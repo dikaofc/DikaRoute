@@ -94,3 +94,4 @@ export const VNC_CONFIG = {
 } as const;
 
 export const VNC_ROUTE_PREFIX = "/api/vnc-session";
+

@@ -80,3 +80,4 @@ echo "warm TTFB:                      ${ttfb_ms} ms (budget ${TTFB_BUDGET_MS} ms
 [ "$ttfb_ms" -le "$TTFB_BUDGET_MS" ] || { echo "FAIL: TTFB budget exceeded"; fail=1; }
 [ "$fail" -eq 0 ] && echo "PASS: within cold-start budgets"
 exit "$fail"
+

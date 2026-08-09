@@ -25,3 +25,4 @@ CREATE INDEX IF NOT EXISTS idx_eval_suites_updated_at
 
 CREATE INDEX IF NOT EXISTS idx_eval_cases_suite_order
   ON eval_cases(suite_id, sort_order ASC, created_at ASC);
+

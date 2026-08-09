@@ -30,3 +30,4 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({ guardrails }, { headers: CORS_HEADERS });
 }
+

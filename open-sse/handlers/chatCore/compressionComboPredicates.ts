@@ -39,3 +39,4 @@ export function isStackedCompressionCombo(
   // page) must still apply. applyCompressionComboConfig already guards length === 0.
   return Boolean(compressionCombo && compressionCombo.pipeline.length >= 1);
 }
+

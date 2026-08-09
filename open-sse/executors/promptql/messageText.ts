@@ -89,3 +89,4 @@ export function isUserLikeRole(role: string): boolean {
   const r = (role || "").toLowerCase();
   return r === "user" || r === "human" || r === "tool" || r === "function";
 }
+

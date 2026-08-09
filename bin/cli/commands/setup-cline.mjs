@@ -158,3 +158,4 @@ export function registerSetupCline(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

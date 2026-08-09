@@ -529,3 +529,4 @@ if (shouldPersistToDisk) {
     // Best-effort startup migration.
   }
 }
+

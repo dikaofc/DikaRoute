@@ -78,3 +78,4 @@ export async function handleSegmindImageGeneration({
     data: { created: Math.floor(Date.now() / 1000), data: [image] },
   };
 }
+

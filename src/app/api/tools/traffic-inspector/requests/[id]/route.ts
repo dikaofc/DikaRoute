@@ -22,3 +22,4 @@ export async function GET(_request: Request, { params }: Params): Promise<Respon
   }
   return Response.json(entry);
 }
+

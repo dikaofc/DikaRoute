@@ -39,3 +39,4 @@ describe("selectScopeAssignment", () => {
     expect(selectScopeAssignment([], "provider", "anything")).toBeNull();
   });
 });
+

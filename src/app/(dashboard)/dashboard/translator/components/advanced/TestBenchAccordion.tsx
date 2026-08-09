@@ -497,3 +497,4 @@ function TestBenchAccordionLazyMount({ onFirstOpen }: { onFirstOpen: () => void 
   }, []);
   return null;
 }
+

@@ -664,3 +664,4 @@ export function hasOpenToolCallMarkup(text: string): boolean {
     (text.includes("<tool_call>") && !text.includes("</tool_call>"))
   );
 }
+

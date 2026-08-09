@@ -69,3 +69,4 @@ export async function DELETE(request: Request, { params }: RouteParams) {
     return NextResponse.json({ error: "Failed to remove key from group" }, { status: 500 });
   }
 }
+

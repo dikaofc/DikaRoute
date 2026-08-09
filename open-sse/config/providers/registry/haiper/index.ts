@@ -13,3 +13,4 @@ export const haiperProvider: RegistryEntry = {
     { id: "gen2-image", name: "Gen 2 Image" },
   ],
 };
+

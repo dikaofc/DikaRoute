@@ -73,3 +73,4 @@ export function buildCursorOutputConstraints(body: {
     ? `\n\nOUTPUT CONSTRAINTS:\n${constraints.map((c) => `- ${c}`).join("\n")}`
     : "";
 }
+

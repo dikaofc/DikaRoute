@@ -130,3 +130,4 @@ export function getVscodeModelGroupingKey(model: VscodeCatalogModel) {
   const metadata = resolveVscodeModelMetadata(model);
   return metadata?.qualifiedId || metadata?.model || model.id || model.name || model.root || "";
 }
+

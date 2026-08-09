@@ -27,3 +27,4 @@ export function resolveOutputStyleSelection(config: ConfigSlice): OutputStyleSel
   }
   return [];
 }
+

@@ -26,3 +26,4 @@ ALTER TABLE quota_pools ADD COLUMN group_id TEXT;
 
 -- Backfill: assign every existing pool with no group to the default group.
 UPDATE quota_pools SET group_id = 'group-demo' WHERE group_id IS NULL OR group_id = '';
+

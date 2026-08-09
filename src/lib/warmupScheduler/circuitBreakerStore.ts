@@ -14,3 +14,4 @@ export interface CircuitBreakerStore {
   recordResult(connectionId: string, result: WarmupResult): Promise<void>;
   isInBackoff(connectionId: string): Promise<boolean>;
 }
+

@@ -100,3 +100,4 @@ export const cliAuthOnlyConfigSchema = z.object({
   apiKey: z.string().nullable().optional(),
   overwrite: z.boolean().optional(),
 });
+

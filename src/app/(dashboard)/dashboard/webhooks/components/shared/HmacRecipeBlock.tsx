@@ -69,3 +69,4 @@ export function HmacRecipeBlock({ code, title, snippets }: HmacRecipeBlockProps)
     </div>
   );
 }
+

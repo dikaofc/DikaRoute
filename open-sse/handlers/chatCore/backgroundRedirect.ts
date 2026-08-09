@@ -39,3 +39,4 @@ export function resolveBackgroundTaskRedirect(opts: {
 
   return { backgroundReason, redirect: { degradedModel, reason: backgroundReason } };
 }
+

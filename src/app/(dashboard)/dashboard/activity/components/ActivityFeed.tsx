@@ -53,3 +53,4 @@ export default function ActivityFeed({ entries, referenceNowMs }: ActivityFeedPr
     </div>
   );
 }
+

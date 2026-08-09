@@ -10,3 +10,4 @@ export const PROVIDER_COLORS = [
   "#14b8a6",
   "#14b8a6",
 ];
+

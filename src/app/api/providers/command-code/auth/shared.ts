@@ -118,3 +118,4 @@ export function buildCommandCodeCliCallbackUrl(): string {
     : COMMAND_CODE_CLI_CALLBACK_PORTS[0];
   return `http://localhost:${safePort}/callback`;
 }
+

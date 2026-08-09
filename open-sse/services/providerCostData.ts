@@ -51,3 +51,4 @@ export function getModelPricing(provider: string, model: string): ModelPricing {
 export function isExplicitlyFree(provider: string, config: TierConfig): boolean {
   return config.freeProviders.includes(provider.toLowerCase());
 }
+

@@ -44,3 +44,4 @@ export function isNewer(latest: string | null | undefined, current: string): boo
   }
   return false;
 }
+

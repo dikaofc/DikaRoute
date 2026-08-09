@@ -16,3 +16,4 @@ CREATE INDEX IF NOT EXISTS idx_compression_analytics_request_id
   ON compression_analytics(request_id);
 CREATE INDEX IF NOT EXISTS idx_compression_analytics_receipt_source
   ON compression_analytics(receipt_source);
+

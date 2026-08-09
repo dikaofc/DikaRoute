@@ -45,3 +45,4 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
 
   return NextResponse.json(formatBatchResponse(updatedBatch), { headers: CORS_HEADERS });
 }
+

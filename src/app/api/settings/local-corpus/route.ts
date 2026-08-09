@@ -86,3 +86,4 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: sanitizeErrorMessage(error) }, { status: 500 });
   }
 }
+

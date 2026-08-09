@@ -759,3 +759,4 @@ function providerEntryName(providerId: string): string | null {
   const providerEntry = AI_PROVIDERS[providerId] as { name?: string } | undefined;
   return toStringOrNull(providerEntry?.name);
 }
+

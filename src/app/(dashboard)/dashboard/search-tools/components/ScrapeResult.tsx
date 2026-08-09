@@ -182,3 +182,4 @@ export default function ScrapeResult({ result, latencyMs }: ScrapeResultProps) {
     </div>
   );
 }
+

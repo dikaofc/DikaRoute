@@ -709,3 +709,4 @@ export async function initModelsDevSync(): Promise<void> {
   const interval = settings.modelsDevSyncInterval as number | undefined;
   startPeriodicSync(interval);
 }
+

@@ -21,3 +21,4 @@ export function shouldStubMitmManager(env = process.env) {
 export function mitmManagerAliasFor(env = process.env) {
   return shouldStubMitmManager(env) ? { "@/mitm/manager": "./src/mitm/manager.stub.ts" } : {};
 }
+

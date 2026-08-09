@@ -70,3 +70,4 @@ export async function handleGetModelById(
     { status: 404, headers: CORS_HEADERS }
   );
 }
+

@@ -34,3 +34,4 @@ const COMPATIBLE_PROVIDER_ID_PATTERN = new RegExp(
 export function isCompatibleProviderConnectionId(providerId: string | null | undefined): boolean {
   return typeof providerId === "string" && COMPATIBLE_PROVIDER_ID_PATTERN.test(providerId);
 }
+

@@ -405,3 +405,4 @@ export const BUCKET_SIZES: Record<UtilizationTimeRange, number> = {
   "7d": 60,
   "30d": 360,
 };
+

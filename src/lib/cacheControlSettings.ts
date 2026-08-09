@@ -23,3 +23,4 @@ export async function getCacheControlSettings(): Promise<CacheControlMode> {
 export function invalidateCacheControlSettingsCache() {
   cachedSettings = null;
 }
+

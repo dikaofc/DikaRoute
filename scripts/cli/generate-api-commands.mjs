@@ -177,3 +177,4 @@ const registryLines = [
 writeFileSync(join(OUT_DIR, "registry.mjs"), registryLines.join("\n") + "\n");
 console.log(`[generate] registry.mjs — ${generatedTags.length} tags`);
 console.log("[generate] Done.");
+

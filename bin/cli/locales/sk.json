@@ -30,3 +30,4 @@
     "description": "Spustiť miestny kontajner Redis jedným kliknutím (Podman alebo Docker) na ukladanie do vyrovnávacej pamäte a sledovanie kvót DikaRoute"
   }
 }
+

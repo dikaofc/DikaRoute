@@ -75,3 +75,4 @@ export function invalidate(): void {
 export function stats(): { hits: number; misses: number; size: number } {
   return { hits: hitCount, misses: missCount, size: store.size };
 }
+

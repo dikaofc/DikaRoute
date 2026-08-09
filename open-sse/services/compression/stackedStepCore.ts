@@ -112,3 +112,4 @@ export function mergeStackStep(
     ...(result.stats.durationMs !== undefined ? { durationMs: result.stats.durationMs } : {}),
   });
 }
+

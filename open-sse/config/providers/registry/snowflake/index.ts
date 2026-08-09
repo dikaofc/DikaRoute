@@ -11,3 +11,4 @@ export const snowflakeProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHAT_OPENAI_COMPAT_MODELS.snowflake,
 };
+

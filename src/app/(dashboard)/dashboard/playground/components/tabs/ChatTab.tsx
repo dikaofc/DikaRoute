@@ -424,3 +424,4 @@ export default function ChatTab({ configState, onMetricsUpdate }: ChatTabProps) 
     </div>
   );
 }
+

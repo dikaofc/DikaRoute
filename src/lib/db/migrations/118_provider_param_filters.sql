@@ -6,3 +6,4 @@
 --
 -- See: src/lib/db/paramFilters.ts
 SELECT 1;
+

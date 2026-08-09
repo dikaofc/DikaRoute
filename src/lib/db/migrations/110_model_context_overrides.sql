@@ -15,3 +15,4 @@ CREATE TABLE IF NOT EXISTS model_context_overrides (
 ) WITHOUT ROWID;
 
 CREATE INDEX IF NOT EXISTS idx_mco_source ON model_context_overrides (source);
+

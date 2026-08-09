@@ -10,3 +10,4 @@ export function createEventEmitter(state: { seq: number }) {
   };
   return { events, emit };
 }
+

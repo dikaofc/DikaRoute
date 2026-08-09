@@ -3,3 +3,4 @@
  * This is used to provide compression analytics data for the context analysis.
  */
 export { GET } from "@/app/api/analytics/compression/route";
+

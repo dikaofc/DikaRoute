@@ -348,3 +348,4 @@ export async function runRedisStatusCommand(opts = {}) {
   }
   return 0;
 }
+

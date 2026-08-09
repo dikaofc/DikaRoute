@@ -58,3 +58,4 @@ export default function ActivityItem({ entry, referenceNowMs }: ActivityItemProp
     </li>
   );
 }
+

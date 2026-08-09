@@ -86,3 +86,4 @@ export function loadTierConfigFromDb(): TierConfig | null {
 export function loadTierConfig(): TierConfig {
   return loadTierConfigFromDb() || DEFAULT_TIER_CONFIG;
 }
+

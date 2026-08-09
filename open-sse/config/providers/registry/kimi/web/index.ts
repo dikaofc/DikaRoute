@@ -22,3 +22,4 @@ export const kimi_webProvider: RegistryEntry = {
   // parallel-agent tool protocol rather than ordinary chat routing.
   models: KIMI_WEB_STATIC_MODELS,
 };
+

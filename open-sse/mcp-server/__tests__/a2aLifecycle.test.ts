@@ -83,3 +83,4 @@ describe("A2A task lifecycle regressions", () => {
     expect(loaded?.state).toBe("cancelled");
   });
 });
+

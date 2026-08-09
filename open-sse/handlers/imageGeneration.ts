@@ -3098,3 +3098,4 @@ function normalizePositiveNumber(value, fallback) {
  * POST {baseUrl} with { prompt, negative_prompt, width, height, steps }
  * Response: { images: ["base64..."] }
  */
+

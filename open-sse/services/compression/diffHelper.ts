@@ -217,3 +217,4 @@ export function buildCompressionPreviewDiff(
 
   return result;
 }
+

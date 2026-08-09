@@ -91,3 +91,4 @@ export const poeProvider: RegistryEntry = {
     { id: "gemini-3.0-pro", name: "Gemini 3.0 Pro" },
   ],
 };
+

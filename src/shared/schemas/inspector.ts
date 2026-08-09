@@ -45,3 +45,4 @@ export const InspectorListQuerySchema = z.object({
   source: z.enum(["agent-bridge", "custom-host", "http-proxy", "system-proxy", "tproxy"]).optional(),
   sessionId: z.string().uuid().optional(),
 });
+

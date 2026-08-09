@@ -14,3 +14,4 @@ export const cerebrasProvider: RegistryEntry = {
     { id: "gpt-oss-120b", name: "GPT OSS 120B" },
   ],
 };
+

@@ -21,3 +21,4 @@ export const sparkdeskProvider: RegistryEntry = {
     { id: "lite", name: "Spark Lite", contextLength: 4096 },
   ],
 };
+

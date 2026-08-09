@@ -80,3 +80,4 @@ describe("ModelVisibilityToolbar active/total count badge (#5264)", () => {
     expect(el.textContent).toContain("7/12 active");
   });
 });
+

@@ -156,3 +156,4 @@ export function appendClaudeEffortVariants<T extends CatalogModelEntry>(
   }
   return variants.length > 0 ? [...models, ...variants] : models;
 }
+

@@ -42,3 +42,4 @@ export function formatReport(report: EvalReport): string {
   lines.push("");
   return lines.join("\n");
 }
+

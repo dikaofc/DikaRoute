@@ -75,3 +75,4 @@ export function getDeliveries(webhookId: string, limit: number): WebhookDelivery
     )
     .all(webhookId, limit) as WebhookDeliverySafe[];
 }
+

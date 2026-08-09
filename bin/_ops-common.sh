@@ -68,3 +68,4 @@ ops_find_snapshot() {
   fi
   ops_die "no snapshot matching '$id' under $DIKAROUTE_BACKUPS_DIR (run bin/snapshot-data.sh first)"
 }
+

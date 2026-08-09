@@ -281,3 +281,4 @@ export function compressToolResult(content: string, opts: ToolStrategiesConfig):
 
   return { compressed: content, strategy: "none", saved: 0 };
 }
+

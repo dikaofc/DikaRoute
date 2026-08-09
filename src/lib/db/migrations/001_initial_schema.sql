@@ -224,3 +224,4 @@ CREATE TABLE IF NOT EXISTS semantic_cache (
 );
 CREATE INDEX IF NOT EXISTS idx_sc_sig ON semantic_cache(signature);
 CREATE INDEX IF NOT EXISTS idx_sc_model ON semantic_cache(model);
+

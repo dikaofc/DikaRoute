@@ -65,3 +65,4 @@ export function stripGroqUnsupportedFields<T extends Record<string, unknown>>(bo
   }
   return next as T;
 }
+

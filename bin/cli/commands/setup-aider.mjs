@@ -144,3 +144,4 @@ export function registerSetupAider(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

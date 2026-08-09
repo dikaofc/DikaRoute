@@ -94,3 +94,4 @@ describe("chatgptTlsClient — proxy plumbing (#2022)", async () => {
     expect(opts.proxyUrl).toBe("http://x:0/");
   });
 });
+

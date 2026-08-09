@@ -123,3 +123,4 @@ export function obfuscateInBody(body: Record<string, unknown>): void {
 function escapeRegex(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
+

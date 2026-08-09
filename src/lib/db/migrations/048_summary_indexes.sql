@@ -27,3 +27,4 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_daily_usage_unique
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_hourly_usage_unique
   ON hourly_usage_summary(provider, model, date_hour);
+

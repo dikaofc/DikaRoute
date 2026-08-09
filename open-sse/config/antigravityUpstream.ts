@@ -32,3 +32,4 @@ export function getAntigravityModelsDiscoveryUrls(): string[] {
 export function getAntigravityFetchAvailableModelsUrls(): string[] {
   return buildAntigravityDiscoveryUrls(ANTIGRAVITY_FETCH_AVAILABLE_MODELS_PATH);
 }
+

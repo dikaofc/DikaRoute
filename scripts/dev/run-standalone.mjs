@@ -32,3 +32,4 @@ spawnWithForwardedSignals("node", [entry], {
   stdio: "inherit",
   env: childEnv,
 });
+

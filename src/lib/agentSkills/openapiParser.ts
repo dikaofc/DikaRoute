@@ -199,3 +199,4 @@ export function getEndpointsForArea(area: SkillArea): string[] {
   const ops = areas.get(area) ?? [];
   return ops.map((op) => `${op.method} ${op.path}`);
 }
+

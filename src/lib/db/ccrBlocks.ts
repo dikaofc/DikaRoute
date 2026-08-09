@@ -141,3 +141,4 @@ export function countCcrBlocks(principalId?: string): number {
 export function resetCcrBlockPruneCounter(): void {
   writesSincePrune = 0;
 }
+

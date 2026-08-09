@@ -243,3 +243,4 @@ export default function UploadFileModal({ onClose, onUploaded }: Props) {
     </div>
   );
 }
+

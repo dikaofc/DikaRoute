@@ -39,3 +39,4 @@ export function resetAllAvailability(): void {
     clearModelLock(entry.provider, entry.connectionId, entry.model);
   }
 }
+

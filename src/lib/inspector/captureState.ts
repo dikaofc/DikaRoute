@@ -88,3 +88,4 @@ export function isTlsInterceptEnabled(): boolean {
 export function setTlsIntercept(enabled: boolean): void {
   tlsInterceptEnabled = enabled;
 }
+

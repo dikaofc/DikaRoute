@@ -7,3 +7,4 @@ INSERT OR IGNORE INTO key_value (namespace, key, value)
 SELECT 'settings', 'sessionAffinityTtlMs', value
 FROM key_value
 WHERE namespace = 'settings' AND key = 'codexSessionAffinityTtlMs';
+

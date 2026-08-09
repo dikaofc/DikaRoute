@@ -18,3 +18,4 @@ export function PayloadPreview({ payload, label }: PayloadPreviewProps) {
     </div>
   );
 }
+

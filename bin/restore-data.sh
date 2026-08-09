@@ -62,3 +62,4 @@ for f in "$snap"/*.sqlite; do
 done
 
 ops_log "restore complete — restart DikaRoute to pick up the restored data"
+

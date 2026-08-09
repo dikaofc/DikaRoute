@@ -1636,3 +1636,4 @@ export function setPageSize(pageSize: number): void {
 export function setCacheSize(cacheSizeKb: number): void {
   setCacheSizeForDb(getDbInstance(), cacheSizeKb);
 }
+

@@ -79,3 +79,4 @@ export const syntheticProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

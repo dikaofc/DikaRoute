@@ -21,3 +21,4 @@ export async function installCert(_sudoPassword: string, _certPath: string): Pro
 export async function uninstallCert(_sudoPassword: string, _certPath: string): Promise<void> {
   throw featureDisabledError(FEATURE);
 }
+

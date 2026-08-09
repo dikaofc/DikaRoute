@@ -54,3 +54,4 @@ export async function DELETE(request: Request) {
 export async function HEAD(request: Request) {
   return notFoundResponse(request);
 }
+

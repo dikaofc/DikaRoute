@@ -54,3 +54,4 @@ export async function getHistory(apiKeyId: string, limit: number = 20) {
   const { getHistory: dbGetHistory } = await import("../db/gamification");
   return dbGetHistory(apiKeyId, limit);
 }
+

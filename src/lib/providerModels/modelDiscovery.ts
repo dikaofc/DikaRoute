@@ -286,3 +286,4 @@ export async function persistDiscoveredModels(
   await replaceSyncedAvailableModelsForConnection(providerId, connectionId, normalized);
   return normalized;
 }
+

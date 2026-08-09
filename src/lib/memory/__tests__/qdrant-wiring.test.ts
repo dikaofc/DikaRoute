@@ -196,3 +196,4 @@ describe("normalizeQdrantConfig — env-var fallbacks (cluster profile: --profil
     expect(cfg.hnswEfConstruct).toBe(128);
   });
 });
+

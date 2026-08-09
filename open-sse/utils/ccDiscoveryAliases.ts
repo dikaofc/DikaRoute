@@ -97,3 +97,4 @@ export function appendCcDiscoveryAliases<T extends CcDiscoveryCatalogEntry>(
 
   return aliases.length > 0 ? [...models, ...aliases] : models;
 }
+

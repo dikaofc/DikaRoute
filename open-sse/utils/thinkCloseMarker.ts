@@ -87,3 +87,4 @@ export function resolveSuppressThinkClose(opts: {
   // Legacy content-scanning clients opt in with x-dikaroute-thinking-marker: on.
   return true;
 }
+

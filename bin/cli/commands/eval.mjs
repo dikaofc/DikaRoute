@@ -276,3 +276,4 @@ export function registerEval(program) {
     .description(t("eval.scorecard.description"))
     .action(runEvalScorecard);
 }
+

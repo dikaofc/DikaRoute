@@ -58,3 +58,4 @@ export function resolveCacheAwareConfig(
   if (effective === config.preserveSystemPrompt) return config;
   return { ...config, preserveSystemPrompt: effective };
 }
+

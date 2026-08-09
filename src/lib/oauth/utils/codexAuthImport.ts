@@ -286,3 +286,4 @@ async function findExistingCodexConnection(
   if (!userId) return workspaceMatches[0];
   return pickCodexConnectionForUser(workspaceMatches, userId, email);
 }
+

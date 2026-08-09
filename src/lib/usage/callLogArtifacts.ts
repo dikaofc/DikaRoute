@@ -335,3 +335,4 @@ export function purgeCallLogArtifactDirectory(
 
   return result;
 }
+

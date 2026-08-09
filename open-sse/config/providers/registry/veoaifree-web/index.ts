@@ -13,3 +13,4 @@ export const veoaifree_webProvider: RegistryEntry = {
     { id: "seedance", name: "Seedance", toolCalling: false },
   ],
 };
+

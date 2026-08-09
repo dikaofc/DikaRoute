@@ -21,3 +21,4 @@ export type {
 } from "./types";
 
 export { getQuotaStore, getQuotaStoreSync, resetQuotaStoreSingleton } from "./storeFactory";
+

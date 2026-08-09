@@ -92,3 +92,4 @@ describe("ProviderCard — #6936 audio-transcriptions provider badge", () => {
     expect(text).toContain("chat");
   });
 });
+

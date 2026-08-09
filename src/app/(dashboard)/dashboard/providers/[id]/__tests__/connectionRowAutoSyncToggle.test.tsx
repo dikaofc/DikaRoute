@@ -109,3 +109,4 @@ describe("ConnectionRow autoSync toggle", () => {
     expect((button as HTMLButtonElement).disabled).toBe(true);
   });
 });
+

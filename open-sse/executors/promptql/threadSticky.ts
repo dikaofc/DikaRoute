@@ -373,3 +373,4 @@ export function storePromptQlThreadAfterTurn(
   // (lastAssistantStickyKeys already does this; kept for clarity).
   return key;
 }
+

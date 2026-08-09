@@ -80,3 +80,4 @@ export async function DELETE(request: Request, { params }: RouteParams) {
     return NextResponse.json({ error: "Failed to remove permission" }, { status: 500 });
   }
 }
+

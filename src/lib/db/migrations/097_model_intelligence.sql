@@ -23,3 +23,4 @@ CREATE INDEX IF NOT EXISTS idx_mi_source
 
 CREATE INDEX IF NOT EXISTS idx_mi_expires
   ON model_intelligence (expires_at) WHERE expires_at IS NOT NULL;
+

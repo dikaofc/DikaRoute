@@ -18,3 +18,4 @@ export const stepfunProvider: RegistryEntry = {
     { id: "step-1v", name: "Step 1V" },
   ],
 };
+

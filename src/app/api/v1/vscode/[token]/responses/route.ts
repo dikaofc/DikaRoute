@@ -8,3 +8,4 @@ export async function POST(request: Request) {
   const authorizedRequest = await withSanitizedPathTokenApiKey(request);
   return basePost(await rewriteVscodeServiceTierRequest(authorizedRequest));
 }
+

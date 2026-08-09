@@ -194,3 +194,4 @@ export function normalizeBedrockDiscoveredModels(
 
   return [...byId.values()].sort((a, b) => a.id.localeCompare(b.id));
 }
+

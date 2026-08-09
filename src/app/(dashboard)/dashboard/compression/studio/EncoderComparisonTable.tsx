@@ -57,3 +57,4 @@ export function EncoderComparisonTable({ comparison }: { comparison: EncoderComp
     </section>
   );
 }
+

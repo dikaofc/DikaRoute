@@ -19,3 +19,4 @@ export function getCompatibleFallbackModels(
 export function compatibleProviderSupportsModelImport(providerId: string): boolean {
   return !isClaudeCodeCompatibleProvider(providerId);
 }
+

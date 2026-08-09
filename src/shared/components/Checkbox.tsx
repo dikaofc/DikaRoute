@@ -36,3 +36,4 @@ export default function Checkbox({ label, className, id, ...props }: CheckboxPro
     </label>
   );
 }
+

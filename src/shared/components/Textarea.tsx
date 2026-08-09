@@ -27,3 +27,4 @@ export default function Textarea({ className, error = false, ...props }: Textare
     />
   );
 }
+

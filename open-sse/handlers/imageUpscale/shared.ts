@@ -389,3 +389,4 @@ export function buildUpscaleImageEntry(opts: {
   }
   return { url: String(opts.url || "") };
 }
+

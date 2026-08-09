@@ -74,3 +74,4 @@ export function shouldBypass(hostname: string, userBypass: string[]): boolean {
   // User-defined bypass patterns (glob strings)
   return userBypass.some((p) => globMatch(hostname, p));
 }
+

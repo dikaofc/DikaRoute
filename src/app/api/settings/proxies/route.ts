@@ -69,3 +69,4 @@ export async function DELETE(request: Request) {
   if (authError) return authError;
   return handleProxyDelete(request);
 }
+

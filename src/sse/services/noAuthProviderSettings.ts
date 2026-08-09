@@ -16,3 +16,4 @@ export async function isNoAuthProviderBlockedBySettings(providerId: string): Pro
     return false;
   }
 }
+

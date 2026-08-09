@@ -3,3 +3,4 @@ export function normalizeCliCompatProviderId(providerId: string): string {
   if (normalized === "copilot") return "github";
   return normalized;
 }
+

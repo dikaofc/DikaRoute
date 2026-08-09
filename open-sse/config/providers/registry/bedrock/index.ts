@@ -47,3 +47,4 @@ export const bedrockProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

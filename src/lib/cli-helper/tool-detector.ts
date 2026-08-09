@@ -198,3 +198,4 @@ export async function detectAllTools(): Promise<DetectedTool[]> {
     .filter((r) => r.status === "fulfilled" && r.value !== null)
     .map((r) => (r as PromiseFulfilledResult<DetectedTool>).value);
 }
+

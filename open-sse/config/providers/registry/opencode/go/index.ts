@@ -155,3 +155,4 @@ export const opencode_goProvider: RegistryEntry = {
     },
   ],
 };
+

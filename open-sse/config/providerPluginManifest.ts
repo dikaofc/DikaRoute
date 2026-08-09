@@ -210,3 +210,4 @@ export function getProviderPluginManifestEntryFromRegistry(
 
   return entry ? createProviderPluginManifestEntry(entry) : null;
 }
+

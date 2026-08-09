@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS cloud_agent_credentials (
   base_url TEXT,
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+

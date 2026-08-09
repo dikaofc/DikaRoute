@@ -259,3 +259,4 @@ export default function CliproxyapiToolCard({ isExpanded = false, onToggle = () 
     </Card>
   );
 }
+

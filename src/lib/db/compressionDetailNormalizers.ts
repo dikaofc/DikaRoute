@@ -68,3 +68,4 @@ export function applyDetailConfigUpdate(
   if (key === "sessionDedup") config.sessionDedup = normalizeSessionDedupConfig(parsed);
   else config.ccr = normalizeCcrConfig(parsed);
 }
+

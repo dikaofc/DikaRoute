@@ -68,3 +68,4 @@ if (fs.existsSync(distDir)) {
 }
 
 console.log(`[write-build-sha] Build SHA: ${sha}`);
+

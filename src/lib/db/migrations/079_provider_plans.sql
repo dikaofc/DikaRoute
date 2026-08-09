@@ -17,3 +17,4 @@ CREATE TABLE IF NOT EXISTS provider_plans (
 
 CREATE INDEX IF NOT EXISTS idx_provider_plans_provider
   ON provider_plans(provider);
+

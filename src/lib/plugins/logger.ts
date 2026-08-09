@@ -48,3 +48,4 @@ export class PluginLogger {
     this.write("DEBUG", message, data);
   }
 }
+

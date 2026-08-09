@@ -31,3 +31,4 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Failed to fetch quota windows" }, { status: 500 });
   }
 }
+

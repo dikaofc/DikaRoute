@@ -9,3 +9,4 @@
 -- column already ('native' | 'cliproxyapi' | 'dario' | 'fallback').
 ALTER TABLE upstream_proxy_config
   ADD COLUMN fallback_backend TEXT NOT NULL DEFAULT 'cliproxyapi';
+

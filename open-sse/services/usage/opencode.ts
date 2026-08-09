@@ -84,3 +84,4 @@ export async function getOpencodeUsage(connectionId: string, apiKey: string) {
     return { message: `OpenCode error: ${sanitizeErrorMessage(error)}` };
   }
 }
+

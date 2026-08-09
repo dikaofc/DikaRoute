@@ -53,3 +53,4 @@ export class CursorHandler extends MitmHandlerBase {
     }
   }
 }
+

@@ -42,3 +42,4 @@ export async function initMemoryBackends(): Promise<void> {
     log.warn("Failed to initialize backends", { error: String(e) });
   }
 }
+

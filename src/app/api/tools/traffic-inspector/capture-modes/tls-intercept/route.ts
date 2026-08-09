@@ -37,3 +37,4 @@ export async function POST(request: Request): Promise<Response> {
   setTlsIntercept(parsed.data.enabled);
   return Response.json({ ok: true, tlsIntercept: { enabled: isTlsInterceptEnabled() } });
 }
+

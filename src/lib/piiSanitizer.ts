@@ -414,3 +414,4 @@ function isValidCNPJ(cnpj: string): boolean {
 
   return true;
 }
+

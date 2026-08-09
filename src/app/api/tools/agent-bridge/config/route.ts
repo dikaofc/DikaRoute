@@ -42,3 +42,4 @@ export async function POST(request: Request): Promise<Response> {
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

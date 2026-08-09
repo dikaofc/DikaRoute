@@ -45,3 +45,4 @@ export function requireJsonContentType(request: Request): Response | null {
     }
   );
 }
+

@@ -39,3 +39,4 @@ export async function deleteCustomSkill(skillId: string, apiKeyId: string): Prom
   if (!skill) return false;
   return skillRegistry.unregister(skill.name, skill.version, apiKeyId);
 }
+

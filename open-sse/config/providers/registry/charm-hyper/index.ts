@@ -12,3 +12,4 @@ export const charmHyperProvider: RegistryEntry = {
   models: [{ id: "hyper/auto", name: "Charm Hyper Auto" }],
   passthroughModels: true,
 };
+

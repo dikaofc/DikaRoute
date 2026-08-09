@@ -53,3 +53,4 @@ export function pickByLatency<T>(db: ReturnType<typeof getDbInstance>, candidate
 
   return sorted[0];
 }
+

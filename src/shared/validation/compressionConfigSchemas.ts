@@ -380,3 +380,4 @@ export const compressionSettingsUpdateSchema = z
   .strict();
 
 export const compressionPreviewConfigSchema = compressionSettingsUpdateSchema;
+

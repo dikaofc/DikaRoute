@@ -138,3 +138,4 @@ export function generateReport(violations) {
     passed: violations.length === 0,
   };
 }
+

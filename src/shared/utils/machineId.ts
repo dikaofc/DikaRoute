@@ -200,3 +200,4 @@ export async function getRawMachineId() {
 export function isBrowser() {
   return typeof window !== "undefined";
 }
+

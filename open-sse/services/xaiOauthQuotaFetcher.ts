@@ -136,3 +136,4 @@ export function registerXaiOauthQuotaFetcher(): void {
     registerQuotaWindows(provider, [GROK_WINDOW_WEEKLY]);
   }
 }
+

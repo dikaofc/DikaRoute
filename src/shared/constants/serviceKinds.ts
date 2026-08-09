@@ -32,3 +32,4 @@ export const SERVICE_KIND_VALUES: readonly ServiceKind[] = [
   "music",
   "ocr",
 ];
+

@@ -509,3 +509,4 @@ export function parseDeepSeekToolCalls(
 
   return { content: stripRanges(text, ranges), toolCalls };
 }
+

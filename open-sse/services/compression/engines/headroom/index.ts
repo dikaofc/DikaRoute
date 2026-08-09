@@ -284,3 +284,4 @@ function restoreText(text: string): string {
   }
   return result;
 }
+

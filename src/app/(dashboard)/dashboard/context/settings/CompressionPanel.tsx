@@ -551,3 +551,4 @@ export default function CompressionPanel() {
     </Card>
   );
 }
+

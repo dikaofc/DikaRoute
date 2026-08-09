@@ -173,3 +173,4 @@ export function applyCavemanOutputMode(
 
   return { body: { ...body, messages: nextMessages }, applied: true };
 }
+

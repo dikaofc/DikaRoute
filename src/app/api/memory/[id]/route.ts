@@ -72,3 +72,4 @@ export async function PUT(request: Request, props: { params: Promise<{ id: strin
     return NextResponse.json({ error: { message } }, { status: 500 });
   }
 }
+

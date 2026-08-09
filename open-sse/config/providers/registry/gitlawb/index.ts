@@ -16,3 +16,4 @@ export const gitlawbProvider: RegistryEntry = {
   },
   models: CHAT_OPENAI_COMPAT_MODELS["gitlawb"],
 };
+

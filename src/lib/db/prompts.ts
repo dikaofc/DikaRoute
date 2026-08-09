@@ -300,3 +300,4 @@ function rowToPrompt(row: PromptRow): PromptTemplate {
     createdAt: toString(row.created_at),
   };
 }
+

@@ -60,3 +60,4 @@ export default function DimensionBar({ dimension, consumedTotal, resetAt }: Dime
     </div>
   );
 }
+

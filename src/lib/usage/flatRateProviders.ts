@@ -58,3 +58,4 @@ export function isFlatRateProvider(providerId: string | null | undefined): boole
   if (FLAT_RATE_SUBSCRIPTION_PROVIDER_IDS.has(id)) return true;
   return Object.prototype.hasOwnProperty.call(WEB_COOKIE_PROVIDERS, id);
 }
+

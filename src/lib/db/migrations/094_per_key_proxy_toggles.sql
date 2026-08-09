@@ -10,3 +10,4 @@
 -- (key: perKeyProxyEnabled).
 
 ALTER TABLE provider_connections ADD COLUMN per_key_proxy_enabled INTEGER NOT NULL DEFAULT 0;
+

@@ -35,3 +35,4 @@ export default function SearchProviderCard({ providerId, t }: SearchProviderCard
     </Card>
   );
 }
+

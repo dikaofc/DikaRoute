@@ -17,3 +17,4 @@ export const internlmProvider: RegistryEntry = {
     { id: "intern-latest", name: "Intern Latest" },
   ],
 };
+

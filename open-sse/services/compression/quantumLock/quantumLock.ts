@@ -56,3 +56,4 @@ export function detectVolatileSpans(text: string, cfg: QuantumLockConfig): Volat
   }
   return merged;
 }
+

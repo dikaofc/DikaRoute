@@ -49,3 +49,4 @@ export function Step2ConfigureIntegration({
 }
 
 export type { SlackConfig, TelegramConfig, DiscordConfig, CustomConfig };
+

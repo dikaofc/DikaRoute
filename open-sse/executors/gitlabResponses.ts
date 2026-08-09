@@ -189,3 +189,4 @@ export function buildToolStreamingResponse(
     headers: { "Content-Type": "text/event-stream" },
   });
 }
+

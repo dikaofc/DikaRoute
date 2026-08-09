@@ -154,3 +154,4 @@ addEventListener("fetch", (event) => {
 });
 `;
 }
+

@@ -206,3 +206,4 @@ export function resetSpendBatchWriterForTests() {
 export function discardSpendBatchEntries(apiKeyId: string) {
   spendBatchWriter.discardEntries(apiKeyId);
 }
+

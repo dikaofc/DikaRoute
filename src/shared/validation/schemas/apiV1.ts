@@ -416,3 +416,4 @@ export const v1WebFetchSchema = z.object({
   wait_for_selector: z.string().max(256).optional(),
   include_metadata: z.boolean().default(false),
 });
+

@@ -430,3 +430,4 @@ export function getRegistryStats(): {
     recentLogs: state.logs.length,
   };
 }
+

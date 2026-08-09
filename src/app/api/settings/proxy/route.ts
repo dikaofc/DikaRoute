@@ -292,3 +292,4 @@ export async function DELETE(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to delete proxy");
   }
 }
+

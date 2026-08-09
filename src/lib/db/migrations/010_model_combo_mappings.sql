@@ -17,3 +17,4 @@ CREATE TABLE IF NOT EXISTS model_combo_mappings (
 
 CREATE INDEX IF NOT EXISTS idx_mcm_enabled ON model_combo_mappings(enabled);
 CREATE INDEX IF NOT EXISTS idx_mcm_priority ON model_combo_mappings(priority DESC);
+

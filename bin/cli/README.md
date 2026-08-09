@@ -144,3 +144,4 @@ node bin/cli/scripts/generate-locales.mjs
 5. Write test in `tests/unit/cli-your-command.test.ts`
 
 See `CONVENTIONS.md` for exit codes, flag naming, output format, and destructive-action rules.
+

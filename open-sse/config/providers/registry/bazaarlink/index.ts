@@ -46,3 +46,4 @@ export const bazaarlinkProvider: RegistryEntry = {
     { id: "nemotron-3-super-120b-a12b", name: "Nemotron 3 Super" },
   ],
 };
+

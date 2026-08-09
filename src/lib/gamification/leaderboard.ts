@@ -62,3 +62,4 @@ export async function rotateScope(scope: "weekly" | "monthly"): Promise<void> {
   const { rotateLeaderboardScope } = await import("../db/gamification");
   rotateLeaderboardScope(scope);
 }
+

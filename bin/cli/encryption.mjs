@@ -65,3 +65,4 @@ export function decryptCredential(value) {
   decrypted += decipher.final("utf8");
   return decrypted;
 }
+

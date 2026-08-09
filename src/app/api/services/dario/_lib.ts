@@ -42,3 +42,4 @@ export async function getOrInitSupervisor(): Promise<ServiceSupervisor> {
   registerSupervisor(sup);
   return sup;
 }
+

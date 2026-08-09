@@ -75,3 +75,4 @@ export default function DocsSidebar({ sections, currentPath, className }: DocsSi
     </div>
   );
 }
+

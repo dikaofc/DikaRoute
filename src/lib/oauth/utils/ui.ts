@@ -45,3 +45,4 @@ export function printList(items, isSuccess = false) {
     console.log(color(`  ${symbol} ${item}`));
   });
 }
+

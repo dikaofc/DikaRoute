@@ -214,3 +214,4 @@ export function registerPolicy(program) {
     .option("--overwrite", t("policy.import.overwrite"))
     .action(runPolicyImport);
 }
+

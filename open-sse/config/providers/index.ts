@@ -453,3 +453,4 @@ export const REGISTRY: Record<string, RegistryEntry> = {
   hyperagent: hyperagentProvider,
   unorouter: unorouterProvider,
 };
+

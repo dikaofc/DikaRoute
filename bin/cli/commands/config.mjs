@@ -349,3 +349,4 @@ export function registerConfig(program) {
   // Register contexts/profiles CRUD as a subgroup of config.
   registerContexts(config);
 }
+

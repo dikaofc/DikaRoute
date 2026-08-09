@@ -77,3 +77,4 @@ describe("shouldSwitchToVisibleFilter", () => {
     expect(shouldSwitchToVisibleFilter({ autoHideFailed: false, hiddenCount: 0 })).toBe(false);
   });
 });
+

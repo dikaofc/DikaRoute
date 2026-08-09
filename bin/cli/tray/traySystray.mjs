@@ -133,3 +133,4 @@ export function killSystrayUnix(tray) {
     tray.kill(false);
   } catch {}
 }
+

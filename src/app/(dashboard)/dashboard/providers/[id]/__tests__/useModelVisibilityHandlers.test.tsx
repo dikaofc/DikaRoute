@@ -120,3 +120,4 @@ describe("useModelVisibilityHandlers", () => {
     expect(hook.get().modelTestStatus["claude-opus-4-8"]).toBe("error");
   });
 });
+

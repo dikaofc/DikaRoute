@@ -122,3 +122,4 @@ export function getPrefixObservations(hash: string): number {
 export function resetPrefixFreeze(): void {
   observations.clear();
 }
+

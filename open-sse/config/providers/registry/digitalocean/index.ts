@@ -9,3 +9,4 @@ export const digitaloceanProvider: RegistryEntry = buildOpenAiCompatibleRegistry
   models: [],
   passthroughModels: true,
 });
+

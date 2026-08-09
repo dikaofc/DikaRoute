@@ -54,3 +54,4 @@ export const pollinationsProvider: RegistryEntry = {
     { id: "qwen-safety", name: "Qwen Safety (Pollinations)" },
   ],
 };
+

@@ -228,3 +228,4 @@ export async function registerAliasResolver(root) {
 // literal was removed because its `new URL(\`data:text/javascript,...\`)` wrapper
 // triggered CodeQL `js/incomplete-url-substring-sanitization`. The hook logic
 // itself is unchanged — see aliasResolverHook.mjs for the resolver behaviour.
+

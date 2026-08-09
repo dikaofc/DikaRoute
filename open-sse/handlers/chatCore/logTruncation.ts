@@ -91,3 +91,4 @@ export function truncateForLog(value: unknown): Record<string, unknown> | null |
   if (Array.isArray(obj.tools)) summary.tools = cloneBoundedChatLogPayload(obj.tools);
   return summary;
 }
+

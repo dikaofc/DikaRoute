@@ -145,3 +145,4 @@ export function deleteGroup(id: string): boolean {
   const result = getDb().prepare("DELETE FROM quota_groups WHERE id = ?").run(id);
   return result.changes > 0;
 }
+

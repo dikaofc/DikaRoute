@@ -288,3 +288,4 @@ export async function getMcpModelsCatalog(
     ...(warnings.size > 0 ? { warning: [...warnings].join(" | ") } : {}),
   };
 }
+

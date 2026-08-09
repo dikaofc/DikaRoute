@@ -22,3 +22,4 @@ export function detectIpLiteralFamily(host: string): 4 | 6 | null {
 export function parseProxyFamily(value: unknown): ProxyFamily {
   return value === "ipv4" || value === "ipv6" ? value : "auto";
 }
+

@@ -171,3 +171,4 @@ export function registerSetupContinue(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

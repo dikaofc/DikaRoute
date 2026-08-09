@@ -148,3 +148,4 @@ export function validateToolsInRequest(body: any): ToolPolicyResult {
   const toolNames = extractToolNames(body);
   return evaluateToolPolicy(toolNames);
 }
+

@@ -271,3 +271,4 @@ export async function runMcpRestartCommand(opts = {}) {
     return 1;
   }
 }
+

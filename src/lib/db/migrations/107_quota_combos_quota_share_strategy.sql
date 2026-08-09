@@ -23,3 +23,4 @@ SET data = json_set(data, '$.strategy', 'quota-share'),
     updated_at = datetime('now')
 WHERE name LIKE 'qtSd/%'
   AND json_extract(data, '$.strategy') = 'fill-first';
+

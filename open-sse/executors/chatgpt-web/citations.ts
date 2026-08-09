@@ -393,3 +393,4 @@ function applyChatGptCitations(text: string, metadata?: Record<string, unknown>)
 export function cleanChatGptText(text: string, metadata?: Record<string, unknown>): string {
   return applyChatGptCitations(text.replace(ENTITY_RE, "$1"), metadata);
 }
+

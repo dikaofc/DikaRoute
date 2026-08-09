@@ -45,3 +45,4 @@ function nextNumeric(base: string, existingAliases: Record<string, unknown>): st
   while (isTaken(`${base}-${i}`, existingAliases)) i++;
   return `${base}-${i}`;
 }
+

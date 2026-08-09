@@ -96,3 +96,4 @@ export const simulateReasoningRoutingSchema = z.object({
   requestTags: z.array(z.string().trim().min(1).max(100)).max(20).optional().default([]),
   transport: z.enum(["http", "codex-ws"]).optional().default("http"),
 });
+

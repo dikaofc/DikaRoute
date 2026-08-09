@@ -50,3 +50,4 @@ SELECT
   updated_at
 FROM proxy_registry
 WHERE source = 'oneproxy';
+

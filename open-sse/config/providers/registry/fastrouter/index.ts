@@ -9,3 +9,4 @@ export const fastrouterProvider: RegistryEntry = buildOpenAiCompatibleRegistryEn
   models: [],
   passthroughModels: true,
 });
+

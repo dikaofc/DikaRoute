@@ -172,3 +172,4 @@ export function buildCostExplorerRows({
       return sortDirection === "asc" ? result : -result;
     });
 }
+

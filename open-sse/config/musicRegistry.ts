@@ -113,3 +113,4 @@ export function parseMusicModel(modelStr: string | null) {
 export function getAllMusicModels() {
   return getAllModelsFromRegistry(MUSIC_PROVIDERS);
 }
+

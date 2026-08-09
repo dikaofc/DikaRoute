@@ -37,3 +37,4 @@ export const MemoryUpdateInputSchema = z
     metadata: z.record(z.string(), z.unknown()).optional(),
   })
   .strict();
+

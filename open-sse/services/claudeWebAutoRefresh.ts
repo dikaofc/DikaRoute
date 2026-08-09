@@ -222,3 +222,4 @@ export function createAutoRefreshMiddleware(options?: CookieRefreshOptions) {
     throw new Error("Max retries exceeded");
   };
 }
+

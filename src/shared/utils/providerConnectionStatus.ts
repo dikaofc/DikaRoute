@@ -44,3 +44,4 @@ export function isProviderConnectionErrored(
     ERROR_STATUSES.has(getEffectiveProviderConnectionStatus(connection, now))
   );
 }
+

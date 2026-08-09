@@ -55,3 +55,4 @@ export const deepseek_webProvider: RegistryEntry = {
     { id: "DeepSeek-Search", name: "DeepSeek Search", toolCalling: true },
   ],
 };
+

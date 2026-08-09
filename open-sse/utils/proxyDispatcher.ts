@@ -563,3 +563,4 @@ export function __getSocksOptionsForTest(proxyUrl: string): SocksDispatcherOptio
   if (parsed.password) socksOptions.password = decodeURIComponent(parsed.password);
   return socksOptions;
 }
+

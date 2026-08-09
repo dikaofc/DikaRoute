@@ -34,3 +34,4 @@ export function getRegisteredProviderEffortBaseModelId(
 export function isRegisteredProviderEffortVariant(providerId: string, modelId: string): boolean {
   return getRegisteredProviderEffortBaseModelId(providerId, modelId) !== null;
 }
+

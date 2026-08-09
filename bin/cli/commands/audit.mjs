@@ -201,3 +201,4 @@ export function registerAudit(program) {
     .option("--source <s>", t("audit.source"), "compliance")
     .action(runAuditGet);
 }
+

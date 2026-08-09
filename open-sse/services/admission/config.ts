@@ -165,3 +165,4 @@ export function validateConfig(input: AdaptiveAdmissionConfig): ValidatedConfig 
     adaptation: resolveAdaptationParams(input, minLimit, maxLimit, windowMs),
   };
 }
+

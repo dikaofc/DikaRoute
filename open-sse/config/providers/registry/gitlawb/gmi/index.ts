@@ -17,3 +17,4 @@ export const gitlawb_gmiProvider: RegistryEntry = {
   passthroughModels: true,
   models: CHAT_OPENAI_COMPAT_MODELS["gitlawb-gmi"],
 };
+

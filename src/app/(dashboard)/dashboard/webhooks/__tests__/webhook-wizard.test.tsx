@@ -268,3 +268,4 @@ describe("AddWebhookWizard — step 2→3 creates webhook with correct kind", ()
     expect(body.kind).toBe("slack");
   });
 });
+

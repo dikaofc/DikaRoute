@@ -356,3 +356,4 @@ export async function runCompletionCommand(shell) {
   process.stdout.write(gen());
   return 0;
 }
+

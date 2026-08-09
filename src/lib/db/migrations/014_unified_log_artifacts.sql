@@ -13,3 +13,4 @@ VALUES (
 
 DELETE FROM key_value
 WHERE namespace = 'settings' AND key IN ('detailed_logs_enabled', 'maxCallLogs', 'MAX_CALL_LOGS');
+

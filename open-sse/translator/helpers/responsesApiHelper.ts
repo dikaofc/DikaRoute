@@ -15,3 +15,4 @@ export function convertResponsesApiFormat(body, credentials = null, provider = n
       : provider;
   return openaiResponsesToOpenAIRequest(requestedModel, body, null, credentials);
 }
+

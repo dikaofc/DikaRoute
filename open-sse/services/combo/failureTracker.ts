@@ -161,3 +161,4 @@ export function getComboFailureCount(
 export function __resetComboFailureTrackerForTests(): void {
   failureMap.clear();
 }
+

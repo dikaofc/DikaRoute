@@ -39,3 +39,4 @@ export function writeActiveOnlyPreference(
   }
   storage.removeItem(ACTIVE_ONLY_STORAGE_KEY);
 }
+

@@ -38,3 +38,4 @@ export function getTranslationEvents(limit = DEFAULT_TRANSLATION_EVENT_LIMIT) {
 }
 
 export { MAX_TRANSLATION_EVENTS };
+

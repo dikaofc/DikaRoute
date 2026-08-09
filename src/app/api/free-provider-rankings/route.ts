@@ -52,3 +52,4 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({ rankings }, { headers: CORS_HEADERS });
 }
+

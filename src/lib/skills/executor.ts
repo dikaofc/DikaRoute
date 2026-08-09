@@ -194,3 +194,4 @@ class SkillExecutor {
 }
 
 export const skillExecutor = SkillExecutor.getInstance();
+

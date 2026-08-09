@@ -107,3 +107,4 @@ export function __resetUltraEntryForTests(): void {
   _slmAvailable = null;
   _testHooks = null;
 }
+

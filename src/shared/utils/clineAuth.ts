@@ -166,3 +166,4 @@ export function applyClineAuthHeaders(
   Object.assign(headers, built);
   return headers;
 }
+

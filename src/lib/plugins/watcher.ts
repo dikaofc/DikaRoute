@@ -88,3 +88,4 @@ export function stopAllWatchers(): void {
 export function getWatcherCount(): number {
   return watchers.size;
 }
+

@@ -37,3 +37,4 @@ export const bluesmindsProvider: RegistryEntry = {
     { id: "qwen-max", name: "Qwen Max (VIP)" },
   ],
 };
+

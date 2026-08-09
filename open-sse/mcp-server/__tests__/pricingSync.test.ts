@@ -57,3 +57,4 @@ describe("dikaroute_sync_pricing MCP tool schema", () => {
     expect(syncPricingTool.sourceEndpoints).toContain("/api/pricing/sync");
   });
 });
+

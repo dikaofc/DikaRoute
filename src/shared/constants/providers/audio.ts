@@ -118,3 +118,4 @@ export const AUDIO_ONLY_PROVIDERS = {
     freeNote: "Free tier — 8 hours/month, no credit card required. Batch (async) mode only.",
   },
 };
+

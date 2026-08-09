@@ -113,3 +113,4 @@ export function setLastError(agentId: string, err: string | null): void {
      ON CONFLICT(agent_id) DO UPDATE SET last_error = excluded.last_error`
   ).run(agentId, err);
 }
+

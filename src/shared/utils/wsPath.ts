@@ -27,3 +27,4 @@ export function deriveLiveWsPath(publicUrl?: string): string {
 export function getLiveWsPath(): string {
   return deriveLiveWsPath(process.env.NEXT_PUBLIC_LIVE_WS_PUBLIC_URL);
 }
+

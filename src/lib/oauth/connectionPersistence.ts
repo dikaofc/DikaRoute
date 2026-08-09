@@ -161,3 +161,4 @@ export async function persistOAuthConnection(
   await syncToCloudIfEnabled();
   return connection;
 }
+

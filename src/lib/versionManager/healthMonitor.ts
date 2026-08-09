@@ -69,3 +69,4 @@ export function stopMonitoring(tool: string): void {
 export function isMonitoring(tool: string): boolean {
   return monitoringIntervals.has(tool);
 }
+

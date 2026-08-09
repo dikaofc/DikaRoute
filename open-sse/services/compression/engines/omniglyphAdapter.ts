@@ -114,3 +114,4 @@ export const omniglyphEngine: CompressionEngine = {
     return { valid: true, errors: [] };
   },
 };
+

@@ -59,3 +59,4 @@ export function buildPaginatedResponse<T>(
     totalPages: Math.ceil(total / params.limit),
   };
 }
+

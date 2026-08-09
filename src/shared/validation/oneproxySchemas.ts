@@ -12,3 +12,4 @@ export const oneproxySyncSchema = z.object({}).strict();
 export const oneproxyRotateSchema = z.object({
   strategy: z.enum(["random", "quality", "sequential"]).optional(),
 });
+

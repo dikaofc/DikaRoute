@@ -24,3 +24,4 @@ export function detectZed(): DetectionResult {
   }
   return { installed: false };
 }
+

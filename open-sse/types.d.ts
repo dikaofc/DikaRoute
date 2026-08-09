@@ -158,3 +158,4 @@ declare global {
     cancel?: (reason?: unknown) => void | PromiseLike<void>;
   }
 }
+

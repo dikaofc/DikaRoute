@@ -95,3 +95,4 @@ export function parseTraeCallbackQuery(q: URLSearchParams): ParsedTraeCallback |
     },
   };
 }
+

@@ -13,3 +13,4 @@ export function RiskGateBadge({ stats }: { stats: RiskGateStats | null | undefin
     </div>
   );
 }
+

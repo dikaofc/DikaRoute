@@ -73,3 +73,4 @@ export function registerApiCommands(program) {
   register_traffic_inspector(api);
   register_agent_skills(api);
 }
+

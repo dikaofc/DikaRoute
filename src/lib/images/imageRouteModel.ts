@@ -243,3 +243,4 @@ export function extractImageEditInputFromJson(body: unknown): ParsedImageEditInp
     imageInputCount: candidates.length,
   };
 }
+

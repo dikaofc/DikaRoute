@@ -344,3 +344,4 @@ export class ObsidianBackend implements MemoryBackend {
 }
 
 export const createObsidianBackend = (vaultPath: string) => new ObsidianBackend(vaultPath);
+

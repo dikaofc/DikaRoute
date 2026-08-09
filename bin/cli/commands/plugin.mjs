@@ -217,3 +217,4 @@ export function registerPlugin(program) {
       process.stdout.write(`  Run: cd ${dir} && dikaroute plugin install .\n`);
     });
 }
+

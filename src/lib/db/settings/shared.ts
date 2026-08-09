@@ -7,3 +7,4 @@ export type JsonRecord = Record<string, unknown>;
 export function toRecord(value: unknown): JsonRecord {
   return value && typeof value === "object" ? (value as JsonRecord) : {};
 }
+

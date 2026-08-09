@@ -313,3 +313,4 @@ test("loader integration: wired interceptor actually injects Bearer when invoked
     restore();
   }
 });
+

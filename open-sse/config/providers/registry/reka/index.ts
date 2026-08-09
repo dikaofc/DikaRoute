@@ -16,3 +16,4 @@ export const rekaProvider: RegistryEntry = {
     { id: "reka-edge-2603", name: "Reka Edge 2603" },
   ],
 };
+

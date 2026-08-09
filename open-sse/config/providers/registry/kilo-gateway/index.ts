@@ -19,3 +19,4 @@ export const kilo_gatewayProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

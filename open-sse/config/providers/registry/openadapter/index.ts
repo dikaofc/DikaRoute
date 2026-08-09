@@ -23,3 +23,4 @@ export const openadapterProvider: RegistryEntry = {
     { id: "glm-4.7", name: "GLM 4.7 (OpenAdapter)", contextLength: 128000, toolCalling: true },
   ],
 };
+

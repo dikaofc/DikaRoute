@@ -111,3 +111,4 @@ export function memoStore(key: string, result: CompressionResult): void {
 export function clearMemoStore(): void {
   memoMap.clear();
 }
+

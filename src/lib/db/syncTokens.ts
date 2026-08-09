@@ -161,3 +161,4 @@ export async function touchSyncTokenLastUsed(id: string, usedAt = new Date().toI
     .run(usedAt, usedAt, id);
   return Number(result.changes || 0) > 0;
 }
+

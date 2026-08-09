@@ -157,3 +157,4 @@ export function deleteCliToolInitialConfig(toolId: string): void {
     toolId
   );
 }
+

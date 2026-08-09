@@ -44,3 +44,4 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json({ error: sanitizeErrorMessage(error) }, { status: 500 });
   }
 }
+

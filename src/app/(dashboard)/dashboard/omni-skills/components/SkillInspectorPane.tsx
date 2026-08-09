@@ -294,3 +294,4 @@ export function SkillInspectorPane({
 }
 
 export default SkillInspectorPane;
+

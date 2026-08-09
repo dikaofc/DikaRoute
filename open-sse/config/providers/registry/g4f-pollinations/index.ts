@@ -18,3 +18,4 @@ export const g4f_pollinationsProvider: RegistryEntry = {
     { id: "openai-fast", name: "OpenAI Fast (g4f/Pollinations)" },
   ],
 };
+

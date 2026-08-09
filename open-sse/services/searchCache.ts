@@ -148,3 +148,4 @@ export function getCacheStats(): { size: number; hits: number; misses: number } 
  * Default TTL for search cache entries.
  */
 export const SEARCH_CACHE_DEFAULT_TTL_MS = DEFAULT_TTL_MS;
+

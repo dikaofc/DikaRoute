@@ -9,3 +9,4 @@ export interface ModelCooldownErrorPayload {
     credentials_cooling?: number;
   };
 }
+

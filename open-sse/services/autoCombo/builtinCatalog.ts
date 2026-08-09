@@ -148,3 +148,4 @@ export async function createBuiltinAutoCombo(modelStr: string, suffix: string) {
 
   throw new Error(`Unknown built-in auto combo: ${modelStr}`);
 }
+

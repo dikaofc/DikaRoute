@@ -541,3 +541,4 @@ export async function runDoctorCommand(opts = {}, context = {}) {
 
   return result.summary.fail > 0 ? 1 : 0;
 }
+

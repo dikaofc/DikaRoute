@@ -288,3 +288,4 @@ export function buildCacheHealthResponse(opts: {
 
   return { ...summary, timeRange: opts.range, since, truncated };
 }
+

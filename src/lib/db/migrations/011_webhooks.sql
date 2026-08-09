@@ -13,3 +13,4 @@ CREATE TABLE IF NOT EXISTS webhooks (
   last_status INTEGER,
   failure_count INTEGER DEFAULT 0
 );
+

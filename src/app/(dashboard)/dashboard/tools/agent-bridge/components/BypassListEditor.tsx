@@ -80,3 +80,4 @@ export function BypassListEditor({ patterns, onSave }: BypassListEditorProps) {
     </div>
   );
 }
+

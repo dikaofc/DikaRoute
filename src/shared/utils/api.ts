@@ -110,3 +110,4 @@ async function handleResponse(response: Response) {
 
 const api = { get, post, put, del };
 export default api;
+

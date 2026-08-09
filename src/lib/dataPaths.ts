@@ -120,3 +120,4 @@ export function isSamePath(a: string | null | undefined, b: string | null | unde
 
   return normalizedA === normalizedB;
 }
+

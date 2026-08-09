@@ -38,3 +38,4 @@ export function register_messages(parent) {
       emit(data, gOpts);
     });
 }
+

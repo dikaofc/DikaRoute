@@ -99,3 +99,4 @@ export function normalizeOpenAIToolFinishReasons(responseBody: unknown): void {
     }
   }
 }
+

@@ -34,3 +34,4 @@ export async function POST(request, { params }) {
     return NextResponse.json({ error: "Failed to regenerate key" }, { status: 500 });
   }
 }
+

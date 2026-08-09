@@ -130,3 +130,4 @@ export const nvidiaProvider: RegistryEntry = {
     { id: "upstage/solar-10.7b-instruct", name: "Solar 10.7B Instruct" },
   ],
 };
+

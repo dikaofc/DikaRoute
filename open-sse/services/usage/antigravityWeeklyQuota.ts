@@ -207,3 +207,4 @@ export async function fetchAndParseAntigravityWeeklyQuotas(
   );
   return parseAntigravityWeeklyQuotas(data);
 }
+

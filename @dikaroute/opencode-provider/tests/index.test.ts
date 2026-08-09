@@ -684,3 +684,4 @@ test("package is marked deprecated in favour of @dikaroute/opencode-plugin (#341
   assert.match(readme, /Deprecated/i);
   assert.match(readme, /@dikaroute\/opencode-plugin/);
 });
+

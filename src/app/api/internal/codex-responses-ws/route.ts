@@ -606,3 +606,4 @@ export async function POST(request: Request) {
 
   return jsonError(400, "invalid_action", "Unsupported bridge action");
 }
+

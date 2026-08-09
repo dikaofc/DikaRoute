@@ -129,3 +129,4 @@ export function getCompactProviderAuthType<TProvider>(
 
   return CATEGORY_AUTH_TYPES[info.category] ?? entry.displayAuthType;
 }
+

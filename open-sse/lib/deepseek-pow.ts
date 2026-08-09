@@ -187,3 +187,4 @@ export function solveDeepSeekPow(
   const prefix = `${salt}_${expireAt}_`;
   return solveWithJS(challenge, prefix, difficulty);
 }
+

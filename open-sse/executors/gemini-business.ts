@@ -449,3 +449,4 @@ function computeSapisidHash(sapisid: string, origin: string): string {
   const hash = createHash("sha1").update(hashInput).digest("hex");
   return `SAPISIDHASH ${epoch}_${hash}`;
 }
+

@@ -81,3 +81,4 @@ export interface LegacyProxyConfig {
   combos?: Record<string, unknown>;
   keys?: Record<string, unknown>;
 }
+

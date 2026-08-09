@@ -13,3 +13,4 @@ CREATE INDEX IF NOT EXISTS idx_playground_presets_name
 
 CREATE INDEX IF NOT EXISTS idx_playground_presets_endpoint
   ON playground_presets(endpoint);
+

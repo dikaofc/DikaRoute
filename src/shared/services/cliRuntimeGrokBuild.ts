@@ -24,3 +24,4 @@ export const AMP_RUNTIME_ENTRY = {
   healthcheckTimeoutMs: 12000,
   paths: {},
 };
+

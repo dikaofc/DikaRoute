@@ -100,3 +100,4 @@ export default function ColumnToggle({ columns = [], visible = {}, onToggle }) {
     </div>
   );
 }
+

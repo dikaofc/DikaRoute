@@ -17,3 +17,4 @@ export const hackclubProvider: RegistryEntry = {
     { id: "deepseek-ai/deepseek-coder-33b", name: "DeepSeek Coder 33B" },
   ],
 };
+

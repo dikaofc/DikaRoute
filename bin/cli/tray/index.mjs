@@ -27,3 +27,4 @@ export function killTray() {
 export function isTrayActive() {
   return active !== null;
 }
+

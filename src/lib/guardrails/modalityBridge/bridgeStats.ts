@@ -70,3 +70,4 @@ export function buildModalityBridgeHeader(results: GuardrailMetaEntry[]): string
   }
   return segments.length ? segments.join(", ") : null;
 }
+

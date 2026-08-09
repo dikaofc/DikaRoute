@@ -254,3 +254,4 @@ export async function DELETE(request: Request) {
     return NextResponse.json({ error: "Failed to reset cline settings" }, { status: 500 });
   }
 }
+

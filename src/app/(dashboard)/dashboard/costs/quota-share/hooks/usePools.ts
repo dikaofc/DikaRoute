@@ -54,3 +54,4 @@ export function usePools(): UsePoolsResult {
 
   return { pools, loading, error, mutate };
 }
+

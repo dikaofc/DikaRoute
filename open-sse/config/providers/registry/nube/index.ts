@@ -15,3 +15,4 @@ export const nubeProvider: RegistryEntry = {
   passthroughModels: true,
   models: [],
 };
+

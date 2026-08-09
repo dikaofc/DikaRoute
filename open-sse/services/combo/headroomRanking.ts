@@ -89,3 +89,4 @@ export function rankByHeadroom<T>(
 
   return decorated.map((entry) => entry.candidate);
 }
+

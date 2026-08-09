@@ -138,3 +138,4 @@ export const mergeOpenCodeConfigText = (
 
   return applyEdits(nextText, providerEdits);
 };
+

@@ -179,3 +179,4 @@ describe("MCP HTTP auth context", () => {
     }
   });
 });
+

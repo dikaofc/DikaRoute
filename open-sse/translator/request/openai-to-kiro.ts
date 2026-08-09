@@ -1054,3 +1054,4 @@ export function buildKiroPayload(model, body, stream, credentials) {
 }
 
 register(FORMATS.OPENAI, FORMATS.KIRO, buildKiroPayload, null);
+

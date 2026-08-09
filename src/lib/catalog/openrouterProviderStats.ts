@@ -343,3 +343,4 @@ export function initOpenRouterProviderStatsSync(): boolean {
   startPeriodicSync();
   return true;
 }
+

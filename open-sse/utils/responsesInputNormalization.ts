@@ -150,3 +150,4 @@ export function normalizeResponsesInputForChat(input: unknown): unknown[] {
   if (Array.isArray(input)) return input.map(normalizeResponsesInputItemForChat);
   return [normalizeResponsesInputItemForChat(input)];
 }
+

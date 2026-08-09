@@ -160,3 +160,4 @@ function appendHistory(entry) {
     // history write failures are non-fatal
   }
 }
+

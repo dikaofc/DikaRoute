@@ -114,3 +114,4 @@ export function flattenToolHistory<T extends Message>(
   }
   return out;
 }
+

@@ -878,3 +878,4 @@ export async function handleAudioTranscription({
     return errorResponse(500, `Transcription request failed: ${error.message}`);
   }
 }
+

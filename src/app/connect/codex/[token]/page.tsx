@@ -17,3 +17,4 @@ export default async function CodexConnectPage({
   const { token } = await params;
   return <CodexConnectClient token={token} />;
 }
+

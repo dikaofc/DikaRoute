@@ -14,3 +14,4 @@ export function BasePathNetworkProvider({ children }: { children: ReactNode }) {
 
   return children;
 }
+

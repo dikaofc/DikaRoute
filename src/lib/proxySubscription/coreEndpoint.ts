@@ -32,3 +32,4 @@ export function isLocalCoreEndpointAllowed(endpoint: string | null): boolean {
     return false;
   }
 }
+

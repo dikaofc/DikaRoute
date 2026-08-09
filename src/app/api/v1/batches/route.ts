@@ -100,3 +100,4 @@ export async function GET(request: Request) {
     { headers: CORS_HEADERS }
   );
 }
+

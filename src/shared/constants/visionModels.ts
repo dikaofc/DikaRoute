@@ -70,3 +70,4 @@ export function isVisionModelId(modelId: string | null | undefined): boolean {
   const normalized = String(modelId).toLowerCase();
   return VISION_MODEL_ID_FRAGMENTS.some((fragment) => normalized.includes(fragment));
 }
+

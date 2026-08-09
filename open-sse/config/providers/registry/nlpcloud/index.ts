@@ -17,3 +17,4 @@ export const nlpcloudProvider: RegistryEntry = {
     { id: "llama-3-8b-instruct", name: "Llama 3 8B" },
   ],
 };
+

@@ -39,3 +39,4 @@ export function startProviderSync(cloudUrl, intervalMs = 900000) {
   console.log("Frontend sync is disabled. Use backend sync instead.");
   return null;
 }
+

@@ -265,3 +265,4 @@ export function registerV0QuotaFetcher(): void {
   registerMonitorFetcher("v0-vercel", fetchV0Quota);
   registerQuotaWindows("v0-vercel", [V0_WINDOW_CREDITS, V0_WINDOW_DAILY_OPS]);
 }
+

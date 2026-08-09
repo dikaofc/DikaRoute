@@ -21,3 +21,4 @@ describe("sanitizeToolId", () => {
     expect(sanitizeToolId("call-xyz_789")).toBe("call-xyz_789");
   });
 });
+

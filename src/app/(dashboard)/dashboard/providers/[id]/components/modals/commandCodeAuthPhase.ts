@@ -14,3 +14,4 @@ const COMMAND_CODE_AUTH_PHASE_LABELS: Record<CommandCodeAuthFlowState["phase"], 
 export function getCommandCodeAuthPhaseLabel(state?: CommandCodeAuthFlowState) {
   return state ? COMMAND_CODE_AUTH_PHASE_LABELS[state.phase] : null;
 }
+

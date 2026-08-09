@@ -37,3 +37,4 @@ export const QdrantHealthResultSchema = z.object({
   latencyMs: z.number(),
   error: z.string().optional(),
 });
+

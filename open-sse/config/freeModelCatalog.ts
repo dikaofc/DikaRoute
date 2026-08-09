@@ -146,3 +146,4 @@ export function computeFreeModelTotals(opts: { excludeTosAvoid?: boolean } = {})
     headline: `~${fmt(steadyRecurringTokens)} documented free tokens/month (steady), up to ~${fmt(firstMonthRealisticTokens)} in your first month with signup credits`,
   };
 }
+

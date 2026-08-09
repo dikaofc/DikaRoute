@@ -22,3 +22,4 @@ CREATE INDEX IF NOT EXISTS idx_quota_consumption_dim_bucket
 
 CREATE INDEX IF NOT EXISTS idx_quota_consumption_updated_at
   ON quota_consumption(updated_at);
+

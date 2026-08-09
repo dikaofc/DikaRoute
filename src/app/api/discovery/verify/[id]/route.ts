@@ -33,3 +33,4 @@ export async function POST(
     return createErrorResponseFromUnknown(error, "Failed to verify discovery result");
   }
 }
+

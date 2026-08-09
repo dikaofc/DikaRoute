@@ -22,3 +22,4 @@ export const ant_lingProvider: RegistryEntry = {
     { id: "Ling-2.6-flash", name: "Ling 2.6 Flash" },
   ],
 };
+

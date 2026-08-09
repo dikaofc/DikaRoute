@@ -102,3 +102,4 @@ test("parseDikaRoutePluginOptions: module import alone does NOT throw", async ()
   const mod = await import("../src/index.js");
   assert.equal(typeof mod.parseDikaRoutePluginOptions, "function");
 });
+

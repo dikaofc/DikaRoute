@@ -128,3 +128,4 @@ export async function DELETE(_: Request, { params }: { params: Promise<{ id: str
     return NextResponse.json({ error: sanitizeErrorMessage(error) }, { status: 500 });
   }
 }
+

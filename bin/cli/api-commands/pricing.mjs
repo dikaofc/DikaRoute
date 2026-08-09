@@ -42,3 +42,4 @@ export function register_pricing(parent) {
       emit(data, gOpts);
     });
 }
+

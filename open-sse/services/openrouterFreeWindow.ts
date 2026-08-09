@@ -253,3 +253,4 @@ export function getFreeWindowStatus(
 export function clearFreeWindowState(): void {
   accountWindows.clear();
 }
+

@@ -36,3 +36,4 @@ export class PluginError extends Error {
 export function isPluginError(err: unknown): err is PluginError {
   return err instanceof PluginError;
 }
+

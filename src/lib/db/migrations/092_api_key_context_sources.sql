@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS api_key_context_sources (
   PRIMARY KEY (api_key_id, source_type),
   FOREIGN KEY (api_key_id) REFERENCES api_keys(id) ON DELETE CASCADE
 );
+

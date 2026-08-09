@@ -109,3 +109,4 @@ export function lastCommandSegment(command: string): string {
 
   return command;
 }
+

@@ -20,3 +20,4 @@ export const vertex_partnerProvider: RegistryEntry = {
     { id: "claude-sonnet-4-6", name: "Claude Sonnet 4.6" },
   ],
 };
+

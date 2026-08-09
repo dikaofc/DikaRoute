@@ -33,3 +33,4 @@ export function resolveAlternateFormat(
   if (typeof requested !== "string" || !requested) return null;
   return alternates.find((alt) => alt.format === requested) ?? null;
 }
+

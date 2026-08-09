@@ -196,3 +196,4 @@ export function synthesizeCompletedToolCalls(state, output): Record<string, unkn
   synthesizedChunks.push(buildFinalChunk(state));
   return synthesizedChunks;
 }
+

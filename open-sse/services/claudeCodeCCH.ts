@@ -47,3 +47,4 @@ export async function signRequestBody(bodyString: string): Promise<string> {
 }
 
 export { CCH_PATTERN };
+

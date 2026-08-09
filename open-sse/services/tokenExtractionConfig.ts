@@ -410,3 +410,4 @@ export function listExtractionConfigs(): TokenExtractionConfig[] {
 
 /** The shared config map — used by LoginManager and InAppLoginService */
 export const TOKEN_EXTRACTION_CONFIGS = CONFIG_MAP;
+

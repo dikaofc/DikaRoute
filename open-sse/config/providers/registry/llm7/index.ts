@@ -25,3 +25,4 @@ export const llm7Provider: RegistryEntry = {
     { id: "qwen2.5-coder-32b-instruct", name: "Qwen2.5 Coder 32B (LLM7)" },
   ],
 };
+

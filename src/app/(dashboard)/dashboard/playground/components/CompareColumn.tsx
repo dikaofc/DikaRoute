@@ -108,3 +108,4 @@ export default function CompareColumn({ column, onCancel, onRemove }: CompareCol
     </div>
   );
 }
+

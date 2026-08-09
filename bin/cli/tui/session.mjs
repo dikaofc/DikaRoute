@@ -52,3 +52,4 @@ export function deleteSession(name) {
   const path = join(sessionsDir(), `${name}.json`);
   if (existsSync(path)) rmSync(path);
 }
+

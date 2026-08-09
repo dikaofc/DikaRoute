@@ -490,3 +490,4 @@ export default function ClineToolCard({
     </Card>
   );
 }
+

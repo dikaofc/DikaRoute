@@ -75,3 +75,4 @@ export function CoverageBar({ coverage }: CoverageBarProps): JSX.Element {
 }
 
 export default CoverageBar;
+

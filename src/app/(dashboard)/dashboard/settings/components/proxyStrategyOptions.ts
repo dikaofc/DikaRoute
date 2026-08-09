@@ -15,3 +15,4 @@ export const POOL_STRATEGY_OPTIONS: Array<{ value: PoolStrategy; labelKey: strin
 export function isPoolStrategy(value: unknown): value is PoolStrategy {
   return POOL_STRATEGY_VALUES.includes(value as PoolStrategy);
 }
+

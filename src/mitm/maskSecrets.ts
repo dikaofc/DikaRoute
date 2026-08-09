@@ -29,3 +29,4 @@ export function maskSecret(value: string): string {
     .replace(SK_KEY, (m) => `${m.slice(0, 6)}…${m.slice(-2)}`)
     .replace(LONG_TOKEN, (m) => `${m.slice(0, 4)}…${m.slice(-2)}`);
 }
+

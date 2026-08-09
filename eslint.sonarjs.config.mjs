@@ -59,3 +59,4 @@ const sonarisCognitiveConfig = [
 ];
 
 export default sonarisCognitiveConfig;
+

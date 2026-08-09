@@ -153,3 +153,4 @@ export const clineProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

@@ -88,3 +88,4 @@ export function getClientIdentityProfileHeaders(
   if (!isClientIdentityProfileId(profileId)) return {};
   return { ...CLIENT_IDENTITY_PROFILES[profileId].headers };
 }
+

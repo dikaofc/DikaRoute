@@ -164,3 +164,4 @@ export default function ClaudeFastModeTab() {
     </Card>
   );
 }
+

@@ -22,3 +22,4 @@ export function normalizeBaseUrl(value: string | null | undefined): string {
   const str = typeof value === "string" ? value : "";
   return stripTrailingSlashes(str.trim());
 }
+

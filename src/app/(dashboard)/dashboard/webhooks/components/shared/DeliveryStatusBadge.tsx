@@ -22,3 +22,4 @@ export function DeliveryStatusBadge({ status, httpStatus }: DeliveryStatusBadgeP
     </span>
   );
 }
+

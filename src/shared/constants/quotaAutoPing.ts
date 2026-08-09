@@ -47,3 +47,4 @@ export const QUOTA_AUTOPING_PROVIDERS: Record<"codex", QuotaAutoPingProviderConf
     pingReasoningEffort: "none",
   },
 };
+

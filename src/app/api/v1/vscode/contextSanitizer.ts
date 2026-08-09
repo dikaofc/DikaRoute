@@ -281,3 +281,4 @@ export async function sanitizeVscodeRequest(request: Request): Promise<Request> 
     body: JSON.stringify(result.body),
   });
 }
+

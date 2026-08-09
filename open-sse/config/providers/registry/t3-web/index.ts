@@ -43,3 +43,4 @@ export const t3_webProvider: RegistryEntry = {
     { id: "kimi-k2", name: "Kimi K2 (via t3.chat)", toolCalling: false },
   ],
 };
+

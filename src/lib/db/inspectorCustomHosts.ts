@@ -86,3 +86,4 @@ export function isCustomHost(host: string): boolean {
     .get(host) as { found: number } | undefined;
   return row !== undefined;
 }
+

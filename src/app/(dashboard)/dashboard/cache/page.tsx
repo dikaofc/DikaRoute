@@ -842,3 +842,4 @@ export default function CachePage() {
     </div>
   );
 }
+

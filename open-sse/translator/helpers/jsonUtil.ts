@@ -16,3 +16,4 @@ export function safeParseJSON<TFallback>(str: unknown, fallback: TFallback): unk
     return fallback;
   }
 }
+

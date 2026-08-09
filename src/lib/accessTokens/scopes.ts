@@ -49,3 +49,4 @@ export function scopeSatisfies(have: unknown, need: AccessScope): boolean {
 export function normalizeScope(value: unknown, fallback: AccessScope = "read"): AccessScope {
   return isAccessScope(value) ? value : fallback;
 }
+

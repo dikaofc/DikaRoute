@@ -49,3 +49,4 @@ export function AutoStartToggle({ name, label, description }: AutoStartTogglePro
     </Card>
   );
 }
+

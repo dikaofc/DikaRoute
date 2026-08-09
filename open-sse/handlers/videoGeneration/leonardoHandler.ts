@@ -114,3 +114,4 @@ export async function handleLeonardoVideoGeneration({
   }).catch(() => {});
   return { success: false, status: 504, error: "Leonardo video generation timed out" };
 }
+

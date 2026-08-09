@@ -154,3 +154,4 @@ export function orderTargetsByPowerOfTwoChoices(targets: ResolvedComboTarget[], 
       : firstIndex;
   return [targets[selectedIndex], ...targets.filter((_, index) => index !== selectedIndex)];
 }
+

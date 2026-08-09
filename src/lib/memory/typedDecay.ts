@@ -243,3 +243,4 @@ export function stopMemoryDecaySweep(): void {
     sweepTimer = null;
   }
 }
+

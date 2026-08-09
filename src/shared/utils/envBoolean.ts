@@ -19,3 +19,4 @@ export function parseEnvBoolean(
   if (["0", "false", "no", "off"].includes(normalized)) return false;
   return fallback;
 }
+

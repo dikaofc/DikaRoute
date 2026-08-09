@@ -123,3 +123,4 @@ export function getModePack(name: string): ScoringWeights | undefined {
 export function getModePackNames(): string[] {
   return Object.keys(MODE_PACKS);
 }
+

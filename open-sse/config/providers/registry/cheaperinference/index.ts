@@ -245,3 +245,4 @@ export const cheaperinferenceProvider: RegistryEntry = {
   authHeader: "bearer",
   models: CHEAPERINFERENCE_MODELS,
 };
+

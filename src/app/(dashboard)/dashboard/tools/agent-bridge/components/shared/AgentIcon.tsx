@@ -25,3 +25,4 @@ export function AgentIcon({ icon, color, size = 20 }: AgentIconProps) {
     </div>
   );
 }
+

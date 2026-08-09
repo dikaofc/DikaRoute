@@ -39,3 +39,4 @@ export function assembleStreamingResponseHeaders(
   }
   return responseHeaders;
 }
+

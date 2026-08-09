@@ -11,3 +11,4 @@ export const CORS_HEADERS: Record<string, string> = {
   "Access-Control-Allow-Headers":
     "Content-Type, Authorization, x-api-key, anthropic-version, x-dikaroute-connection, x-internal-test, accept",
 };
+

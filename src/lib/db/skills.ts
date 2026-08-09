@@ -60,3 +60,4 @@ export function updateSkill(id: string, patch: SkillPatch): number {
   const result = db.prepare(`UPDATE skills SET ${setClauses.join(", ")} WHERE id = ?`).run(...params);
   return (result as { changes: number }).changes;
 }
+

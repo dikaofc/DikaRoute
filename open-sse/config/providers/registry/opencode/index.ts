@@ -35,3 +35,4 @@ export const opencodeProvider: RegistryEntry = {
     { id: "north-mini-code-free", name: "North Mini Code Free", contextLength: 131000 },
   ],
 };
+

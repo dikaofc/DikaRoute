@@ -87,3 +87,4 @@ export function isHighSpecificity(result: SpecificityResult): boolean {
 export function isLowSpecificity(result: SpecificityResult): boolean {
   return result.score <= 15;
 }
+

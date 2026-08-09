@@ -16,3 +16,4 @@ export const EXTRA_TOOL_RENAME_MAP: Record<string, string> = {
   subagents: "SubDispatch",
   session_status: "CheckStatus",
 };
+

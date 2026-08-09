@@ -64,3 +64,4 @@ export function hoistLeadingSystemMessage(
   const leadingSystem: Message = { role: "system", content: mergedText };
   return [leadingSystem, ...rest];
 }
+

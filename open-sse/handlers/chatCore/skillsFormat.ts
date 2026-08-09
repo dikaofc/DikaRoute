@@ -31,3 +31,4 @@ export function getSkillsModelIdForFormat(format: string): string {
       return "openai";
   }
 }
+

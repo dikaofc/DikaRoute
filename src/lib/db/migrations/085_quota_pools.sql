@@ -37,3 +37,4 @@ CREATE TABLE IF NOT EXISTS quota_allocations (
 
 CREATE INDEX IF NOT EXISTS idx_quota_allocations_apikey
   ON quota_allocations(api_key_id);
+

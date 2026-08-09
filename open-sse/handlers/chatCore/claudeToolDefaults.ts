@@ -25,3 +25,4 @@ export function defaultClaudeToolType(tools: unknown): unknown {
     return tool;
   });
 }
+

@@ -70,3 +70,4 @@ export function applyQuantumLock(
     stats: { fragments: values.length, categories },
   };
 }
+

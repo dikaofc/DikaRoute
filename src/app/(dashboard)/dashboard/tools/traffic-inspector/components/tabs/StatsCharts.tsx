@@ -101,3 +101,4 @@ export default function StatsCharts({ requests }: StatsChartsProps) {
     </div>
   );
 }
+

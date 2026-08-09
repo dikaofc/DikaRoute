@@ -19,3 +19,4 @@ CREATE TABLE IF NOT EXISTS tier_assignments (
 
 CREATE INDEX IF NOT EXISTS idx_tier_assignments_provider ON tier_assignments(provider);
 CREATE INDEX IF NOT EXISTS idx_tier_assignments_tier ON tier_assignments(tier);
+

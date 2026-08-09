@@ -35,3 +35,4 @@ export function matchesTrafficFilter(req: InterceptedRequest, f: TrafficFilters)
   }
   return true;
 }
+

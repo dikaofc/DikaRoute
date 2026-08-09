@@ -84,3 +84,4 @@ export function isNoLog(apiKeyId: string): boolean {
   }
   return persistedNoLog;
 }
+

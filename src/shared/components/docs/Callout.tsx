@@ -36,3 +36,4 @@ export default function Callout({ type, title, children, className }: CalloutPro
     </div>
   );
 }
+

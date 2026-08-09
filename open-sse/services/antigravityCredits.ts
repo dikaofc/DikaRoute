@@ -66,3 +66,4 @@ export function shouldUseCreditsFirst(authKey: string, creditsMode: CreditsMode 
   if (isCreditsDisabled(authKey)) return false;
   return true;
 }
+

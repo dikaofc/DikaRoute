@@ -37,3 +37,4 @@ export function detectCopilot(): DetectionResult {
   }
   return { installed: false };
 }
+

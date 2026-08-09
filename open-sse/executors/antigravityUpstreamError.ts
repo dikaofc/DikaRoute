@@ -23,3 +23,4 @@ export function buildAntigravityUpstreamError(
   const suffix = statusText ? `: ${statusText}` : "";
   return buildErrorBody(status, `Antigravity upstream error (${status})${suffix}`, upstreamDetails);
 }
+

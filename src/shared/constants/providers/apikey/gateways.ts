@@ -834,3 +834,4 @@ export const APIKEY_PROVIDERS_GATEWAYS = {
       "OpenAI-compatible endpoint at https://api.regolo.ai/v1 with dynamic model discovery (19 models).",
   },
 };
+

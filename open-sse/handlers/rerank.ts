@@ -307,3 +307,4 @@ export async function handleRerank({
     return errorResponse(500, `Rerank request failed: ${err.message}`);
   }
 }
+

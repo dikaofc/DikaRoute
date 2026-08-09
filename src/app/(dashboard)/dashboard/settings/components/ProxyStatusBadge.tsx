@@ -21,3 +21,4 @@ export function ProxyStatusBadge({ status }: ProxyStatusBadgeProps) {
     </span>
   );
 }
+

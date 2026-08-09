@@ -10,3 +10,4 @@ export const yiProvider: RegistryEntry = {
   authHeader: "bearer",
   models: [{ id: "yi-large", name: "Yi Large" }],
 };
+

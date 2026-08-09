@@ -60,3 +60,4 @@ export function applyClaudeEffortVariant(opts: {
 
   return { effectiveModel, log };
 }
+

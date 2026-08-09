@@ -46,7 +46,3 @@ mengikuti [Semantic Versioning](https://semver.org/).
 
 - Maintenance dan perbaikan stabilitas (detail lengkap lihat riwayat commit).
 
----
-
-> Catatan: versi `3.8.53` tidak pernah dirilis ke npm — build CI-nya gagal
-> karena bug import yang diperbaiki pada `3.8.54`.

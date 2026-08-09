@@ -118,3 +118,4 @@ export function registerOneProxy(program) {
       emit(data.pool ?? data, cmd.optsWithGlobals(), proxySchema);
     });
 }
+

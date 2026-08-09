@@ -299,3 +299,4 @@ export async function handleDesignerWebImageGeneration({
     return saveImageErrorResult({ provider, model, status: 500, startTime, error: errorText });
   }
 }
+

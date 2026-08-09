@@ -57,3 +57,4 @@ export function TelegramConfigForm({ value, onChange, t, isEditing }: TelegramCo
     </div>
   );
 }
+

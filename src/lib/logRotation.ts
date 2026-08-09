@@ -204,3 +204,4 @@ export function closeLogRotation(): void {
     rotationTimer = null;
   }
 }
+

@@ -282,3 +282,4 @@ export function setPageSizeForDb(db: SqliteDatabase, pageSize: number): void {
     pageSize: targetPageSize,
   });
 }
+

@@ -54,3 +54,4 @@ CREATE INDEX IF NOT EXISTS idx_upc_provider ON upstream_proxy_config(provider_id
 CREATE INDEX IF NOT EXISTS idx_upc_mode ON upstream_proxy_config(mode);
 CREATE INDEX IF NOT EXISTS idx_vm_tool ON version_manager(tool);
 CREATE INDEX IF NOT EXISTS idx_vm_status ON version_manager(status);
+

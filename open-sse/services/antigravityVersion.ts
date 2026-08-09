@@ -177,3 +177,4 @@ export function clearAntigravityVersionCaches(): void {
   cliState.cache = null;
   cliState.inFlight = null;
 }
+

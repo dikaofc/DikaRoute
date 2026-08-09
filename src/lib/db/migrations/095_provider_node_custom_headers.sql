@@ -3,3 +3,4 @@
 -- NULL = no custom headers (backward compatible)
 -- Column uses _json suffix so rowToCamel auto-parses it
 ALTER TABLE provider_nodes ADD COLUMN custom_headers_json TEXT;
+

@@ -257,3 +257,4 @@ export function resolveProviderCatalogEntry(
 
   return resolveStaticProviderCatalogEntry(providerId);
 }
+

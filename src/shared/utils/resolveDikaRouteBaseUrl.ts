@@ -22,3 +22,4 @@ export function resolveDikaRouteBaseUrl(env: DikaRouteBaseUrlEnv = process.env):
 }
 
 export { DEFAULT_DIKAROUTE_BASE_URL };
+

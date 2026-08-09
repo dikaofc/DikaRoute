@@ -55,3 +55,4 @@ RUN DATA_DIR=/tmp/dikaroute-build-data \
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["bash"]
+

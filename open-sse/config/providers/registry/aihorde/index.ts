@@ -62,3 +62,4 @@ export const aihordeProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry
     },
   ],
 });
+

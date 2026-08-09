@@ -472,3 +472,4 @@ export function getVectorStore(): VectorStore | null {
 export function _resetVectorStoreSingleton(): void {
   _instance = undefined;
 }
+

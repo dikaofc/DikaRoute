@@ -87,3 +87,4 @@ export function recordToolTtft(provider: string, ttftMs: number): void {
 export function resetToolLatency(): void {
   metrics.clear();
 }
+

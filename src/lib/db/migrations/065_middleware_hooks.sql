@@ -43,3 +43,4 @@ CREATE INDEX IF NOT EXISTS idx_middleware_logs_hook
 
 CREATE INDEX IF NOT EXISTS idx_middleware_logs_request
   ON middleware_logs(request_id, timestamp);
+

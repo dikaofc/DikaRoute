@@ -18,3 +18,4 @@ export const togetherProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntr
     { id: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8", name: "Llama 4 Maverick" },
   ],
 });
+

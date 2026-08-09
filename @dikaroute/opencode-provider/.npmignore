@@ -5,3 +5,4 @@ tsup.config.ts
 node_modules
 .DS_Store
 *.log
+

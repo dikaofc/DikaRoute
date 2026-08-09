@@ -12,3 +12,4 @@
 -- so user-set cutoffs and displayed quotas refer to the same windows.
 
 ALTER TABLE provider_connections ADD COLUMN quota_window_thresholds_json TEXT;
+

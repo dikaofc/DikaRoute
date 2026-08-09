@@ -436,3 +436,4 @@ export function registerSetupOpenCode(setupCommand) {
       if (exitCode !== 0) process.exit(exitCode);
     });
 }
+

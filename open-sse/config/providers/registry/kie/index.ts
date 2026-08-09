@@ -25,3 +25,4 @@ export const kieProvider: RegistryEntry = {
     { id: "gemini-3-5-flash", name: "Gemini 3.5 Flash" },
   ],
 };
+

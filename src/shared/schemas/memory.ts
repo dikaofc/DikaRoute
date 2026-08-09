@@ -144,3 +144,4 @@ export const RetrievePreviewResultSchema = z.object({
 export type MemorySettingsExtended = z.infer<typeof MemorySettingsExtendedSchema>;
 export type MemoryEngineStatus = z.infer<typeof MemoryEngineStatusSchema>;
 export type RetrievePreviewResult = z.infer<typeof RetrievePreviewResultSchema>;
+

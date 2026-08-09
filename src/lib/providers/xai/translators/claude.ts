@@ -366,3 +366,4 @@ export function xaiCompletedToClaudeJson(
   }
   return out;
 }
+

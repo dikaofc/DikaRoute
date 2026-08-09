@@ -22,3 +22,4 @@ export async function resolveChatRequestBody(
   if (preParsedBody != null) return preParsedBody;
   return await request.json();
 }
+

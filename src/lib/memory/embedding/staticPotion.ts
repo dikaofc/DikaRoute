@@ -251,3 +251,4 @@ export async function embedStatic(text: string): Promise<EmbeddingResult | Embed
     };
   }
 }
+

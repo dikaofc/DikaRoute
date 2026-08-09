@@ -52,3 +52,4 @@ export function reasoningRuleDataToInput(data: Record<string, unknown>): Reasoni
     enabled: data.enabled !== false,
   };
 }
+

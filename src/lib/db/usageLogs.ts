@@ -92,3 +92,4 @@ export function getAutoRoutingTopProviders(): AutoRoutingTopProviderRow[] {
     )
     .all() as AutoRoutingTopProviderRow[];
 }
+

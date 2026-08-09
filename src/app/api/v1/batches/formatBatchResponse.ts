@@ -28,3 +28,4 @@ export function formatBatchResponse(batch: any) {
     usage: batch.usage || null,
   };
 }
+

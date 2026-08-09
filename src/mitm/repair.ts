@@ -117,3 +117,4 @@ export async function performRepairSteps(sudoPassword: string): Promise<string[]
 
   return repaired;
 }
+

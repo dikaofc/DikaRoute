@@ -762,3 +762,4 @@ export async function* extractContent(
 export function sseChunk(data: unknown): string {
   return `data: ${JSON.stringify(data)}\n\n`;
 }
+

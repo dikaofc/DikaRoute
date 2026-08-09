@@ -393,3 +393,4 @@ export async function fetchKiroAvailableModels(
 export function clearKiroModelCache(): void {
   catalogCache.clear();
 }
+

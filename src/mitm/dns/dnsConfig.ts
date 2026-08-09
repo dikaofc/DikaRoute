@@ -294,3 +294,4 @@ export async function removeDNSEntry(
 ): Promise<void> {
   await removeDNSEntries(resolveHostsForAgent(agentId), sudoPassword, deps);
 }
+

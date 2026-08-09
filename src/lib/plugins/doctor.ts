@@ -136,3 +136,4 @@ export async function runPluginDoctor(pluginDir: string, pluginName: string): Pr
   log.info("doctor.result", { pluginName, overall, failCount, warnCount });
   return { pluginName, checks, overall };
 }
+

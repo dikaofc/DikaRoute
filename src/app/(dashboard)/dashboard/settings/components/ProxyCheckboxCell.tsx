@@ -19,3 +19,4 @@ export function ProxyCheckboxCell({ checked, onChange, label }: ProxyCheckboxCel
     </td>
   );
 }
+

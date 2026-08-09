@@ -49,3 +49,4 @@ export function getStoredClaudeAuthValue(
   const trimmed = authValue.trim();
   return trimmed.length > 0 ? trimmed : null;
 }
+

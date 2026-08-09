@@ -22,3 +22,4 @@ export function register_responses(parent) {
       emit(data, gOpts);
     });
 }
+

@@ -43,3 +43,4 @@ export interface MemoryConfig {
   retentionDays: number;
   scope: "session" | "apiKey" | "global";
 }
+

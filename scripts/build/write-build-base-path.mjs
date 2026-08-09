@@ -40,3 +40,4 @@ if (fs.existsSync(distDir)) {
   const distSentinel = writeSentinel(distDir).sentinel;
   console.log(`[write-build-base-path] Recorded basePath -> ${path.relative(ROOT, distSentinel)}`);
 }
+

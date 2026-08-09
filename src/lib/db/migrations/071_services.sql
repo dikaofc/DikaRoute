@@ -17,3 +17,4 @@ INSERT OR IGNORE INTO version_manager
   (tool, status, port, auto_start, auto_update, provider_expose)
 VALUES
   ('9router', 'not_installed', 20130, 0, 1, 1);
+

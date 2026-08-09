@@ -159,3 +159,4 @@ export function snapshotSession(sessionId: string): InterceptedRequest[] | null 
 
   return results;
 }
+

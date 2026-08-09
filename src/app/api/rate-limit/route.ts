@@ -16,3 +16,4 @@ export async function POST(request) {
   url.pathname = "/api/rate-limits";
   return NextResponse.redirect(url, 308);
 }
+

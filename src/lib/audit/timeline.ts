@@ -130,3 +130,4 @@ export function relativeTime(
   if (diffDay === 1) return "yesterday";
   return `${diffDay} days ago`;
 }
+

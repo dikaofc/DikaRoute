@@ -54,3 +54,4 @@ export const kimi_codingProvider: RegistryEntry = {
     authUrl: "https://auth.kimi.com/api/oauth/device_authorization",
   },
 };
+

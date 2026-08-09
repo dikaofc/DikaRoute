@@ -222,3 +222,4 @@ export async function GET(request: Request) {
   // Success — go to dashboard
   return NextResponse.redirect(`${origin}/dashboard`);
 }
+

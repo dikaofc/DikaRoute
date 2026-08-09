@@ -40,3 +40,4 @@ export function edgeStyle(
   if (healthy) return { stroke: FLOW_EDGE_COLORS.active, strokeWidth: 1.5, opacity: 0.4 };
   return { stroke: FLOW_EDGE_COLORS.idle, strokeWidth: 1, opacity: 0.3 };
 }
+

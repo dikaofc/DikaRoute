@@ -869,3 +869,4 @@ export async function setMcpAccessibilityConfig(
   compressionSettingsCache = null;
   invalidateDbCache();
 }
+

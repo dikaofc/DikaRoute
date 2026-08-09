@@ -10,3 +10,4 @@ export const difyProvider: RegistryEntry = {
   authHeader: "bearer",
   models: [{ id: "auto", name: "Auto" }],
 };
+

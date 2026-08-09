@@ -12,3 +12,4 @@ export const kenariProvider: RegistryEntry = {
   models: [],
   passthroughModels: true,
 };
+

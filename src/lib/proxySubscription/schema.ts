@@ -96,3 +96,4 @@ export const proxySubscriptionUpdateSchema = z
 export function firstIssueMessage(error: z.ZodError): string {
   return error.issues[0]?.message ?? "Invalid request";
 }
+

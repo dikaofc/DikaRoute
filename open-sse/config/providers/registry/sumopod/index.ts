@@ -13,3 +13,4 @@ export const sumopodProvider: RegistryEntry = {
   models: [],
   passthroughModels: true,
 };
+

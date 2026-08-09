@@ -26,3 +26,4 @@ export function getRelayProbeStats(): RelayProbeStats {
 export function resetRelayProbeStats(): void {
   stats = { tested: 0, alive: 0 };
 }
+

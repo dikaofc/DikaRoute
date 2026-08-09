@@ -25,3 +25,4 @@ export function shouldAutoSyncOnOpen(
   if (!Number.isFinite(fetchedMs)) return true;
   return nowMs - fetchedMs >= staleMs;
 }
+

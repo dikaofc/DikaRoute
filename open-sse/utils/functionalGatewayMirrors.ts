@@ -101,3 +101,4 @@ export function appendFunctionalGatewayMirrors<T extends GatewayMirrorCatalogEnt
 
   return aliases.length > 0 ? [...models, ...aliases] : models;
 }
+

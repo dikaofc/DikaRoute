@@ -112,3 +112,4 @@ export default function UsageLogCard({ poolId, keyLabels }: UsageLogCardProps) {
     </div>
   );
 }
+

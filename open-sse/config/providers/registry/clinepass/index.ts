@@ -133,3 +133,4 @@ export const clinepassProvider: RegistryEntry = {
   ],
   passthroughModels: true,
 };
+

@@ -293,3 +293,4 @@ export function logTokenLimitReset(
      VALUES (?, datetime('now'), ?, ?)`
   ).run(limitId, Math.max(0, Math.floor(toNumber(prevTokens))), windowStart);
 }
+

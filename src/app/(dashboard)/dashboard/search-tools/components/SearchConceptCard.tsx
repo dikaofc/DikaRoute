@@ -87,3 +87,4 @@ export default function SearchConceptCard({ defaultCollapsed = false }: SearchCo
     </div>
   );
 }
+

@@ -130,3 +130,4 @@ export function formatArenaPrompt(messages: OpenAIMessage[]): string {
 
   return rendered.join("\n\n");
 }
+

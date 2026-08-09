@@ -167,3 +167,4 @@ export function resolvePromptQlCredentials(credentials: ProviderCredentials | un
   const timezone = readPs(ps, ["timezone", "tz"]) || DEFAULT_TZ;
   return { token, projectId, cookie, timezone };
 }
+

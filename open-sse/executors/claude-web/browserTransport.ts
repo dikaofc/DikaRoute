@@ -492,3 +492,4 @@ export function __resetClaudeWebBrowserTemplatesForTesting(): void {
 export function __setClaudeWebBrowserNowForTesting(value: number | null): void {
   testNow = value;
 }
+

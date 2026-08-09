@@ -204,3 +204,4 @@ class AutoRefreshDaemon {
 // ─── Singleton ──────────────────────────────────────────────────────────────
 
 export const autoRefreshDaemon = new AutoRefreshDaemon();
+

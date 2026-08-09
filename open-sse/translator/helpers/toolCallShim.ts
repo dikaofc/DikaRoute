@@ -116,3 +116,4 @@ export function applyToolCallShimToBuffer(name: string, raw: string): string {
 
 // Exposed for unit tests only.
 export const __test = { coerceToArray, TOOL_SHIMS };
+

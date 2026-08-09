@@ -464,3 +464,4 @@ export const CURATED_SKILLS: CuratedSkillEntry[] = [
     isNew: true,
   },
 ];
+

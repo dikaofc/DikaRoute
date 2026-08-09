@@ -39,3 +39,4 @@ export function getProviderDisplayLabel(
   }
   return null; // Not a compatible provider, use default PROVIDER_COLORS
 }
+

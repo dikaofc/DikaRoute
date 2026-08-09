@@ -674,3 +674,4 @@ export const builtInSuites = [
   instructionSuite,
   codexComparisonSuite,
 ];
+

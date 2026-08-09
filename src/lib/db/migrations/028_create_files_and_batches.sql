@@ -49,3 +49,4 @@ CREATE TABLE IF NOT EXISTS batches (
 );
 CREATE INDEX IF NOT EXISTS idx_batches_api_key ON batches(api_key_id);
 CREATE INDEX IF NOT EXISTS idx_batches_status ON batches(status);
+

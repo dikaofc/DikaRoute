@@ -110,3 +110,4 @@ export function containsTextualToolCallMarker(text: unknown): boolean {
   const trimmed = normalized.trim();
   return trimmed.startsWith("[Tool call:") || trimmed.startsWith("(empty)[Tool call:");
 }
+

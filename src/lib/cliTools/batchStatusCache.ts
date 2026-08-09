@@ -61,3 +61,4 @@ export function invalidate(toolId: string): void {
 export function clearCache(): void {
   _cache.clear();
 }
+

@@ -93,3 +93,4 @@ CREATE TABLE IF NOT EXISTS combo_adaptation_state (
     UNIQUE(combo_id, provider_id)
 );
 CREATE INDEX IF NOT EXISTS idx_cas_combo ON combo_adaptation_state(combo_id);
+

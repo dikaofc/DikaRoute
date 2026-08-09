@@ -787,3 +787,4 @@ export function resolveModelAlias(modelId: string): string {
   const hit = getModelSpecIndex().aliasExact.get(modelId);
   return hit ?? modelId;
 }
+

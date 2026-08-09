@@ -53,3 +53,4 @@ END;
 INSERT INTO memory_fts(rowid, content, key) SELECT memory_id, content, key FROM memories;
 
 
+

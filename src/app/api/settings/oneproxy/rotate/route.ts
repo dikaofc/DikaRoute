@@ -10,3 +10,4 @@ export async function POST(request: Request) {
     headers: { Location: "/api/settings/free-proxies/sync" },
   });
 }
+

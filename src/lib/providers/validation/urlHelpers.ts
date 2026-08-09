@@ -118,3 +118,4 @@ export function normalizeGigachatChatUrl(baseUrl: string) {
   if (!normalized) return "";
   return `${normalized}/chat/completions`;
 }
+

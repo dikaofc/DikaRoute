@@ -31,3 +31,4 @@ export function checkToolCallingRequiredButUnsupported(
     message: `Model "${model}" does not support tool calling. Remove "tools" from the request or choose a different model.`,
   };
 }
+

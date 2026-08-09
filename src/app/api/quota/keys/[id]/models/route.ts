@@ -68,3 +68,4 @@ export async function GET(request: Request, { params }: RouteParams): Promise<Re
     return NextResponse.json(buildErrorBody(500, message), { status: 500 });
   }
 }
+

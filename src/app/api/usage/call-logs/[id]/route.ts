@@ -20,3 +20,4 @@ export async function GET(request, { params }) {
     return NextResponse.json({ error: "Failed to fetch log" }, { status: 500 });
   }
 }
+

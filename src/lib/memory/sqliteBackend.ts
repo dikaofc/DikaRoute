@@ -100,3 +100,4 @@ export class SQLiteBackend implements MemoryBackend {
 // Export singleton instance
 export const sqliteBackend = new SQLiteBackend();
 export default sqliteBackend;
+

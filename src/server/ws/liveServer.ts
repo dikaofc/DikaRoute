@@ -626,3 +626,4 @@ if (!isBuildOrTest() && isLiveWsEnabled()) {
     console.error("[LiveWS] Failed to start: %s", err instanceof Error ? err.message : String(err));
   });
 }
+

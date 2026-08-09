@@ -36,3 +36,4 @@ export const crofProvider: RegistryEntry = {
     { id: "qwen3.5-9b", name: "Qwen3.5 9B", supportsReasoning: true },
   ],
 };
+

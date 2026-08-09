@@ -73,3 +73,4 @@ export function reportPollinationsAnonOutcome(session: Session | null, status: n
   }
   session.release();
 }
+

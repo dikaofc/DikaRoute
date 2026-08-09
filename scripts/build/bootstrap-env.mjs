@@ -351,3 +351,4 @@ if (process.argv[1] && process.argv[1].endsWith("bootstrap-env.mjs")) {
     `[bootstrap] STORAGE_ENCRYPTION_KEY length: ${env.STORAGE_ENCRYPTION_KEY?.length ?? 0}\n`
   );
 }
+

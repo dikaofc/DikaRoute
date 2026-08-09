@@ -8,3 +8,4 @@ CREATE TABLE IF NOT EXISTS free_proxy_sync_errors (
   errors TEXT NOT NULL,
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+

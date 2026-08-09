@@ -76,3 +76,4 @@ export class FetchTimeoutError extends Error {
 export function getConfiguredTimeout() {
   return FETCH_TIMEOUT_MS;
 }
+

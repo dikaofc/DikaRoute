@@ -6,3 +6,4 @@ export * from "./db.ts";
 import { createCloudAgentTaskTable } from "./db.ts";
 
 createCloudAgentTaskTable();
+

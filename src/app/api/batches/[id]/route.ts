@@ -17,3 +17,4 @@ export async function GET(request: Request, { params }: { params: { id: string }
     return NextResponse.json({ error: "Failed to fetch batch" }, { status: 500 });
   }
 }
+

@@ -166,3 +166,4 @@ export default function ProviderComparison({
     </div>
   );
 }
+

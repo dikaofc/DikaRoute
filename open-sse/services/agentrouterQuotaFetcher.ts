@@ -199,3 +199,4 @@ export function registerAgentrouterQuotaFetcher(): void {
   registerQuotaFetcher("agentrouter", fetchAgentrouterQuota);
   registerMonitorFetcher("agentrouter", fetchAgentrouterQuota);
 }
+

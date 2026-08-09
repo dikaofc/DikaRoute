@@ -170,3 +170,4 @@ export function registerSetupRoo(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

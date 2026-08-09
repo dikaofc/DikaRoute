@@ -39,3 +39,4 @@ export function filterConnectionsByQuery<T extends ConnectionRowConnection>(
   if (!normalize(query)) return connections;
   return connections.filter((conn) => matchesAccountQuery(query, conn));
 }
+

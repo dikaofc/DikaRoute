@@ -28,3 +28,4 @@ export function detectKiro(): DetectionResult {
   }
   return { installed: false };
 }
+

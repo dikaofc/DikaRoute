@@ -118,3 +118,4 @@ export async function uninstallTproxyCa(
   await d.run("sudo", ["-S", "rm", "-f", dest], sudoPassword);
   await d.run("sudo", ["-S", cfg.cmd], sudoPassword);
 }
+

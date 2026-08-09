@@ -39,3 +39,4 @@ export function countNeedsCoreNodes(nodes: unknown[] | null | undefined): number
   for (const n of nodes) if (isNeedsCoreNode(n)) count += 1;
   return count;
 }
+

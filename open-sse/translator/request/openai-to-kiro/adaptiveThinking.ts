@@ -45,3 +45,4 @@ export function resolveKiroModelAlias(model: unknown): { upstream: string; think
   }
   return { upstream, thinking };
 }
+

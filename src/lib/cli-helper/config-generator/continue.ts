@@ -35,3 +35,4 @@ export async function generateContinueConfig(options: {
 
   return y.dump(config, { lineWidth: -1 });
 }
+

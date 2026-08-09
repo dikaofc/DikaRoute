@@ -54,3 +54,4 @@ export async function GET(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to build sync bundle");
   }
 }
+

@@ -813,3 +813,4 @@ function extractProviderHint(model: unknown): string {
 // Register both directions
 register(FORMATS.OPENAI_RESPONSES, FORMATS.OPENAI, openaiResponsesToOpenAIRequest, null);
 register(FORMATS.OPENAI, FORMATS.OPENAI_RESPONSES, openaiToOpenAIResponsesRequest, null);
+

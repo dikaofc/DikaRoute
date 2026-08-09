@@ -28,3 +28,4 @@ export const qwen_cloudProvider: RegistryEntry = {
   models: QWEN_CLOUD_TEXT_MODELS,
   passthroughModels: true,
 };
+

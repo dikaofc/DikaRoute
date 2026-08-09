@@ -117,3 +117,4 @@ export async function resolveAccountProxies(
 export async function resolveAccountProxiesFromRegistry(entries: unknown) {
   return resolveAccountProxies(entries, (id) => getProxyById(id, { includeSecrets: true }));
 }
+

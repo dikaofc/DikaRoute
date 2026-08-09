@@ -71,3 +71,4 @@ export async function loadOrCreateMitmCa(
 
   return { key: ca.key, cert: ca.cert, keyPath, certPath };
 }
+

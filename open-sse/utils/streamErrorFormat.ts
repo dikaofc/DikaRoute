@@ -113,3 +113,4 @@ export function formatTranslatedStreamError(payload: unknown, sourceFormat?: str
 
   return `data: ${JSON.stringify(errorBody)}\n\ndata: [DONE]\n\n`;
 }
+

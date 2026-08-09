@@ -60,3 +60,4 @@ export function AutoRestartAdoptedToggle({ name }: AutoRestartAdoptedToggleProps
     </Card>
   );
 }
+

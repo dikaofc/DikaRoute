@@ -472,3 +472,4 @@ export const databaseSettingsSchema = z
     // Skip location and stats as they're read-only
   })
   .strict();
+

@@ -209,3 +209,4 @@ export default function PricingModal({ isOpen, onClose, onSave }) {
     </div>
   );
 }
+

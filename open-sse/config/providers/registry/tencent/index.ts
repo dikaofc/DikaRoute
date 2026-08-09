@@ -23,3 +23,4 @@ export const tencentProvider: RegistryEntry = {
     { id: "hunyuan-lite", name: "Hunyuan Lite" },
   ],
 };
+

@@ -82,3 +82,4 @@ export function SkillsConceptCard({ variant, className = "" }: SkillsConceptCard
 }
 
 export default SkillsConceptCard;
+

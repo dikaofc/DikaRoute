@@ -9,3 +9,4 @@ export type { CliAgentInfo } from "./registry";
 
 export { AcpManager, acpManager } from "./manager";
 export type { AcpSession } from "./manager";
+

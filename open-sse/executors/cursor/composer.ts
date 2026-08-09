@@ -51,3 +51,4 @@ export function composerReasoningRemainder(thinking: string): string {
   if (endIdx < 0) return thinking;
   return thinking.slice(0, endIdx);
 }
+

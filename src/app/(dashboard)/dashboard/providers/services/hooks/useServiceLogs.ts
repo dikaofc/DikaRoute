@@ -93,3 +93,4 @@ export function useServiceLogs(
 
   return { lines, isPaused, error, togglePause, clear, setFilter };
 }
+

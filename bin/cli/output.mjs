@@ -199,3 +199,4 @@ export function exitWith(code, message) {
   if (message) printError(message);
   process.exit(code);
 }
+

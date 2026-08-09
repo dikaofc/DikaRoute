@@ -29,3 +29,4 @@ export function normalizeHiddenSidebarGroupLabels(value: unknown): HideableSideb
 
   return HIDEABLE_SIDEBAR_GROUP_IDS.filter((item) => hiddenGroups.has(item));
 }
+

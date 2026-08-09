@@ -181,3 +181,4 @@ export function extractLlmMetadata(req: InterceptedRequest): LlmMetadata | null 
     costEstimateUsd: estimateCost(model, tokensIn, tokensOut),
   };
 }
+

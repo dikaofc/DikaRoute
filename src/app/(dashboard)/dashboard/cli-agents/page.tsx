@@ -5,3 +5,4 @@ export default async function CliAgentsPage() {
   const machineId = await getMachineId();
   return <CliAgentsPageClient machineId={machineId} />;
 }
+

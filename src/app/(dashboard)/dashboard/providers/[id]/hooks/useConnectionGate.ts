@@ -46,3 +46,4 @@ export function useConnectionGate({ providerId, subscriptionRisk }: UseConnectio
     handleCancelRiskNotice,
   };
 }
+

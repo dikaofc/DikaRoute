@@ -14,3 +14,4 @@ CREATE TABLE IF NOT EXISTS model_capability_overrides (
 
 CREATE INDEX IF NOT EXISTS idx_model_capability_overrides_key
   ON model_capability_overrides (override_key);
+

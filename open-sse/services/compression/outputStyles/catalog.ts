@@ -115,3 +115,4 @@ export const OUTPUT_STYLE_IDS: string[] = Object.keys(OUTPUT_STYLE_CATALOG);
 export function outputStyleMeta(id: string): OutputStyle {
   return OUTPUT_STYLE_CATALOG[id];
 }
+

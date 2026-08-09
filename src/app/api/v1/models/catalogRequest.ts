@@ -79,3 +79,4 @@ export function isCcDiscoveryModelCatalogClient(request: Request): boolean {
   const userAgent = request.headers.get("user-agent")?.toLowerCase() ?? "";
   return userAgent.includes("claude-cli");
 }
+

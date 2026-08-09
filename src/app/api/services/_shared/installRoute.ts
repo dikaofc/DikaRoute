@@ -77,3 +77,4 @@ export async function handleServiceInstall(
     return createErrorResponse({ status: 500, message: msg });
   }
 }
+

@@ -38,3 +38,4 @@ export function isValidModel(aliasOrId, modelId) {
 export const AI_MODELS = Object.entries(MODELS).flatMap(([alias, models]) =>
   models.map((m) => ({ provider: alias, model: m.id, name: m.name }))
 );
+

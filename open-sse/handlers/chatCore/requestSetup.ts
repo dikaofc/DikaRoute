@@ -49,3 +49,4 @@ export function resolveChatCoreRequestSetup(
     typeof body?.model === "string" && body.model.trim().length > 0 ? body.model : model;
   return { apiFormat, customModelTargetFormat, requestedModel };
 }
+

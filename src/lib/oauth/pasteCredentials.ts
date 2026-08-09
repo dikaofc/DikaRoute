@@ -49,3 +49,4 @@ export function parsePastedCredentials(routeProvider: string, blob: string): Cre
 
   return decoded;
 }
+

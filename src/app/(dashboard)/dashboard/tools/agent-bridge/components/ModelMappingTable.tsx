@@ -158,3 +158,4 @@ export function ModelMappingTable({ agentId, mappings, onSave }: ModelMappingTab
     </div>
   );
 }
+

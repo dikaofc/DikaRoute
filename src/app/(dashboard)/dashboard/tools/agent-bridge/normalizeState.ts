@@ -89,3 +89,4 @@ export function normalizeAgentBridgeState(raw: unknown): AgentBridgePageData {
     mappings: isRecord(raw.mappings) ? (raw.mappings as AgentMappingsMap) : {},
   };
 }
+

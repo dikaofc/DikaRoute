@@ -269,3 +269,4 @@ export async function getFallbackChainForProvider(providerId: string) {
   chain.sort((a, b) => a.priority - b.priority);
   return chain;
 }
+

@@ -90,3 +90,4 @@ export function zodToTsSignature(name: string, inputSchema?: unknown): string {
     return `${name}(args: object)`;
   }
 }
+

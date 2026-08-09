@@ -118,3 +118,4 @@ export function checkKeylessCatalogConsistency(
     stale: [...recorded].filter((id) => !credentialed.includes(id)).sort(),
   };
 }
+

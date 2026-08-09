@@ -17,3 +17,4 @@ export async function GET(request: NextRequest) {
   const anomalies = await getAnomalies();
   return NextResponse.json({ anomalies }, { headers: CORS_HEADERS });
 }
+

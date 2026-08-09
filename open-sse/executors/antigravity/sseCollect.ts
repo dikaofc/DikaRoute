@@ -182,3 +182,4 @@ export function flushAntigravitySSEText(
   if (!trimmed.startsWith("data:")) return;
   processAntigravitySSEPayload(trimmed.slice(5).trim(), collected, log);
 }
+

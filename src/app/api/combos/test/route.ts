@@ -201,3 +201,4 @@ function getInternalBaseUrl(): string {
   const { apiPort } = getRuntimePorts();
   return `http://127.0.0.1:${apiPort}`;
 }
+

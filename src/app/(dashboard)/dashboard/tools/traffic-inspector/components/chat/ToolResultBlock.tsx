@@ -32,3 +32,4 @@ export function ToolResultBlock({ toolUseId, content }: ToolResultBlockProps) {
     </div>
   );
 }
+

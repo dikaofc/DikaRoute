@@ -272,3 +272,4 @@ export function gcOlderThan(maxUpdatedAtMs: number): number {
     .run(maxUpdatedAtMs);
   return result.changes;
 }
+

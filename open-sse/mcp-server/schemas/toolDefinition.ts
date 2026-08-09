@@ -29,3 +29,4 @@ export interface McpToolDefinition<TInput extends z.ZodTypeAny, TOutput extends 
   /** Source endpoints on DikaRoute that this tool wraps */
   sourceEndpoints: readonly string[];
 }
+

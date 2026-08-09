@@ -24,3 +24,4 @@ export const agnesProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry({
     },
   ],
 });
+

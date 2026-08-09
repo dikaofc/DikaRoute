@@ -26,3 +26,4 @@ export async function POST(request: Request) {
 
   return noStoreJson({ state, authUrl, callbackUrl, expiresAt, mode: "manual" });
 }
+

@@ -6,3 +6,4 @@ export { OPTIONS };
 export async function POST(request: Request) {
   return basePost(await withSanitizedPathTokenApiKey(request));
 }
+

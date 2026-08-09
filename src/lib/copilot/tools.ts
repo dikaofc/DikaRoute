@@ -424,3 +424,4 @@ export function getCopilotTool(name: string): CopilotTool | undefined {
 export function getCopilotToolDescriptions(): string {
   return COPILOT_TOOLS.map((t) => `- **${t.name}**: ${t.description}`).join("\n");
 }
+

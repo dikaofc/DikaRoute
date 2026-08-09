@@ -22,3 +22,4 @@ export function getEnabledProviders(): FreeProxyProvider[] {
 export function getAllProviders(): FreeProxyProvider[] {
   return ALL_PROVIDERS;
 }
+

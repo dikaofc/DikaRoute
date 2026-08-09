@@ -26,3 +26,4 @@ export const zaiProvider: RegistryEntry = {
     { id: "glm-4.7", name: "GLM 4.7" },
   ],
 };
+

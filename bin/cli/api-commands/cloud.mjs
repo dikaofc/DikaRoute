@@ -79,3 +79,4 @@ export function register_cloud(parent) {
       emit(data, gOpts);
     });
 }
+

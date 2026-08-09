@@ -102,3 +102,4 @@ export function BadgeToast({ apiKeyId }: { apiKeyId: string }) {
     </div>
   );
 }
+

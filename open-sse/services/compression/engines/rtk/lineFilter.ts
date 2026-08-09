@@ -224,3 +224,4 @@ export function applyLineFilter(text: string, filter: RtkFilterDefinition): Line
     appliedRules,
   };
 }
+

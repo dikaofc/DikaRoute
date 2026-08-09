@@ -26,3 +26,4 @@ CREATE INDEX IF NOT EXISTS idx_eval_runs_group_id
 
 CREATE INDEX IF NOT EXISTS idx_eval_runs_created_at
   ON eval_runs(created_at DESC);
+

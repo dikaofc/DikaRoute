@@ -14,3 +14,4 @@ export async function OPTIONS() {
 export async function GET(request: Request) {
   return handleInternalUsageCommandHttpRequest(request);
 }
+

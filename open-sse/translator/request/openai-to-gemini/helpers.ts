@@ -152,3 +152,4 @@ export function buildHistoricalToolResultContext(name: string, response: unknown
     "</previous_tool_result_context>",
   ].join("\n");
 }
+

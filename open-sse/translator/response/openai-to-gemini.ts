@@ -12,3 +12,4 @@ import { openaiToAntigravityResponse } from "./openai-to-antigravity.ts";
 // `chat.completion.chunk` objects instead of the Gemini candidates envelope.
 // Reuse the existing Antigravity projection — no new conversion logic needed.
 register(FORMATS.OPENAI, FORMATS.GEMINI, null, openaiToAntigravityResponse);
+

@@ -61,3 +61,4 @@ export const PROVIDER_TIMEOUTS: Record<string, number> = {
 export function getProviderTimeout(provider: string): number {
   return PROVIDER_TIMEOUTS[provider] || PROVIDER_TIMEOUTS.default;
 }
+

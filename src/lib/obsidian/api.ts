@@ -388,3 +388,4 @@ export function createSyncServerClient(syncToken: string, baseUrl?: string) {
 }
 
 export type SyncServerClient = ReturnType<typeof createSyncServerClient>;
+

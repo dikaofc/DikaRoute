@@ -232,3 +232,4 @@ export function shouldPreserve(text: string, preservePatterns: RegExp[]): boolea
     return pattern.test(text);
   });
 }
+

@@ -129,3 +129,4 @@ export function registerTranslator(program) {
       emit(data.items ?? data, cmd.optsWithGlobals());
     });
 }
+

@@ -253,3 +253,4 @@ export function buildGeminiTools(
 
   return result.length > 0 ? result : undefined;
 }
+

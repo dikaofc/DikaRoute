@@ -22,3 +22,4 @@ EXPOSE 3000 9222 9223
 
 # The base launches the visible browser via ${CHROME_CLI}; we add the CDP port.
 ENV CHROME_CLI="--remote-debugging-port=9222 --no-first-run --no-default-browser-check --disable-background-networking"
+

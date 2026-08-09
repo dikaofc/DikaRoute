@@ -24,3 +24,4 @@ describe("zodToTsSignature", () => {
     expect(() => zodToTsSignature("x", {} as never)).not.toThrow();
   });
 });
+

@@ -166,3 +166,4 @@ export function appendNoThinkingVariants<T extends CatalogModelEntry>(
   }
   return variants.length > 0 ? [...models, ...variants] : models;
 }
+

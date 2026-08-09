@@ -143,3 +143,4 @@ export function openaiToAntigravityResponse(chunk, state) {
 
 // Register
 register(FORMATS.OPENAI, FORMATS.ANTIGRAVITY, null, openaiToAntigravityResponse);
+

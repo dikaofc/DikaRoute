@@ -48,3 +48,4 @@ describe("Memory Schemas", () => {
     expect(() => MemoryUpdateInputSchema.parse(invalidUpdate)).toThrow();
   });
 });
+

@@ -32,3 +32,4 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({ entries, myRank, neighbors }, { headers: CORS_HEADERS });
 }
+

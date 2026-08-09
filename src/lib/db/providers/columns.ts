@@ -114,3 +114,4 @@ export function toStringOrNull(value: unknown): string | null {
 export function toNumberOrZero(value: unknown): number {
   return typeof value === "number" ? value : 0;
 }
+

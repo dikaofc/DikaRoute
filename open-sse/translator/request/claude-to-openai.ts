@@ -537,3 +537,4 @@ function convertToolChoice(choice, hasServerWebSearch = false) {
 
 // Register
 register(FORMATS.CLAUDE, FORMATS.OPENAI, claudeToOpenAIRequest, null);
+

@@ -175,3 +175,4 @@ export function stopHeadroomProxy(): StopResult {
     throw new HeadroomError(`Failed to stop headroom proxy: ${msg}`, "STOP_FAILED");
   }
 }
+

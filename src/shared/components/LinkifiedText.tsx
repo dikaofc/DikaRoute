@@ -28,3 +28,4 @@ export default function LinkifiedText({ text }: { text: string | null | undefine
     </>
   );
 }
+

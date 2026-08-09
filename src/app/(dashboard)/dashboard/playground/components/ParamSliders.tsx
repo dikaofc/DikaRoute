@@ -183,3 +183,4 @@ export default function ParamSliders({ params, setParams }: ParamSlidersProps) {
     </div>
   );
 }
+

@@ -13,3 +13,4 @@ CREATE TABLE IF NOT EXISTS compression_cache_stats (
 );
 CREATE INDEX IF NOT EXISTS idx_compression_cache_stats_provider ON compression_cache_stats(provider);
 CREATE INDEX IF NOT EXISTS idx_compression_cache_stats_created ON compression_cache_stats(created_at);
+

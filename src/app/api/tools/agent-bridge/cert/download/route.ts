@@ -32,3 +32,4 @@ export async function GET(): Promise<Response> {
     return createErrorResponse({ status: 500, message: "Failed to read certificate file" });
   }
 }
+

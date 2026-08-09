@@ -78,3 +78,4 @@ export const QUANTUM_PATTERNS: QuantumPattern[] = [
   // fragments a longer token already claimed above.
   { category: "unix_ts", pattern: /\b1[0-9]{9}(?:[0-9]{3})?\b/g },
 ];
+

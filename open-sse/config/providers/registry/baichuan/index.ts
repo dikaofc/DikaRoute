@@ -18,3 +18,4 @@ export const baichuanProvider: RegistryEntry = {
     { id: "Baichuan3-Turbo-128k", name: "Baichuan 3 Turbo 128k", contextLength: 131072 },
   ],
 };
+

@@ -7,3 +7,4 @@ export const publicPolicy: RoutePolicy = {
     return allow({ kind: "anonymous", id: "anonymous" });
   },
 };
+

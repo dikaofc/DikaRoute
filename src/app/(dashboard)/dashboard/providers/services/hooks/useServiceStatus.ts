@@ -75,3 +75,4 @@ export function useServiceStatus(name: string): UseServiceStatusResult {
 
   return { data, isLoading, error, mutate };
 }
+

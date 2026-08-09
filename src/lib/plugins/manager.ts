@@ -582,3 +582,4 @@ class PluginManager {
 }
 
 export const pluginManager = PluginManager.getInstance();
+

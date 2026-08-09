@@ -226,3 +226,4 @@ export function register_settings(parent) {
       emit(data, gOpts);
     });
 }
+

@@ -70,3 +70,4 @@ export function resolvePreserveSystemPrompt(
 export function modeToBaselineBoolean(mode: PreserveSystemPromptMode): boolean {
   return resolvePreserveSystemPrompt(mode, { hasCache: false });
 }
+

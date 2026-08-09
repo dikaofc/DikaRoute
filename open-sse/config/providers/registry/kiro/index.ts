@@ -69,3 +69,4 @@ export const kiroProvider: RegistryEntry = {
     },
   ],
 };
+

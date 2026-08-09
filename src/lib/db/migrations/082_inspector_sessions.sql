@@ -16,3 +16,4 @@ CREATE TABLE IF NOT EXISTS inspector_session_requests (
 
 CREATE INDEX IF NOT EXISTS idx_inspector_session_requests_sid
   ON inspector_session_requests(session_id);
+

@@ -97,3 +97,4 @@ export function writeProviderDisplayModePreference(
 export function shouldSyncProviderDisplayMode(ready: boolean, loading: boolean): boolean {
   return ready && !loading;
 }
+

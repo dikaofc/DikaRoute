@@ -16,3 +16,4 @@ export const grok_webProvider: RegistryEntry = {
     { id: "grok-420-computer-use-sa", name: "Grok 4.3 (Beta)", toolCalling: true },
   ],
 };
+

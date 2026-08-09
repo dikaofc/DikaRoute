@@ -204,3 +204,4 @@ export function getCredentialHealthSummary(): {
 export function initCredentialCache(): void {
   getCacheState().initialized = true;
 }
+

@@ -52,3 +52,4 @@ const SERVICE_BACKEND_PLUGIN_ID_SET = new Set<string>(SERVICE_BACKEND_PLUGIN_IDS
 export function isServiceBackendPluginId(pluginId: string): pluginId is ServiceBackendPluginId {
   return SERVICE_BACKEND_PLUGIN_ID_SET.has(pluginId);
 }
+

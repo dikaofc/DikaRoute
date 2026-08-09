@@ -797,3 +797,4 @@ export const SIDEBAR_SECTIONS: readonly SidebarSectionDefinition[] = [
     children: HELP_ITEMS,
   },
 ];
+

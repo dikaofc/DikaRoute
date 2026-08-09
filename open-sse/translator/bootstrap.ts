@@ -26,3 +26,4 @@ import "./response/cursor-to-openai.ts";
 export function bootstrapTranslatorRegistry() {
   // no-op by design; importing this module triggers translator self-registration once
 }
+

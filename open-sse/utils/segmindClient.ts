@@ -122,3 +122,4 @@ export async function segmindRequest(opts: SegmindRequestOptions): Promise<Segmi
     };
   }
 }
+

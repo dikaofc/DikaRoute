@@ -60,3 +60,4 @@ export async function DELETE(
     return createErrorResponseFromUnknown(error, "Failed to delete discovery result");
   }
 }
+

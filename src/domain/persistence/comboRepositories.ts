@@ -59,3 +59,4 @@ export interface ModelComboMappingRepository {
   deleteById(id: string): Promise<boolean>;
   resolveForModel(model: string): Promise<ComboRecord | null>;
 }
+

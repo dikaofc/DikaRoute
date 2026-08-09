@@ -77,3 +77,4 @@ export function markAllUnavailable(tool: string): void {
     JSON.stringify(updated)
   );
 }
+

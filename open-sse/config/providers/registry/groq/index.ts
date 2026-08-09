@@ -23,3 +23,4 @@ export const groqProvider: RegistryEntry = {
     { id: "openai/gpt-oss-safeguard-20b", name: "GPT-OSS Safeguard 20B" },
   ],
 };
+

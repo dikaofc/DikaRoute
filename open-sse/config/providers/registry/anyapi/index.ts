@@ -9,3 +9,4 @@ export const anyapiProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntry(
   models: [],
   passthroughModels: true,
 });
+

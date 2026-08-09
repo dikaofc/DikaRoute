@@ -28,3 +28,4 @@ export const cloudflare_aiProvider: RegistryEntry = {
     { id: "@cf/google/gemma-4-26b-a4b-it", name: "Gemma 4 26B (🆓)", contextLength: 262144 },
   ],
 };
+

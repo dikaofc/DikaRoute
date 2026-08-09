@@ -48,3 +48,4 @@ export function buildFunctionalGatewayPredicate(
     return resolveSetting(model, provider, snapshot.global);
   };
 }
+

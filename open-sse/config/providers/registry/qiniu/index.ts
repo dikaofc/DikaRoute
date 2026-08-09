@@ -13,3 +13,4 @@ export const qiniuProvider: RegistryEntry = {
   models: [],
   passthroughModels: true,
 };
+

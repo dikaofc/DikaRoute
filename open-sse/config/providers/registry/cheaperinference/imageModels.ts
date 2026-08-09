@@ -32,3 +32,4 @@ export const CHEAPERINFERENCE_IMAGE_PROVIDER = {
   ],
   supportedSizes: ["1024x1024", "2048x2048", "4096x4096"],
 };
+

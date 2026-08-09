@@ -43,3 +43,4 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Failed to build combo forecast" }, { status: 500 });
   }
 }
+

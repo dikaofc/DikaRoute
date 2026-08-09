@@ -181,3 +181,4 @@ export async function runLogsCommand(opts = {}) {
 
   return 0;
 }
+

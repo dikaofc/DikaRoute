@@ -130,3 +130,4 @@ async function persistAndRestore(
   void writeCompressionAnalytics(writeOpts);
   return adapter.restore(result.body) as JsonRecord;
 }
+

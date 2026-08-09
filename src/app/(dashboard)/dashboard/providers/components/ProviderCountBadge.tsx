@@ -28,3 +28,4 @@ export default function ProviderCountBadge({ configured, total }: ProviderCountB
     </span>
   );
 }
+

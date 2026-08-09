@@ -389,3 +389,4 @@ export function hasThinkingCapableModel(body: unknown) {
     model.includes("thinking")
   );
 }
+

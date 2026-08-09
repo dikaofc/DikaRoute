@@ -65,3 +65,4 @@ function readCap(): number {
 export function checkConnectionCapacity(): CapacityResult {
   return evalCapacity(getActiveSessionCount(), readCap());
 }
+

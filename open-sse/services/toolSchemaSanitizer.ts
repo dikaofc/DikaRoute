@@ -163,3 +163,4 @@ export function sanitizeOpenAITool(tool: unknown): unknown {
 export function sanitizeOpenAITools(tools: unknown[]): unknown[] {
   return tools.map(sanitizeOpenAITool);
 }
+

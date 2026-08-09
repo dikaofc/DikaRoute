@@ -75,3 +75,4 @@ export function deleteOmpCredentials(providerId: string) {
   db.prepare("DELETE FROM auth_credentials WHERE provider = ?").run(providerId);
   db.close();
 }
+

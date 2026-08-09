@@ -33,3 +33,4 @@ export function AgentEmoji({ agentId, className }: AgentEmojiProps) {
     </span>
   );
 }
+

@@ -23,3 +23,4 @@ export function detectCodex(): DetectionResult {
   }
   return { installed: false };
 }
+

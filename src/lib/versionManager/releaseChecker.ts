@@ -96,3 +96,4 @@ export async function getChecksums(version: string): Promise<Map<string, string>
 export function clearCache(): void {
   releasesCache.clear();
 }
+

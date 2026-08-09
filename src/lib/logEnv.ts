@@ -162,3 +162,4 @@ export function isChatDebugFileEnabled(): boolean {
   if (parseBoolean(process.env.CHAT_DEBUG_FILE, false)) return true;
   return process.env.APP_LOG_LEVEL?.trim().toLowerCase() === "debug";
 }
+

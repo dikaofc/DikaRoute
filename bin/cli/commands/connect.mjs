@@ -130,3 +130,4 @@ export function registerConnect(program) {
       if (code !== 0) process.exit(code);
     });
 }
+

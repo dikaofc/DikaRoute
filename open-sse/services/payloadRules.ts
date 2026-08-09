@@ -472,3 +472,4 @@ export function resetPayloadRulesConfigForTests() {
   lastFileErrorSignature = "";
   cachedFileConfig = clonePayloadRulesConfig(DEFAULT_PAYLOAD_RULES_CONFIG);
 }
+

@@ -38,3 +38,4 @@
   ],
   "exclude": ["node_modules", ".next", "app.__qa_backup", "vscode-extension"]
 }
+

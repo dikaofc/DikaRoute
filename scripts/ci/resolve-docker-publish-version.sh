@@ -58,3 +58,4 @@ if ! printf '%s' "$VERSION" | grep -qE '^[A-Za-z0-9._-]+$'; then
 fi
 
 printf '%s\n' "$VERSION"
+

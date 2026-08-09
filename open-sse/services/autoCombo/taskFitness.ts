@@ -432,3 +432,4 @@ export function invalidateFitnessCache(): void {
   _capabilitiesCache = null;
   _intelligenceCache.clear();
 }
+

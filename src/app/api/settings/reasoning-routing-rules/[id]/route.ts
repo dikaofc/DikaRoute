@@ -54,3 +54,4 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
   const deleted = await deleteReasoningRoutingRule((await params).id);
   return deleted ? NextResponse.json({ success: true }) : errorResponse(404, "Rule not found");
 }
+

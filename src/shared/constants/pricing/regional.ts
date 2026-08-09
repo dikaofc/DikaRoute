@@ -166,3 +166,4 @@ export const DEFAULT_PRICING_REGIONAL = {
     },
   },
 };
+

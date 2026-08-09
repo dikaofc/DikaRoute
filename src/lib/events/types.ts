@@ -179,3 +179,4 @@ export function getChannelForEvent(event: DashboardEventName): DashboardChannel 
   }
   return undefined;
 }
+

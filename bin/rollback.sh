@@ -100,3 +100,4 @@ case "$METHOD" in
   *) ops_die "unknown method: $METHOD (use npm or docker)" ;;
 esac
 ops_log "rollback to $VERSION complete"
+

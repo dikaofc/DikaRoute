@@ -30,3 +30,4 @@
     "description": "Helyi Redis-tároló indítása egyetlen kattintással (Podman vagy Docker) az DikaRoute gyorsítótárazáshoz és kvótafigyeléshez"
   }
 }
+

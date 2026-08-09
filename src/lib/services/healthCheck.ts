@@ -77,3 +77,4 @@ export class HealthChecker {
     this.onChange(health);
   }
 }
+

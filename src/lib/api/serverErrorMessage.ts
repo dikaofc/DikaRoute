@@ -34,3 +34,4 @@ export function resolveServerErrorMessage(body: unknown, fallback: string): stri
 
   return fallback;
 }
+

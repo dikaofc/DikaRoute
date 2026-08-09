@@ -4,3 +4,4 @@
 ALTER TABLE call_logs ADD COLUMN tokens_cache_read INTEGER DEFAULT NULL;
 ALTER TABLE call_logs ADD COLUMN tokens_cache_creation INTEGER DEFAULT NULL;
 ALTER TABLE call_logs ADD COLUMN tokens_reasoning INTEGER DEFAULT NULL;
+

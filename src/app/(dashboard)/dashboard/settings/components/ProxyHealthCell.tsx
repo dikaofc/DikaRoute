@@ -59,3 +59,4 @@ export function ProxyHealthCell({ testResult, health }: ProxyHealthCellProps) {
 
   return <span>—</span>;
 }
+

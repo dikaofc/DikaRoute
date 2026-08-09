@@ -9,3 +9,4 @@ CREATE TABLE IF NOT EXISTS session_account_affinity (
 
 CREATE INDEX IF NOT EXISTS idx_saa_provider ON session_account_affinity(provider);
 CREATE INDEX IF NOT EXISTS idx_saa_last_seen ON session_account_affinity(last_seen_at);
+

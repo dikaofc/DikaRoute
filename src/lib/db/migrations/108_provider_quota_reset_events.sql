@@ -24,3 +24,4 @@ CREATE INDEX IF NOT EXISTS idx_provider_quota_reset_events_connection_window
 
 CREATE INDEX IF NOT EXISTS idx_provider_quota_reset_events_provider_observed
   ON provider_quota_reset_events(provider, observed_at);
+

@@ -42,3 +42,4 @@ export async function GET(request: Request) {
 
   return NextResponse.json({ command, sampleCount: matching.length, filter });
 }
+

@@ -3,3 +3,4 @@ export function isResponsesEndpointPath(endpointPath?: string | null): boolean {
   while (normalizedEndpoint.endsWith("/")) normalizedEndpoint = normalizedEndpoint.slice(0, -1);
   return normalizedEndpoint.split("/").includes("responses");
 }
+

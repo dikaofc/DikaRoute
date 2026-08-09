@@ -714,3 +714,4 @@ export function createStructuredSSECollector(options: CollectorOptions = {}) {
     },
   };
 }
+

@@ -160,3 +160,4 @@ export function shouldUseFallback(
 export function isFallbackDecision(result: FallbackResult): result is FallbackDecision {
   return result.shouldFallback === true;
 }
+

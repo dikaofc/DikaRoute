@@ -83,3 +83,4 @@ export function resolveVisionBridgeRuntimeSettings(
       pickNumber(s.modalityBridgeCacheMaxEntries) ?? MODALITY_BRIDGE_DEFAULTS.cacheMaxEntries,
   };
 }
+

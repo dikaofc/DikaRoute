@@ -43,3 +43,4 @@ export interface InspectorSessionRow {
   request_count: number;
   profile: "llm" | "custom" | "all" | null;
 }
+

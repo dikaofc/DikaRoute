@@ -39,3 +39,4 @@ export function isProxyHealthAutoDeactivateEnabled(
 ): boolean {
   return (env.PROXY_HEALTH_AUTO_DEACTIVATE ?? "").trim().toLowerCase() === "true";
 }
+

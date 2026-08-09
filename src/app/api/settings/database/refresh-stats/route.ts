@@ -15,3 +15,4 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Failed to refresh database stats" }, { status: 500 });
   }
 }
+

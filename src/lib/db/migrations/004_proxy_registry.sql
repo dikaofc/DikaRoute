@@ -29,3 +29,4 @@ CREATE TABLE IF NOT EXISTS proxy_assignments (
 
 CREATE INDEX IF NOT EXISTS idx_proxy_assignments_proxy_id ON proxy_assignments(proxy_id);
 CREATE INDEX IF NOT EXISTS idx_proxy_assignments_scope ON proxy_assignments(scope, scope_id);
+

@@ -181,3 +181,4 @@ export function revokeAccessToken(idOrPrefix: string): boolean {
     .run(new Date().toISOString(), idOrPrefix, idOrPrefix);
   return res.changes > 0;
 }
+

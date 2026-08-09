@@ -371,3 +371,4 @@ export function registerSkills(program) {
 
   registerSkillsMarketplace(skills);
 }
+

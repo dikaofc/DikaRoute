@@ -30,3 +30,4 @@
     "description": "Spustit místní Redis kontejner jedním kliknutím (Podman nebo Docker) pro mezipaměť a sledování kvót DikaRoute"
   }
 }
+

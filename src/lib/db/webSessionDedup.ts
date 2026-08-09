@@ -55,3 +55,4 @@ export function parseProviderSpecificData(raw: unknown): Record<string, unknown>
   }
   return null;
 }
+

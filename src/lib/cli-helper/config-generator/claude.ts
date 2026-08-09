@@ -23,3 +23,4 @@ export function generateClaudeConfig(options: {
 
   return JSON.stringify(config, null, 2);
 }
+

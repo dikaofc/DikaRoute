@@ -54,3 +54,4 @@ export async function POST(request: Request) {
     return createErrorResponseFromUnknown(error, "Failed to sync free proxies");
   }
 }
+

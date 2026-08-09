@@ -40,3 +40,4 @@ export function register_embeddings(parent) {
       emit(data, gOpts);
     });
 }
+

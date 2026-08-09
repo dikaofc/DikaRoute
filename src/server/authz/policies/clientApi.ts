@@ -99,3 +99,4 @@ export const clientApiPolicy: RoutePolicy = {
     return allow({ kind: "client_api_key", id: maskKeyId(bearer) });
   },
 };
+

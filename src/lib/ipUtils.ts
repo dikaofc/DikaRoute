@@ -146,3 +146,4 @@ export function getClientIpFromRequest(req: {
   // Direct public peer — forwarding headers are attacker-controlled, ignore.
   return normalizePeer(remoteAddress);
 }
+

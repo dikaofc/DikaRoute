@@ -233,3 +233,4 @@ export function getFallbackStats(
     .get(params) as FallbackStatsRow | undefined;
   return row ?? { total: 0, with_requested: 0, fallback_eligible: 0, fallbacks: 0 };
 }
+

@@ -173,3 +173,4 @@ export default function EmbeddingSourceSelector({ settings, providers, onSave, s
     </div>
   );
 }
+

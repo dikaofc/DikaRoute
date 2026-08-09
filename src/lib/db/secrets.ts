@@ -26,3 +26,4 @@ export function persistSecret(key: string, value: string): void {
     // Non-fatal: secrets still work for the current process if persistence fails.
   }
 }
+

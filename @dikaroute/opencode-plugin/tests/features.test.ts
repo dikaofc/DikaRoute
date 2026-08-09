@@ -1067,3 +1067,4 @@ test("resolveProviderTagEntry: direct present but empty alias+display → still 
   const out = resolveProviderTagEntry("cohere/rerank-v4.0", direct, idx);
   assert.equal(out?.providerDisplayName, "Cohere");
 });
+

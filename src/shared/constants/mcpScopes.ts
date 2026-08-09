@@ -82,3 +82,4 @@ export const MCP_TOOL_SCOPES: Record<string, readonly McpScope[]> = {
   // Stealth browser pool observability (#3368 PR7)
   dikaroute_browser_pool_status: ["read:health"],
 } as const;
+

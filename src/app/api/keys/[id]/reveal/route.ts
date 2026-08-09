@@ -27,3 +27,4 @@ export async function GET(request, { params }) {
     return NextResponse.json({ error: "Failed to reveal key" }, { status: 500 });
   }
 }
+

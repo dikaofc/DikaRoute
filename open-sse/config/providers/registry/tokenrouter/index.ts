@@ -42,3 +42,4 @@ export const tokenrouterProvider: RegistryEntry = {
     },
   ],
 };
+

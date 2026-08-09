@@ -352,3 +352,4 @@ describe("Memory Retrieval — FTS5 integration (pre-existing broken test infras
     expect(estimateTokens(undefined as unknown as string)).toBe(0);
   });
 });
+

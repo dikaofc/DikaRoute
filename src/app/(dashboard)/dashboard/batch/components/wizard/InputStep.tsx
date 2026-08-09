@@ -205,3 +205,4 @@ export default function InputStep({ input, onChange, destination }: InputStepPro
     </div>
   );
 }
+

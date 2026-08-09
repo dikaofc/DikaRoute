@@ -22,3 +22,4 @@ export const traeProvider: RegistryEntry = {
     { id: "gpt-5.2", name: "GPT 5.2" },
   ],
 };
+

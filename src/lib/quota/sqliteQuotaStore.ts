@@ -280,3 +280,4 @@ export function getSqliteQuotaStore(): SqliteQuotaStore {
   }
   return _instance;
 }
+

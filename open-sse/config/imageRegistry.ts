@@ -997,3 +997,4 @@ export function modalitiesRequireImageInput(inputModalities) {
   const list = Array.isArray(inputModalities) ? inputModalities : ["text"];
   return list.includes("image") && !list.includes("text");
 }
+

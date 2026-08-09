@@ -25,3 +25,4 @@ export const ainativeProvider: RegistryEntry = buildOpenAiCompatibleRegistryEntr
     { id: "gemini-flash", name: "Gemini Flash", contextLength: 131072, toolCalling: true },
   ],
 });
+

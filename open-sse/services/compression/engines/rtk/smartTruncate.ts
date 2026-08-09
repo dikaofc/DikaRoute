@@ -65,3 +65,4 @@ export function smartTruncate(
 
   return { text: result, truncated: true, droppedLines };
 }
+

@@ -42,3 +42,4 @@ CREATE INDEX IF NOT EXISTS idx_daily_usage_provider_model_date
 -- Index for date-based queries
 CREATE INDEX IF NOT EXISTS idx_daily_usage_date 
   ON daily_usage_summary(date);
+

@@ -23,3 +23,4 @@ export const blackboxProvider: RegistryEntry = {
     { id: "grok-4.3", name: "Grok 4.3" },
   ],
 };
+

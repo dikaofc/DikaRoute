@@ -35,3 +35,4 @@ export const toolSearchTool: McpToolDefinition<typeof toolSearchInput, typeof to
   phase: 1,
   sourceEndpoints: [],
 };
+

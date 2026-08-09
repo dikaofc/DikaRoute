@@ -13,3 +13,4 @@ export const alibaba_cnProvider: RegistryEntry = {
   models: ALIBABA_MODEL_STUDIO_MODELS,
   passthroughModels: true,
 };
+

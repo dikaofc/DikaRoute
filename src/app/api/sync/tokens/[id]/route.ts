@@ -53,3 +53,4 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     return createErrorResponseFromUnknown(error, "Failed to revoke sync token");
   }
 }
+

@@ -36,3 +36,4 @@ export function assignGlmTeamQuotaProviderData(
     delete target.glmProjectId;
   }
 }
+

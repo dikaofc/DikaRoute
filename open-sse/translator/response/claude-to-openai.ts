@@ -357,3 +357,4 @@ function convertStopReason(reason) {
 
 // Register
 register(FORMATS.CLAUDE, FORMATS.OPENAI, null, claudeToOpenAIResponse);
+

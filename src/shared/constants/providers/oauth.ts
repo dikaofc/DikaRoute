@@ -274,3 +274,4 @@ export const OAUTH_PROVIDERS = {
       "Tencent CodeBuddy CN (copilot.tencent.com). Sign in via the official CLI device-code flow, or paste a direct API key (sent as Authorization: Bearer). Catalog: GLM / Kimi / MiniMax / DeepSeek / Hunyuan.",
   },
 };
+

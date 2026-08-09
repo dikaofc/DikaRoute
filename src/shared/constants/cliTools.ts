@@ -844,3 +844,4 @@ export function listCliTools(): CliToolEntry[] {
 export function getCliTool(id: string): CliToolEntry | undefined {
   return CLI_TOOLS[id];
 }
+

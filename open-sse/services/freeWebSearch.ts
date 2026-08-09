@@ -152,3 +152,4 @@ export async function freeWebSearch(
   const html = await response.text();
   return parseDuckDuckGoLite(html).slice(0, Math.max(1, maxResults));
 }
+

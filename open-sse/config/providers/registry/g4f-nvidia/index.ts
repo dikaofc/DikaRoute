@@ -20,3 +20,4 @@ export const g4f_nvidiaProvider: RegistryEntry = {
     { id: "minimaxai/minimax-m2.7", name: "MiniMax M2.7 (g4f/NVIDIA)" },
   ],
 };
+

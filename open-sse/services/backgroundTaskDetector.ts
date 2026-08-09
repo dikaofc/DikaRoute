@@ -261,3 +261,4 @@ export function getDefaultDegradationMap(): Record<string, string> {
 export function getDefaultDetectionPatterns(): string[] {
   return [...DEFAULT_DETECTION_PATTERNS];
 }
+

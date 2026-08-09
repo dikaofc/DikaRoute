@@ -365,3 +365,4 @@ export async function generateAgentSkills(opts: GeneratorOptions): Promise<Gener
 // Exported for unit testing only — keep the internal helpers reachable without
 // widening the public surface.
 export const __testing = { serializeFrontmatter };
+

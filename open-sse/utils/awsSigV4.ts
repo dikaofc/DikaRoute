@@ -137,3 +137,4 @@ export function signAwsRequest({
     ].join(" "),
   };
 }
+

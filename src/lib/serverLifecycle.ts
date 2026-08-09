@@ -21,3 +21,4 @@ export function markServerReady(): void {
 export function markServerStopping(): void {
   globalThis.__dikarouteServerLifecycle = "stopping";
 }
+

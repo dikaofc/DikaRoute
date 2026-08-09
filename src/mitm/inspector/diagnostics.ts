@@ -65,3 +65,4 @@ export function summarizeDiagnostics(input: DiagnosticInput): DiagnosticReport {
   ];
   return { healthy: checks.every((c) => c.ok), checks };
 }
+

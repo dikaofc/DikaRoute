@@ -61,3 +61,4 @@ export interface ResetButtonInput {
 export function isResetDisabled({ restoring }: ResetButtonInput): boolean {
   return restoring;
 }
+

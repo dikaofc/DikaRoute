@@ -142,3 +142,4 @@ describe("useConnectionAutoSync", () => {
     expect(notify.success).not.toHaveBeenCalled();
   });
 });
+

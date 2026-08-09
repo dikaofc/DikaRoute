@@ -325,3 +325,4 @@ export function migrateLegacyEncryptedString(ciphertext: string | null | undefin
   // 3. Un-decryptable or corrupted, leave it alone
   return { updated: false, value: ciphertext };
 }
+

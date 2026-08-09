@@ -209,3 +209,4 @@ export function shouldInjectMemory(request: ChatRequest, config?: { enabled?: bo
   if (config?.enabled === false) return false;
   return Array.isArray(request.messages) && request.messages.length > 0;
 }
+

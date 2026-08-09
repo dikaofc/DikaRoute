@@ -139,3 +139,4 @@ export async function scanCliProxyAuthDir(
   }
   return { candidates, skipped, scanned: jsonFiles.length };
 }
+

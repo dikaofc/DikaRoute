@@ -56,3 +56,4 @@ export async function selectProxyForValidation(targetUrl: string): Promise<strin
 export function clearProxySelectionCache(): void {
   clearProxyFallbackCache();
 }
+

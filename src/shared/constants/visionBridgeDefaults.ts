@@ -86,3 +86,4 @@ export function getVisionBridgeConfig(
     maxImages: s.visionBridgeMaxImages ?? VISION_BRIDGE_DEFAULTS.maxImagesPerRequest,
   };
 }
+

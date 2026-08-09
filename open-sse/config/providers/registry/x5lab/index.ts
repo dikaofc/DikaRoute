@@ -13,3 +13,4 @@ export const x5labProvider: RegistryEntry = {
   models: [],
   passthroughModels: true,
 };
+

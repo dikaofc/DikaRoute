@@ -165,3 +165,4 @@ export function getSelfHealingManager(): SelfHealingManager {
   if (!_instance) _instance = new SelfHealingManager();
   return _instance;
 }
+

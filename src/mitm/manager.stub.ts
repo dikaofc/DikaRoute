@@ -42,3 +42,4 @@ export const startMitm = async (
 export const stopMitm = async (_sudoPassword: string): Promise<never> => {
   throw new Error(STUB_ERROR);
 };
+

@@ -48,3 +48,4 @@ export default function Tabs({ tabs, defaultIndex = 0, className }: TabsProps) {
     </div>
   );
 }
+

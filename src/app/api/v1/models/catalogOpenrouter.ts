@@ -44,3 +44,4 @@ export function getOpenRouterDisplayName(model: {
   const name = model.name || model.id || "OpenRouter model";
   return isOpenRouterFreeModel(model) && !/\bgr[aá]tis\b/i.test(name) ? `${name} (Grátis)` : name;
 }
+

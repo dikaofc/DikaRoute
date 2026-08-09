@@ -42,3 +42,4 @@ export function parseDayGranularityResetMs(msg: string, maxMs: number): number |
   if (!Number.isFinite(days) || days <= 0) return null;
   return Math.min(days * 24 * 3600 * 1000, maxMs);
 }
+

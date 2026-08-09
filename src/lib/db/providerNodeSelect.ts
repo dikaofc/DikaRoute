@@ -46,3 +46,4 @@ export function selectProviderNodeForConnection<T extends SelectableNode>(
   const ofType = nodes.filter((n) => typeof n.id === "string" && nodeTypeFromId(n.id) === idOrType);
   return ofType.length === 1 ? ofType[0] : null;
 }
+

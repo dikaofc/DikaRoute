@@ -87,3 +87,4 @@ export function deleteCloudAgentCredential(providerId: string): void {
   const db = getDbInstance();
   db.prepare("DELETE FROM cloud_agent_credentials WHERE provider_id = ?").run(providerId);
 }
+

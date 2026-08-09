@@ -48,3 +48,4 @@ export async function POST(request: Request) {
   const combo = createCompressionCombo(validation.data);
   return NextResponse.json(combo, { status: 201 });
 }
+

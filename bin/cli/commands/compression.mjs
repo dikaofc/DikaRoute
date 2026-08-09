@@ -253,3 +253,4 @@ export function registerCompression(program) {
     .requiredOption("--file <path>", t("compression.preview.file"))
     .action(runCompressionPreview);
 }
+

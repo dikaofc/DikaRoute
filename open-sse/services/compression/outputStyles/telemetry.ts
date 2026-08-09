@@ -48,3 +48,4 @@ export function buildOutputStyleTelemetry(input: {
   if (typeof input.outputTokens === "number") record.outputTokens = input.outputTokens;
   return record;
 }
+

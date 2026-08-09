@@ -232,3 +232,4 @@ assertNoStaleHashedNatives(join(ELECTRON_STANDALONE_DIR, NEXT_DIST_DIR, "node_mo
 console.log(
   `[electron] prepared standalone bundle: ${relative(ROOT, ELECTRON_STANDALONE_DIR) || "."}`
 );
+

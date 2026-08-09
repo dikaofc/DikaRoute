@@ -29,3 +29,4 @@ export async function syncToCloud(
   // continue serving the rest of the request — Cloud sync is best-effort.
   return { error: "Cloud Sync is disabled in this build (minimal profile)" };
 }
+

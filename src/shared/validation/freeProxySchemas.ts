@@ -107,3 +107,4 @@ export const cloudflareDeploySchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Worker name must be lowercase alphanumeric with hyphens")
     .default("dikaroute-relay"),
 });
+

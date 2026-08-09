@@ -3,3 +3,4 @@
 // target (src/lib/providers/validation.ts) and the add-connection modal pre-fills
 // the Validation Model Id field with the same value (#5446 checklist item 4).
 export const MODAL_DEFAULT_VALIDATION_MODEL_ID = "Qwen/Qwen3-4B-Thinking-2507-FP8";
+

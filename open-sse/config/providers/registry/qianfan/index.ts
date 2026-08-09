@@ -16,3 +16,4 @@ export const qianfanProvider: RegistryEntry = {
     { id: "ernie-x1.1", name: "ERNIE X1.1", contextLength: 64000 },
   ],
 };
+

@@ -54,3 +54,4 @@ export function useConnectionAutoSync(
     [notify, setConnections, t, connections]
   );
 }
+

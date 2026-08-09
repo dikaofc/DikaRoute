@@ -25,3 +25,4 @@ if (
     console.warn(`[dikaroute] postinstall warm-up skipped: ${err?.message ?? err}`);
   }
 })();
+

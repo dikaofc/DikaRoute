@@ -20,3 +20,4 @@ export function SecretMaskToggle({ masked, onToggle }: SecretMaskToggleProps) {
     </button>
   );
 }
+

@@ -87,3 +87,4 @@ export function replaceTextContent(msg: ChatMessageLike, newText: string): ChatM
 
   return { ...msg, content };
 }
+

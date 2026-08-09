@@ -38,3 +38,4 @@ export default function GitlabDuoSetupStep({ onContinue, onClose }: GitlabDuoSet
     </div>
   );
 }
+

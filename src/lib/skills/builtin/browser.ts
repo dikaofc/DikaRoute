@@ -20,3 +20,4 @@ export const browserSkill: SkillHandler = async (input, context) => {
 export function registerBrowserSkill(executor: any): void {
   executor.registerHandler("browser", browserSkill);
 }
+

@@ -146,3 +146,4 @@ export function CustomHostsManager({ onClose }: CustomHostsManagerProps) {
     </div>
   );
 }
+

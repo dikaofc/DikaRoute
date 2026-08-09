@@ -217,3 +217,4 @@ export function resolveFlowAccessToken(
   const cred = credentials ?? {};
   return asTrimmedString(cred.accessToken) ?? asTrimmedString(cred.apiKey) ?? null;
 }
+

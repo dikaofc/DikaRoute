@@ -108,3 +108,4 @@ export function createTranslateCommentaryFilter(targetFormat: string | undefined
   return (parsed: JsonRecord): boolean =>
     applies && shouldDropResponsesCommentaryEvent(parsed, commentaryItemIds, commentaryIndexes);
 }
+

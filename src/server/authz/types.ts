@@ -75,3 +75,4 @@ export interface AuthSubject {
    */
   scopes?: ReadonlyArray<string>;
 }
+

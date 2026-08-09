@@ -42,3 +42,4 @@ export interface RuleMatch {
 }
 
 export type SpecificityLevel = "trivial" | "simple" | "moderate" | "complex" | "expert";
+

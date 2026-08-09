@@ -50,3 +50,4 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
   const updated = getAccountKeyLimit(resolvedParams.id);
   return NextResponse.json({ accountId: resolvedParams.id, limits: updated });
 }
+

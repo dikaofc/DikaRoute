@@ -490,3 +490,4 @@ export function getLobeProviderIcon(
   const entry = LOBE_ICON_COMPONENTS[iconKey];
   return type === "color" && entry.color ? entry.color : entry.mono;
 }
+

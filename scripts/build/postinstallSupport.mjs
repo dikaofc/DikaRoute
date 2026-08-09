@@ -43,3 +43,4 @@ export function isTermux(env = process.env) {
     return false;
   }
 }
+

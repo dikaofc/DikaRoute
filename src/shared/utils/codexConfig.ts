@@ -28,3 +28,4 @@ export function migrateCodexFeatureFlags(parsed: ParsedCodexToml): ParsedCodexTo
   delete features.codex_hooks;
   return parsed;
 }
+

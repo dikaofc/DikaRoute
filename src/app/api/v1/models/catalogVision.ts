@@ -55,3 +55,4 @@ export function getCustomVisionCapabilityFields(
   }
   return null;
 }
+

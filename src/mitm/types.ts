@@ -74,3 +74,4 @@ export type DetectionResult = {
   version?: string;
   path?: string;
 };
+

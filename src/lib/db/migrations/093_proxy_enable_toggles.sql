@@ -15,3 +15,4 @@ ALTER TABLE provider_connections ADD COLUMN proxy_enabled INTEGER NOT NULL DEFAU
 -- This UPDATE runs on the initial migration apply; on re-runs the ALTER TABLE
 -- above fails with "duplicate column" and the migration runner skips the rest.
 UPDATE provider_connections SET proxy_enabled = 1 WHERE proxy_enabled = 0;
+

@@ -65,3 +65,4 @@ export async function runRedisRuntimeCommand(
   const { stdout, stderr } = await runCommand(runtime, args, { timeout });
   return { stdout: stdout.trim(), stderr: stderr.trim() };
 }
+

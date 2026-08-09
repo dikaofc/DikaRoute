@@ -49,3 +49,4 @@ export default function ManualConfigModal({ isOpen, onClose, title, configs = []
     </Modal>
   );
 }
+

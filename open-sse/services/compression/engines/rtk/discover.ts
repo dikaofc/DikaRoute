@@ -148,3 +148,4 @@ export function discoverRepeatedNoise(samples: CommandSample[]): NoiseCandidate[
   candidates.sort((a, b) => b.hits - a.hits || a.pattern.localeCompare(b.pattern));
   return candidates;
 }
+

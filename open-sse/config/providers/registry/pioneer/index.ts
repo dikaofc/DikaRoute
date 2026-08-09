@@ -39,3 +39,4 @@ export const pioneerProvider: RegistryEntry = {
     { id: "HuggingFaceTB/SmolLM3-3B-Base", name: "SmolLM3 3B Base" },
   ],
 };
+

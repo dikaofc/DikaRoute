@@ -75,3 +75,4 @@ export function xaiSseEventToOpenaiResponses(ev: SseEvent): SseEvent | null {
   if (ev.event === "response.output_text.annotation.added") return null;
   return ev;
 }
+

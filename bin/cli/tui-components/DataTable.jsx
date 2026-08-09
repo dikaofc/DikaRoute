@@ -48,3 +48,4 @@ export function DataTable({ rows = [], schema = [], selectable = false, onSelect
     </Box>
   );
 }
+

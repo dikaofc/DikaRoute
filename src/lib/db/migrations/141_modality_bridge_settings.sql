@@ -28,3 +28,4 @@ INSERT INTO key_value (namespace, key, value)
 SELECT 'settings', 'modalityBridgeVisionMaxImages', value FROM key_value
 WHERE namespace = 'settings' AND key = 'visionBridgeMaxImages'
   AND NOT EXISTS (SELECT 1 FROM key_value WHERE namespace = 'settings' AND key = 'modalityBridgeVisionMaxImages');
+

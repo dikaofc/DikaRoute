@@ -139,3 +139,4 @@ test("#7976: buildStaticProviderEntry keys bare-slug combo ids with the unprefix
       "OC dispatches it verbatim as the `model` field"
   );
 });
+

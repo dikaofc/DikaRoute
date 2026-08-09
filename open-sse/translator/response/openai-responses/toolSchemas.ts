@@ -27,3 +27,4 @@ export function extractToolSchemaMap(body: unknown): Map<string, JsonRecord> | n
   }
   return map.size > 0 ? map : null;
 }
+

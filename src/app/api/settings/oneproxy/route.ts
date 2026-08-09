@@ -23,3 +23,4 @@ export async function DELETE(request: Request) {
   if (authError) return authError;
   return relativeRedirect("/api/settings/free-proxies");
 }
+

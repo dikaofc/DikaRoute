@@ -125,3 +125,4 @@ function lengthOf(value: unknown, seen: Set<object>): number {
     seen.delete(obj);
   }
 }
+

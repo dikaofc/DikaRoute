@@ -21,3 +21,4 @@ export function modelHasNativeContext1m(model: string | null | undefined): boole
     (supported) => normalizedModel === supported || normalizedModel.startsWith(`${supported}-`)
   );
 }
+

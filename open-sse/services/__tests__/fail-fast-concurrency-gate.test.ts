@@ -28,3 +28,4 @@ describe("isAccountSemaphoreFull fail-fast concurrency gate", () => {
     expect(isAccountSemaphoreFull("featherless-ai", "conn-1", 1)).toBe(false);
   });
 });
+

@@ -17,3 +17,4 @@ export function getKeyValue(row: unknown): { key: string | null; value: string |
     value: typeof record.value === "string" ? record.value : null,
   };
 }
+
