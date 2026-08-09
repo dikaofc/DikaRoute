@@ -296,8 +296,8 @@ export default function ProfilePage() {
 
       {/* Badge Detail Modal */}
       {selectedBadge && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-surface border border-border rounded-xl p-6 w-full max-w-md mx-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md dkr-fade-in">
+          <div className="glass-strong rounded-3xl p-6 w-full max-w-md mx-4 dkr-scale-in">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <span className="text-4xl">
@@ -336,7 +336,7 @@ export default function ProfilePage() {
             )}
 
             {selectedBadge.criteria && (
-              <div className="p-3 rounded-lg bg-surface/50 border border-border/50">
+              <div className="p-3 rounded-xl bg-glass-bg border border-glass-border">
                 <p className="text-xs font-medium text-text-muted mb-1">{t("profileHowToEarn")}</p>
                 <p className="text-sm">{translateBadge(selectedBadge, "criteria")}</p>
               </div>
@@ -357,7 +357,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={() => setSelectedBadge(null)}
-                className="px-4 py-2 text-sm rounded-lg border border-border text-text-muted hover:text-text-main transition-colors"
+                className="px-4 py-2 text-sm rounded-[10px] border border-glass-border text-text-muted hover:text-text-main hover:bg-glass-bg transition-colors"
               >
                 {t("close")}
               </button>
@@ -368,4 +368,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-

@@ -64,31 +64,34 @@ export default function Select({
           aria-invalid={error ? true : undefined}
           aria-describedby={describedBy}
           className={cn(
-            "w-full py-2 px-3 pe-10 text-sm text-text-main",
-            "bg-surface border border-black/10 dark:border-white/10 rounded-control appearance-none",
-            "focus:ring-1 focus:ring-accent/30 focus:border-accent/50 focus:outline-none",
-            "transition-all disabled:opacity-50 disabled:cursor-not-allowed",
+            "w-full py-2.5 px-3.5 pe-10 text-sm text-text-main",
+            "bg-glass-bg border border-glass-border rounded-control appearance-none backdrop-blur-sm",
+            "shadow-[inset_0_1px_2px_rgba(0,0,0,0.18)]",
+            "transition-all duration-200",
+            "hover:border-glass-border-strong",
+            "focus:ring-2 focus:ring-accent/25 focus:border-accent/60 focus:outline-none",
+            "disabled:opacity-50 disabled:cursor-not-allowed",
             "text-[16px] sm:text-sm",
-            error ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : "",
+            error ? "border-red-500/70 focus:border-red-500 focus:ring-red-500/20" : "",
             selectClassName
           )}
           {...props}
         >
           {!children && (placeholder ?? t("selectOption")) && (
-            <option value="" disabled className="bg-surface text-text-muted">
+            <option value="" disabled className="bg-bg-alt text-text-muted">
               {placeholder ?? t("selectOption")}
             </option>
           )}
           {!children &&
             options.map((option) => (
-              <option key={option.value} value={option.value} className="bg-surface text-text-main">
+              <option key={option.value} value={option.value} className="bg-bg-alt text-text-main">
                 {option.label}
               </option>
             ))}
           {children}
         </select>
         <div
-          className="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none text-text-muted"
+          className="absolute inset-y-0 end-0 flex items-center pe-3.5 pointer-events-none text-text-muted"
           aria-hidden="true"
         >
           <span className="material-symbols-outlined text-[20px]">expand_more</span>
@@ -110,4 +113,3 @@ export default function Select({
     </div>
   );
 }
-

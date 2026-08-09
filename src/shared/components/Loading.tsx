@@ -37,7 +37,7 @@ interface LoadingProps extends HTMLAttributes<HTMLDivElement> {
   label?: string;
 }
 
-// Spinner loading
+// iOS-style ring spinner
 export function Spinner({ size = "md", className, label }: SpinnerProps) {
   const t = useTranslations("common");
   const ariaLabel = label ?? t("loading");
@@ -52,23 +52,22 @@ export function Spinner({ size = "md", className, label }: SpinnerProps) {
       <span
         aria-hidden="true"
         className={cn(
-          "material-symbols-outlined text-primary animate-spin motion-reduce:animate-none",
+          "block rounded-full border-2 border-text-muted/20 border-t-primary",
+          "animate-spin motion-reduce:animate-none",
           spinnerSizes[size]
         )}
-      >
-        progress_activity
-      </span>
+      />
     </span>
   );
 }
 
-// Full page loading
+// Full page loading — frosted glass backdrop
 export function PageLoading({ message, className }: PageLoadingProps) {
   const t = useTranslations("common");
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 flex flex-col items-center justify-center bg-bg px-6",
+        "fixed inset-0 z-50 flex flex-col items-center justify-center bg-bg/70 backdrop-blur-xl px-6 dkr-fade-in",
         className
       )}
       role="status"
@@ -81,24 +80,27 @@ export function PageLoading({ message, className }: PageLoadingProps) {
   );
 }
 
-// Skeleton loading
+// Skeleton — shimmer sweep
 export function Skeleton({ className, ...props }: SkeletonProps) {
   return (
     <div
       aria-hidden="true"
-      className={cn("animate-pulse motion-reduce:animate-none rounded-lg bg-border", className)}
+      className={cn("skeleton motion-reduce:animate-pulse", className)}
       {...props}
     />
   );
 }
 
-// Card skeleton
+// Card skeleton — glass card with shimmer blocks
 export function CardSkeleton() {
   return (
-    <div className="p-6 rounded-xl border border-border bg-surface" aria-hidden="true">
+    <div
+      className="p-6 rounded-[var(--radius-card)] border border-glass-border bg-[image:var(--card-surface-gradient)] shadow-[var(--glass-highlight),0_10px_30px_-14px_rgba(0,0,0,0.7)]"
+      aria-hidden="true"
+    >
       <div className="flex items-center justify-between mb-4 gap-4">
         <Skeleton className="h-4 w-24" />
-        <Skeleton className="size-10 rounded-lg" />
+        <Skeleton className="size-10 rounded-xl" />
       </div>
       <Skeleton className="h-8 w-16 mb-2" />
       <Skeleton className="h-3 w-20" />
@@ -126,4 +128,3 @@ export default function Loading({
       return <Spinner size={size} className={className} label={label} />;
   }
 }
-

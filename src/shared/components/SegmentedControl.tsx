@@ -26,9 +26,9 @@ export default function SegmentedControl({
   "aria-label": ariaLabel,
 }: SegmentedControlProps) {
   const sizes = {
-    sm: "h-7 text-xs",
-    md: "h-9 text-sm",
-    lg: "h-11 text-base",
+    sm: "h-7 text-xs px-3",
+    md: "h-9 text-sm px-4",
+    lg: "h-11 text-base px-5",
   };
 
   return (
@@ -36,8 +36,8 @@ export default function SegmentedControl({
       role="tablist"
       aria-label={ariaLabel}
       className={cn(
-        "inline-flex items-center p-1 rounded-lg",
-        "bg-black/5 dark:bg-white/5",
+        "inline-flex items-center gap-1 p-1.5 rounded-[14px]",
+        "bg-glass-bg border border-glass-border backdrop-blur-md",
         className
       )}
     >
@@ -49,12 +49,12 @@ export default function SegmentedControl({
           tabIndex={value === option.value ? 0 : -1}
           onClick={() => onChange(option.value)}
           className={cn(
-            "px-4 rounded-md font-medium transition-all",
+            "rounded-[10px] font-medium transition-all duration-200 will-change-transform",
             sizes[size],
             value === option.value
-              ? "bg-white dark:bg-white/10 text-text-main shadow-sm"
-              : "text-text-muted hover:text-text-main",
-            option.icon && "flex items-center",
+              ? "bg-white/90 dark:bg-white/15 text-text-main dkr-active-pill"
+              : "text-text-muted hover:text-text-main hover:bg-glass-bg-hover active:scale-[0.98]",
+            option.icon && "flex items-center"
           )}
         >
           {option.icon && (
@@ -68,4 +68,3 @@ export default function SegmentedControl({
     </div>
   );
 }
-

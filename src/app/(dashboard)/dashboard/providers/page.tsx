@@ -840,7 +840,7 @@ export default function ProvidersPage() {
                   href="https://github.com/dikaofc/DikaRoute#-documentation"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-border text-text-muted hover:text-text-main hover:bg-bg-subtle transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-[10px] border border-glass-border text-text-muted hover:text-text-main hover:bg-glass-bg transition-colors"
                 >
                   <span className="material-symbols-outlined text-[16px]">help</span>
                   {t("learnMore") || "Learn more"}
@@ -1941,4 +1941,3 @@ function ProviderTestResultsView({ results }: { results: ProviderBatchTestResult
     </div>
   );
 }
-

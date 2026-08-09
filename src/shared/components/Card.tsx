@@ -35,29 +35,33 @@ export default function Card({
   return (
     <div
       className={cn(
-        "bg-surface",
-        "border border-border",
-        "rounded-card shadow-sm",
-        hover && "hover:shadow-md hover:border-primary/30 transition-all cursor-pointer",
+        // No overflow-hidden: absolute-positioned dropdowns/popovers inside cards
+        // must be allowed to escape the panel bounds.
+        "relative",
+        "border border-glass-border rounded-[var(--radius-card)]",
+        "bg-[image:var(--card-surface-gradient)]",
+        "shadow-[var(--glass-highlight),0_10px_30px_-14px_rgba(0,0,0,0.7)]",
+        hover &&
+          "dkr-press hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-[var(--glass-highlight),0_16px_40px_-14px_rgba(10,132,255,0.3)] cursor-pointer",
         paddings[padding],
         className
       )}
       {...props}
     >
       {(title || action) && (
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between gap-3 mb-4">
+          <div className="flex items-center gap-3 min-w-0">
             {icon && (
-              <div className="p-2 rounded-lg bg-bg text-text-muted">
+              <div className="p-2 rounded-lg bg-glass-bg border border-glass-border text-text-muted">
                 <span className="material-symbols-outlined text-[20px]">{icon}</span>
               </div>
             )}
-            <div>
-              {title && <h3 className="text-text-main font-semibold">{title}</h3>}
-              {subtitle && <p className="text-sm text-text-muted">{subtitle}</p>}
+            <div className="min-w-0">
+              {title && <h3 className="text-text-main font-semibold truncate">{title}</h3>}
+              {subtitle && <p className="text-sm text-text-muted truncate">{subtitle}</p>}
             </div>
           </div>
-          {action}
+          {action && <div className="shrink-0">{action}</div>}
         </div>
       )}
       {children}
@@ -73,12 +77,7 @@ interface CardSectionProps extends React.HTMLAttributes<HTMLDivElement> {
 Card.Section = function CardSection({ children, className, ...props }: CardSectionProps) {
   return (
     <div
-      className={cn(
-        "p-4 rounded-lg",
-        "bg-black/[0.02] dark:bg-white/[0.02]",
-        "border border-border",
-        className
-      )}
+      className={cn("p-4 rounded-xl", "bg-glass-bg border border-glass-border", className)}
       {...props}
     >
       {children}
@@ -96,8 +95,8 @@ Card.Row = function CardRow({ children, className, ...props }: CardRowProps) {
     <div
       className={cn(
         "p-3 -mx-3 px-3 transition-colors",
-        "border-b border-border last:border-b-0",
-        "hover:bg-black/[0.02] dark:hover:bg-white/[0.02]",
+        "border-b border-glass-border last:border-b-0",
+        "hover:bg-glass-bg",
         className
       )}
       {...props}
@@ -122,9 +121,9 @@ Card.ListItem = function CardListItem({
   return (
     <div
       className={cn(
-        "group flex items-center justify-between p-3 -mx-3 px-3",
-        "border-b border-black/[0.03] dark:border-white/[0.03] last:border-b-0",
-        "hover:bg-black/[0.02] dark:hover:bg-white/[0.02]",
+        "group flex items-center justify-between gap-3 p-3 -mx-3 px-3",
+        "border-b border-glass-border last:border-b-0",
+        "hover:bg-glass-bg",
         "transition-colors",
         className
       )}
@@ -132,11 +131,10 @@ Card.ListItem = function CardListItem({
     >
       <div className="flex-1 min-w-0">{children}</div>
       {actions && (
-        <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity">
+        <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity shrink-0">
           {actions}
         </div>
       )}
     </div>
   );
 };
-

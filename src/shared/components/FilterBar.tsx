@@ -5,23 +5,11 @@
  *
  * Reusable filter bar with search input and optional filter chips.
  * Used by RequestLoggerV2, ProxyLogger, and similar data tables.
- *
- * Usage:
- *   <FilterBar
- *     searchValue={search}
- *     onSearchChange={setSearch}
- *     placeholder="Search logs..."
- *     filters={[
- *       { key: 'status', label: 'Status', options: ['ok', 'error'] },
- *       { key: 'provider', label: 'Provider', options: ['openai', 'anthropic'] },
- *     ]}
- *     activeFilters={activeFilters}
- *     onFilterChange={(key, value) => setFilters({ ...filters, [key]: value })}
- *   />
  */
 
 import { useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
+import { cn } from "@/shared/utils/cn";
 
 export default function FilterBar({
   searchValue = "",
@@ -44,102 +32,44 @@ export default function FilterBar({
   const hasActiveFilters = searchValue || Object.values(activeFilters).some((v) => v && v !== "");
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "8px",
-        alignItems: "center",
-        padding: "8px 0",
-      }}
-    >
+    <div className="flex flex-wrap items-center gap-2 py-2">
       {/* Search input */}
-      <div style={{ position: "relative", flex: "1 1 200px", minWidth: "200px" }}>
+      <div className="relative flex-1 basis-48 min-w-48">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted/50 pointer-events-none">
+          <span className="material-symbols-outlined text-[18px]">search</span>
+        </span>
         <input
           type="text"
           value={searchValue}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={placeholder || t("search")}
-          style={{
-            width: "100%",
-            padding: "8px 12px 8px 32px",
-            borderRadius: "6px",
-            border: "1px solid rgba(255,255,255,0.1)",
-            background: "rgba(255,255,255,0.05)",
-            color: "var(--text-primary, #e0e0e0)",
-            fontSize: "13px",
-            outline: "none",
-          }}
+          className="w-full pl-9 pr-3 py-2 text-[13px] rounded-[10px] border border-glass-border bg-glass-bg text-text-main placeholder:text-text-muted/50 outline-none transition-all duration-200 focus:border-accent/60 focus:ring-2 focus:ring-accent/20"
         />
-        <span
-          style={{
-            position: "absolute",
-            left: "10px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            opacity: 0.4,
-            fontSize: "14px",
-            pointerEvents: "none",
-          }}
-        >
-          🔍
-        </span>
       </div>
 
       {/* Filter chips */}
       {filters.map((filter) => (
-        <div key={filter.key} style={{ position: "relative" }}>
+        <div key={filter.key} className="relative">
           <button
             onClick={() => setExpandedFilter(expandedFilter === filter.key ? null : filter.key)}
-            style={{
-              padding: "6px 12px",
-              borderRadius: "6px",
-              border: `1px solid ${activeFilters[filter.key] ? "rgba(99,102,241,0.5)" : "rgba(255,255,255,0.1)"}`,
-              background: activeFilters[filter.key]
-                ? "rgba(99,102,241,0.15)"
-                : "rgba(255,255,255,0.05)",
-              color: activeFilters[filter.key] ? "#818cf8" : "var(--text-secondary, #888)",
-              fontSize: "12px",
-              cursor: "pointer",
-              whiteSpace: "nowrap",
-            }}
+            className={cn(
+              "inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-[10px] border cursor-pointer whitespace-nowrap transition-all duration-200",
+              activeFilters[filter.key]
+                ? "border-primary/50 bg-primary/15 text-primary"
+                : "border-glass-border bg-glass-bg text-text-muted hover:text-text-main hover:border-glass-border-strong"
+            )}
           >
             {filter.label}
             {activeFilters[filter.key] ? ` · ${activeFilters[filter.key]}` : ""}
           </button>
           {expandedFilter === filter.key && (
-            <div
-              style={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                marginTop: "4px",
-                background: "rgba(20,20,30,0.95)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "8px",
-                padding: "4px",
-                zIndex: 50,
-                minWidth: "120px",
-                backdropFilter: "blur(12px)",
-              }}
-            >
+            <div className="absolute top-full left-0 mt-1.5 glass-strong rounded-xl p-1.5 z-50 min-w-[120px]">
               <button
                 onClick={() => {
                   onFilterChange(filter.key, "");
                   setExpandedFilter(null);
                 }}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  padding: "6px 12px",
-                  textAlign: "left",
-                  background: "none",
-                  border: "none",
-                  color: "#888",
-                  fontSize: "12px",
-                  cursor: "pointer",
-                  borderRadius: "4px",
-                }}
+                className="block w-full px-3 py-1.5 text-left text-xs text-text-muted hover:bg-glass-bg hover:text-text-main rounded-lg cursor-pointer transition-colors"
               >
                 {t("all")}
               </button>
@@ -150,21 +80,12 @@ export default function FilterBar({
                     onFilterChange(filter.key, opt);
                     setExpandedFilter(null);
                   }}
-                  style={{
-                    display: "block",
-                    width: "100%",
-                    padding: "6px 12px",
-                    textAlign: "left",
-                    background: activeFilters[filter.key] === opt ? "rgba(99,102,241,0.2)" : "none",
-                    border: "none",
-                    color:
-                      activeFilters[filter.key] === opt
-                        ? "#818cf8"
-                        : "var(--text-primary, #e0e0e0)",
-                    fontSize: "12px",
-                    cursor: "pointer",
-                    borderRadius: "4px",
-                  }}
+                  className={cn(
+                    "block w-full px-3 py-1.5 text-left text-xs rounded-lg cursor-pointer transition-colors",
+                    activeFilters[filter.key] === opt
+                      ? "bg-primary/20 text-primary"
+                      : "text-text-main hover:bg-glass-bg"
+                  )}
                 >
                   {opt}
                 </button>
@@ -178,15 +99,7 @@ export default function FilterBar({
       {hasActiveFilters && (
         <button
           onClick={handleClear}
-          style={{
-            padding: "6px 12px",
-            borderRadius: "6px",
-            border: "1px solid rgba(239,68,68,0.3)",
-            background: "rgba(239,68,68,0.1)",
-            color: "#ef4444",
-            fontSize: "12px",
-            cursor: "pointer",
-          }}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-[10px] border border-red-500/30 bg-red-500/10 text-red-500 cursor-pointer transition-all duration-200 hover:bg-red-500/20 hover:border-red-500/50 active:scale-[0.98]"
         >
           {t("clear")}
         </button>
@@ -197,4 +110,3 @@ export default function FilterBar({
     </div>
   );
 }
-

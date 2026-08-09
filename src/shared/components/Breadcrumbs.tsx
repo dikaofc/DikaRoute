@@ -133,44 +133,26 @@ export default function Breadcrumbs() {
   return (
     <nav
       aria-label={t("ariaLabel")}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "6px",
-        fontSize: "13px",
-        color: "var(--text-secondary, #888)",
-        padding: "8px 0",
-        marginBottom: "8px",
-      }}
+      className="flex flex-wrap items-center gap-1.5 py-1.5 mb-3 text-[13px]"
     >
       {crumbs.map((crumb, i) => (
-        <span key={crumb.href} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+        <span key={crumb.href} className="flex items-center gap-1.5 min-w-0">
           {i > 0 && (
-            <span style={{ opacity: 0.4, fontSize: "11px" }} aria-hidden="true">
-              ›
+            <span
+              className="material-symbols-outlined text-[14px] text-text-muted/40 select-none shrink-0"
+              aria-hidden="true"
+            >
+              chevron_right
             </span>
           )}
           {crumb.isLast ? (
-            <span
-              aria-current="page"
-              style={{ color: "var(--text-primary, #e0e0e0)", fontWeight: 500 }}
-            >
+            <span aria-current="page" className="text-text-main font-medium truncate">
               {crumb.label}
             </span>
           ) : (
             <Link
               href={crumb.href}
-              style={{
-                color: "var(--text-secondary, #888)",
-                textDecoration: "none",
-                transition: "color 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = "var(--accent, #818cf8)")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.color = "var(--text-secondary, #888)")
-              }
+              className="text-text-muted hover:text-primary transition-colors whitespace-nowrap"
             >
               {crumb.label}
             </Link>
@@ -180,4 +162,3 @@ export default function Breadcrumbs() {
     </nav>
   );
 }
-

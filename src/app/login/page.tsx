@@ -6,6 +6,30 @@ import { useState, useEffect } from "react";
 import { Button, Input } from "@/shared/components";
 import { useRouter } from "next/navigation";
 
+function AmbientOrbs() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
+      <div className="dkr-orb dkr-orb-1" />
+      <div className="dkr-orb dkr-orb-2" />
+      <div className="dkr-orb dkr-orb-3" />
+    </div>
+  );
+}
+
+function GlassPanel({ children, className = "" }) {
+  return <div className={`glass-strong rounded-[32px] p-8 sm:p-10 ${className}`}>{children}</div>;
+}
+
+function BrandMark({ icon = "hub", tone = "from-primary to-primary-hover" }) {
+  return (
+    <div
+      className={`flex items-center justify-center size-14 rounded-2xl bg-gradient-to-br ${tone} shadow-[0_8px_28px_-6px_rgba(10,132,255,0.55)] ring-1 ring-white/15`}
+    >
+      <span className="material-symbols-outlined text-white text-[28px]">{icon}</span>
+    </div>
+  );
+}
+
 export default function LoginPage() {
   const t = useTranslations("auth");
   const [password, setPassword] = useState("");
@@ -93,8 +117,8 @@ export default function LoginPage() {
 
   const nodeWarningBanner =
     !nodeCompatible && nodeVersion ? (
-      <div className="w-full max-w-lg mx-auto mb-6 animate-in fade-in slide-in-from-top-2 duration-500">
-        <div className="bg-red-950/60 border-2 border-red-500/40 rounded-2xl p-6 shadow-lg shadow-red-900/20 backdrop-blur-sm">
+      <div className="w-full max-w-lg mx-auto mb-6 dkr-rise">
+        <div className="glass-strong rounded-3xl p-6 border-red-500/40 shadow-[0_16px_40px_-16px_rgba(239,68,68,0.5)]">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
               <span className="material-symbols-outlined text-red-400 text-[28px]">error</span>
@@ -106,7 +130,7 @@ export default function LoginPage() {
               <p className="text-sm text-red-200/80 leading-relaxed mb-3">
                 {t("nodeIncompatibleDesc", { version: nodeVersion })}
               </p>
-              <div className="bg-black/40 rounded-lg px-4 py-3 font-mono text-sm border border-red-500/20">
+              <div className="bg-black/40 rounded-xl px-4 py-3 font-mono text-sm border border-red-500/20">
                 <div className="flex items-center gap-2 text-red-300/60 mb-1">
                   <span className="material-symbols-outlined text-[14px]">terminal</span>
                   <span className="text-xs">{t("nodeIncompatibleFixLabel")}</span>
@@ -122,15 +146,16 @@ export default function LoginPage() {
         </div>
       </div>
     ) : null;
+
+  const entrance = mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4";
+
   if (hasPassword === null || setupComplete === null || oidcEnabled === null) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="relative min-h-screen flex flex-col items-center justify-center p-6">
+        <AmbientOrbs />
         {nodeWarningBanner}
-        <div className="flex flex-col items-center gap-3">
-          <div className="relative">
-            <div className="w-10 h-10 border-2 border-primary/20 rounded-full"></div>
-            <div className="absolute inset-0 w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-          </div>
+        <div className="flex flex-col items-center gap-4">
+          <BrandMark icon="rocket_launch" />
           <span className="text-sm text-text-muted">{t("loading")}</span>
         </div>
       </div>
@@ -139,33 +164,31 @@ export default function LoginPage() {
 
   if (!hasPassword && !setupComplete) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="relative min-h-screen flex flex-col items-center justify-center p-6">
+        <AmbientOrbs />
         {nodeWarningBanner}
-        <div
-          className={`w-full max-w-md transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-        >
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/10 mb-6">
-              <span className="material-symbols-outlined text-primary text-[40px]">
-                rocket_launch
-              </span>
+        <div className={`w-full max-w-md transition-all duration-700 ease-out ${entrance}`}>
+          <div className="text-center mb-8">
+            <div className="inline-flex mb-5">
+              <BrandMark icon="rocket_launch" />
             </div>
             <h1 className="text-3xl font-bold text-text-main tracking-tight">{t("welcome")}</h1>
             <p className="text-text-muted mt-2">{t("configureInstance")}</p>
           </div>
 
-          <div className="bg-surface border border-border rounded-2xl p-8 shadow-soft">
+          <GlassPanel>
             <div className="text-center">
               <p className="text-text-muted leading-relaxed mb-6">{t("runOnboardingWizard")}</p>
               <Button
                 variant="primary"
-                className="w-full h-11 text-sm font-medium"
+                size="lg"
+                className="w-full font-medium"
                 onClick={() => router.push("/dashboard/onboarding")}
               >
                 {t("startOnboarding")}
               </Button>
             </div>
-          </div>
+          </GlassPanel>
 
           <p className="text-center text-xs text-text-muted/60 mt-8">
             DikaRoute — {t("unifiedProxy")}
@@ -177,16 +200,13 @@ export default function LoginPage() {
 
   if (!hasPassword && setupComplete) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <div className="relative min-h-screen flex flex-col items-center justify-center p-6">
+        <AmbientOrbs />
         {nodeWarningBanner}
-        <div
-          className={`w-full max-w-md transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-        >
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/10 to-amber-500/5 border border-amber-500/10 mb-6">
-              <span className="material-symbols-outlined text-amber-500 text-[40px]">
-                shield_person
-              </span>
+        <div className={`w-full max-w-md transition-all duration-700 ease-out ${entrance}`}>
+          <div className="text-center mb-8">
+            <div className="inline-flex mb-5">
+              <BrandMark icon="shield_person" tone="from-amber-500 to-amber-400" />
             </div>
             <h1 className="text-3xl font-bold text-text-main tracking-tight">
               {t("secureYourInstance")}
@@ -194,18 +214,19 @@ export default function LoginPage() {
             <p className="text-text-muted mt-2">{t("passwordNotEnabled")}</p>
           </div>
 
-          <div className="bg-surface border border-border rounded-2xl p-8 shadow-soft">
+          <GlassPanel>
             <div className="text-center">
               <p className="text-text-muted leading-relaxed mb-6">{t("setPasswordDescription")}</p>
               <Button
                 variant="primary"
-                className="w-full h-11 text-sm font-medium"
+                size="lg"
+                className="w-full font-medium"
                 onClick={() => router.push("/dashboard/onboarding")}
               >
                 {t("configurePassword")}
               </Button>
             </div>
-          </div>
+          </GlassPanel>
 
           <p className="text-center text-xs text-text-muted/60 mt-8">
             DikaRoute — {t("unifiedAiApiProxy")}
@@ -216,19 +237,18 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="relative min-h-screen flex flex-col overflow-hidden">
+      <AmbientOrbs />
       {nodeWarningBanner && (
-        <div className="flex justify-center pt-6 px-6">{nodeWarningBanner}</div>
+        <div className="relative flex justify-center pt-6 px-6">{nodeWarningBanner}</div>
       )}
-      <div className="flex-1 flex">
+      <div className="relative flex-1 flex">
         <div className="flex-1 flex items-center justify-center p-6">
-          <div
-            className={`w-full max-w-sm transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            <div className="mb-10">
+          <div className={`w-full max-w-sm transition-all duration-700 ease-out ${entrance}`}>
+            <div className="mb-8">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-hover flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-[20px]">hub</span>
+                <div className="flex items-center justify-center size-11 rounded-2xl bg-gradient-to-br from-primary to-primary-hover shadow-[0_8px_24px_-6px_rgba(10,132,255,0.55)] ring-1 ring-white/15">
+                  <span className="material-symbols-outlined text-white text-[22px]">hub</span>
                 </div>
                 <span className="text-xl font-semibold text-text-main tracking-tight">
                   DikaRoute
@@ -251,7 +271,7 @@ export default function LoginPage() {
                   className="h-11"
                 />
                 {error && (
-                  <p className="text-sm text-red-500 flex items-center gap-1.5 pt-1">
+                  <p className="text-sm text-red-500 flex items-center gap-1.5 pt-1 dkr-fade-in">
                     <span className="material-symbols-outlined text-base">error</span>
                     {error}
                   </p>
@@ -262,7 +282,8 @@ export default function LoginPage() {
               <Button
                 type="submit"
                 variant="primary"
-                className="w-full h-11 text-sm font-medium"
+                size="lg"
+                className="w-full font-medium"
                 loading={loading}
               >
                 {t("continue")}
@@ -273,7 +294,8 @@ export default function LoginPage() {
                 <Button
                   type="button"
                   variant="secondary"
-                  className="w-full h-11 text-sm font-medium"
+                  size="lg"
+                  className="w-full font-medium"
                   onClick={() => (window.location.href = "/api/auth/oidc/login")}
                 >
                   {t("continueWithOidc") || "Continue with OIDC"}
@@ -281,7 +303,7 @@ export default function LoginPage() {
               </div>
             )}
 
-            <div className="mt-6 pt-6 border-t border-border">
+            <div className="mt-6 pt-6 border-t border-glass-border">
               <a
                 href="/forgot-password"
                 className="text-sm text-text-muted hover:text-primary transition-colors"
@@ -292,55 +314,59 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent items-center justify-center p-12">
+        <div className="hidden lg:flex lg:w-1/2 items-center justify-center p-12">
           <div
-            className={`max-w-md transition-all duration-700 delay-200 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`w-full max-w-md transition-all duration-700 delay-200 ease-out ${entrance}`}
           >
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold text-text-main mb-3">{t("unifiedAiApiProxy")}</h2>
-                <p className="text-text-muted leading-relaxed">{t("unifiedAiApiProxyDesc")}</p>
-              </div>
+            <GlassPanel className="p-8">
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-2xl font-bold text-text-main mb-3">
+                    {t("unifiedAiApiProxy")}
+                  </h2>
+                  <p className="text-text-muted leading-relaxed">{t("unifiedAiApiProxyDesc")}</p>
+                </div>
 
-              <div className="space-y-4">
-                {[
-                  {
-                    icon: "swap_horiz",
-                    title: t("featureMultiProviderTitle"),
-                    desc: t("featureMultiProviderDesc"),
-                  },
-                  {
-                    icon: "speed",
-                    title: t("featureLoadBalancingTitle"),
-                    desc: t("featureLoadBalancingDesc"),
-                  },
-                  {
-                    icon: "analytics",
-                    title: t("featureUsageTrackingTitle"),
-                    desc: t("featureUsageTrackingDesc"),
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.icon}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-surface/50 border border-border"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="material-symbols-outlined text-primary text-[20px]">
-                        {item.icon}
-                      </span>
+                <div className="space-y-4">
+                  {[
+                    {
+                      icon: "swap_horiz",
+                      title: t("featureMultiProviderTitle"),
+                      desc: t("featureMultiProviderDesc"),
+                    },
+                    {
+                      icon: "speed",
+                      title: t("featureLoadBalancingTitle"),
+                      desc: t("featureLoadBalancingDesc"),
+                    },
+                    {
+                      icon: "analytics",
+                      title: t("featureUsageTrackingTitle"),
+                      desc: t("featureUsageTrackingDesc"),
+                    },
+                  ].map((item, idx) => (
+                    <div
+                      key={item.icon}
+                      className="dkr-rise flex items-start gap-4 p-4 rounded-2xl glass hover:bg-glass-bg-hover transition-colors"
+                      style={{ animationDelay: `${150 + idx * 90}ms` }}
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-primary text-[20px]">
+                          {item.icon}
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-text-main">{item.title}</h3>
+                        <p className="text-sm text-text-muted">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-medium text-text-main">{item.title}</h3>
-                      <p className="text-sm text-text-muted">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </GlassPanel>
           </div>
         </div>
       </div>
     </div>
   );
 }
-

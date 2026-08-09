@@ -128,24 +128,23 @@ export default function Modal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Overlay */}
+      {/* Overlay — frosted glass dim */}
       <div
-        className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/50 backdrop-blur-md dkr-fade-in"
         onClick={closeOnOverlay ? onClose : undefined}
         aria-hidden="true"
       />
 
-      {/* Modal content */}
+      {/* Modal content — glass surface with spring-like scale entrance */}
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
         className={cn(
-          "relative w-full bg-surface",
-          "border border-black/10 dark:border-white/10",
-          "rounded-card shadow-2xl",
-          "animate-in fade-in zoom-in-95 duration-200",
+          "relative w-full glass-strong",
+          "rounded-[28px]",
+          "dkr-scale-in will-change-transform",
           sizes[size],
           className
         )}
@@ -154,8 +153,8 @@ export default function Modal({
         {(title || showCloseButton) && (
           <div
             className={cn(
-              "flex items-center justify-between border-b border-black/5 dark:border-white/5",
-              compactHeader ? "px-4 py-2.5" : "p-6"
+              "flex items-center justify-between border-b border-glass-border",
+              compactHeader ? "px-4 py-2.5" : "p-6 pb-4"
             )}
           >
             <div className="flex items-center min-w-0">
@@ -201,7 +200,7 @@ export default function Modal({
               <button
                 onClick={onClose}
                 aria-label={t("close")}
-                className="p-1.5 rounded-lg text-text-muted hover:bg-black/5 dark:hover:bg-white/5 transition-colors shrink-0"
+                className="p-1.5 rounded-lg text-text-muted hover:bg-glass-bg hover:text-text-main transition-colors shrink-0 active:scale-90"
               >
                 <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
                   close
@@ -218,7 +217,7 @@ export default function Modal({
 
         {/* Footer */}
         {footer && (
-          <div className="flex items-center justify-end gap-3 p-6 border-t border-black/5 dark:border-white/5">
+          <div className="flex items-center justify-end gap-3 p-6 border-t border-glass-border">
             {footer}
           </div>
         )}
@@ -265,4 +264,3 @@ export function ConfirmModal({
     </Modal>
   );
 }
-

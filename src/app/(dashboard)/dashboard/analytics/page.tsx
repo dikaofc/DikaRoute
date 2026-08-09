@@ -14,13 +14,7 @@ import SearchAnalyticsTab from "./SearchAnalyticsTab";
 import DiversityScoreCard from "./components/DiversityScoreCard";
 
 type AnalyticsTab =
-  | "overview"
-  | "evals"
-  | "search"
-  | "utilization"
-  | "combo-health"
-  | "cache-health"
-  | "route-trace";
+  "overview" | "evals" | "search" | "utilization" | "combo-health" | "cache-health" | "route-trace";
 
 const ANALYTICS_TABS: Array<{
   id: AnalyticsTab;
@@ -97,7 +91,7 @@ function AnalyticsPageContent() {
       <div
         role="tablist"
         aria-label={t("sectionsAria")}
-        className="flex flex-wrap items-center gap-1 rounded-lg border border-border bg-bg-subtle p-1"
+        className="flex flex-wrap items-center gap-1 rounded-[14px] border border-glass-border bg-glass-bg backdrop-blur-md p-1.5"
       >
         {ANALYTICS_TABS.map((tab) => {
           const selected = activeTab === tab.id;
@@ -111,10 +105,10 @@ function AnalyticsPageContent() {
               tabIndex={selected ? 0 : -1}
               onClick={() => handleTabChange(tab.id)}
               className={cn(
-                "focus-ring inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-sm font-medium transition-colors",
+                "focus-ring inline-flex h-9 items-center gap-1.5 rounded-[10px] px-3 text-sm font-medium transition-all duration-200",
                 selected
-                  ? "bg-surface text-text-main shadow-sm"
-                  : "text-text-muted hover:bg-surface/70 hover:text-text-main"
+                  ? "bg-white/90 dark:bg-white/15 text-text-main dkr-active-pill"
+                  : "text-text-muted hover:bg-glass-bg-hover hover:text-text-main"
               )}
             >
               <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
@@ -153,4 +147,3 @@ export default function AnalyticsPage() {
     </Suspense>
   );
 }
-

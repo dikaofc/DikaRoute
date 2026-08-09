@@ -10,14 +10,14 @@
  */
 
 import { useNotificationStore } from "@/store/notificationStore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const ICONS = {
-  success: "✓",
-  error: "✕",
-  warning: "⚠",
-  info: "ℹ",
+  success: "check_circle",
+  error: "error",
+  warning: "warning",
+  info: "info",
 };
 
 /**
@@ -42,28 +42,22 @@ export function toToastText(value: unknown): string {
   return String(value);
 }
 
-const BG_DARK = "rgba(30, 30, 30, 0.95)";
-
 const COLORS = {
   success: {
-    bg: BG_DARK,
-    border: "rgba(16, 185, 129, 0.6)",
+    border: "rgba(48, 209, 88, 0.45)",
     icon: "#30D158",
   },
   error: {
-    bg: BG_DARK,
-    border: "rgba(239, 68, 68, 0.6)",
-    icon: "#ef4444",
+    border: "rgba(255, 69, 58, 0.5)",
+    icon: "#ff453a",
   },
   warning: {
-    bg: BG_DARK,
-    border: "rgba(245, 158, 11, 0.6)",
-    icon: "#fbbf24",
+    border: "rgba(255, 214, 10, 0.45)",
+    icon: "#ffd60a",
   },
   info: {
-    bg: BG_DARK,
-    border: "rgba(59, 130, 246, 0.6)",
-    icon: "#3b82f6",
+    border: "rgba(10, 132, 255, 0.5)",
+    icon: "#0a84ff",
   },
 };
 
@@ -77,10 +71,6 @@ function Toast({ notification, onDismiss }) {
   };
 
   const color = COLORS[notification.type] || COLORS.info;
-  const textColors = {
-    title: "var(--text-primary, #fff)",
-    message: "var(--text-secondary, #ccc)",
-  };
 
   return (
     <div
@@ -92,11 +82,12 @@ function Toast({ notification, onDismiss }) {
         alignItems: "flex-start",
         gap: "12px",
         padding: "14px 16px",
-        borderRadius: "10px",
-        backgroundColor: color.bg,
+        borderRadius: "16px",
+        backgroundColor: "var(--glass-bg-strong)",
         border: `1px solid ${color.border}`,
-        backdropFilter: "blur(12px)",
-        boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+        backdropFilter: "blur(20px) saturate(180%)",
+        WebkitBackdropFilter: "blur(20px) saturate(180%)",
+        boxShadow: "var(--glass-highlight), 0 12px 40px rgba(0,0,0,0.35)",
         minWidth: "320px",
         maxWidth: "420px",
         cursor: notification.onClick ? "pointer" : "default",
@@ -105,15 +96,15 @@ function Toast({ notification, onDismiss }) {
       }}
     >
       <span
+        className="material-symbols-outlined"
         style={{
-          fontSize: "18px",
+          fontSize: "20px",
           color: color.icon,
-          fontWeight: "bold",
           lineHeight: 1,
-          marginTop: "2px",
+          marginTop: "1px",
         }}
       >
-        {ICONS[notification.type]}
+        {ICONS[notification.type] || "info"}
       </span>
       <div style={{ flex: 1, minWidth: 0 }}>
         {notification.title && (
@@ -121,7 +112,7 @@ function Toast({ notification, onDismiss }) {
             style={{
               fontWeight: 600,
               fontSize: "14px",
-              color: textColors.title,
+              color: "var(--text-primary, #fff)",
               marginBottom: "2px",
             }}
           >
@@ -131,7 +122,7 @@ function Toast({ notification, onDismiss }) {
         <div
           style={{
             fontSize: "13px",
-            color: textColors.message,
+            color: "var(--text-secondary, #ccc)",
             lineHeight: 1.4,
           }}
         >
@@ -159,7 +150,7 @@ function Toast({ notification, onDismiss }) {
           onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
           onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.6")}
         >
-          ×
+          <span className="material-symbols-outlined text-[18px]">close</span>
         </button>
       )}
     </div>
@@ -175,12 +166,12 @@ export default function NotificationToast() {
     <>
       <style>{`
         @keyframes toastIn {
-          from { opacity: 0; transform: translateX(100%) scale(0.95); }
+          from { opacity: 0; transform: translateX(24px) scale(0.96); }
           to   { opacity: 1; transform: translateX(0) scale(1); }
         }
         @keyframes toastOut {
           from { opacity: 1; transform: translateX(0) scale(1); }
-          to   { opacity: 0; transform: translateX(100%) scale(0.95); }
+          to   { opacity: 0; transform: translateX(24px) scale(0.96); }
         }
       `}</style>
       <div
@@ -206,4 +197,3 @@ export default function NotificationToast() {
     </>
   );
 }
-

@@ -83,16 +83,24 @@ export default function DashboardLayout({ children }) {
       <Suspense fallback={null}>
         <NavigationProgress />
       </Suspense>
+
+      {/* Ambient iOS color-field orbs — fixed, GPU-driven drift behind glass */}
+      <div aria-hidden="true" className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="dkr-orb dkr-orb-1" />
+        <div className="dkr-orb dkr-orb-2" />
+        <div className="dkr-orb dkr-orb-3" />
+      </div>
+
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/20 lg:hidden"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden dkr-fade-in"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
-      {/* Sidebar - Desktop: keep visibility independent from Tailwind hidden/lg:flex ordering. */}
-      <div className="dashboard-sidebar-desktop">
+      {/* Sidebar - Desktop: floating glass panel (inset margin comes from p-3). */}
+      <div className="dashboard-sidebar-desktop p-3">
         <Sidebar
           collapsed={collapsed}
           onToggleCollapse={handleToggleCollapse}
@@ -123,7 +131,7 @@ export default function DashboardLayout({ children }) {
           {/* Fluid up to a 4K cap (3840px): content follows the viewport on large
               monitors and only centers (side gutters) beyond ~4K, instead of the prior
               1280px cap that left big empty margins on wide screens. */}
-          <div className="max-w-[3840px] mx-auto w-full h-full min-h-0 flex flex-col">
+          <div className="max-w-[3840px] mx-auto w-full h-full min-h-0 flex flex-col dkr-rise">
             <Breadcrumbs />
             <div className="flex-1 min-h-0">{children}</div>
           </div>
@@ -137,4 +145,3 @@ export default function DashboardLayout({ children }) {
     </div>
   );
 }
-

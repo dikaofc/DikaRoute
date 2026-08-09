@@ -7,15 +7,6 @@ import { useTranslations } from "next-intl";
  *
  * Reusable empty state component for dashboard sections when no data
  * is available. Provides visual feedback and optional action button.
- *
- * Usage:
- *   <EmptyState
- *     icon="📡"
- *     title="No providers yet"
- *     description="Add your first API provider to get started."
- *     actionLabel="Add Provider"
- *     onAction={() => router.push('/providers/add')}
- *   />
  */
 
 interface EmptyStateProps {
@@ -27,7 +18,7 @@ interface EmptyStateProps {
 }
 
 export default function EmptyState({
-  icon = "📭",
+  icon = "inbox",
   title,
   description = "",
   actionLabel = "",
@@ -37,93 +28,34 @@ export default function EmptyState({
   const resolvedTitle = title ?? t("nothingHere");
   const usesMaterialSymbol = /^[a-z][a-z0-9_]*$/.test(icon);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "48px 24px",
-        textAlign: "center",
-        minHeight: "200px",
-      }}
-    >
+    <div className="flex flex-col items-center justify-center px-6 py-12 text-center min-h-[200px] gap-5">
       <div
-        style={{
-          fontSize: "48px",
-          marginBottom: "16px",
-          opacity: 0.8,
-          animation: "emptyBounce 2s ease-in-out infinite",
-        }}
+        className="dkr-float flex items-center justify-center size-16 rounded-2xl glass text-text-muted"
         role="img"
         aria-hidden="true"
       >
         {usesMaterialSymbol ? (
-          <span className="material-symbols-outlined" style={{ fontSize: "inherit" }}>
-            {icon}
-          </span>
+          <span className="material-symbols-outlined text-[32px]">{icon}</span>
         ) : (
-          icon
+          <span className="text-[32px] leading-none">{icon}</span>
         )}
       </div>
-      <h3
-        style={{
-          fontSize: "18px",
-          fontWeight: 600,
-          color: "var(--text-primary, #e0e0e0)",
-          marginBottom: "8px",
-          margin: 0,
-        }}
-      >
-        {resolvedTitle}
-      </h3>
-      {description && (
-        <p
-          style={{
-            fontSize: "14px",
-            color: "var(--text-secondary, #888)",
-            maxWidth: "320px",
-            lineHeight: 1.5,
-            marginTop: "8px",
-          }}
-        >
-          {description}
-        </p>
-      )}
+      <div>
+        <h3 className="text-lg font-semibold text-text-main">{resolvedTitle}</h3>
+        {description && (
+          <p className="text-sm text-text-muted max-w-[320px] leading-relaxed mt-2">
+            {description}
+          </p>
+        )}
+      </div>
       {actionLabel && onAction && (
         <button
           onClick={onAction}
-          style={{
-            marginTop: "20px",
-            padding: "10px 24px",
-            borderRadius: "8px",
-            border: "1px solid rgba(99, 102, 241, 0.4)",
-            background: "rgba(99, 102, 241, 0.15)",
-            color: "#818cf8",
-            fontSize: "14px",
-            fontWeight: 500,
-            cursor: "pointer",
-            transition: "all 0.2s ease",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "rgba(99, 102, 241, 0.25)";
-            (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "rgba(99, 102, 241, 0.15)";
-            (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-          }}
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[10px] border border-primary/40 bg-primary/15 text-primary text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-primary/25 hover:-translate-y-px active:scale-[0.98]"
         >
           {actionLabel}
         </button>
       )}
-      <style>{`
-        @keyframes emptyBounce {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-8px); }
-        }
-      `}</style>
     </div>
   );
 }
-

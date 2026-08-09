@@ -38,6 +38,7 @@ export default function Badge({
     <span
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full font-semibold",
+        "border border-glass-border/70 backdrop-blur-sm",
         variants[variant],
         sizes[size],
         className
@@ -66,4 +67,3 @@ export default function Badge({
     </span>
   );
 }
-

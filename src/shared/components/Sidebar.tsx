@@ -390,11 +390,11 @@ export default function Sidebar({
   const renderNavLink = (item) => {
     const active = !item.external && activeHref === item.href;
     const className = cn(
-      "flex items-center gap-3 rounded-lg transition-all group",
-      collapsed ? "justify-center px-2 py-2.5" : "px-3 py-1.5",
+      "flex items-center gap-3 rounded-xl transition-all duration-200 group",
+      collapsed ? "justify-center px-2 py-2.5" : "px-3 py-2",
       active
-        ? "bg-primary/10 text-primary"
-        : "text-text-muted hover:bg-surface/50 hover:text-text-main"
+        ? "bg-primary/15 text-primary dkr-active-pill"
+        : "text-text-muted hover:bg-glass-bg hover:text-text-main active:scale-[0.98]"
     );
     const iconClassName = cn(
       "material-symbols-outlined text-[18px] shrink-0",
@@ -455,8 +455,12 @@ export default function Sidebar({
       <aside
         ref={sidebarRef}
         className={cn(
-          "flex h-full min-h-0 flex-col border-r border-black/5 bg-sidebar transition-all duration-300 ease-in-out dark:border-white/5",
-          collapsed ? "w-16" : "w-[220px]"
+          "flex h-full min-h-0 flex-col transition-all duration-300 ease-in-out",
+          "bg-sidebar backdrop-blur-2xl backdrop-saturate-150",
+          !onClose
+            ? "border border-glass-border rounded-[24px] shadow-[var(--glass-highlight),0_20px_50px_-20px_rgba(0,0,0,0.8)]"
+            : "border-r border-glass-border",
+          collapsed ? "w-[68px]" : "w-[228px]"
         )}
         style={{ paddingTop: isMacElectron ? "var(--desktop-safe-top)" : undefined }}
       >
@@ -510,7 +514,7 @@ export default function Sidebar({
             prefetch={false}
             className={cn("flex items-center", collapsed ? "justify-center" : "gap-2.5")}
           >
-            <div className="flex items-center justify-center size-8 rounded bg-linear-to-br from-[#0a84ff] to-[#C93D4E] shrink-0">
+            <div className="flex items-center justify-center size-8 rounded-xl bg-linear-to-br from-[#0a84ff] to-[#C93D4E] shadow-[0_4px_16px_-4px_rgba(10,132,255,0.5)] shrink-0">
               {customLogo ? (
                 <img
                   src={customLogo}
@@ -570,9 +574,7 @@ export default function Sidebar({
             if (collapsed) {
               return (
                 <div key={section.id}>
-                  {!isFirst && (
-                    <div className="border-t border-black/5 dark:border-white/5 my-1.5" />
-                  )}
+                  {!isFirst && <div className="border-t border-glass-border my-1.5" />}
                   {sectionItems.map(renderNavLink)}
                 </div>
               );
@@ -591,7 +593,7 @@ export default function Sidebar({
             return (
               <div key={section.id} className={isFirst ? "space-y-0.5" : "mt-2"}>
                 <div
-                  className="flex items-center gap-0.5 px-2 py-1 rounded-md hover:bg-surface/30 transition-colors cursor-pointer group/header"
+                  className="flex items-center gap-0.5 px-2 py-1 rounded-lg hover:bg-glass-bg transition-colors cursor-pointer group/header"
                   onClick={() => toggleSection(sectionId)}
                   role="button"
                   aria-expanded={isExpanded}
@@ -668,7 +670,7 @@ export default function Sidebar({
 
         <div
           className={cn(
-            "shrink-0 border-t border-black/5 dark:border-white/5",
+            "shrink-0 border-t border-glass-border",
             collapsed ? "p-2 flex flex-col gap-1" : "p-2 flex gap-2"
           )}
           style={{
@@ -679,7 +681,7 @@ export default function Sidebar({
             onClick={() => setShowRestartModal(true)}
             title={t("restart")}
             className={cn(
-              "flex items-center justify-center gap-2 rounded-lg font-medium transition-all",
+              "flex items-center justify-center gap-2 rounded-[10px] font-medium transition-all duration-200 backdrop-blur-sm active:scale-[0.97]",
               "text-amber-500 hover:bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40",
               collapsed ? "p-2" : "flex-1 min-w-0 px-2 py-1.5 text-xs"
             )}
@@ -691,7 +693,7 @@ export default function Sidebar({
             onClick={() => setShowShutdownModal(true)}
             title={t("shutdown")}
             className={cn(
-              "flex items-center justify-center gap-2 rounded-lg font-medium transition-all",
+              "flex items-center justify-center gap-2 rounded-[10px] font-medium transition-all duration-200 backdrop-blur-sm active:scale-[0.97]",
               "text-red-500 hover:bg-red-500/10 border border-red-500/20 hover:border-red-500/40",
               collapsed ? "p-2" : "flex-1 min-w-0 px-2 py-1.5 text-xs"
             )}
@@ -756,4 +758,3 @@ export default function Sidebar({
     </>
   );
 }
-

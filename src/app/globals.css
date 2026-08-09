@@ -18,7 +18,6 @@
 @source not "../../*.sqlite*";
 @source not "../../.claude*";
 
-
 @source not "../../.claude-memory";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -32,62 +31,92 @@
    Distinct from upstream coral/indigo; cooler slate neutrals,
    softer shadows, friendlier radius. Token-only: every page follows. */
 :root {
- --desktop-safe-top: 0px;
- --desktop-safe-bottom: 0px;
- color-scheme: dark;
- --color-primary: #0a84ff;
- --color-primary-hover: #409cff;
- --color-accent: #0a84ff;
- --color-accent-hover: #409cff;
- --color-accent-light: #64b5ff;
- --color-error: #ff453a;
- --color-success: #30d158;
- --color-warning: #ffd60a;
- --color-traffic-red: #ff453a;
- --color-traffic-yellow: #ffd60a;
- --color-traffic-green: #30d158;
- --color-bg: #0a0b0d;
- --color-bg-alt: #121316;
- --color-bg-primary: #0a0b0d;
- --color-bg-subtle: #18191c;
- --color-surface: #14171a;
- --color-card: #15171b;
- --color-sidebar: #0d0e11;
- --color-border: rgba(255, 255, 255, 0.08);
- --color-text-main: #f2f2f7;
- --color-text-primary: #f2f2f7;
- --color-text-muted: #98989d;
- --color-fd-background: #0a0b0d;
- --color-fd-foreground: #f2f2f7;
- --color-fd-muted: #18191c;
- --color-fd-muted-foreground: #98989d;
- --color-fd-popover: #1c1e22;
- --color-fd-popover-foreground: #f2f2f7;
- --color-fd-card: #1c1e22;
- --color-fd-card-foreground: #f2f2f7;
- --color-fd-border: rgba(255, 255, 255, 0.1);
- --color-fd-primary: #0a84ff;
- --color-fd-primary-foreground: #ffffff;
- --color-fd-secondary: #18191c;
- --color-fd-secondary-foreground: #f2f2f7;
- --color-fd-accent: rgba(10, 132, 255, 0.16);
- --color-fd-accent-foreground: #f2f2f7;
- --color-fd-ring: #0a84ff;
- --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.28);
- --shadow-warm: 0 2px 14px -4px rgba(10, 132, 255, 0.22);
- --shadow-elevated: 0 18px 40px -12px rgba(0, 0, 0, 0.65);
- --grid-line: rgba(148, 163, 184, 0.06);
- --grid-size: 32px;
- --section-alt: rgba(148, 163, 184, 0.02);
- --surface-2: #1a1c20;
- --radius: 12px;
- --radius-control: 9px;
- --grad-brand: linear-gradient(135deg, #0a84ff 0%, #5e5ce6 100%);
- --table-header-bg: rgba(16, 17, 20, 0.9);
- --table-row-zebra: rgba(255, 255, 255, 0.02);
- --table-row-hover: rgba(255, 255, 255, 0.045);
- --table-cell-border: rgba(255, 255, 255, 0.06);
- --table-row-selected: rgba(10, 132, 255, 0.14);
+  --desktop-safe-top: 0px;
+  --desktop-safe-bottom: 0px;
+  color-scheme: dark;
+  --color-primary: #0a84ff;
+  --color-primary-hover: #409cff;
+  --color-accent: #0a84ff;
+  --color-accent-hover: #409cff;
+  --color-accent-light: #64b5ff;
+  --color-error: #ff453a;
+  --color-success: #30d158;
+  --color-warning: #ffd60a;
+  --color-traffic-red: #ff453a;
+  --color-traffic-yellow: #ffd60a;
+  --color-traffic-green: #30d158;
+  /* DikaRoute iOS Fluid Glass — AMOLED deep-black base with translucent glass surfaces. */
+  --color-bg: #000000;
+  --color-bg-alt: #050608;
+  --color-bg-primary: #000000;
+  --color-bg-subtle: rgba(255, 255, 255, 0.04);
+  --color-bg-card: #0b0d10;
+  --color-surface: rgba(255, 255, 255, 0.045);
+  --color-card: rgba(255, 255, 255, 0.035);
+  --color-sidebar: rgba(12, 14, 17, 0.62);
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-text-main: #f2f2f7;
+  --color-text-primary: #f2f2f7;
+  --color-text-muted: #9a9aa2;
+  --color-fd-background: #000000;
+  --color-fd-foreground: #f2f2f7;
+  --color-fd-muted: rgba(255, 255, 255, 0.05);
+  --color-fd-muted-foreground: #9a9aa2;
+  --color-fd-popover: #0e1014;
+  --color-fd-popover-foreground: #f2f2f7;
+  --color-fd-card: #0e1014;
+  --color-fd-card-foreground: #f2f2f7;
+  --color-fd-border: rgba(255, 255, 255, 0.1);
+  --color-fd-primary: #0a84ff;
+  --color-fd-primary-foreground: #ffffff;
+  --color-fd-secondary: rgba(255, 255, 255, 0.06);
+  --color-fd-secondary-foreground: #f2f2f7;
+  --color-fd-accent: rgba(10, 132, 255, 0.16);
+  --color-fd-accent-foreground: #f2f2f7;
+  --color-fd-ring: #0a84ff;
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px -12px rgba(0, 0, 0, 0.7);
+  --shadow-warm: 0 8px 30px -8px rgba(10, 132, 255, 0.35);
+  --shadow-elevated: 0 24px 60px -16px rgba(0, 0, 0, 0.8);
+  --grid-line: rgba(148, 163, 184, 0.05);
+  --grid-size: 32px;
+  --section-alt: rgba(148, 163, 184, 0.02);
+  --surface-2: #131519;
+  --radius: 18px;
+  --radius-control: 10px;
+  --grad-brand: linear-gradient(135deg, #0a84ff 0%, #5e5ce6 100%);
+  --table-header-bg: rgba(8, 9, 11, 0.72);
+  --table-row-zebra: rgba(255, 255, 255, 0.02);
+  --table-row-hover: rgba(255, 255, 255, 0.05);
+  --table-cell-border: rgba(255, 255, 255, 0.06);
+  --table-row-selected: rgba(10, 132, 255, 0.14);
+  /* ── Glass system ── */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(15, 17, 21, 0.72);
+  --glass-bg-hover: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  --glass-blur: 20px;
+  --card-bg-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+  /* Ambient color orbs (fixed background layers) */
+  --orb-1: rgba(10, 132, 255, 0.16);
+  --orb-2: rgba(94, 92, 230, 0.13);
+  --orb-3: rgba(255, 69, 58, 0.07);
+  /* Legacy inline-style aliases — several components still use raw var()
+    fallbacks (Breadcrumbs, EmptyState, FilterBar, NotificationToast, logs).
+    Keep them in sync with the tokens above so those pages follow the theme. */
+  --text-primary: #f2f2f7;
+  --text-secondary: #a2a2ab;
+  --text-muted: #9a9aa2;
+  --accent: #0a84ff;
+  --card-bg: rgba(20, 22, 26, 0.85);
+  --border: rgba(255, 255, 255, 0.1);
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
 }
 
 .dark {
@@ -100,92 +129,134 @@
   --color-error: #ff453a;
   --color-success: #30d158;
   --color-warning: #ffd60a;
-  --color-bg: #0a0b0d;
-  --color-bg-alt: #121316;
-  --color-bg-subtle: #18191c;
-  --color-surface: #14171a;
-  --color-card: #15171b;
-  --color-sidebar: #0d0e11;
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-bg: #000000;
+  --color-bg-alt: #050608;
+  --color-bg-subtle: rgba(255, 255, 255, 0.04);
+  --color-bg-card: #0b0d10;
+  --color-surface: rgba(255, 255, 255, 0.045);
+  --color-card: rgba(255, 255, 255, 0.035);
+  --color-sidebar: rgba(12, 14, 17, 0.62);
+  --color-border: rgba(255, 255, 255, 0.09);
   --color-text-main: #f2f2f7;
   --color-text-primary: #f2f2f7;
-  --color-text-muted: #98989d;
-  --color-fd-background: #0a0b0d;
+  --color-text-muted: #9a9aa2;
+  --color-fd-background: #000000;
   --color-fd-foreground: #f2f2f7;
-  --color-fd-muted: #18191c;
-  --color-fd-muted-foreground: #98989d;
-  --color-fd-popover: #1c1e22;
+  --color-fd-muted: rgba(255, 255, 255, 0.05);
+  --color-fd-muted-foreground: #9a9aa2;
+  --color-fd-popover: #0e1014;
   --color-fd-popover-foreground: #f2f2f7;
-  --color-fd-card: #1c1e22;
+  --color-fd-card: #0e1014;
   --color-fd-card-foreground: #f2f2f7;
   --color-fd-border: rgba(255, 255, 255, 0.1);
   --color-fd-primary: #0a84ff;
   --color-fd-primary-foreground: #ffffff;
-  --color-fd-secondary: #18191c;
+  --color-fd-secondary: rgba(255, 255, 255, 0.06);
   --color-fd-secondary-foreground: #f2f2f7;
   --color-fd-accent: rgba(10, 132, 255, 0.16);
   --color-fd-accent-foreground: #f2f2f7;
   --color-fd-ring: #0a84ff;
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.28);
-  --shadow-warm: 0 2px 14px -4px rgba(10, 132, 255, 0.22);
-  --shadow-elevated: 0 18px 40px -12px rgba(0, 0, 0, 0.65);
-  --grid-line: rgba(148, 163, 184, 0.06);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px -12px rgba(0, 0, 0, 0.7);
+  --shadow-warm: 0 8px 30px -8px rgba(10, 132, 255, 0.35);
+  --shadow-elevated: 0 24px 60px -16px rgba(0, 0, 0, 0.8);
+  --grid-line: rgba(148, 163, 184, 0.05);
   --section-alt: rgba(148, 163, 184, 0.02);
-  --surface-2: #1a1c20;
-  --table-header-bg: rgba(16, 17, 20, 0.9);
+  --surface-2: #131519;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(15, 17, 21, 0.72);
+  --glass-bg-hover: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  --glass-blur: 20px;
+  --card-bg-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+  --orb-1: rgba(10, 132, 255, 0.16);
+  --orb-2: rgba(94, 92, 230, 0.13);
+  --orb-3: rgba(255, 69, 58, 0.07);
+  --text-primary: #f2f2f7;
+  --text-secondary: #a2a2ab;
+  --text-muted: #9a9aa2;
+  --accent: #0a84ff;
+  --card-bg: rgba(20, 22, 26, 0.85);
+  --border: rgba(255, 255, 255, 0.1);
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --table-header-bg: rgba(8, 9, 11, 0.72);
   --table-row-zebra: rgba(255, 255, 255, 0.02);
-  --table-row-hover: rgba(255, 255, 255, 0.045);
+  --table-row-hover: rgba(255, 255, 255, 0.05);
   --table-cell-border: rgba(255, 255, 255, 0.06);
   --table-row-selected: rgba(10, 132, 255, 0.14);
 }
 
 .light {
   color-scheme: light;
-  --color-primary: #059669;
-  --color-primary-hover: #047857;
-  --color-accent: #0ea5e9;
-  --color-accent-hover: #0284c7;
-  --color-accent-light: #38bdf8;
-  --color-error: #ef4444;
-  --color-success: #16a34a;
-  --color-warning: #f59e0b;
-  --color-bg: #f8fafc;
-  --color-bg-alt: #f1f5f9;
-  --color-bg-subtle: #f1f5f9;
-  --color-surface: #ffffff;
-  --color-card: #ffffff;
-  --color-sidebar: #f1f5f9;
+  --color-primary: #007aff;
+  --color-primary-hover: #0066d6;
+  --color-accent: #0a84ff;
+  --color-accent-hover: #0071e3;
+  --color-accent-light: #64b5ff;
+  --color-error: #ff3b30;
+  --color-success: #34c759;
+  --color-warning: #ff9500;
+  --color-bg: #f4f5f8;
+  --color-bg-alt: #eef0f4;
+  --color-bg-subtle: rgba(15, 23, 42, 0.035);
+  --color-bg-card: #ffffff;
+  --color-surface: rgba(255, 255, 255, 0.7);
+  --color-card: rgba(255, 255, 255, 0.85);
+  --color-sidebar: rgba(255, 255, 255, 0.72);
   --color-border: rgba(15, 23, 42, 0.08);
   --color-text-main: #0f172a;
   --color-text-primary: #0f172a;
   --color-text-muted: #64748b;
-  --color-fd-background: #f8fafc;
+  --color-fd-background: #f4f5f8;
   --color-fd-foreground: #0f172a;
-  --color-fd-muted: #f1f5f9;
+  --color-fd-muted: #eef0f4;
   --color-fd-muted-foreground: #64748b;
   --color-fd-popover: #ffffff;
   --color-fd-popover-foreground: #0f172a;
   --color-fd-card: #ffffff;
   --color-fd-card-foreground: #0f172a;
   --color-fd-border: rgba(15, 23, 42, 0.08);
-  --color-fd-primary: #059669;
+  --color-fd-primary: #007aff;
   --color-fd-primary-foreground: #ffffff;
-  --color-fd-secondary: #f1f5f9;
+  --color-fd-secondary: #eef0f4;
   --color-fd-secondary-foreground: #0f172a;
-  --color-fd-accent: rgba(5, 150, 105, 0.08);
+  --color-fd-accent: rgba(10, 132, 255, 0.08);
   --color-fd-accent-foreground: #0f172a;
-  --color-fd-ring: #059669;
-  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.04), 0 2px 8px rgba(15, 23, 42, 0.04);
-  --shadow-warm: 0 2px 12px -2px rgba(5, 150, 105, 0.14);
-  --shadow-elevated: 0 12px 28px -6px rgba(15, 23, 42, 0.1);
-  --grid-line: rgba(15, 23, 42, 0.05);
+  --color-fd-ring: #0a84ff;
+  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
+  --shadow-warm: 0 8px 24px -8px rgba(0, 122, 255, 0.16);
+  --shadow-elevated: 0 16px 40px -12px rgba(15, 23, 42, 0.12);
+  --grid-line: rgba(15, 23, 42, 0.045);
   --section-alt: rgba(15, 23, 42, 0.02);
-  --surface-2: #eef2f7;
-  --table-header-bg: rgba(248, 250, 252, 0.95);
+  --surface-2: #e9ecf1;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-bg-hover: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-border-strong: rgba(15, 23, 42, 0.14);
+  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.75);
+  --glass-blur: 20px;
+  --card-bg-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+  --orb-1: rgba(0, 122, 255, 0.1);
+  --orb-2: rgba(94, 92, 230, 0.08);
+  --orb-3: rgba(255, 59, 48, 0.04);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #0a84ff;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --border: rgba(15, 23, 42, 0.08);
+  --hover-bg: rgba(15, 23, 42, 0.04);
+  --table-header-bg: rgba(248, 250, 252, 0.9);
   --table-row-zebra: rgba(15, 23, 42, 0.02);
   --table-row-hover: rgba(15, 23, 42, 0.04);
   --table-cell-border: rgba(15, 23, 42, 0.05);
-  --table-row-selected: rgba(14, 165, 233, 0.1);
+  --table-row-selected: rgba(10, 132, 255, 0.1);
 }
 
 @theme inline {
@@ -209,11 +280,19 @@
   --color-bg-subtle: var(--color-bg-subtle);
   --color-surface: var(--color-surface);
   --color-card: var(--color-card);
+  --color-bg-card: var(--color-bg-card);
   --color-sidebar: var(--color-sidebar);
   --color-border: var(--color-border);
   --color-text-main: var(--color-text-main);
   --color-text-primary: var(--color-text-primary);
   --color-text-muted: var(--color-text-muted);
+
+  /* Glass system → bg-glass-bg, border-glass-border, … utilities */
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-bg-strong: var(--glass-bg-strong);
+  --color-glass-bg-hover: var(--glass-bg-hover);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-strong: var(--glass-border-strong);
 
   /* Static colors (for explicit light/dark usage) */
   --color-bg-light: #f8fafc;
@@ -243,10 +322,22 @@
   /* Nested surface (enables bg-surface-2) */
   --color-surface-2: var(--surface-2);
 
-  /* Semantic radius scale → rounded-card (surfaces, 14px) / rounded-control (controls,
-     9px). Custom names so the default rounded-sm/md/lg/xl utilities stay untouched. */
+  /* Card glass gradient surface */
+  --card-surface-gradient: var(--card-bg-gradient);
+
+  /* Semantic radius scale → rounded-card (surfaces) / rounded-control (controls). */
   --radius-card: var(--radius);
   --radius-control: var(--radius-control);
+}
+
+/* iOS Fluid Glass radius scale — bump the default rounded-* steps so ad-hoc
+   panels across all pages inherit the premium 20–32px rounding feel. */
+@theme {
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.25rem; /* 20px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-3xl: 1.75rem; /* 28px */
 }
 
 /* ── Focus Indicators (U-3) ── */
@@ -274,18 +365,24 @@
 }
 
 /* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text-main);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-/* Graph-paper wallpaper grid — one fixed, full-viewport layer behind every screen
-   (dashboard, auth, error pages). A z-index:-1 ::before paints above body's own
-   background but below all in-flow content, so it shows through any transparent
-   wrapper without lowering text contrast. Mirrors the marketing site exactly. */
+/* Ambient iOS-style backdrop — one fixed layer painting a faint color-field
+   gradient + the graph-paper grid behind every screen (dashboard, auth, error
+   pages). z-index:-1 keeps it below all in-flow content while showing through
+   transparent glass surfaces. Mirrors the marketing site exactly. */
 body::before {
   content: "";
   position: fixed;
@@ -293,9 +390,82 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
+    radial-gradient(60rem 40rem at 12% -10%, var(--orb-1), transparent 62%),
+    radial-gradient(50rem 36rem at 108% 18%, var(--orb-2), transparent 62%),
+    radial-gradient(42rem 30rem at 55% 118%, var(--orb-3), transparent 62%),
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: var(--grid-size) var(--grid-size);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size);
+  background-attachment: fixed;
+}
+
+/* Animated ambient orbs (used by dashboard + auth). Slow GPU transform-only
+   drift — cheap to composite, no layout thrash. */
+@keyframes dkrDrift1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(40px, -30px, 0) scale(1.12);
+  }
+}
+@keyframes dkrDrift2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-50px, 36px, 0) scale(0.94);
+  }
+}
+@keyframes dkrDrift3 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(30px, 44px, 0) scale(1.1);
+  }
+}
+
+.dkr-orb {
+  position: fixed;
+  z-index: -1;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(90px);
+  will-change: transform;
+  opacity: 0.9;
+}
+.dkr-orb-1 {
+  width: 480px;
+  height: 480px;
+  top: -140px;
+  left: -120px;
+  background: radial-gradient(circle at 30% 30%, var(--orb-1), transparent 70%);
+  animation: dkrDrift1 26s ease-in-out infinite;
+}
+.dkr-orb-2 {
+  width: 520px;
+  height: 520px;
+  top: 8%;
+  right: -180px;
+  background: radial-gradient(circle at 60% 40%, var(--orb-2), transparent 70%);
+  animation: dkrDrift2 32s ease-in-out infinite;
+}
+.dkr-orb-3 {
+  width: 460px;
+  height: 460px;
+  bottom: -160px;
+  left: 30%;
+  background: radial-gradient(circle at 50% 50%, var(--orb-3), transparent 70%);
+  animation: dkrDrift3 38s ease-in-out infinite;
 }
 
 body.electron-macos {
@@ -305,9 +475,9 @@ body.electron-macos {
 
 /* Selection — with fallback for browsers that don't support color-mix() */
 ::selection {
- background-color: rgba(10, 132, 255, 0.28);
- background-color: color-mix(in srgb, var(--color-primary) 22%, transparent);
- color: var(--color-primary);
+  background-color: rgba(10, 132, 255, 0.28);
+  background-color: color-mix(in srgb, var(--color-primary) 22%, transparent);
+  color: var(--color-primary);
 }
 
 /* Global custom scrollbar — thin, minimal, theme-aware */
@@ -360,11 +530,11 @@ body.electron-macos {
 
 /* Hero gradient */
 .bg-hero-gradient {
- background: linear-gradient(180deg, #14171a 0%, #0a0b0d 100%);
+  background: linear-gradient(180deg, #14171a 0%, #0a0b0d 100%);
 }
 
 .dark .bg-hero-gradient {
- background: linear-gradient(180deg, #101216 0%, #0a0b0d 100%);
+  background: linear-gradient(180deg, #101216 0%, #0a0b0d 100%);
 }
 
 /* Material Symbols */
@@ -434,8 +604,13 @@ button .material-symbols-outlined,
 }
 
 @keyframes border-glow {
- 0%, 100% { box-shadow: 0 0 5px rgba(10, 132, 255, 0.3); }
- 50% { box-shadow: 0 0 12px rgba(10, 132, 255, 0.5); }
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(10, 132, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(10, 132, 255, 0.5);
+  }
 }
 
 .animate-border-glow {
@@ -444,15 +619,15 @@ button .material-symbols-outlined,
 
 /* macOS Vibrancy/Blur Effect */
 .bg-vibrancy {
- backdrop-filter: blur(18px) saturate(160%);
- -webkit-backdrop-filter: blur(18px) saturate(160%);
- background: rgba(24, 25, 28, 0.66);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  background: var(--glass-bg);
 }
 
 .dark .bg-vibrancy {
- backdrop-filter: blur(18px) saturate(160%);
- -webkit-backdrop-filter: blur(18px) saturate(160%);
- background: rgba(20, 21, 24, 0.72);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  background: var(--glass-bg);
 }
 
 /* macOS Traffic Lights */
@@ -494,7 +669,7 @@ button .material-symbols-outlined,
 
 /* Fix for native dropdown options visibility in dark mode */
 select option {
-  background-color: var(--color-surface);
+  background-color: var(--color-bg-alt);
   color: var(--color-text-main);
 }
 
@@ -532,9 +707,15 @@ select option {
 }
 
 @keyframes dkrPulse {
-  0% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.45); }
-  70% { box-shadow: 0 0 0 6px rgba(48, 209, 88, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(48, 209, 88, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(48, 209, 88, 0);
+  }
 }
 
 .dkr-status-dot {
@@ -558,15 +739,169 @@ select option {
 .dkr-stat-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
-  border-radius: 12px;
-  background: var(--color-surface, #14171a);
-  padding: 14px 16px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius, 18px);
+  background: var(--card-bg-gradient);
+  padding: 16px 18px;
+  box-shadow:
+    var(--glass-highlight),
+    0 8px 24px -12px rgba(0, 0, 0, 0.6);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
 }
 
 .dkr-stat-card:hover {
-  border-color: rgba(10, 132, 255, 0.35);
-  transform: translateY(-1px);
+  border-color: rgba(10, 132, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow:
+    var(--glass-highlight),
+    0 14px 34px -12px rgba(10, 132, 255, 0.25);
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   iOS Fluid Glass design system — shared surfaces & motion
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Glass surfaces & motion classes live in @layer components so Tailwind
+   utilities (hover:border-*, shadow-*, motion-reduce:*) can still override
+   them — unlayered author CSS would beat every utility in Tailwind v4. */
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-highlight);
+  }
+
+  .glass-strong {
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      var(--glass-highlight),
+      0 24px 60px -16px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Press feedback — used on interactive cards/rows */
+  .dkr-press {
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+    will-change: transform;
+  }
+  .dkr-press:active {
+    transform: scale(0.98);
+  }
+
+  /* Entrance / micro-interaction animations (transform + opacity only) */
+  @keyframes dkrRise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .dkr-rise {
+    animation: dkrRise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes dkrFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .dkr-fade-in {
+    animation: dkrFadeIn 0.3s ease-out both;
+  }
+
+  @keyframes dkrScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.94);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .dkr-scale-in {
+    animation: dkrScaleIn 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes dkrFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  .dkr-float {
+    animation: dkrFloat 2.4s ease-in-out infinite;
+  }
+
+  /* Skeleton shimmer — GPU-friendly gradient sweep replacing the flat pulse */
+  @keyframes dkrShimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+  .skeleton {
+    border-radius: 10px;
+    background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.045) 30%,
+      rgba(255, 255, 255, 0.13) 50%,
+      rgba(255, 255, 255, 0.045) 70%
+    );
+    background-size: 200% 100%;
+    animation: dkrShimmer 1.6s linear infinite;
+  }
+  .light .skeleton {
+    background: linear-gradient(
+      100deg,
+      rgba(15, 23, 42, 0.05) 30%,
+      rgba(15, 23, 42, 0.11) 50%,
+      rgba(15, 23, 42, 0.05) 70%
+    );
+    background-size: 200% 100%;
+  }
+
+  /* Active nav pill glow — used by sidebar & tab bars */
+  .dkr-active-pill {
+    position: relative;
+    box-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.35),
+      0 4px 20px -4px rgba(10, 132, 255, 0.35);
+  }
+}
+
+/* Motion-safe: honor reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
