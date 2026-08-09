@@ -69,21 +69,22 @@ jobs:
           fi
           git commit -m "chore: release v${VERSION}"
           git push origin main
-          echo "Pushed v${VERSION}."
+          # Tag the release commit so publish.yml can check out the exact
+          # release code deterministically. A raw commit SHA cannot be used:
+          # actions/checkout fails with "upload-pack: not our ref" (GitHub
+          # does not serve arbitrary SHAs), and a just-pushed `main` can still
+          # resolve to the PREVIOUS commit when the runner starts — which once
+          # made publish build 3.8.58 and skip publishing (#3.8.59).
+          # Tags ARE servable refs, so they are race-free.
+          git tag "v${VERSION}" HEAD
+          git push origin "v${VERSION}"
+          echo "Pushed v${VERSION} (commit + tag)."
           # A push made with GITHUB_TOKEN does NOT re-trigger other workflows
           # (GitHub's anti-recursion rule), so dispatch publish.yml explicitly.
           # workflow_dispatch IS allowed for GITHUB_TOKEN.
-          #
-          # Dispatch against the EXACT commit SHA we just pushed. The `--ref`
-          # must be a branch/tag (GitHub rejects raw SHAs with HTTP 422), but
-          # the runner may still resolve a just-pushed `main` to the PREVIOUS
-          # commit, which once made publish build 3.8.58 and skip publishing
-          # (#3.8.59). Passing the SHA as the `release_ref` input makes the
-          # build deterministic: publish.yml checks out exactly that commit.
-          RELEASE_SHA="$(git rev-parse HEAD)"
           for attempt in 1 2 3 4 5; do
-            if gh workflow run 'Publish to npm' --ref main -f "release_ref=${RELEASE_SHA}" 2>/dev/null; then
-              echo "Dispatched Publish to npm @ ${RELEASE_SHA} — build, npm publish and GitHub Release run automatically."
+            if gh workflow run 'Publish to npm' --ref "v${VERSION}" 2>/dev/null; then
+              echo "Dispatched Publish to npm @ v${VERSION} — build, npm publish and GitHub Release run automatically."
               break
             fi
             echo "Dispatch attempt ${attempt} not ready yet — retrying..."

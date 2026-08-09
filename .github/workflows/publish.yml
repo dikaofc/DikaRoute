@@ -8,14 +8,16 @@ on:
       - "package.json"
   workflow_dispatch:
     inputs:
-      # Exact commit SHA to build & publish. Auto-release passes the release
-      # bump commit here so the checkout never races the `main` ref update
-      # (a `gh workflow run --ref main` dispatched right after push can still
-      # resolve to the PREVIOUS commit, as seen in the 3.8.59 run that built
-      # 3.8.58 and skipped publishing). Falls back to the default ref (main)
-      # for manual dispatches / push triggers.
+      # Git ref (tag, e.g. `v3.8.59`) to build & publish. Auto-release pushes a
+      # `vX.Y.Z` tag on the release commit and dispatches against it, so the
+      # checkout never races the `main` ref update (a `--ref main` dispatch
+      # right after push can still resolve to the PREVIOUS commit, as seen in
+      # the 3.8.59 run that built 3.8.58 and skipped publishing). Raw commit
+      # SHAs are rejected by actions/checkout ("upload-pack: not our ref"),
+      # which is why the tag is required. Falls back to the default ref
+      # (main) for manual dispatches / push triggers.
       release_ref:
-        description: "Commit SHA to build (auto-set by Auto Release workflow)"
+        description: "Tag ref to build (e.g. v3.8.59; auto-set by Auto Release workflow)"
         required: false
         type: string
 
