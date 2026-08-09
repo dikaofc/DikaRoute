@@ -36,7 +36,11 @@ export async function generateMetadata(): Promise<Metadata> {
     process.env.NEXT_PUBLIC_BASE_URL || process.env.BASE_URL || "http://localhost:20128";
   const metadataBase = new URL(new URL(publicBaseUrl).origin);
   const basePath = process.env.NEXT_PUBLIC_DIKAROUTE_BASE_PATH || "";
-  const ogImage = `${basePath}/images/dikaroute-social.png`;
+  // og:image uses the transparent variant (nice on platforms that preserve
+  // alpha: iMessage/Discord/Slack); twitter:image stays solid because X
+  // flattens transparency onto a solid fill when it reads og:image directly.
+  const ogImage = `${basePath}/images/dikaroute-social-1200x630-transparent.png`;
+  const twitterImage = `${basePath}/images/dikaroute-social-1200x630.png`;
 
   return {
     metadataBase,
@@ -69,13 +73,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: new URL(basePath || "/", metadataBase).toString(),
       title,
       description,
-      images: [{ url: ogImage, width: 1280, height: 640, alt: title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage],
+      images: [twitterImage],
     },
   };
 }
