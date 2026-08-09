@@ -5,8 +5,8 @@ import type {
 import {
   getCombosCount as getSqliteCombosCount,
   sqliteComboRepository,
-} from "./sqliteComboRepository.js";
-import { sqliteModelComboMappingRepository } from "./sqliteModelComboMappingRepository.js";
+} from "./sqliteComboRepository";
+import { sqliteModelComboMappingRepository } from "./sqliteModelComboMappingRepository";
 
 export interface RoutingConfigRepositories {
   combos: ComboRepository;

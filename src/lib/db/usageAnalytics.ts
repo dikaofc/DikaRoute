@@ -9,15 +9,15 @@
  * Sliced out of #3500 (usage_history / daily_usage_summary cluster).
  */
 
-import { getDbInstance } from "./core.js";
-import type { AnalyticsParams } from "./usageAnalytics/sources.js";
+import { getDbInstance } from "./core";
+import type { AnalyticsParams } from "./usageAnalytics/sources";
 
-export { buildUnifiedSource, buildPresetUnifiedSource } from "./usageAnalytics/sources.js";
+export { buildUnifiedSource, buildPresetUnifiedSource } from "./usageAnalytics/sources";
 export type {
   AnalyticsParams,
   BuildUnifiedSourceOptions,
   UnifiedSourceResult,
-} from "./usageAnalytics/sources.js";
+} from "./usageAnalytics/sources";
 
 // ---------------------------------------------------------------------------
 // Analytics summary — /api/usage/analytics

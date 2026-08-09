@@ -8,7 +8,7 @@ import type {
   ModelComboMappingPage,
   UpdateModelComboMappingInput,
 } from "@/domain/persistence/comboRepositories";
-import { routingConfigRepositories } from "./repositories/routingConfigRepositories.js";
+import { routingConfigRepositories } from "./repositories/routingConfigRepositories";
 
 export type { ModelComboMapping } from "@/domain/persistence/comboRepositories";
 

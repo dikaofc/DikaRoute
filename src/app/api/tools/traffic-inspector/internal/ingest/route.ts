@@ -22,7 +22,7 @@
 import { buildErrorBody, sanitizeErrorMessage } from "@dikaroute/open-sse/utils/error.ts";
 import { createHash, timingSafeEqual } from "node:crypto";
 import { randomUUID } from "node:crypto";
-import { InterceptedRequestSchema } from "@/mitm/inspector/types";
+import { InterceptedRequestSchema, type InterceptedRequest } from "@/mitm/inspector/types";
 import { globalTrafficBuffer } from "@/mitm/inspector/buffer";
 import { maskSecret } from "@/mitm/maskSecrets";
 import { sanitizeHeaders } from "@/mitm/sanitizeHeaders";
@@ -110,15 +110,18 @@ export async function POST(request: Request): Promise<Response> {
     // stores bearer tokens / API keys (Hard Rule #12).
     const data = parsed.data;
     const req = {
-      requestBody: null,
-      responseBody: null,
       ...data,
       requestHeaders: sanitizeHeaders(data.requestHeaders || {}),
       responseHeaders: sanitizeHeaders(data.responseHeaders || {}),
+      // Defaults are applied by the schema (partial); the null fallbacks below
+      // are intentional — never duplicate the keys above them (TS1117).
       requestBody: data.requestBody != null ? maskSecret(data.requestBody) : null,
       responseBody: data.responseBody != null ? maskSecret(data.responseBody) : null,
     };
-    globalTrafficBuffer.push(req);
+    // The body is zod-validated above. `agent` arrives as an arbitrary string
+    // from server.cjs (not necessarily a known AgentId), so the schema types it
+    // `string` while InterceptedRequest narrows it to AgentId — cast here.
+    globalTrafficBuffer.push(req as InterceptedRequest);
     return Response.json({ ok: true, id: req.id }, { status: 200 });
   } catch (err) {
     const msg = sanitizeErrorMessage(err);

@@ -11,7 +11,7 @@ export type DetectedKind = "llm" | "app" | "unknown";
 export interface InterceptedRequest {
   id: string;                            // uuid
   source: CaptureSource;
-  agent?: import("../types").AgentId;    // only when source === "agent-bridge"
+  agent?: import("../types.ts").AgentId;    // only when source === "agent-bridge"
   timestamp: string;                     // ISO 8601
   method: string;
   host: string;
@@ -105,7 +105,7 @@ export type WsEvent =
 export type ListFilters = {
   profile?: "llm" | "custom" | "all";
   host?: string;
-  agent?: import("../types").AgentId;
+  agent?: import("../types.ts").AgentId;
   status?: "2xx" | "3xx" | "4xx" | "5xx" | "error";
   source?: CaptureSource;
   sessionId?: string;

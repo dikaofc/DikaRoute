@@ -12,7 +12,7 @@
  * Part of: Group B — Quota Sharing Engine (plan 22, frente F2).
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 // ---------------------------------------------------------------------------
 // Internal helpers

@@ -6,7 +6,7 @@
  * another instance. Every function here is best-effort: the caller treats a throw as
  * "not durable this time", never as a request failure.
  */
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 export interface CcrBlockRow {
   principalId: string;

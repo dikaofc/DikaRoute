@@ -10,6 +10,10 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    // TypeScript 6 deprecates `baseUrl` (errors as TS5101 without this flag);
+    // `paths` entries here are relative, so keep baseUrl working via the
+    // official escape hatch rather than remove it (https://aka.ms/ts6).
+    "ignoreDeprecations": "6.0",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,

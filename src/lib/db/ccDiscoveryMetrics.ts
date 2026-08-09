@@ -18,7 +18,7 @@
  * Every write is best-effort: a DB hiccup here must never break the request
  * it is instrumenting (mirrors src/lib/db/pluginMetrics.ts).
  */
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 const NAMESPACE = "ccDiscoveryMetrics";
 const TOTAL_KEY = "req:total";

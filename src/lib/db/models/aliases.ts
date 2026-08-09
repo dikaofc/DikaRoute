@@ -1,8 +1,8 @@
 /** db/models/aliases.ts — model alias CRUD (modelAliases namespace, providerAliases namespace). */
 
-import { getDbInstance } from "../core.js";
-import { backupDbFile } from "../backup.js";
-import { getKeyValue } from "./shared.js";
+import { getDbInstance } from "../core";
+import { backupDbFile } from "../backup";
+import { getKeyValue } from "./shared";
 
 export async function getModelAliases() {
   const db = getDbInstance();

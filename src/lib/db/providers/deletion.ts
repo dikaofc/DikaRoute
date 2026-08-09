@@ -8,16 +8,16 @@
  * connections.
  */
 
-import { getDbInstance } from "../core.js";
-import { backupDbFile } from "../backup.js";
+import { getDbInstance } from "../core";
+import { backupDbFile } from "../backup";
 import {
   removeConnectionHealth,
   removeConnectionIndex,
 } from "@dikaroute/open-sse/services/apiKeyRotator.ts";
-import { invalidateDbCache } from "../readCache.js";
-import { invalidateReasoningRoutingRuleCache } from "../reasoningRoutingRules.js";
-import { bumpProxyConfigGeneration } from "../settings.js";
-import { toRecord } from "./columns.js";
+import { invalidateDbCache } from "../readCache";
+import { invalidateReasoningRoutingRuleCache } from "../reasoningRoutingRules";
+import { bumpProxyConfigGeneration } from "../settings";
+import { toRecord } from "./columns";
 
 interface StatementLike<TRow = unknown> {
   all: (...params: unknown[]) => TRow[];

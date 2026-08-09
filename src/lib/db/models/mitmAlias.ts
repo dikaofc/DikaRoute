@@ -1,8 +1,8 @@
 /** db/models/mitmAlias.ts — MITM alias CRUD (mitmAlias namespace). */
 
-import { getDbInstance } from "../core.js";
-import { backupDbFile } from "../backup.js";
-import { getKeyValue } from "./shared.js";
+import { getDbInstance } from "../core";
+import { backupDbFile } from "../backup";
+import { getKeyValue } from "./shared";
 
 export async function getMitmAlias(toolName?: string) {
   const db = getDbInstance();

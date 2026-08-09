@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 const NOTION_NAMESPACE = "notion";
 const NOTION_TOKEN_KEY = "integration_token";

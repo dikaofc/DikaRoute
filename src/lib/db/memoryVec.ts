@@ -9,7 +9,7 @@
  *   - `memories.needs_reindex`: flag for lazy backfill of missing/stale vectors
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 // ──────────────── Types ────────────────
 

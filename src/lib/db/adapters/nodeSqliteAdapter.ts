@@ -1,8 +1,8 @@
-import type { SqliteAdapter } from "./types.js";
+import type { SqliteAdapter } from "./types";
 import {
   createNodeSqliteAdapterFromDatabase,
   type NodeSqliteDatabaseLike,
-} from "./nodeSqliteShared.js";
+} from "./nodeSqliteShared";
 
 const CHECKPOINT_INTERVAL_MS = 60_000;
 

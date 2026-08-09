@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
-import { getDbInstance, rowToCamel } from "./core.js";
-import { backupDbFile } from "./backup.js";
+import { getDbInstance, rowToCamel } from "./core";
+import { backupDbFile } from "./backup";
 
 type JsonRecord = Record<string, unknown>;
 

@@ -1,5 +1,5 @@
 /** Upstream proxy config persistence for upstream_proxy_config table. */
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 /** Which embedded proxy handles the retry leg when mode === "fallback". */
 export type FallbackBackend = "cliproxyapi" | "dario";

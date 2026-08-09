@@ -5,8 +5,8 @@
  */
 
 import { randomBytes } from "node:crypto";
-import { getDbInstance } from "./core.js";
-import { rowToCamel } from "./core.js";
+import { getDbInstance } from "./core";
+import { rowToCamel } from "./core";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 

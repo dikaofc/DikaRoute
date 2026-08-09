@@ -8,7 +8,7 @@
  * Sliced out of #3500 (semantic_cache cluster, slice 4).
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 // ---------------------------------------------------------------------------
 // Shared types

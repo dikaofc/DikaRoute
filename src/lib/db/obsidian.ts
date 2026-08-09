@@ -1,6 +1,6 @@
-import { getDbInstance } from "./core.js";
-import { getApiKeyContextSource } from "./apiKeyContextSources.js";
-import { encrypt, decrypt } from "./encryption.js";
+import { getDbInstance } from "./core";
+import { getApiKeyContextSource } from "./apiKeyContextSources";
+import { encrypt, decrypt } from "./encryption";
 
 const OBSIDIAN_NAMESPACE = "obsidian";
 const OBSIDIAN_TOKEN_KEY = "api_key";

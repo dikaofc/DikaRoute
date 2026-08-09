@@ -20,8 +20,8 @@
  * before (see `tests/unit/mitm-handler-antigravity.test.ts`).
  */
 import type { IncomingMessage, ServerResponse } from "node:http";
-import type { AgentId } from "../types";
-import { MitmHandlerBase } from "./base";
+import type { AgentId } from "../types.ts";
+import { MitmHandlerBase } from "./base.ts";
 
 interface GeminiPart {
   text?: string;

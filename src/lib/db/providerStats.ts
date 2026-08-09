@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 /**
  * Provider/model call statistics aggregated from `call_logs`.

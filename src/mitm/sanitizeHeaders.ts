@@ -1,6 +1,6 @@
 import type { IncomingHttpHeaders } from "node:http";
 import { isForbiddenUpstreamHeaderName } from "@/shared/constants/upstreamHeaders";
-import { maskSecret } from "./maskSecrets";
+import { maskSecret } from "./maskSecrets.ts";
 
 /**
  * Header names whose values must be masked (case-insensitive).

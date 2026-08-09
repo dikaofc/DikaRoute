@@ -21,7 +21,7 @@ import {
   buildTproxyRevertCommands,
   validateTproxyConfig,
   type TproxyConfig,
-} from "./commands";
+} from "./commands.ts";
 
 const execFileAsync = promisify(execFile);
 

@@ -2,17 +2,17 @@
  * db/settings.js — Settings, pricing, and proxy config.
  */
 
-import { getDbInstance } from "./core.js";
-import { backupDbFile } from "./backup.js";
+import { getDbInstance } from "./core";
+import { backupDbFile } from "./backup";
 import { PROVIDER_ID_TO_ALIAS } from "@dikaroute/open-sse/config/providerModels.ts";
-import { invalidateDbCache } from "./readCache.js";
-import { encrypt, decrypt } from "./encryption.js";
-import { getProxyRegistryGeneration, resolveProxyForScopeFromRegistry } from "./proxies.js";
+import { invalidateDbCache } from "./readCache";
+import { encrypt, decrypt } from "./encryption";
+import { getProxyRegistryGeneration, resolveProxyForScopeFromRegistry } from "./proxies";
 import { getComboModelProvider as getComboEntryProvider } from "@/lib/combos/steps";
 import { requestBodyLimitMbFromEnv } from "@/shared/constants/bodySize";
 import { DEFAULT_RESPONSES_PREVIOUS_RESPONSE_ID_MODE } from "@/shared/constants/responsesPreviousResponseId";
-import { type JsonRecord, toRecord } from "./settings/shared.js";
-import { resolveNoAuthSharedProviderProxy } from "./settings/noAuthProxyFallback.js";
+import { type JsonRecord, toRecord } from "./settings/shared";
+import { resolveNoAuthSharedProviderProxy } from "./settings/noAuthProxyFallback";
 
 type ProxyValue = JsonRecord | string | null;
 type ProxyResolutionResult = {
@@ -813,9 +813,9 @@ export {
   updatePricing,
   resetPricing,
   resetAllPricing,
-} from "./settings/pricing.js";
+} from "./settings/pricing";
 
-export { type LKGPRecord, getLKGP, setLKGP, clearAllLKGP } from "./settings/lkgp.js";
+export { type LKGPRecord, getLKGP, setLKGP, clearAllLKGP } from "./settings/lkgp";
 
 export {
   type CacheTrendPoint,
@@ -823,5 +823,5 @@ export {
   updateCacheMetrics,
   getCacheTrend,
   resetCacheMetrics,
-} from "./settings/cacheMetrics.js";
-export { getCachedSettings } from "./readCache.js";
+} from "./settings/cacheMetrics";
+export { getCachedSettings } from "./readCache";

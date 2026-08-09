@@ -4,22 +4,22 @@
  * All domain modules import `getDbInstance` and helpers from here.
  */
 
-import type { SqliteAdapter } from "./adapters/types.js";
+import type { SqliteAdapter } from "./adapters/types";
 import {
   tryOpenSync,
   getSqlJsAdapter,
   preInitSqlJs,
   getSqlJsPreInitError,
   openDatabaseAsync,
-} from "./adapters/driverFactory.js";
+} from "./adapters/driverFactory";
 import path from "path";
-import { retryProbeIfTransient } from "./probeUtils.js";
+import { retryProbeIfTransient } from "./probeUtils";
 import fs from "fs";
-import { resolveWritableDataDir, getLegacyDotDataDir } from "../dataPaths.js";
-import { runMigrations } from "./migrationRunner.js";
-import { runDbHealthCheck } from "./healthCheck.js";
-import { resetAllDbModuleState } from "./stateReset.js";
-import { parseStoredPayload } from "../logPayloads.js";
+import { resolveWritableDataDir, getLegacyDotDataDir } from "../dataPaths";
+import { runMigrations } from "./migrationRunner";
+import { runDbHealthCheck } from "./healthCheck";
+import { resetAllDbModuleState } from "./stateReset";
+import { parseStoredPayload } from "../logPayloads";
 import { DEFAULT_DATABASE_SETTINGS, type DatabaseSettings } from "@/types/databaseSettings";
 import {
   applyDatabaseOptimizationSettingsForDb,
@@ -28,18 +28,18 @@ import {
   setAutoVacuumForDb,
   setCacheSizeForDb,
   setPageSizeForDb,
-} from "./optimizationSettings.js";
+} from "./optimizationSettings";
 import {
   buildArtifactRelativePath,
   writeCallArtifact,
   type CallLogArtifact,
-} from "../usage/callLogArtifacts.js";
-import { migrateLegacyEncryptedString } from "./encryption.js";
-import { invalidateDbCache } from "./readCache.js";
-import { rowToCamel } from "./caseMapping.js";
+} from "../usage/callLogArtifacts";
+import { migrateLegacyEncryptedString } from "./encryption";
+import { invalidateDbCache } from "./readCache";
+import { rowToCamel } from "./caseMapping";
 import { isAutomatedTestProcess } from "@/shared/utils/testProcess";
 // Re-exported so existing call sites that pull these helpers off the core module keep working.
-export { toSnakeCase, toCamelCase, objToSnake, rowToCamel, cleanNulls } from "./caseMapping.js";
+export { toSnakeCase, toCamelCase, objToSnake, rowToCamel, cleanNulls } from "./caseMapping";
 import {
   ensureProviderConnectionsColumns,
   ensureUsageHistoryAccountIndex,
@@ -48,7 +48,7 @@ import {
   hasTable,
   quoteIdentifier,
   getTableColumns,
-} from "./schemaColumns.js";
+} from "./schemaColumns";
 
 type SqliteDatabase = SqliteAdapter;
 type JsonRecord = Record<string, unknown>;

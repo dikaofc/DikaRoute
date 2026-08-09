@@ -3,7 +3,7 @@
  * CRUD operations for webhook event subscriptions
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 import crypto from "crypto";
 
 export type WebhookKind = "slack" | "telegram" | "discord" | "custom";

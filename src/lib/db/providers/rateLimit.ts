@@ -2,8 +2,8 @@
  * db/providers/rateLimit.ts — Rate-limit/quota runtime helpers for provider_connections.
  */
 
-import { getDbInstance } from "../core.js";
-import { invalidateDbCache } from "../readCache.js";
+import { getDbInstance } from "../core";
+import { invalidateDbCache } from "../readCache";
 
 interface StatementLike<TRow = unknown> {
   all: (...params: unknown[]) => TRow[];

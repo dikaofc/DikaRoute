@@ -126,7 +126,11 @@ function handleHttp(req: http.IncomingMessage, res: http.ServerResponse): void {
       const upstream = await fetch(target.toString(), {
         method: req.method ?? "GET",
         headers: upstreamHeaders,
-        body: body.length > 0 ? body : undefined,
+        // Node's fetch types reject `Buffer` outright (SharedArrayBuffer
+        // variance inside the BodyInit union), so cast through the RequestInit
+        // body type to keep the raw bytes flowing without widening to `any`.
+        body:
+          body.length > 0 ? (body as unknown as Parameters<typeof fetch>[1]["body"]) : undefined,
         redirect: "manual",
       });
 

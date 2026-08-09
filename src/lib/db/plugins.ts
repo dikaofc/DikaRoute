@@ -4,8 +4,8 @@
  * @module db/plugins
  */
 
-import { getDbInstance } from "./core.js";
-import { logger } from "../../../open-sse/utils/logger.js";
+import { getDbInstance } from "./core";
+import { logger } from "../../../open-sse/utils/logger";
 
 const log = logger("DB_PLUGINS");
 

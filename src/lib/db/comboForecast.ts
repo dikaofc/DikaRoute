@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 export type ComboForecastUsageRow = {
   comboName: string;

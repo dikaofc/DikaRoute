@@ -6,7 +6,7 @@
  * primary source at runtime; this module provides the fallback read/write layer.
  */
 
-import { getDbInstance, isBuildPhase, isCloud } from "./core.js";
+import { getDbInstance, isBuildPhase, isCloud } from "./core";
 
 interface StatementLike<TRow = unknown> {
   get: (...params: unknown[]) => TRow | undefined;

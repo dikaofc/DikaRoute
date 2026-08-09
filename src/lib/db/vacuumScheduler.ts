@@ -1,7 +1,7 @@
 import { DEFAULT_DATABASE_SETTINGS } from "@/types/databaseSettings";
 import { MAX_TIMER_TIMEOUT_MS } from "@/shared/utils/runtimeTimeouts";
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 // Direct `key_value` access — the existing `keyValueStore` helpers only exist
 // in test fixtures; the 3 production call sites (pricingSync, jsonMigration,
 // serviceModels) all use `getDbInstance().prepare(...).run()` directly. We

@@ -1,6 +1,6 @@
 import { createHash, randomBytes, randomUUID } from "crypto";
-import { getDbInstance } from "./core.js";
-import { type AccessScope, normalizeScope } from "../accessTokens/scopes.js";
+import { getDbInstance } from "./core";
+import { type AccessScope, normalizeScope } from "../accessTokens/scopes";
 
 /**
  * CLI access tokens — scoped credentials for remote-mode management commands.

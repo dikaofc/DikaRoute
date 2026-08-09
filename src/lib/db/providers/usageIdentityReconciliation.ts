@@ -1,6 +1,6 @@
 import { resolveUsageAccountIdentity } from "@/lib/usage/accountIdentity";
-import { parseProviderSpecificData } from "../webSessionDedup.js";
-import { toStringOrNull } from "./columns.js";
+import { parseProviderSpecificData } from "../webSessionDedup";
+import { toStringOrNull } from "./columns";
 
 type JsonRecord = Record<string, unknown>;
 

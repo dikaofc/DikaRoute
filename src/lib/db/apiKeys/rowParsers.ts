@@ -8,7 +8,7 @@
  * move; apiKeys.ts imports them back for getApiKeys/getApiKeyById/getApiKeyMetadata.
  */
 
-import type { AccessSchedule, RateLimitRule } from "./types.js";
+import type { AccessSchedule, RateLimitRule } from "./types";
 
 /**
  * Helper function to safely parse allowed_models JSON

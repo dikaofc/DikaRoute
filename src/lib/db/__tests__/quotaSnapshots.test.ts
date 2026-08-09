@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import Database from "better-sqlite3";
-import { rowToCamel } from "../core.js";
+import { rowToCamel } from "../core";
 import type { QuotaSnapshotRow } from "@/shared/types/utilization";
 
 const MIGRATION_SQL = `

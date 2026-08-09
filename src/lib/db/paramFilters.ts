@@ -5,7 +5,7 @@
  * Follows the established key_value pattern from databaseSettings.ts.
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 const NAMESPACE = "provider_param_filters";
 

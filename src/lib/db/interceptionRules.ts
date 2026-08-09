@@ -8,7 +8,7 @@
  * rule > undefined (caller falls back to the existing native-bypass defaults).
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 const NAMESPACE = "interception_rules";
 

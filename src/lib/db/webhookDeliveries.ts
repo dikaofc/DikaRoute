@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 import { sanitizeErrorMessage } from "@dikaroute/open-sse/utils/error";
 
 export interface WebhookDelivery {

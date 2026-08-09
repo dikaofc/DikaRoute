@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import type { PreparedStatement, RunResult, SqliteAdapter } from "./types.js";
+import type { PreparedStatement, RunResult, SqliteAdapter } from "./types";
 
 /**
  * The Bun runtime already ships a SQLite driver. Keep this adapter deliberately

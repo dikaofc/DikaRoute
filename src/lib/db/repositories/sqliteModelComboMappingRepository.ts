@@ -15,7 +15,7 @@ import type {
   UpdateModelComboMappingInput,
 } from "@/domain/persistence/comboRepositories";
 import { globToRegex } from "@/shared/utils/globPattern";
-import { getDbInstance } from "../core.js";
+import { getDbInstance } from "../core";
 
 export type { ModelComboMapping } from "@/domain/persistence/comboRepositories";
 

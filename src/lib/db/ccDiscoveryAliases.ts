@@ -20,8 +20,8 @@
  * why this module resolves the flag directly instead of reusing it).
  */
 
-import { getFeatureFlagOverride } from "./featureFlags.js";
-import { getDbInstance } from "./core.js";
+import { getFeatureFlagOverride } from "./featureFlags";
+import { getDbInstance } from "./core";
 
 const NAMESPACE = "ccDiscoveryAliases";
 const FLAG_KEY = "EXPOSE_CC_DISCOVERY_ALIASES";

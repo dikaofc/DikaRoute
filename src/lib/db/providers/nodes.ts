@@ -3,11 +3,11 @@
  */
 
 import { v4 as uuidv4 } from "uuid";
-import { getDbInstance, rowToCamel } from "../core.js";
-import { selectProviderNodeForConnection } from "../providerNodeSelect.js";
-import { backupDbFile } from "../backup.js";
-import { invalidateDbCache } from "../readCache.js";
-import { toRecord, type JsonRecord } from "./columns.js";
+import { getDbInstance, rowToCamel } from "../core";
+import { selectProviderNodeForConnection } from "../providerNodeSelect";
+import { backupDbFile } from "../backup";
+import { invalidateDbCache } from "../readCache";
+import { toRecord, type JsonRecord } from "./columns";
 
 interface StatementLike<TRow = unknown> {
   all: (...params: unknown[]) => TRow[];

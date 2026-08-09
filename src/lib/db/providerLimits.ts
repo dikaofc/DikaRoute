@@ -1,5 +1,5 @@
 import { sanitizeGrokBillingStatus, type GrokBillingStatus } from "@/shared/utils/grokBilling";
-import { getDbInstance, isBuildPhase, isCloud } from "./core.js";
+import { getDbInstance, isBuildPhase, isCloud } from "./core";
 
 type JsonRecord = Record<string, unknown>;
 

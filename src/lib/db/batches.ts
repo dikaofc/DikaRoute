@@ -1,5 +1,5 @@
-import { getDbInstance, rowToCamel, objToSnake } from "./core.js";
-import { deleteFile } from "./files.js";
+import { getDbInstance, rowToCamel, objToSnake } from "./core";
+import { deleteFile } from "./files";
 import { v4 as uuidv4 } from "uuid";
 
 function parseBatchRow(row: any): BatchRecord {

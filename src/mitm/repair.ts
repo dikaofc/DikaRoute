@@ -4,9 +4,9 @@ import { resolveMitmDataDir } from "./dataDir.ts";
 import { removeDNSEntry, removeDNSEntries } from "./dns/dnsConfig.ts";
 import { uninstallCert } from "./cert/install.ts";
 import { ALL_TARGETS } from "./targets/index.ts";
-import { listCustomHosts } from "@/lib/db/inspectorCustomHosts.ts";
-import { getGheCopilotHosts } from "@/lib/db/providers.ts";
-import { createLogger } from "@/shared/utils/logger.ts";
+import { listCustomHosts } from "@/lib/db/inspectorCustomHosts";
+import { getGheCopilotHosts } from "@/lib/db/providers";
+import { createLogger } from "@/shared/utils/logger";
 
 const log = createLogger("mitm-repair");
 

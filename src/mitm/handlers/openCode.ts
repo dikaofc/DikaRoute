@@ -6,8 +6,8 @@
  * the mapped target and the request is forwarded to the DikaRoute router.
  */
 import type { IncomingMessage, ServerResponse } from "node:http";
-import type { AgentId } from "../types";
-import { MitmHandlerBase } from "./base";
+import type { AgentId } from "../types.ts";
+import { MitmHandlerBase } from "./base.ts";
 
 export class OpenCodeHandler extends MitmHandlerBase {
   readonly agentId: AgentId = "open-code";

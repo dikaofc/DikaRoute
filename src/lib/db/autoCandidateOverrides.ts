@@ -14,7 +14,7 @@
  * JSON array column.
  */
 import { randomUUID } from "node:crypto";
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 export interface AutoCandidateOverride {
   id: string;

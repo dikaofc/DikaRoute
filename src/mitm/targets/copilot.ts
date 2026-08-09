@@ -1,7 +1,7 @@
 /**
  * GitHub Copilot — MITM target descriptor.
  */
-import type { MitmTarget } from "../types";
+import type { MitmTarget } from "../types.ts";
 
 export const COPILOT_TARGET: MitmTarget = {
   id: "copilot",
@@ -27,6 +27,6 @@ export const COPILOT_TARGET: MitmTarget = {
     detection: { command: "code --list-extensions", platform: "all" },
   },
   handler: () =>
-    import("../handlers/copilot").then((m) => ({ default: m.CopilotHandler })),
+    import("../handlers/copilot.ts").then((m) => ({ default: m.CopilotHandler })),
   riskNoticeKey: "providers.riskNotice.oauth",
 };

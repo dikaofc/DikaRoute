@@ -4,7 +4,7 @@
  * Hosts: `api2.cursor.sh` (chat backend).
  * Format: OpenAI-compatible Chat Completions on `/v1/chat/completions`.
  */
-import type { MitmTarget } from "../types";
+import type { MitmTarget } from "../types.ts";
 
 export const CURSOR_TARGET: MitmTarget = {
   id: "cursor",
@@ -28,6 +28,6 @@ export const CURSOR_TARGET: MitmTarget = {
     detection: { command: "which cursor", platform: "all" },
   },
   handler: () =>
-    import("../handlers/cursor").then((m) => ({ default: m.CursorHandler })),
+    import("../handlers/cursor.ts").then((m) => ({ default: m.CursorHandler })),
   riskNoticeKey: "providers.riskNotice.oauth",
 };

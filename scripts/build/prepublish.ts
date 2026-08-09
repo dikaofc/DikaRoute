@@ -254,61 +254,45 @@ if (existsSync(distServer)) {
   }
 }
 
-// ── Step 8: Compile + copy MITM cert utilities ─────────────
+// ── Step 8: Bundle + copy MITM utilities ─────────────────────
+// The MITM stack used to be compiled per-file with tsc under
+// moduleResolution: NodeNext. That never worked: src/mitm transitively
+// imports src/lib, src/shared, src/app and open-sse, which all follow the
+// project-wide extensionless + @/alias import style (TS2835/TS2877 under
+// NodeNext), and the graph is too large to emit under a single rootDir
+// (TS6059) - so the step silently fell back to copying raw .ts source into
+// dist/src/mitm/ and the published package shipped uncompiled TypeScript.
+// esbuild (already used for the MCP server, LLMLingua worker and CLI)
+// resolves the same import styles and emits one runnable bundle. server.cjs
+// and the _internal/*.cjs shims are copied separately by assembleStandalone.
 const mitmSrc = join(ROOT, "src", "mitm");
 const mitmDest = join(DIST_DIR, "src", "mitm");
 if (existsSync(mitmSrc)) {
-  console.log("  🔨 Compiling MITM utilities (TypeScript → JavaScript)...");
+  console.log("  🔨 Bundling MITM utilities (TypeScript → JavaScript)...");
   mkdirSync(mitmDest, { recursive: true });
-
-  // Write a temporary tsconfig.json targeting the mitm directory
-  const mitmTsconfig = {
-    compilerOptions: {
-      target: "ES2022",
-      module: "NodeNext",
-      moduleResolution: "NodeNext",
-      outDir: mitmDest,
-      rootDir: mitmSrc,
-      strict: false,
-      noImplicitAny: false,
-      strictNullChecks: false,
-      noEmitOnError: true,
-      allowImportingTsExtensions: true,
-      rewriteRelativeImportExtensions: true,
-      ignoreDeprecations: "6.0",
-      resolveJsonModule: true,
-      esModuleInterop: true,
-      skipLibCheck: true,
-      types: ["node"],
-      baseUrl: ".",
-      paths: {
-        "@/*": ["src/*"],
-      },
-    },
-    include: [mitmSrc + "/**/*"],
-  };
-  const tmpTsconfigPath = join(ROOT, "tsconfig.mitm.tmp.json");
-  writeFileSync(tmpTsconfigPath, JSON.stringify(mitmTsconfig, null, 2));
-
   try {
-    runBuildTool("typescript", "tsc", ["-p", "tsconfig.mitm.tmp.json"], {
-      cwd: ROOT,
-      stdio: "inherit",
-    });
+    runBuildTool(
+      "esbuild",
+      "esbuild",
+      [
+        "src/mitm/manager.ts",
+        "--bundle",
+        "--platform=node",
+        "--packages=external",
+        "--format=esm",
+        "--outfile=dist/src/mitm/manager.js",
+      ],
+      { cwd: ROOT, stdio: "inherit" }
+    );
     const mitmServerSrc = join(mitmSrc, "server.cjs");
     if (existsSync(mitmServerSrc)) {
       cpSync(mitmServerSrc, join(mitmDest, "server.cjs"));
     }
-    console.log("  ✅ MITM utilities compiled to dist/src/mitm/");
+    console.log("  ✅ MITM utilities bundled to dist/src/mitm/manager.js");
   } catch (err: any) {
-    console.warn("  ⚠️  MITM compile warning (non-fatal):", err.message);
+    console.warn("  ⚠️  MITM bundle warning (non-fatal):", err.message);
     // Fallback: copy source files so at least they are present
     cpSync(mitmSrc, mitmDest, { recursive: true });
-  } finally {
-    // Cleanup temp tsconfig
-    try {
-      rmSync(tmpTsconfigPath);
-    } catch {}
   }
 }
 

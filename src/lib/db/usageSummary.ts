@@ -1,5 +1,5 @@
-import { getDbInstance } from "./core.js";
-import type { SqliteAdapter } from "./adapters/types.js";
+import { getDbInstance } from "./core";
+import type { SqliteAdapter } from "./adapters/types";
 
 /** Total input+output tokens rolled up in daily_usage_summary for the current calendar month. */
 export function sumUsageTokensThisMonth(db: SqliteAdapter = getDbInstance()): number {

@@ -17,8 +17,8 @@
  * most one no-auth provider has a provider-level proxy assigned at a time.
  */
 import { NOAUTH_PROVIDERS } from "@/shared/constants/providers";
-import { resolveProxyForScopeFromRegistry } from "../proxies.js";
-import type { JsonRecord } from "./shared.js";
+import { resolveProxyForScopeFromRegistry } from "../proxies";
+import type { JsonRecord } from "./shared";
 
 type ProxyValue = JsonRecord | string | null;
 export type NoAuthProxyResolutionResult = {

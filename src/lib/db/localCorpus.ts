@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 const LOCAL_CORPUS_NAMESPACE = "local_corpus";
 const LOCAL_CORPUS_ROOT_KEY = "root_path";

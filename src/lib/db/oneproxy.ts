@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
-import { getDbInstance } from "./core.js";
-import { backupDbFile } from "./backup.js";
+import { getDbInstance } from "./core";
+import { backupDbFile } from "./backup";
 
 type JsonRecord = Record<string, unknown>;
 

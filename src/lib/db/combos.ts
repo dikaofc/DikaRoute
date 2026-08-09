@@ -7,12 +7,12 @@
  */
 
 import type { ComboRecord } from "@/domain/persistence/comboRepositories";
-import { backupDbFile } from "./backup.js";
-import { clearSessionModelHistoryForCombo } from "./contextHandoffs.js";
-import { getDbInstance } from "./core.js";
-import { invalidateDbCache } from "./readCache.js";
-import { invalidateReasoningRoutingRuleCache } from "./reasoningRoutingRules.js";
-import { routingConfigRepositories } from "./repositories/routingConfigRepositories.js";
+import { backupDbFile } from "./backup";
+import { clearSessionModelHistoryForCombo } from "./contextHandoffs";
+import { getDbInstance } from "./core";
+import { invalidateDbCache } from "./readCache";
+import { invalidateReasoningRoutingRuleCache } from "./reasoningRoutingRules";
+import { routingConfigRepositories } from "./repositories/routingConfigRepositories";
 
 const repository = routingConfigRepositories.combos;
 

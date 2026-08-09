@@ -1,5 +1,5 @@
-import { getDbInstance } from "./core.js";
-import { invalidateDbCache } from "./readCache.js";
+import { getDbInstance } from "./core";
+import { invalidateDbCache } from "./readCache";
 
 /**
  * Feature 5004 — self-correcting context-window overrides.

@@ -8,7 +8,7 @@
  * @module lib/db/playgroundPresets
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 import { randomUUID } from "node:crypto";
 
 // TODO(F1-merge): swap to import from "@/shared/schemas/playground" after F1 lands

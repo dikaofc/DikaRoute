@@ -1,4 +1,4 @@
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 interface StatementLike<TRow = unknown> {
   all: (...params: unknown[]) => TRow[];

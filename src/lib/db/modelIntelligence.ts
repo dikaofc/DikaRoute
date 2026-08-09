@@ -7,7 +7,7 @@
  * @see Migration 097_model_intelligence.sql
  */
 
-import { getDbInstance, rowToCamel } from "./core.js";
+import { getDbInstance, rowToCamel } from "./core";
 
 // ──────────────── Types ────────────────
 

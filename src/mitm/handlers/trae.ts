@@ -7,8 +7,8 @@
  * the UI exposes the agent as `viability: "investigating"` (no Setup button).
  */
 import type { IncomingMessage, ServerResponse } from "node:http";
-import type { AgentId } from "../types";
-import { MitmHandlerBase } from "./base";
+import type { AgentId } from "../types.ts";
+import { MitmHandlerBase } from "./base.ts";
 
 export class TraeHandler extends MitmHandlerBase {
   readonly agentId: AgentId = "trae";

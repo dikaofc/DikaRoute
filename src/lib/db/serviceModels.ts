@@ -1,6 +1,6 @@
 /** Persists and retrieves the model list synced from embedded services (9router, etc.). */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 const NAMESPACE = "serviceModels";
 

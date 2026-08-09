@@ -12,7 +12,7 @@
  * @module db/pluginMetrics
  */
 
-import { getDbInstance } from "./core.js";
+import { getDbInstance } from "./core";
 
 export interface PluginMetricRow {
   pluginName: string;

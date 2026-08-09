@@ -5,8 +5,8 @@
  * Follows the same pattern as getModelPreserveOpenAIDeveloperRole.
  */
 
-import { getDbInstance } from "../core.js";
-import { type CompatByProtocolMap, readCompatList, isCompatProtocolKey } from "./compat.js";
+import { getDbInstance } from "../core";
+import { type CompatByProtocolMap, readCompatList, isCompatProtocolKey } from "./compat";
 
 /** The model-compat override key for the preserveVideoUrl flag. */
 const KEY = "preserveVideoUrl";

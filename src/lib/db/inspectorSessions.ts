@@ -4,10 +4,10 @@
  */
 
 import { randomUUID } from "crypto";
-import { getDbInstance } from "./core.js";
-import type { InspectorSessionRow } from "./_rowTypes.js";
-import { InterceptedRequestSchema } from "../../mitm/inspector/types.js";
-import type { InterceptedRequest } from "../../mitm/inspector/types.js";
+import { getDbInstance } from "./core";
+import type { InspectorSessionRow } from "./_rowTypes";
+import { InterceptedRequestSchema } from "../../mitm/inspector/types";
+import type { InterceptedRequest } from "../../mitm/inspector/types";
 
 interface InspectorSessionDbRow {
   id: string;
