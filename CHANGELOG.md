@@ -6,6 +6,17 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.58] - 2026-08-09
+
+### Fixed
+
+- surface real instrumentation-failure error on Termux/Android; add TERMUX_GUIDE
+
+### Documentation
+
+- fix markdown table alignment after npm badge style bump
+- align npm version badge in Releases table with hero badge style
+
 ## [3.8.57] - 2026-08-09
 
 ### Added
