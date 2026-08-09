@@ -56,6 +56,11 @@ function readJson(file) {
   return JSON.parse(readFileSync(path.join(ROOT, file), "utf8"));
 }
 
+// Deterministic 2-space JSON output with a trailing newline.
+function writeJson(file, data) {
+  writeFileSync(path.join(ROOT, file), `${JSON.stringify(data, null, 2)}\n`);
+}
+
 function parseArgs(argv) {
   const args = { bump: "patch", version: "", since: null, dryRun: false };
   for (let i = 0; i < argv.length; i++) {
