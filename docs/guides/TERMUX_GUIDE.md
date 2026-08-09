@@ -1,3 +1,8 @@
+---
+title: "DikaRoute on Termux"
+description: "Menjalankan DikaRoute di Android/Termux: instalasi, cache dir, dan troubleshooting instrumentation."
+---
+
 # DikaRoute on Termux (Android)
 
 DikaRoute runs on Android via [Termux](https://termux.dev/). This guide covers the
