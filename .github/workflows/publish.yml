@@ -11,7 +11,13 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    
+    # The repo default is "read" for the auto-generated GITHUB_TOKEN, which
+    # makes the release step below fail with 403 ("Resource not accessible by
+    # integration"). Grant contents: write for THIS job only so npm publish and
+    # the GitHub Release creation succeed; everything else stays read-only.
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
