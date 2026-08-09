@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.59] - 2026-08-09
+
+### Fixed
+
+- force sql.js WASM driver on Android/Termux (skip unreliable native sync drivers) + DIKAROUTE_FORCE_SQLJS override
+
 ## [3.8.58] - 2026-08-09
 
 ### Fixed
