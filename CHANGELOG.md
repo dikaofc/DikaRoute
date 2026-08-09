@@ -6,6 +6,25 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.56] - 2026-08-09
+
+### Added
+
+- iOS Fluid Glass dashboard redesign (AMOLED glassmorphism design system across all routes)
+- hybrid OG images — transparent og:image + solid twitter:image (1200x630)
+- add Open Graph + Twitter card metadata with social preview image
+
+### Documentation
+
+- add 1200x630 social preview variants (X/Twitter card size)
+- add transparent dark-mode social preview variant (PNG + SVG source)
+- add 1280x640 social preview image (dikaroute-social.png)
+
+### Changed
+
+- add UI validation job (lint + typecheck) to publish workflow; dry-run guard in release workflow
+- add auto-release workflow (version bump + CHANGELOG generation)
+
 ## [3.8.55] - 2026-08-09
 
 ### Changed
