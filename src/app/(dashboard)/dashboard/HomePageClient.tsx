@@ -135,8 +135,8 @@ export default function HomePageClient({ machineId }: HomePageClientProps) {
 
   const [versionInfo, setVersionInfo] = useState<VersionInfo | null>(null);
   const [updateDismissed, setUpdateDismissed] = useState<string | null>(null);
-  const [baseCopied, setBaseCopied] = useState(false);;
-  const [updating, setUpdating] = useState(false);;
+  const [baseCopied, setBaseCopied] = useState(false);
+  const [updating, setUpdating] = useState(false);
   useEffect(() => {
     try {
       const stored = window.localStorage.getItem("dikaroute.dismissedUpdate");
@@ -940,131 +940,215 @@ export default function HomePageClient({ machineId }: HomePageClientProps) {
       )}
 
       {/* Hero — iOS control-center welcome */}
-<section className="relative overflow-hidden rounded-2xl border border-border bg-surface p-6 sm:p-8">
-  <div className="dkr-hero-grid pointer-events-none absolute inset-0 opacity-60" />
-  <div className="pointer-events-none absolute -top-28 right-0 size-72 rounded-full bg-primary/10 blur-3xl" />
-  <div className="relative flex flex-col gap-6">
-    <div className="flex flex-wrap items-start justify-between gap-4">
-      <div className="flex items-center gap-4">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary shadow-lg shadow-primary/10">
-          <span className="material-symbols-outlined text-[26px]">route</span>
-        </span>
-        <div>
-          <h1 className="text-xl font-bold tracking-tight text-text-main sm:text-2xl">Welcome to DikaRoute</h1>
-          <p className="mt-1 text-sm text-text-muted">Your AI gateway is ready — route, monitor, and optimize LLM traffic from one control center.</p>
-        </div>
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="flex items-center gap-1.5 rounded-full border border-border bg-bg-subtle px-3 py-1.5 text-xs font-medium text-text-main">
-          <span className="dkr-status-dot size-2 rounded-full bg-success" />
-          Running
-        </span>
-        {versionInfo?.current && (
-          <span className="rounded-full border border-border bg-bg-subtle px-3 py-1.5 font-mono text-xs text-text-muted">v{versionInfo.current}</span>
-        )}
-      </div>
-    </div>
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-      <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">Active</p>
-        <p className="mt-1 text-2xl font-bold tabular-nums text-text-main">{providerStats.reduce((sum, s) => sum + s.connected, 0)}</p>
-      </div>
-      <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">Recent</p>
-        <p className="mt-1 text-2xl font-bold tabular-nums text-text-main">{providerConnections.length}</p>
-      </div>
-      <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">Errors</p>
-        <p className="mt-1 text-2xl font-bold tabular-nums text-error">{providerStats.reduce((sum, s) => sum + s.errors, 0)}</p>
-      </div>
-      <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">Models</p>
-        <p className="mt-1 text-2xl font-bold tabular-nums text-text-main">{models.length}</p>
-      </div>
-    </div>
-    <div>
-      <div className="flex items-center justify-between">
-        <label className="text-[11px] font-semibold uppercase tracking-wider text-text-muted">API Endpoint</label>
-        <button onClick={copyBaseUrl} className="flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-main">
-          <span className="material-symbols-outlined text-[14px]">{baseCopied ? "check" : "content_copy"}</span>
-          {baseCopied ? "Copied" : "Copy"}
-        </button>
-      </div>
-      <button onClick={copyBaseUrl} className="mt-2 flex w-full items-center gap-3 overflow-hidden rounded-xl border border-border bg-[#0b0c0e] px-4 py-3 text-left font-mono text-sm text-text-main transition-colors hover:border-primary/30">
-        <span className="material-symbols-outlined shrink-0 text-[16px] text-primary">link</span>
-        <code className="min-w-0 flex-1 truncate">{currentEndpoint}</code>
-        <span className="material-symbols-outlined shrink-0 text-[16px] text-text-muted">{baseCopied ? "check_circle" : "content_copy"}</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-{/* Update Notification Banner (dismissible, iOS-styled) */}
-{versionInfo?.updateAvailable && !showUpdateOverlay && (!updateDismissed || updateDismissed !== versionInfo.latest) && (
-  <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/[0.07] px-4 py-3.5">
-    <div className="flex items-center gap-3.5">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
-        <span className="material-symbols-outlined text-[20px]">system_update_alt</span>
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className="text-sm font-semibold text-text-main">Update Available: v{versionInfo.latest}</p>
-        <p className="mt-0.5 text-xs text-text-muted">
-          {isElectron
-            ? electronUpdateStatus.status === "downloading"
-              ? `Downloading update... ${electronUpdateStatus.percent || 0}% complete.`
-              : `Version v${versionInfo.latest} is available for the desktop app.`
-            : versionInfo.autoUpdateSupported
-              ? t("updateAvailableDesc")
-              : `You are using v${versionInfo.current}. Update to access the latest features and bug fixes.`}
-        </p>
-      </div>
-      <div className="flex shrink-0 items-center gap-2">
-        <Button size="sm" variant="ghost" onClick={dismissUpdate}>Later</Button>
-        {isElectron ? (
-          electronUpdateStatus.status === "downloaded" ? (
-            <Button size="sm" onClick={() => globalThis.window.electronAPI?.installUpdate()} className="font-semibold">Restart &amp; Install</Button>
-          ) : (
-            <Button size="sm" onClick={() => globalThis.window.electronAPI?.downloadUpdate()} className="font-semibold">Download</Button>
-          )
-        ) : (
-          <Button size="sm" onClick={versionInfo.autoUpdateSupported ? handleUpdate : undefined} disabled={updating || !versionInfo.autoUpdateSupported} className="font-semibold">
-            {updating ? "Updating…" : versionInfo.autoUpdateSupported ? t("updateNow") : "Manual Update"}
-          </Button>
-        )}
-        <button onClick={dismissUpdate} aria-label="Dismiss update notice" className="flex size-8 items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-main">
-          <span className="material-symbols-outlined text-[18px]">close</span>
-        </button>
-      </div>
-    </div>
-    {isElectron && (electronUpdateStatus.status === "error" || electronUpdateStatus.status === "idle" || electronUpdateStatus.status === "not-available") && (
-      <p className="border-t border-primary/15 pt-2.5 text-xs text-text-muted">
-        Auto-update unavailable.{" "}
-        <a href={`https://github.com/dikaofc/DikaRoute/releases/tag/v${versionInfo.latest}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
-          Download installer manually
-        </a>
-      </p>
-    )}
-  </div>
-)}{/* News Notification Banner */}
-        {versionInfo?.news && (
-          <div className="flex min-h-[64px] items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-2.5 text-[13px]">
-            <div className="flex min-w-0 items-center gap-4">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <span className="material-symbols-outlined text-[20px]">{versionInfo.news.icon || "campaign"}</span>
-              </div>
-              <div className="min-w-0">
-                <p className="text-sm font-semibold text-text-main">{versionInfo.news.title}</p>
-                <p className="mt-0.5 max-w-[560px] text-xs leading-relaxed text-text-muted">{versionInfo.news.message}</p>
+      <section className="relative overflow-hidden rounded-2xl border border-border bg-surface p-6 sm:p-8">
+        <div className="dkr-hero-grid pointer-events-none absolute inset-0 opacity-60" />
+        <div className="pointer-events-none absolute -top-28 right-0 size-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="relative flex flex-col gap-6">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary shadow-lg shadow-primary/10">
+                <span className="material-symbols-outlined text-[26px]">route</span>
+              </span>
+              <div>
+                <h1 className="text-xl font-bold tracking-tight text-text-main sm:text-2xl">
+                  Welcome to DikaRoute
+                </h1>
+                <p className="mt-1 text-sm text-text-muted">
+                  Your AI gateway is ready — route, monitor, and optimize LLM traffic from one
+                  control center.
+                </p>
               </div>
             </div>
-            {versionInfo.news.link && (
-              <a href={versionInfo.news.link} target="_blank" rel="noopener noreferrer" className="ml-4 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-bg px-4 py-2 text-xs font-semibold text-text-main transition-colors hover:border-primary/30 hover:text-primary">
-                {versionInfo.news.linkLabel || "Ler Mais"}
-                <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
-              </a>
-            )}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="flex items-center gap-1.5 rounded-full border border-border bg-bg-subtle px-3 py-1.5 text-xs font-medium text-text-main">
+                <span className="dkr-status-dot size-2 rounded-full bg-success" />
+                Running
+              </span>
+              {versionInfo?.current && (
+                <span className="rounded-full border border-border bg-bg-subtle px-3 py-1.5 font-mono text-xs text-text-muted">
+                  v{versionInfo.current}
+                </span>
+              )}
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
+              <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">
+                Active
+              </p>
+              <p className="mt-1 text-2xl font-bold tabular-nums text-text-main">
+                {providerStats.reduce((sum, s) => sum + s.connected, 0)}
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
+              <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">
+                Recent
+              </p>
+              <p className="mt-1 text-2xl font-bold tabular-nums text-text-main">
+                {providerConnections.length}
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
+              <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">
+                Errors
+              </p>
+              <p className="mt-1 text-2xl font-bold tabular-nums text-error">
+                {providerStats.reduce((sum, s) => sum + s.errors, 0)}
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-bg-subtle/50 p-3.5">
+              <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted">
+                Models
+              </p>
+              <p className="mt-1 text-2xl font-bold tabular-nums text-text-main">{models.length}</p>
+            </div>
+          </div>
+          <div>
+            <div className="flex items-center justify-between">
+              <label className="text-[11px] font-semibold uppercase tracking-wider text-text-muted">
+                API Endpoint
+              </label>
+              <button
+                onClick={copyBaseUrl}
+                className="flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-main"
+              >
+                <span className="material-symbols-outlined text-[14px]">
+                  {baseCopied ? "check" : "content_copy"}
+                </span>
+                {baseCopied ? "Copied" : "Copy"}
+              </button>
+            </div>
+            <button
+              onClick={copyBaseUrl}
+              className="mt-2 flex w-full items-center gap-3 overflow-hidden rounded-xl border border-border bg-[#0b0c0e] px-4 py-3 text-left font-mono text-sm text-text-main transition-colors hover:border-primary/30"
+            >
+              <span className="material-symbols-outlined shrink-0 text-[16px] text-primary">
+                link
+              </span>
+              <code className="min-w-0 flex-1 truncate">{currentEndpoint}</code>
+              <span className="material-symbols-outlined shrink-0 text-[16px] text-text-muted">
+                {baseCopied ? "check_circle" : "content_copy"}
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Update Notification Banner (dismissible, iOS-styled) */}
+      {versionInfo?.updateAvailable &&
+        !showUpdateOverlay &&
+        (!updateDismissed || updateDismissed !== versionInfo.latest) && (
+          <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/[0.07] px-4 py-3.5">
+            <div className="flex items-center gap-3.5">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+                <span className="material-symbols-outlined text-[20px]">system_update_alt</span>
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold text-text-main">
+                  Update Available: v{versionInfo.latest}
+                </p>
+                <p className="mt-0.5 text-xs text-text-muted">
+                  {isElectron
+                    ? electronUpdateStatus.status === "downloading"
+                      ? `Downloading update... ${electronUpdateStatus.percent || 0}% complete.`
+                      : `Version v${versionInfo.latest} is available for the desktop app.`
+                    : versionInfo.autoUpdateSupported
+                      ? t("updateAvailableDesc")
+                      : `You are using v${versionInfo.current}. Update to access the latest features and bug fixes.`}
+                </p>
+              </div>
+              <div className="flex shrink-0 items-center gap-2">
+                <Button size="sm" variant="ghost" onClick={dismissUpdate}>
+                  Later
+                </Button>
+                {isElectron ? (
+                  electronUpdateStatus.status === "downloaded" ? (
+                    <Button
+                      size="sm"
+                      onClick={() => globalThis.window.electronAPI?.installUpdate()}
+                      className="font-semibold"
+                    >
+                      Restart &amp; Install
+                    </Button>
+                  ) : (
+                    <Button
+                      size="sm"
+                      onClick={() => globalThis.window.electronAPI?.downloadUpdate()}
+                      className="font-semibold"
+                    >
+                      Download
+                    </Button>
+                  )
+                ) : (
+                  <Button
+                    size="sm"
+                    onClick={versionInfo.autoUpdateSupported ? handleUpdate : undefined}
+                    disabled={updating || !versionInfo.autoUpdateSupported}
+                    className="font-semibold"
+                  >
+                    {updating
+                      ? "Updating…"
+                      : versionInfo.autoUpdateSupported
+                        ? t("updateNow")
+                        : "Manual Update"}
+                  </Button>
+                )}
+                <button
+                  onClick={dismissUpdate}
+                  aria-label="Dismiss update notice"
+                  className="flex size-8 items-center justify-center rounded-lg text-text-muted transition-colors hover:bg-bg-subtle hover:text-text-main"
+                >
+                  <span className="material-symbols-outlined text-[18px]">close</span>
+                </button>
+              </div>
+            </div>
+            {isElectron &&
+              (electronUpdateStatus.status === "error" ||
+                electronUpdateStatus.status === "idle" ||
+                electronUpdateStatus.status === "not-available") && (
+                <p className="border-t border-primary/15 pt-2.5 text-xs text-text-muted">
+                  Auto-update unavailable.{" "}
+                  <a
+                    href={`https://github.com/dikaofc/DikaRoute/releases/tag/v${versionInfo.latest}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-primary hover:underline"
+                  >
+                    Download installer manually
+                  </a>
+                </p>
+              )}
           </div>
         )}
+      {/* News Notification Banner */}
+      {versionInfo?.news && (
+        <div className="flex min-h-[64px] items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-2.5 text-[13px]">
+          <div className="flex min-w-0 items-center gap-4">
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="material-symbols-outlined text-[20px]">
+                {versionInfo.news.icon || "campaign"}
+              </span>
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-text-main">{versionInfo.news.title}</p>
+              <p className="mt-0.5 max-w-[560px] text-xs leading-relaxed text-text-muted">
+                {versionInfo.news.message}
+              </p>
+            </div>
+          </div>
+          {versionInfo.news.link && (
+            <a
+              href={versionInfo.news.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-border bg-bg px-4 py-2 text-xs font-semibold text-text-main transition-colors hover:border-primary/30 hover:text-primary"
+            >
+              {versionInfo.news.linkLabel || "Ler Mais"}
+              <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          )}
+        </div>
+      )}
       {/* Pinned Provider Quota Limits (compact, no filters) */}
       {pinProviderQuotaToHome && (
         <Suspense fallback={<CardSkeleton />}>
@@ -1076,122 +1160,139 @@ export default function HomePageClient({ machineId }: HomePageClientProps) {
 
       {/* Quick Start (controlled by Appearance setting, default on) */}
       {/* QuickStart — iOS onboarding stepper */}
-{showQuickStartOnHome && (
-  <Card>
-    <div className="flex flex-col gap-5">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-lg font-semibold">{t("quickStart")}</h2>
-          <p className="text-sm text-text-muted">{t("quickStartDesc")}</p>
-        </div>
-        <Link href="/docs" prefetch={false} className={DOCS_LINK}>
-          <span className="material-symbols-outlined text-[14px]">menu_book</span>
-          {t("fullDocs")}
-        </Link>
-      </div>
-      <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
-          <div className="flex items-center justify-between">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-primary/12 text-primary">
-              <span className="material-symbols-outlined text-[18px]">key</span>
-            </span>
-            <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">1</span>
-          </div>
-          <div>
-            <p className="text-sm font-semibold">{t("step1Title")}</p>
-            <p className="mt-1 text-xs leading-relaxed text-text-muted">
-              {t.rich("step1Desc", {
-                endpoint: (chunks) => (
-                  <Link href="/dashboard/api-manager" prefetch={false} className={INLINE_LINK}>
-                    {chunks}
-                  </Link>
-                ),
-              })}
-            </p>
-          </div>
-        </li>
-        <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
-          <div className="flex items-center justify-between">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-success/12 text-success">
-              <span className="material-symbols-outlined text-[18px]">dns</span>
-            </span>
-            {connected.length > 0 ? (
-              <span className="flex size-6 items-center justify-center rounded-full bg-success/15 text-success">
-                <span className="material-symbols-outlined text-[13px]">check</span>
-              </span>
-            ) : (
-              <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">2</span>
+      {showQuickStartOnHome && (
+        <Card>
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-semibold">{t("quickStart")}</h2>
+                <p className="text-sm text-text-muted">{t("quickStartDesc")}</p>
+              </div>
+              <Link href="/docs" prefetch={false} className={DOCS_LINK}>
+                <span className="material-symbols-outlined text-[14px]">menu_book</span>
+                {t("fullDocs")}
+              </Link>
+            </div>
+            <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
+                <div className="flex items-center justify-between">
+                  <span className="flex size-9 items-center justify-center rounded-xl bg-primary/12 text-primary">
+                    <span className="material-symbols-outlined text-[18px]">key</span>
+                  </span>
+                  <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">
+                    1
+                  </span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">{t("step1Title")}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-text-muted">
+                    {t.rich("step1Desc", {
+                      endpoint: (chunks) => (
+                        <Link
+                          href="/dashboard/api-manager"
+                          prefetch={false}
+                          className={INLINE_LINK}
+                        >
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
+                  </p>
+                </div>
+              </li>
+              <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
+                <div className="flex items-center justify-between">
+                  <span className="flex size-9 items-center justify-center rounded-xl bg-success/12 text-success">
+                    <span className="material-symbols-outlined text-[18px]">dns</span>
+                  </span>
+                  {providerConnections.length > 0 ? (
+                    <span className="flex size-6 items-center justify-center rounded-full bg-success/15 text-success">
+                      <span className="material-symbols-outlined text-[13px]">check</span>
+                    </span>
+                  ) : (
+                    <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">
+                      2
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">{t("step2Title")}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-text-muted">
+                    {t.rich("step2Desc", {
+                      providers: (chunks) => (
+                        <Link href="/dashboard/providers" prefetch={false} className={INLINE_LINK}>
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
+                  </p>
+                </div>
+              </li>
+              <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
+                <div className="flex items-center justify-between">
+                  <span className="flex size-9 items-center justify-center rounded-xl bg-accent/12 text-accent">
+                    <span className="material-symbols-outlined text-[18px]">link</span>
+                  </span>
+                  <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">
+                    3
+                  </span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">{t("step3Title")}</p>
+                  <p className="mt-1 break-all font-mono text-[11px] leading-relaxed text-primary">
+                    {baseUrl}
+                  </p>
+                  <p className="mt-1 text-xs leading-relaxed text-text-muted">
+                    {t("step3Desc", { url: baseUrl })}
+                  </p>
+                </div>
+              </li>
+              <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
+                <div className="flex items-center justify-between">
+                  <span className="flex size-9 items-center justify-center rounded-xl bg-warning/12 text-warning">
+                    <span className="material-symbols-outlined text-[18px]">analytics</span>
+                  </span>
+                  <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">
+                    4
+                  </span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">{t("step4Title")}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-text-muted">
+                    {t.rich("step4Desc", {
+                      logs: (chunks) => (
+                        <Link href="/dashboard/logs" prefetch={false} className={INLINE_LINK}>
+                          {chunks}
+                        </Link>
+                      ),
+                      analytics: (chunks) => (
+                        <Link href="/dashboard/analytics" prefetch={false} className={INLINE_LINK}>
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
+                  </p>
+                </div>
+              </li>
+            </ol>
+            {providerConnections.length === 0 && (
+              <div className="flex flex-col items-start justify-between gap-3 rounded-xl border border-dashed border-border bg-bg-subtle/40 px-4 py-3.5 sm:flex-row sm:items-center">
+                <p className="text-sm text-text-muted">
+                  <span className="font-semibold text-text-main">Connect your first provider</span>{" "}
+                  to start routing live traffic.
+                </p>
+                <Link href="/dashboard/providers" prefetch={false} className="shrink-0">
+                  <Button size="sm" className="font-semibold">
+                    <span className="material-symbols-outlined mr-1 text-[15px]">add_link</span>
+                    Connect Provider
+                  </Button>
+                </Link>
+              </div>
             )}
           </div>
-          <div>
-            <p className="text-sm font-semibold">{t("step2Title")}</p>
-            <p className="mt-1 text-xs leading-relaxed text-text-muted">
-              {t.rich("step2Desc", {
-                providers: (chunks) => (
-                  <Link href="/dashboard/providers" prefetch={false} className={INLINE_LINK}>
-                    {chunks}
-                  </Link>
-                ),
-              })}
-            </p>
-          </div>
-        </li>
-        <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
-          <div className="flex items-center justify-between">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-accent/12 text-accent">
-              <span className="material-symbols-outlined text-[18px]">link</span>
-            </span>
-            <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">3</span>
-          </div>
-          <div>
-            <p className="text-sm font-semibold">{t("step3Title")}</p>
-            <p className="mt-1 break-all font-mono text-[11px] leading-relaxed text-primary">{baseUrl}</p>
-            <p className="mt-1 text-xs leading-relaxed text-text-muted">{t("step3Desc", { url: baseUrl })}</p>
-          </div>
-        </li>
-        <li className="flex flex-col gap-3 rounded-xl border border-border bg-bg-subtle/50 p-4 transition-all hover:border-primary/25 hover:bg-bg-subtle">
-          <div className="flex items-center justify-between">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-warning/12 text-warning">
-              <span className="material-symbols-outlined text-[18px]">analytics</span>
-            </span>
-            <span className="flex size-6 items-center justify-center rounded-full border border-border bg-bg text-[11px] font-semibold text-text-muted">4</span>
-          </div>
-          <div>
-            <p className="text-sm font-semibold">{t("step4Title")}</p>
-            <p className="mt-1 text-xs leading-relaxed text-text-muted">
-              {t.rich("step4Desc", {
-                logs: (chunks) => (
-                  <Link href="/dashboard/logs" prefetch={false} className={INLINE_LINK}>
-                    {chunks}
-                  </Link>
-                ),
-                analytics: (chunks) => (
-                  <Link href="/dashboard/analytics" prefetch={false} className={INLINE_LINK}>
-                    {chunks}
-                  </Link>
-                ),
-              })}
-            </p>
-          </div>
-        </li>
-      </ol>
-      {connected.length === 0 && (
-        <div className="flex flex-col items-start justify-between gap-3 rounded-xl border border-dashed border-border bg-bg-subtle/40 px-4 py-3.5 sm:flex-row sm:items-center">
-          <p className="text-sm text-text-muted">
-            <span className="font-semibold text-text-main">Connect your first provider</span> to start routing live traffic.
-          </p>
-          <Link href="/dashboard/providers" prefetch={false} className="shrink-0">
-            <Button size="sm" className="font-semibold">
-              <span className="material-symbols-outlined mr-1 text-[15px]">add_link</span>
-              Connect Provider
-            </Button>
-          </Link>
-        </div>
+        </Card>
       )}
-    </div>
-  </Card>
-)}
-{showProviderTopologyOnHome && (
+      {showProviderTopologyOnHome && (
         <HomeProviderTopologySection
           providers={topologyProviders}
           lastProvider={lastProvider}
@@ -1392,4 +1493,3 @@ function ProviderModelsModal({
     </Modal>
   );
 }
-
