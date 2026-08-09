@@ -63,11 +63,17 @@ jobs:
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
 
-      - name: Build CLI
+      # Full production build — 100% in CI, never local. `build:cli` runs
+      # scripts/build/prepublish.ts, which consumes .build/next/standalone and
+      # AUTOMATICALLY triggers `npm run build` (build-next-isolated.mjs → full
+      # Next.js Turbopack production build + standalone assembly) when the
+      # artifact is absent, then bundles the CLI entrypoint, MITM stack, MCP
+      # server, LLMLingua worker and @dikaroute/opencode-plugin into dist/.
+      - name: Build package (Next.js standalone + CLI + sidecars)
         run: npm run build:cli
         env:
-          NODE_OPTIONS: "--max-old-space-size=4096"
-          DIKAROUTE_BUILD_MEMORY_MB: 4096
+          NODE_OPTIONS: "--max-old-space-size=8192"
+          DIKAROUTE_BUILD_MEMORY_MB: 8192
 
       - name: Verify dist folder
         run: |
@@ -75,11 +81,20 @@ jobs:
             echo "ERROR: Build failed - dist folder not found"
             exit 1
           fi
+          if [ ! -f "dist/server.js" ]; then
+            echo "ERROR: Build failed - dist/server.js not found"
+            exit 1
+          fi
           echo "dist size: $(du -sh dist)"
 
       - name: Get package version
         id: pkg
         run: echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      # Pre-publish packaging gate: catch malformed tarballs (E415 hard links,
+      # missing files, wrong file list) before anything is pushed to the registry.
+      - name: Validate npm tarball (pack dry-run)
+        run: npm pack --dry-run --json > /tmp/pack.json && node -e "const p=JSON.parse(require('fs').readFileSync('/tmp/pack.json','utf8')); console.log('tarball bytes:', p[0]?.size ?? 'n/a', '| files:', p[0]?.files?.length ?? 'n/a')"
 
       - name: Check if version already published
         id: check-version
