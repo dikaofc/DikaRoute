@@ -45,6 +45,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Sanity check (dry-run, no writes)
+        run: |
+          node scripts/release/auto-bump.mjs \
+            --bump "${{ github.event.inputs.bump }}" \
+            --version "${{ github.event.inputs.version }}" \
+            --dry-run
+
       - name: Auto-bump version + generate CHANGELOG
         run: |
           node scripts/release/auto-bump.mjs \
