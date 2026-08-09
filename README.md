@@ -374,12 +374,12 @@ Run `dikaroute` for the dashboard, or use the CLI for everything else:
 
 ## 📦 Releases & Changelog
 
-|                        |                                                                                                                |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------- |
+|                        |                                                                                                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Current version**    | [![npm version](https://img.shields.io/npm/v/dikaroute?style=for-the-badge&logo=npm&label=version&color=6366f1)](https://www.npmjs.com/package/dikaroute) |
-| 📝 **Changelog**       | [CHANGELOG.md](./CHANGELOG.md) — detailed release notes, also rendered inside the dashboard                    |
-| 🏷️ **GitHub Releases** | [Releases](https://github.com/dikaofc/DikaRoute/releases)                                                      |
-| 📦 **npm**             | [dikaroute](https://www.npmjs.com/package/dikaroute)                                                           |
+| 📝 **Changelog**       | [CHANGELOG.md](./CHANGELOG.md) — detailed release notes, also rendered inside the dashboard                                                               |
+| 🏷️ **GitHub Releases** | [Releases](https://github.com/dikaofc/DikaRoute/releases)                                                                                                 |
+| 📦 **npm**             | [dikaroute](https://www.npmjs.com/package/dikaroute)                                                                                                      |
 
 ---
 
