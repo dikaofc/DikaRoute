@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.61] - 2026-08-09
+
+### Fixed
+
+- ReferenceError on /home dashboard — connected is undefined, use providerConnections (QuickStart badge + empty-state guard)
+
 ## [3.8.60] - 2026-08-09
 
 ### Fixed
