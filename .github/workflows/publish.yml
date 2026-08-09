@@ -7,6 +7,17 @@ on:
     paths:
       - "package.json"
   workflow_dispatch:
+    inputs:
+      # Exact commit SHA to build & publish. Auto-release passes the release
+      # bump commit here so the checkout never races the `main` ref update
+      # (a `gh workflow run --ref main` dispatched right after push can still
+      # resolve to the PREVIOUS commit, as seen in the 3.8.59 run that built
+      # 3.8.58 and skipped publishing). Falls back to the default ref (main)
+      # for manual dispatches / push triggers.
+      release_ref:
+        description: "Commit SHA to build (auto-set by Auto Release workflow)"
+        required: false
+        type: string
 
 jobs:
   # UI/design-system validation gate — lint + typecheck must pass before any
@@ -46,10 +57,24 @@ jobs:
       contents: write
 
     steps:
+      # Auto-release passes the release bump commit SHA so the build never
+      # races the `main` ref update; manual dispatches and push triggers fall
+      # back to the default ref (main). Resolved in a dedicated step because
+      # `github.event.inputs` does not exist for push events.
+      - name: Resolve build ref
+        id: build-ref
+        run: |
+          if [ -n "${{ github.event.inputs.release_ref }}" ]; then
+            echo "REF=${{ github.event.inputs.release_ref }}" >> $GITHUB_OUTPUT
+          else
+            echo "REF=${{ github.ref }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ steps.build-ref.outputs.REF }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

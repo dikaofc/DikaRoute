@@ -73,7 +73,22 @@ jobs:
           # A push made with GITHUB_TOKEN does NOT re-trigger other workflows
           # (GitHub's anti-recursion rule), so dispatch publish.yml explicitly.
           # workflow_dispatch IS allowed for GITHUB_TOKEN.
-          gh workflow run 'Publish to npm' --ref main
-          echo "Dispatched Publish to npm — build, npm publish and GitHub Release run automatically."
+          #
+          # Dispatch against the EXACT commit SHA we just pushed (not `--ref
+          # main`): the push returns before the remote `main` ref is visible to
+          # the runner that resolves the workflow ref, which once made publish
+          # build the PREVIOUS version and skip publishing (#3.8.59). Passing
+          # the SHA makes the build deterministic. `gh workflow run` accepts a
+          # SHA as --ref once the push is registered; retry briefly to smooth
+          # that propagation.
+          RELEASE_SHA="$(git rev-parse HEAD)"
+          for attempt in 1 2 3 4 5; do
+            if gh workflow run 'Publish to npm' --ref "${RELEASE_SHA}" -f "release_ref=${RELEASE_SHA}" 2>/dev/null; then
+              echo "Dispatched Publish to npm @ ${RELEASE_SHA} — build, npm publish and GitHub Release run automatically."
+              break
+            fi
+            echo "Dispatch attempt ${attempt} not ready yet (SHA propagation) — retrying..."
+            sleep 5
+          done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
