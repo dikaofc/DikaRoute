@@ -3,8 +3,8 @@
  * CRUD operations for agent_bridge_state table.
  */
 
-import { getDbInstance } from "./core.ts";
-import type { AgentBridgeStateRow } from "./_rowTypes.ts";
+import { getDbInstance } from "./core.js";
+import type { AgentBridgeStateRow } from "./_rowTypes.js";
 
 // SQLite stores booleans as 0/1 integers
 interface AgentBridgeStateDbRow {

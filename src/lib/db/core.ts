@@ -4,22 +4,22 @@
  * All domain modules import `getDbInstance` and helpers from here.
  */
 
-import type { SqliteAdapter } from "./adapters/types";
+import type { SqliteAdapter } from "./adapters/types.js";
 import {
   tryOpenSync,
   getSqlJsAdapter,
   preInitSqlJs,
   getSqlJsPreInitError,
   openDatabaseAsync,
-} from "./adapters/driverFactory";
+} from "./adapters/driverFactory.js";
 import path from "path";
-import { retryProbeIfTransient } from "./probeUtils";
+import { retryProbeIfTransient } from "./probeUtils.js";
 import fs from "fs";
-import { resolveWritableDataDir, getLegacyDotDataDir } from "../dataPaths";
-import { runMigrations } from "./migrationRunner";
-import { runDbHealthCheck } from "./healthCheck";
-import { resetAllDbModuleState } from "./stateReset";
-import { parseStoredPayload } from "../logPayloads";
+import { resolveWritableDataDir, getLegacyDotDataDir } from "../dataPaths.js";
+import { runMigrations } from "./migrationRunner.js";
+import { runDbHealthCheck } from "./healthCheck.js";
+import { resetAllDbModuleState } from "./stateReset.js";
+import { parseStoredPayload } from "../logPayloads.js";
 import { DEFAULT_DATABASE_SETTINGS, type DatabaseSettings } from "@/types/databaseSettings";
 import {
   applyDatabaseOptimizationSettingsForDb,
