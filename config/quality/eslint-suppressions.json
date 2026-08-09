@@ -323,11 +323,6 @@
       "count": 1
     }
   },
-  "src/app/(dashboard)/dashboard/providers/[id]/components/ProviderModalsPanel.tsx": {
-    "react/jsx-no-undef": {
-      "count": 1
-    }
-  },
   "src/app/(dashboard)/dashboard/settings/components/AppearanceTab.tsx": {
     "@next/next/no-img-element": {
       "count": 4
