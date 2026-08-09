@@ -27,7 +27,7 @@ function getDocsLocale(): string {
 // `docs/i18n/<locale>/docs/<section>/<FILE>.md` — the exact path layout that
 // `scripts/i18n/run-translation.mjs` produces. Returns rendered HTML or null.
 
-function tryI18nFallback(slug: string[], locale: string): string | null {
+async function tryI18nFallback(slug: string[], locale: string): Promise<string | null> {
   if (!locale || locale === "en") return null;
 
   // 🛡️ Path traversal prevention — `locale` is a user-controllable cookie, so
@@ -75,7 +75,7 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   if (!page) notFound();
 
   const locale = getDocsLocale();
-  const i18nHtml = tryI18nFallback(params.slug, locale);
+  const i18nHtml = await tryI18nFallback(params.slug, locale);
 
   if (i18nHtml) {
     // Render translated markdown (non-English locale with available translation)
@@ -117,4 +117,3 @@ export async function generateMetadata(props: {
     description: page.data.description ?? `DikaRoute documentation: ${page.data.title}`,
   };
 }
-
