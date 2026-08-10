@@ -22,22 +22,22 @@ export const metadata: Metadata = {
 
 const featuredLinks = [
   {
-    href: "/docs/getting-started/quick-start",
+    href: "/docs/guides/quickstart",
     title: "Quick Start",
     icon: "rocket_launch",
-    desc: "Get DikaRoute running in 3 minutes",
+    desc: "Get DikaRoute running in minutes",
   },
   {
-    href: "/docs/getting-started/auto-combo-guide",
-    title: "Auto-Combo Guide",
-    icon: "auto_awesome",
-    desc: "Let DikaRoute pick the best AI for you",
+    href: "/docs/architecture/overview",
+    title: "Architecture",
+    icon: "code",
+    desc: "Deep dive into how DikaRoute is built",
   },
   {
-    href: "/docs/getting-started/providers-guide",
-    title: "Providers Guide",
-    icon: "link",
-    desc: "Connect AI providers in minutes",
+    href: "/docs/guides/termux-guide",
+    title: "Termux Guide",
+    icon: "smartphone",
+    desc: "Run DikaRoute on Android / Termux",
   },
 ];
 
