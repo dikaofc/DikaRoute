@@ -22,6 +22,9 @@ export default function NewsViewer() {
         if (res.ok) {
           const data = await res.json();
           setNews(parseActiveNewsPayload(data));
+        } else if (res.status === 404) {
+          // No news file on the source branch — nothing announced, not an error.
+          setNews(null);
         } else {
           setError(true);
         }
