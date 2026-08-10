@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.66] - 2026-08-10
+
+### Fixed
+
+- Termux sql.js WASM resolution, health-gated readiness, aligned repair versions — Resolve sql-wasm.wasm cwd-independently (module walk-up), fail build on missing required WASM asset,
+
 ## [3.8.65] - 2026-08-09
 
 ### Fixed
