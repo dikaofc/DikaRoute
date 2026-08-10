@@ -222,6 +222,15 @@ export function normalizeArtifactPath(filePath: string): string {
  * a machine where someone had installed inside that subpackage. `files[]` in
  * package.json now excludes it at the source; this is the gate that FAILS if it
  * ever comes back instead of silently allowing it.
+ *
+ * NOTE — this is ALSO why `dist/node_modules/sql.js/dist/sql-wasm.wasm` is NOT
+ * listed in PACK_ARTIFACT_REQUIRED_PATHS: the npm tarball strips node_modules by
+ * design, so requiring it there would fail every release. sql.js is a HARD
+ * `dependencies` entry, so `npm install -g dikaroute` always places it (and its
+ * WASM sibling) under the registry root's node_modules, where the runtime
+ * resolves it via module walk-up (sqljsAdapter.resolveSqlJsWasmPath). The
+ * Docker/standalone bundles are covered by assembleStandalone's
+ * assertSqlJsWasmShipped() build-time gate.
  */
 export const PACK_ARTIFACT_NEVER_ALLOWED_SEGMENTS: string[] = ["node_modules"];
 

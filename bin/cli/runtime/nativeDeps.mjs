@@ -10,9 +10,40 @@ import {
 import { join, sep } from "node:path";
 import { spawnSync } from "node:child_process";
 import { platform } from "node:os";
+import { fileURLToPath } from "node:url";
 import { resolveDataDir } from "../data-dir.mjs";
 
-const BETTER_SQLITE3_VERSION = "12.10.1";
+/**
+ * Fallback only — the real version comes from the installed package.json's
+ * optionalDependencies (see declaredBetterSqlite3Version). Kept as a safety net
+ * for unusual layouts where the root package.json cannot be read.
+ */
+const BETTER_SQLITE3_VERSION_FALLBACK = "12.10.1";
+
+/**
+ * Derive the better-sqlite3 version to install into the runtime dir from the
+ * installed package.json's optionalDependencies declaration, instead of
+ * hardcoding a possibly-stale version. The main project declares ^13.x while an
+ * old hardcoded 12.10.1 caused ABI divergence on Linux/VPS/Windows (Termux audit
+ * finding #6). Falls back to the legacy constant when package.json is unreadable.
+ *
+ * @returns {string}
+ */
+export function declaredBetterSqlite3Version(rootDir = fileURLToPath(
+  new URL("../../../", import.meta.url)
+)) {
+  try {
+    const pkg = JSON.parse(readFileSync(join(rootDir, "package.json"), "utf8"));
+    const declared = pkg?.optionalDependencies?.["better-sqlite3"];
+    if (typeof declared === "string" && declared.trim()) return declared.trim();
+    // Also accept dependencies/peerDependencies as a courtesy.
+    const dep = pkg?.dependencies?.["better-sqlite3"];
+    if (typeof dep === "string" && dep.trim()) return dep.trim();
+  } catch {
+    // fall through to the fallback below
+  }
+  return BETTER_SQLITE3_VERSION_FALLBACK;
+}
 
 function runtimeDir() {
   return join(resolveDataDir(), "runtime");
@@ -154,12 +185,13 @@ export function ensureBetterSqliteRuntime({ silent = false, force = false } = {}
     if (!silent) process.stdout.write("[dikaroute][runtime] better-sqlite3 OK\n");
     return { betterSqlite: true };
   }
+  const targetVersion = declaredBetterSqlite3Version();
   if (!silent) {
     process.stdout.write(
-      `[dikaroute][runtime] Installing better-sqlite3@${BETTER_SQLITE3_VERSION} into runtime...\n`
+      `[dikaroute][runtime] Installing better-sqlite3@${targetVersion} into runtime...\n`
     );
   }
-  const ok = npmInstallRuntime([`better-sqlite3@${BETTER_SQLITE3_VERSION}`], { silent });
+  const ok = npmInstallRuntime([`better-sqlite3@${targetVersion}`], { silent });
   if (!ok && !silent) {
     process.stderr.write(
       "[dikaroute][runtime] better-sqlite3 install failed.\n" +

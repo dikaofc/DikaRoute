@@ -334,25 +334,21 @@ function runWithoutRecovery(serverJs, env, memoryLimit, dashboardPort, apiPort, 
 
   writePidFile("server", server.pid);
 
-  let started = false;
+  // A fatal instrumentation/DB startup failure (e.g. sql-wasm.wasm missing on
+  // Termux) must NOT print the success banner — the port may be open while
+  // every request 500s. Tracks whether such a marker was seen in child output.
+  let fatalStartup = false;
 
   server.stdout.on("data", (data) => {
     const text = data.toString();
     process.stdout.write(text);
-    maybeReportInstrumentationHookFailure(text);
-    if (
-      !started &&
-      (text.includes("Ready") || text.includes("started") || text.includes("listening"))
-    ) {
-      started = true;
-      onReady(dashboardPort, apiPort, noOpen, startedAt);
-    }
+    if (maybeReportInstrumentationHookFailure(text)) fatalStartup = true;
   });
 
   server.stderr.on("data", (data) => {
     const text = data.toString();
     process.stderr.write(text);
-    maybeReportInstrumentationHookFailure(text);
+    if (maybeReportInstrumentationHookFailure(text)) fatalStartup = true;
   });
 
   server.on("error", (err) => {
@@ -380,12 +376,30 @@ function runWithoutRecovery(serverJs, env, memoryLimit, dashboardPort, apiPort, 
   process.on("SIGINT", shutdown);
   process.on("SIGTERM", shutdown);
 
-  setTimeout(() => {
-    if (!started) {
-      started = true;
-      onReady(dashboardPort, apiPort, noOpen, startedAt);
+  // Readiness gate: verify a real health response instead of trusting the
+  // child's "Ready"/"listening" text (which the port can print even after a
+  // fatal instrumentation failure). A fatal marker seen in child output
+  // suppresses the banner and exits nonzero. A plain timeout (server still
+  // booting — e.g. slow Windows cold start) only reports the diagnostic and
+  // keeps the child alive; killing a possibly-healthy server would be worse.
+  waitForServer(dashboardPort, 60000).then((up) => {
+    if (fatalStartup) {
+      console.error(
+        "\n\x1b[31m✖ DikaRoute failed to start: instrumentation/database initialization failed.\x1b[0m"
+      );
+      console.error(
+        "  See the error above, or run with \x1b[36m--log\x1b[0m for the full server output.\n"
+      );
+      cleanupPidFile("server");
+      server.kill("SIGTERM");
+      process.exit(1);
     }
-  }, 15000);
+    if (!up) {
+      reportReadinessTimeout(dashboardPort, { getRecentLog: () => [] });
+      return;
+    }
+    onReady(dashboardPort, apiPort, noOpen, startedAt);
+  });
 }
 
 async function runWithSupervisor(
@@ -440,9 +454,23 @@ async function runWithSupervisor(
 
   if (!showLog) {
     waitForServer(dashboardPort, 60000).then(async (up) => {
-      if (up) {
+      // Even when the port answers, a fatal instrumentation/DB startup failure
+      // detected in child output (supervisor.instrumentationFailureHintPrinted)
+      // must suppress the "DikaRoute is running!" banner and exit nonzero — the
+      // server would 500 on every request otherwise.
+      if (up && !supervisor.instrumentationFailureHintPrinted) {
         if (useTray) await maybeStartTray(dashboardPort, apiPort, supervisor);
         onReady(dashboardPort, apiPort, noOpen, startedAt);
+      } else if (up && supervisor.instrumentationFailureHintPrinted) {
+        console.error(
+          "\n\x1b[31m✖ DikaRoute failed to start: instrumentation/database initialization failed.\x1b[0m"
+        );
+        console.error(
+          "  See the error above, or run with \x1b[36m--log\x1b[0m for the full server output.\n"
+        );
+        cleanupPidFile("supervisor");
+        supervisor.stop();
+        process.exit(1);
       } else {
         reportReadinessTimeout(dashboardPort, supervisor);
       }

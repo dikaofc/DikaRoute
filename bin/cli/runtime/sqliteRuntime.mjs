@@ -1,12 +1,41 @@
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { homedir } from "node:os";
 import { execSync } from "node:child_process";
-import { pathToFileURL } from "node:url";
+import { pathToFileURL, fileURLToPath } from "node:url";
 import { validateBinaryMagic, platformBinaryLabel } from "./magicBytes.mjs";
 
 const RUNTIME_DIR = join(homedir(), ".dikaroute", "runtime");
-const BETTER_SQLITE3_VERSION = "better-sqlite3@^12.10.1";
+
+/**
+ * Fallback only — the real version comes from the installed package.json's
+ * optionalDependencies (see declaredBetterSqlite3Version). Kept as a safety net
+ * for unusual layouts where the root package.json cannot be read.
+ */
+const BETTER_SQLITE3_VERSION_FALLBACK = "12.10.1";
+
+/**
+ * Derive the better-sqlite3 version from the installed package.json's declared
+ * optionalDependencies instead of a hardcoded value. The main project declares
+ * ^13.x while the old hardcoded 12.10.1 caused ABI divergence (Termux audit
+ * finding #6). Returns a bare specifier (`better-sqlite3@<declared>`).
+ *
+ * @param {string} [rootDir]
+ * @returns {string}
+ */
+export function declaredBetterSqlite3Specifier(rootDir = fileURLToPath(
+  new URL("../../../", import.meta.url)
+)) {
+  let version = BETTER_SQLITE3_VERSION_FALLBACK;
+  try {
+    const pkg = JSON.parse(readFileSync(join(rootDir, "package.json"), "utf8"));
+    const declared = pkg?.optionalDependencies?.["better-sqlite3"];
+    if (typeof declared === "string" && declared.trim()) version = declared.trim();
+  } catch {
+    // fall back to the constant below
+  }
+  return `better-sqlite3@${version}`;
+}
 
 let resolvedCached = null;
 
@@ -118,7 +147,7 @@ async function installRuntime() {
   ensureRuntimeDir();
   const npm = process.platform === "win32" ? "npm.cmd" : "npm";
   execSync(
-    `${npm} install --prefix "${RUNTIME_DIR}" ${BETTER_SQLITE3_VERSION} --no-audit --no-fund --silent`,
+    `${npm} install --prefix "${RUNTIME_DIR}" ${declaredBetterSqlite3Specifier()} --no-audit --no-fund --silent`,
     { stdio: ["ignore", "ignore", "pipe"], timeout: 180_000 }
   );
 }

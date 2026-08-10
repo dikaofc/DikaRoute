@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getProviderConnections, getCachedSettings } from "@/lib/localDb";
+import { getCachedSettings } from "@/lib/db/readCache";
+import { getProviderConnections } from "@/lib/db/providers";
 import { buildHealthPayload } from "@/lib/monitoring/observability";
 import { APP_CONFIG } from "@/shared/constants/config";
 import { AI_PROVIDERS } from "@/shared/constants/providers";
@@ -72,6 +73,36 @@ export async function GET() {
       getCachedSettings(),
       getProviderConnections(),
     ]);
+
+    // Readiness gate: the two direct DB reads (settings + connections) are the
+    // cheapest signal that the SQLite driver actually works. When the driver is
+    // dead (e.g. sql.js WASM asset missing on Termux, or better-sqlite3 ABI
+    // mismatch), these reject while the HTTP server itself is still answering —
+    // the classic "port open but every request 500s" state. Report 503 degraded
+    // here so readiness probes (`waitForServer` in bin/cli/utils/pid.mjs) never
+    // print the success banner for a DB-less boot.
+    const dbUnavailable =
+      settingsResult.status === "rejected" || connectionsResult.status === "rejected";
+    if (dbUnavailable) {
+      const dbReason =
+        settingsResult.status === "rejected"
+          ? settingsResult.reason
+          : connectionsResult.reason;
+      const dbMessage =
+        dbReason instanceof Error ? dbReason.message : dbReason ?? "unknown";
+      console.error(
+        `[API] GET /api/monitoring/health DB unavailable (${dbMessage}) — returning 503 degraded`
+      );
+      return NextResponse.json(
+        {
+          status: "degraded",
+          db: "unavailable",
+          error: `Database driver unavailable: ${dbMessage}`,
+          timestamp: new Date().toISOString(),
+        },
+        { status: 503 }
+      );
+    }
 
     const circuitBreakers =
       circuitBreakerModule.status === "fulfilled"

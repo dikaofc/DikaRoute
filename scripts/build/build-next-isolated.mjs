@@ -281,6 +281,11 @@ export async function main() {
 
     const result = await runNextBuild();
     const standaloneDir = path.join(distDir, "standalone");
+    // A REQUIRED runtime asset missing from the assembled bundle (sql.js WASM)
+    // must fail the build — tracked here because the inner catch below cannot
+    // overwrite `result.code` (the final `process.exitCode = result.code` would
+    // clobber a plain `process.exitCode = 1` set inside the try).
+    let standaloneAssemblyFailed = false;
     if (result.code === 0 && (await exists(standaloneDir))) {
       try {
         await fs.cp(path.join(projectRoot, "docs"), path.join(standaloneDir, "docs"), {
@@ -341,10 +346,20 @@ export async function main() {
           );
         }
       } catch (assembleErr) {
-        console.warn("[build-next-isolated] Non-fatal error assembling standalone:", assembleErr);
+        // A REQUIRED runtime asset missing from the bundle (sql.js WASM — the
+        // only driver on Android/Termux) must fail the build: swallowing it
+        // shipped a tarball that boots to HTTP 500 on every Termux install
+        // ("sql-wasm.wasm was not found"). Optional sidecars stay non-fatal.
+        const message = assembleErr?.message || String(assembleErr);
+        if (message.includes("REQUIRED runtime asset missing")) {
+          console.error("[build-next-isolated] Fatal: standalone assembly failed:", assembleErr);
+          standaloneAssemblyFailed = true;
+        } else {
+          console.warn("[build-next-isolated] Non-fatal error assembling standalone:", assembleErr);
+        }
       }
     }
-    process.exitCode = result.code;
+    process.exitCode = standaloneAssemblyFailed ? 1 : result.code;
   } catch (error) {
     console.error("[build-next-isolated] Build failed:", error);
     process.exitCode = 1;

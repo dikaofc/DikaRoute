@@ -263,6 +263,46 @@ const EXTRA_MODULE_ENTRIES = [
 ];
 
 /**
+ * REQUIRED-runtime-asset gate for the sql.js WASM fallback driver.
+ *
+ * sql.js is the ONLY SQLite driver on Android/Termux (the native sync drivers are
+ * deliberately skipped there), so sql-wasm.wasm missing from a shipped bundle
+ * means every Termux install boots to HTTP 500. The EXTRA_MODULE_ENTRIES copy
+ * above handles the happy path; this is the loud failure when it does not land.
+ *
+ * Semantics:
+ *  - Source package present at build time (sql.js is a HARD dependency, so this
+ *    is the normal case) → the assembled bundle MUST contain the wasm, else
+ *    throw (fails the build instead of shipping a broken tarball/Docker image).
+ *  - Source package absent (impossible for a hard dependency; defensive) → warn
+ *    and continue — nothing could have been copied, so failing would be noise.
+ *
+ * @param {string} projectRoot - project root (source node_modules read from here)
+ * @param {string} outDir      - assembled bundle output directory
+ */
+export function assertSqlJsWasmShipped(projectRoot, outDir) {
+  const srcWasm = path.join(projectRoot, "node_modules", "sql.js", "dist", "sql-wasm.wasm");
+  if (!fsSync.existsSync(srcWasm)) {
+    console.warn(
+      "[assembleStandalone] sql.js source package absent — skipping REQUIRED wasm gate (slim install?)"
+    );
+    return;
+  }
+  const destWasm = path.join(outDir, "node_modules", "sql.js", "dist", "sql-wasm.wasm");
+  if (!fsSync.existsSync(destWasm)) {
+    throw new Error(
+      `[assembleStandalone] REQUIRED runtime asset missing from bundle: ${path.relative(
+        projectRoot,
+        destWasm
+      )}. ` +
+        `sql.js is the only SQLite driver on Android/Termux — an incomplete bundle boots to HTTP 500 ` +
+        `("sql-wasm.wasm was not found"). Fix the EXTRA_MODULE_ENTRIES sql.js copy, do not disable this gate.`
+    );
+  }
+  console.log(`[assembleStandalone] sql.js WASM present: ${path.relative(projectRoot, destWasm)}`);
+}
+
+/**
  * Copy native standalone assets (wreq-js rust/, better-sqlite3 build/).
  *
  * The destination is derived as <rootDir>/<distDir>/standalone/node_modules/...
@@ -293,7 +333,9 @@ export async function syncStandaloneNativeAssets(rootDir, fsImpl = fs, log = con
 export async function syncStandaloneExtraModules(rootDir, fsImpl = fs, log = console, outDir) {
   const standaloneRoot =
     outDir || path.join(rootDir, process.env.NEXT_DIST_DIR || ".build/next", "standalone");
-  return syncExtraModulesToDir(rootDir, standaloneRoot, fsImpl, log);
+  const changed = await syncExtraModulesToDir(rootDir, standaloneRoot, fsImpl, log);
+  assertSqlJsWasmShipped(rootDir, standaloneRoot);
+  return changed;
 }
 
 /**
@@ -740,6 +782,10 @@ export function assembleStandalone({
   // 6. Optionally copy native assets + extra modules (synchronous)
   if (copyNatives) {
     copyNativeAssetsAndExtraModules(projectRoot, resolvedOutDir);
+
+    // REQUIRED-runtime-asset gate: sql.js is the only driver on Android/Termux,
+    // so an incomplete WASM copy must FAIL assembly, not ship silently.
+    assertSqlJsWasmShipped(projectRoot, resolvedOutDir);
 
     // #9166: dynamically imported LLMLingua packages are not reliably traced
     // into the standalone bundle. Copy their complete dependency closure from

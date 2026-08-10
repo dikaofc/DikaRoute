@@ -73,6 +73,13 @@ export function sleep(ms) {
 // socket that merely accepts TCP and then hangs without ever completing
 // a single request (#6800: that's a still-booting/CPU-bound process, not
 // a "route not mounted" gap, and must NOT be reported as ready).
+//
+// A 503 from the health route (status:"degraded", e.g. the DB driver is
+// unavailable — sql.js WASM missing on Termux, better-sqlite3 ABI mismatch)
+// is ALSO never reported ready: the HTTP server is up and answering, but the
+// app is not functional. Classified as "degraded" and excluded from the
+// fast-reject grace window so the CLI does not print the success banner for
+// a boot that will 500 on every request.
 export async function waitForServer(port, timeout = 60000) {
   const start = Date.now();
   let tcpListeningSince = null;
@@ -83,8 +90,10 @@ export async function waitForServer(port, timeout = 60000) {
       if (tcpListeningSince === null) tcpListeningSince = Date.now();
       if (Date.now() - tcpListeningSince >= 3000) return true;
     } else {
-      // "hanging" (request timed out with no response at all) or
-      // "not-listening" — neither counts toward the grace window.
+      // "hanging" (request timed out with no response at all),
+      // "not-listening", or "degraded" (HTTP 503: server up but app
+      // unhealthy — e.g. DB driver failed) — none count toward the grace
+      // window, and degraded never becomes ready.
       tcpListeningSince = null;
     }
     await sleep(500);
@@ -94,9 +103,12 @@ export async function waitForServer(port, timeout = 60000) {
 
 // Polls /api/monitoring/health once and classifies the outcome:
 // - "ready": got a 2xx HTTP response.
-// - "fast-reject": got a non-2xx HTTP response, or the connection was
-//   actively refused/reset (not a timeout) — the HTTP server is alive and
-//   answering quickly, just not routing this endpoint yet (#2460).
+// - "degraded": got HTTP 503 with status:"degraded" — the server is alive
+//   and answering, but the app is unhealthy (e.g. DB driver unavailable).
+//   Never reported ready.
+// - "fast-reject": got any other non-2xx HTTP response, or the connection
+//   was actively refused/reset (not a timeout) — the HTTP server is alive
+//   and answering quickly, just not routing this endpoint yet (#2460).
 // - "hanging": the request timed out waiting for any response — the
 //   process accepted the TCP connection but never answered (#6800).
 // - "not-listening": nothing is accepting connections on the port at all.
@@ -105,7 +117,16 @@ async function pollHealthOnce(port) {
     const res = await fetch(`http://localhost:${port}/api/monitoring/health`, {
       signal: AbortSignal.timeout(2000),
     });
-    return res.ok ? "ready" : "fast-reject";
+    if (res.ok) return "ready";
+    if (res.status === 503) {
+      try {
+        const body = await res.json();
+        if (body?.status === "degraded") return "degraded";
+      } catch {
+        // body not JSON — treat as a plain fast-reject below
+      }
+    }
+    return "fast-reject";
   } catch (err) {
     if (err?.name === "TimeoutError") return "hanging";
     const listening = await isPortListening(port).catch(() => false);

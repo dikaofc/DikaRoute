@@ -1,6 +1,7 @@
 // src/lib/db/adapters/sqljsAdapter.ts
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { SqliteAdapter, PreparedStatement, RunResult } from "./types";
 
 const SAVE_DEBOUNCE_MS = 100;
@@ -8,24 +9,80 @@ const CHECKPOINT_INTERVAL_MS = 60_000;
 
 let _sqlJsLib: Awaited<ReturnType<(typeof import("sql.js"))["default"]>> | null = null;
 
-function resolveSqlJsWasmPath(): string {
-  // The standalone assembler copies the complete sql.js package into
-  // <bundle>/node_modules/sql.js. Every packaged server launcher sets cwd to that
-  // bundle directory, so the JavaScript entrypoint and its sibling WASM share one
-  // explicit runtime contract instead of relying on a require.resolve call that
-  // webpack can rewrite. The second path retains direct-source compatibility.
-  const candidatePaths = [
-    path.join(process.cwd(), "node_modules", "sql.js", "dist", "sql-wasm.wasm"),
+/**
+ * Build the ordered list of candidate sql-wasm.wasm locations.
+ *
+ * The WASM asset is a sibling of the sql.js JS entrypoint inside the installed
+ * package. Node's own module resolution locates sql.js independently of the
+ * caller's current working directory (walking up from the code that imports it
+ * — a global npm install hoists it to <npmRoot>/node_modules/sql.js, the
+ * standalone/Docker bundle carries it at <bundle>/node_modules/sql.js), so the
+ * primary candidates are derived by walking UP from `anchorDir` (the directory
+ * of the module that is being executed, e.g. a compiled chunk). `process.cwd()`
+ * is retained ONLY as a fallback for source checkouts and direct launchers.
+ *
+ * Both the current dist layout (.build/next) and the legacy .next layout are
+ * covered.
+ */
+export function buildSqlJsWasmCandidatePaths(
+  anchorDir: string,
+  cwd: string = process.cwd()
+): string[] {
+  const candidates: string[] = [];
+
+  // 1) Walk up from the executing module: every ancestor may carry a
+  //    node_modules/sql.js (source checkout, bundle, hoisted global install).
+  let dir = path.resolve(anchorDir);
+  while (true) {
+    candidates.push(path.join(dir, "node_modules", "sql.js", "dist", "sql-wasm.wasm"));
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+
+  // 2) cwd-relative fallbacks (dev / run-standalone launchers).
+  candidates.push(path.join(cwd, "node_modules", "sql.js", "dist", "sql-wasm.wasm"));
+  candidates.push(
     path.join(
-      process.cwd(),
+      cwd,
       ".next",
       "standalone",
       "node_modules",
       "sql.js",
       "dist",
       "sql-wasm.wasm"
-    ),
-  ];
+    )
+  );
+  candidates.push(
+    path.join(
+      cwd,
+      ".build",
+      "next",
+      "standalone",
+      "node_modules",
+      "sql.js",
+      "dist",
+      "sql-wasm.wasm"
+    )
+  );
+
+  return candidates;
+}
+
+/**
+ * Resolve the packaged sql-wasm.wasm independently of process.cwd().
+ *
+ * Prior behavior only checked `process.cwd()`-relative paths; on a global npm
+ * install the CLI spawns the server with `cwd` pointing at the bundle dir, so a
+ * bundle whose node_modules was stripped (npm tarballs exclude node_modules)
+ * always threw "sql-wasm.wasm was not found" on Termux/Android — the sql.js
+ * driver is the ONLY driver there (#Termux audit). Resolving from the executing
+ * module's own location (walk-up) finds sql.js wherever Node would have loaded
+ * it from, and cwd remains as a last-resort fallback.
+ */
+export function resolveSqlJsWasmPath(anchorDir?: string, cwd: string = process.cwd()): string {
+  const anchor = anchorDir ?? path.dirname(fileURLToPath(import.meta.url));
+  const candidatePaths = buildSqlJsWasmCandidatePaths(anchor, cwd);
 
   for (const candidatePath of candidatePaths) {
     if (fs.existsSync(candidatePath)) {

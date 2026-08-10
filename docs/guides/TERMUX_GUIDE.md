@@ -81,19 +81,34 @@ An error occurred while loading instrumentation hook: ...
 mkdir -p ~/.cache
 dikaroute serve
 
-# 2. If it still fails, rebuild native modules into a user-writable runtime
-#    (works without a C++ toolchain):
+# 2. Verify the sql.js WASM fallback driver is actually installed.
+#    Termux uses the WASM driver (better-sqlite3 is intentionally skipped), so
+#    if sql-wasm.wasm is missing the server boots to HTTP 500 no matter what
+#    you rebuild. This is the most common real cause of this symptom:
+find "$(npm root -g)" -path '*sql.js/dist/sql-wasm.wasm' -print
+
+#    If nothing is printed, the install is incomplete — reinstall:
+npm install -g dikaroute@latest --include=optional
+
+# 3. Only after the WASM check passes, rebuild native modules into a
+#    user-writable runtime (works without a C++ toolchain):
 dikaroute runtime repair
 
-# 3. Or rebuild the SQLite driver explicitly (needs a C++ toolchain):
+# 4. Or rebuild the SQLite driver explicitly (needs a C++ toolchain):
 npm rebuild better-sqlite3
 ```
 
 After each fix, restart: `dikaroute serve`.
 
+> `dikaroute runtime repair` and `npm rebuild better-sqlite3` do **not** fix the
+> sql.js WASM driver — on Termux that driver is used instead of
+> better-sqlite3. Only reinstall (step 2) or update fixes a missing
+> `sql-wasm.wasm`.
+
 **Step 3 — if the error persists**, share the full `dikaroute serve --log`
 output (especially the `An error occurred while loading instrumentation hook: …`
-line) — that identifies the exact module that failed on your device.
+or `[STARTUP] Fatal: Database driver initialization failed` line) — that
+identifies the exact module that failed on your device.
 
 ### SQLite driver on Termux
 
@@ -148,3 +163,11 @@ is installed.
 > Termux anymore — `npm rebuild better-sqlite3` is unnecessary there (sql.js
 > WASM is used instead). The runtime-repair path still matters for other
 > optional native pieces (e.g. `wreq-js`).
+>
+> The sql.js WASM driver is a **regular dependency** (`sql.js`), so a normal
+> `npm install -g dikaroute` places `sql-wasm.wasm` under the global
+> `node_modules` (typically `$(npm root -g)/node_modules/sql.js/dist/`).
+> DikaRoute resolves it relative to the installed package rather than the
+> current directory, so it works from any working directory. If it is missing,
+> reinstall (`npm install -g dikaroute@latest --include=optional`) — no native
+> rebuild will restore it.
