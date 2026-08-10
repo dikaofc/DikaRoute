@@ -538,11 +538,6 @@
       "count": 1
     }
   },
-  "src/app/api/monitoring/health/route.ts": {
-    "no-restricted-imports": {
-      "count": 1
-    }
-  },
   "src/app/api/pricing/models/route.ts": {
     "no-restricted-imports": {
       "count": 1
