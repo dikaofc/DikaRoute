@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.67] - 2026-08-10
+
+### Changed
+
+- prune stale eslint suppression after health route import fix
+
 ## [3.8.66] - 2026-08-10
 
 ### Fixed
