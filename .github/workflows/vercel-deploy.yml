@@ -3,12 +3,9 @@
 # Optional. Requires a Vercel account + token. This runs the same build/install
 # commands as `vercel.json` — see docs/ops/vercel-deployment-guide.md.
 #
-# Preconditions:
-#   1. Install the Vercel CLI locally (or use `vercel dev`).
-#   2. Add a Vercel access token as a repo secret named VERCEL_TOKEN
-#      (or use the Vercel GitHub App integration instead of this workflow).
-#   3. `vercel link` already exists locally so `--token` + `--prod` resolve the
-#      project (you can pass `VERCEL_PROJECT_ID` / `VERCEL_ORG_ID` too).
+# Preconditions (repo secrets, or the Vercel GitHub App integration):
+#   VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
+# Until those are configured this workflow skips cleanly (success, no deploy).
 name: Deploy to Vercel
 
 on:
@@ -23,11 +20,11 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: >-
-      github.repository == 'dikaofc/DikaRoute'
-      && secrets.VERCEL_TOKEN != ''
-      && secrets.VERCEL_ORG_ID != ''
-      && secrets.VERCEL_PROJECT_ID != ''
+    if: github.repository == 'dikaofc/DikaRoute'
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,20 +38,21 @@ jobs:
       - name: Install Vercel CLI
         run: npm i -g vercel@latest
 
+      - name: Verify Vercel secrets are configured
+        run: |
+          if [ -z "$VERCEL_TOKEN" ] || [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
+            echo "::warning::VERCEL_TOKEN / VERCEL_ORG_ID / VERCEL_PROJECT_ID not set — skipping Vercel deploy. See docs/ops/vercel-deployment-guide.md."
+            echo "SKIP_DEPLOY=1" >> "$GITHUB_ENV"
+          fi
+
       - name: Pull Vercel env
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        if: env.SKIP_DEPLOY != '1'
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
 
       - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        if: env.SKIP_DEPLOY != '1'
+        run: vercel build --prod --token="$VERCEL_TOKEN"
 
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        if: env.SKIP_DEPLOY != '1'
+        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
