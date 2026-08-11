@@ -57,6 +57,22 @@ layer `isBuildPhase`, so `next build` also uses in-memory SQLite and never
 writes to disk during the build. `.source/` (fumadocs MDX output) is regenerated
 by the `createMDX()` plugin in `next.config.mjs`.
 
+### Bundler: webpack (not Turbopack) on Vercel
+
+`scripts/deploy/vercel-build.sh` runs `next build --webpack` **by default**.
+Turbopack (Next 16's default) is faster on big hosts (~7 min on a 4 vCPU /
+16 GB runner), but its native Rust heap is unbounded and it **freezes with zero
+build output** on 8 GB-class machines — Vercel's default Elastic build machine
+(4 vCPU / 8 GB) reproduced exactly that: the deployment sat at
+"Creating an optimized production build ..." for the full 45-minute limit. The
+webpack pass is bounded and completes in ~8-14 min on the same profile.
+
+- `NODE_OPTIONS` is capped at 5 GB (tune via `DIKAROUTE_BUILD_MEMORY_MB`) so the
+  webpack production pass (~3.9 GB peak) fits Vercel's 8 GB build machine while
+  leaving room for the static-generation workers.
+- To opt back into Turbopack (e.g. after upgrading to a larger Vercel build
+  machine), set the project env var `DIKAROUTE_USE_TURBOPACK=1`.
+
 ## What works on Vercel
 
 - ✅ **Dashboard, docs, landing, auth, status pages** — static + server-rendered.
