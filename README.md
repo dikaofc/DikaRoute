@@ -41,6 +41,7 @@
 - [🧠 Compression & Context Optimization](#-compression--context-optimization)
 - [🔐 Security](#-security)
 - [🐳 Docker Deployment](#-docker-deployment)
+- [▲ Vercel (preview / demo only)](#-vercel-preview--demo-only)
 - [🤖 CLI & Ecosystem](#-cli--ecosystem)
 - [📦 Releases & Changelog](#-releases--changelog)
 - [❓ FAQ](#-faq)
@@ -348,6 +349,14 @@ docker compose -f docker-compose.prod.yml up -d
 - **Production ports:** host publishes `PROD_DASHBOARD_PORT` (default `20130`) and `PROD_API_PORT` (default `20131`).
 - **Podman:** set `CONTAINER_HOST=podman`.
 - **Behind a proxy:** set `DIKAROUTE_BASE_PATH` for subpath serving and `NEXT_PUBLIC_BASE_URL` for the public origin.
+
+---
+
+## ▲ Vercel (preview / demo only)
+
+Vercel is a serverless platform — it runs **stateless** function invocations on an ephemeral filesystem, so it is **not** a target for a persistent DikaRoute gateway. The repo ships a Vercel-aware build (`vercel.json` + `scripts/deploy/`) that runs a plain `next build` (no standalone assembly) so the dashboard, docs, landing pages and most `/v1/*` API routes render — but **nothing persists between requests** (in-memory SQLite via the existing `isCloud` path) and **long-lived listeners (WebSocket bridges, MITM, tunnels, background workers) don't run**.
+
+See [docs/ops/vercel-deployment-guide.md](docs/ops/vercel-deployment-guide.md) for the full capability matrix and setup. For a real, persistent instance use Docker, a VPS, or the npm/desktop builds above.
 
 ---
 

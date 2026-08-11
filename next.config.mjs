@@ -157,7 +157,12 @@ const nextConfig = {
       },
     ],
   },
-  output: "standalone",
+  // Standalone output is the artifact for Docker/local/npm/Electron — a custom
+  // Node server (run-next.mjs / server-ws.mjs) boots it. Vercel builds its own
+  // serverless output from a plain `next build` and does not consume standalone;
+  // emitting it there only adds build cost (VERCEL=1 is set by Vercel's build
+  // pipeline — see docs/ops/vercel-deployment-guide.md).
+  output: process.env.VERCEL === "1" ? undefined : "standalone",
   compress: true,
   productionBrowserSourceMaps: false,
   // DikaRoute is a proxy for AI APIs — request bodies routinely include
