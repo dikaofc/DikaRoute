@@ -1,4 +1,7 @@
-# Vercel Deployment Guide
+---
+title: "Vercel Deployment"
+description: "Stateless preview/demo deployment on Vercel: what works, what doesn't, and how to configure it."
+---
 
 > **tl;dr** DikaRoute is built to run as a *persistent, self-hosted daemon*
 > (Docker / VPS / npm / desktop) with an on-disk SQLite database and native
