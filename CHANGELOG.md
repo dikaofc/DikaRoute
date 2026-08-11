@@ -6,6 +6,12 @@ File ini juga dirender di dalam dashboard aplikasi (halaman Changelog).
 Format mengikuti [Keep a Changelog](https://keepachangelog.com/) dan versi
 mengikuti [Semantic Versioning](https://semver.org/).
 
+## [3.8.70] - 2026-08-11
+
+### Fixed
+
+- use webpack bundler on Vercel — Turbopack freezes 8 GB build machines — Vercel's default Elastic build machine is 4 vCPU / 8 GB. Turbopack's native
+
 ## [3.8.69] - 2026-08-11
 
 ### Added
